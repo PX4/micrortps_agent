@@ -1,0 +1,23 @@
+
+#ifndef __debug_array__idl__
+#define __debug_array__idl__
+
+
+
+const octet debug_array__ARRAY_SIZE = 58;
+
+typedef float debug_array__float_array_58[58];
+typedef char debug_array__char_array_10[10];
+
+struct debug_array
+{
+    unsigned long long timestamp_;
+    unsigned short id_;
+    debug_array__char_array_10 name;
+    debug_array__float_array_58 data;
+
+}; // struct debug_array
+
+#pragma keylist debug_array
+
+#endif  // __debug_array__idl__

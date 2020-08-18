@@ -1,0 +1,51 @@
+
+#ifndef __vehicle_mocap_odometry__idl__
+#define __vehicle_mocap_odometry__idl__
+
+
+
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_X_VARIANCE = 0;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_Y_VARIANCE = 6;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_Z_VARIANCE = 11;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_ROLL_VARIANCE = 15;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_PITCH_VARIANCE = 18;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_YAW_VARIANCE = 20;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_VX_VARIANCE = 0;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_VY_VARIANCE = 6;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_VZ_VARIANCE = 11;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_ROLLRATE_VARIANCE = 15;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_PITCHRATE_VARIANCE = 18;
+const octet vehicle_mocap_odometry__COVARIANCE_MATRIX_YAWRATE_VARIANCE = 20;
+const octet vehicle_mocap_odometry__LOCAL_FRAME_NED = 0;
+const octet vehicle_mocap_odometry__LOCAL_FRAME_FRD = 1;
+const octet vehicle_mocap_odometry__LOCAL_FRAME_OTHER = 2;
+const octet vehicle_mocap_odometry__BODY_FRAME_FRD = 3;
+
+typedef float vehicle_mocap_odometry__float_array_4[4];
+typedef float vehicle_mocap_odometry__float_array_21[21];
+
+struct vehicle_mocap_odometry
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_sample_;
+    octet local_frame_;
+    float x_;
+    float y_;
+    float z_;
+    vehicle_mocap_odometry__float_array_4 q;
+    vehicle_mocap_odometry__float_array_4 q_offset;
+    vehicle_mocap_odometry__float_array_21 pose_covariance;
+    octet velocity_frame_;
+    float vx_;
+    float vy_;
+    float vz_;
+    float rollspeed_;
+    float pitchspeed_;
+    float yawspeed_;
+    vehicle_mocap_odometry__float_array_21 velocity_covariance;
+
+}; // struct vehicle_mocap_odometry
+
+#pragma keylist vehicle_mocap_odometry
+
+#endif  // __vehicle_mocap_odometry__idl__

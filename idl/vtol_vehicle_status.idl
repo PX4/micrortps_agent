@@ -1,0 +1,27 @@
+
+#ifndef __vtol_vehicle_status__idl__
+#define __vtol_vehicle_status__idl__
+
+
+
+const octet vtol_vehicle_status__VEHICLE_VTOL_STATE_UNDEFINED = 0;
+const octet vtol_vehicle_status__VEHICLE_VTOL_STATE_TRANSITION_TO_FW = 1;
+const octet vtol_vehicle_status__VEHICLE_VTOL_STATE_TRANSITION_TO_MC = 2;
+const octet vtol_vehicle_status__VEHICLE_VTOL_STATE_MC = 3;
+const octet vtol_vehicle_status__VEHICLE_VTOL_STATE_FW = 4;
+
+
+struct vtol_vehicle_status
+{
+    unsigned long long timestamp_;
+    boolean vtol_in_rw_mode_;
+    boolean vtol_in_trans_mode_;
+    boolean in_transition_to_fw_;
+    boolean vtol_transition_failsafe_;
+    boolean fw_permanent_stab_;
+
+}; // struct vtol_vehicle_status
+
+#pragma keylist vtol_vehicle_status
+
+#endif  // __vtol_vehicle_status__idl__

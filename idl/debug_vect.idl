@@ -1,0 +1,22 @@
+
+#ifndef __debug_vect__idl__
+#define __debug_vect__idl__
+
+
+
+
+typedef char debug_vect__char_array_10[10];
+
+struct debug_vect
+{
+    unsigned long long timestamp_;
+    debug_vect__char_array_10 name;
+    float x_;
+    float y_;
+    float z_;
+
+}; // struct debug_vect
+
+#pragma keylist debug_vect
+
+#endif  // __debug_vect__idl__

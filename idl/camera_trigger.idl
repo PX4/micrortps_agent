@@ -1,0 +1,20 @@
+
+#ifndef __camera_trigger__idl__
+#define __camera_trigger__idl__
+
+
+
+
+
+struct camera_trigger
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_utc_;
+    unsigned long seq_;
+    boolean feedback_;
+
+}; // struct camera_trigger
+
+#pragma keylist camera_trigger
+
+#endif  // __camera_trigger__idl__

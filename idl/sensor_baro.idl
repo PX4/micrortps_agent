@@ -1,0 +1,22 @@
+
+#ifndef __sensor_baro__idl__
+#define __sensor_baro__idl__
+
+
+
+
+
+struct sensor_baro
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_sample_;
+    unsigned long device_id_;
+    unsigned long error_count_;
+    float pressure_;
+    float temperature_;
+
+}; // struct sensor_baro
+
+#pragma keylist sensor_baro
+
+#endif  // __sensor_baro__idl__

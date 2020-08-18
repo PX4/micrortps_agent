@@ -1,0 +1,25 @@
+
+#ifndef __trajectory_waypoint__idl__
+#define __trajectory_waypoint__idl__
+
+
+
+
+typedef float trajectory_waypoint__float_array_3[3];
+
+struct trajectory_waypoint
+{
+    unsigned long long timestamp_;
+    trajectory_waypoint__float_array_3 position;
+    trajectory_waypoint__float_array_3 velocity;
+    trajectory_waypoint__float_array_3 acceleration;
+    float yaw_;
+    float yaw_speed_;
+    boolean point_valid_;
+    octet type_;
+
+}; // struct trajectory_waypoint
+
+#pragma keylist trajectory_waypoint
+
+#endif  // __trajectory_waypoint__idl__

@@ -1,0 +1,25 @@
+
+#ifndef __satellite_info__idl__
+#define __satellite_info__idl__
+
+
+
+const octet satellite_info__SAT_INFO_MAX_SATELLITES = 20;
+
+typedef octet satellite_info__octet_array_20[20];
+
+struct satellite_info
+{
+    unsigned long long timestamp_;
+    octet count_;
+    satellite_info__octet_array_20 svid;
+    satellite_info__octet_array_20 used;
+    satellite_info__octet_array_20 elevation;
+    satellite_info__octet_array_20 azimuth;
+    satellite_info__octet_array_20 snr;
+
+}; // struct satellite_info
+
+#pragma keylist satellite_info
+
+#endif  // __satellite_info__idl__

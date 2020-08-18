@@ -1,0 +1,20 @@
+
+#ifndef __position_setpoint_triplet__idl__
+#define __position_setpoint_triplet__idl__
+
+#include "position_setpoint.idl"
+
+
+
+struct position_setpoint_triplet
+{
+    unsigned long long timestamp_;
+    position_setpoint previous_;
+    position_setpoint current_;
+    position_setpoint next_;
+
+}; // struct position_setpoint_triplet
+
+#pragma keylist position_setpoint_triplet
+
+#endif  // __position_setpoint_triplet__idl__

@@ -1,0 +1,24 @@
+
+#ifndef __radio_status__idl__
+#define __radio_status__idl__
+
+
+
+
+
+struct radio_status
+{
+    unsigned long long timestamp_;
+    octet rssi_;
+    octet remote_rssi_;
+    octet txbuf_;
+    octet noise_;
+    octet remote_noise_;
+    unsigned short rxerrors_;
+    unsigned short fix_;
+
+}; // struct radio_status
+
+#pragma keylist radio_status
+
+#endif  // __radio_status__idl__

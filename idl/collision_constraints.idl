@@ -1,0 +1,20 @@
+
+#ifndef __collision_constraints__idl__
+#define __collision_constraints__idl__
+
+
+
+
+typedef float collision_constraints__float_array_2[2];
+
+struct collision_constraints
+{
+    unsigned long long timestamp_;
+    collision_constraints__float_array_2 original_setpoint;
+    collision_constraints__float_array_2 adapted_setpoint;
+
+}; // struct collision_constraints
+
+#pragma keylist collision_constraints
+
+#endif  // __collision_constraints__idl__

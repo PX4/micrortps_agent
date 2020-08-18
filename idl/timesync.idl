@@ -1,0 +1,21 @@
+
+#ifndef __timesync__idl__
+#define __timesync__idl__
+
+
+
+
+
+struct timesync
+{
+    unsigned long long timestamp_;
+    octet sys_id_;
+    octet seq_;
+    long long tc1_;
+    long long ts1_;
+
+}; // struct timesync
+
+#pragma keylist timesync
+
+#endif  // __timesync__idl__

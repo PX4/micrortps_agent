@@ -1,0 +1,19 @@
+
+#ifndef __debug_value__idl__
+#define __debug_value__idl__
+
+
+
+
+
+struct debug_value
+{
+    unsigned long long timestamp_;
+    octet ind_;
+    float value_;
+
+}; // struct debug_value
+
+#pragma keylist debug_value
+
+#endif  // __debug_value__idl__

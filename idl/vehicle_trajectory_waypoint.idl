@@ -1,0 +1,27 @@
+
+#ifndef __vehicle_trajectory_waypoint__idl__
+#define __vehicle_trajectory_waypoint__idl__
+
+#include "trajectory_waypoint.idl"
+
+const octet vehicle_trajectory_waypoint__MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS = 0;
+const octet vehicle_trajectory_waypoint__POINT_0 = 0;
+const octet vehicle_trajectory_waypoint__POINT_1 = 1;
+const octet vehicle_trajectory_waypoint__POINT_2 = 2;
+const octet vehicle_trajectory_waypoint__POINT_3 = 3;
+const octet vehicle_trajectory_waypoint__POINT_4 = 4;
+const octet vehicle_trajectory_waypoint__NUMBER_POINTS = 5;
+
+typedef trajectory_waypoint vehicle_trajectory_waypoint__trajectory_waypoint_array_5[5];
+
+struct vehicle_trajectory_waypoint
+{
+    unsigned long long timestamp_;
+    octet type_;
+    vehicle_trajectory_waypoint__trajectory_waypoint_array_5 waypoints;
+
+}; // struct vehicle_trajectory_waypoint
+
+#pragma keylist vehicle_trajectory_waypoint
+
+#endif  // __vehicle_trajectory_waypoint__idl__

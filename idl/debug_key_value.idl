@@ -1,0 +1,20 @@
+
+#ifndef __debug_key_value__idl__
+#define __debug_key_value__idl__
+
+
+
+
+typedef char debug_key_value__char_array_10[10];
+
+struct debug_key_value
+{
+    unsigned long long timestamp_;
+    debug_key_value__char_array_10 key;
+    float value_;
+
+}; // struct debug_key_value
+
+#pragma keylist debug_key_value
+
+#endif  // __debug_key_value__idl__

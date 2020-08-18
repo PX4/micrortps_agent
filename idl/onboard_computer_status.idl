@@ -1,0 +1,42 @@
+
+#ifndef __onboard_computer_status__idl__
+#define __onboard_computer_status__idl__
+
+
+
+
+typedef octet onboard_computer_status__octet_array_8[8];
+typedef octet onboard_computer_status__octet_array_10[10];
+typedef short onboard_computer_status__short_array_4[4];
+typedef unsigned long onboard_computer_status__unsigned_long_array_4[4];
+typedef octet onboard_computer_status__octet_array_4[4];
+typedef unsigned long onboard_computer_status__unsigned_long_array_6[6];
+
+struct onboard_computer_status
+{
+    unsigned long long timestamp_;
+    unsigned long uptime_;
+    octet type_;
+    onboard_computer_status__octet_array_8 cpu_cores;
+    onboard_computer_status__octet_array_10 cpu_combined;
+    onboard_computer_status__octet_array_4 gpu_cores;
+    onboard_computer_status__octet_array_10 gpu_combined;
+    octet temperature_board_;
+    onboard_computer_status__octet_array_8 temperature_core;
+    onboard_computer_status__short_array_4 fan_speed;
+    unsigned long ram_usage_;
+    unsigned long ram_total_;
+    onboard_computer_status__unsigned_long_array_4 storage_type;
+    onboard_computer_status__unsigned_long_array_4 storage_usage;
+    onboard_computer_status__unsigned_long_array_4 storage_total;
+    onboard_computer_status__unsigned_long_array_6 link_type;
+    onboard_computer_status__unsigned_long_array_6 link_tx_rate;
+    onboard_computer_status__unsigned_long_array_6 link_rx_rate;
+    onboard_computer_status__unsigned_long_array_6 link_tx_max;
+    onboard_computer_status__unsigned_long_array_6 link_rx_max;
+
+}; // struct onboard_computer_status
+
+#pragma keylist onboard_computer_status
+
+#endif  // __onboard_computer_status__idl__

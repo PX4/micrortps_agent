@@ -1,0 +1,51 @@
+
+#ifndef __battery_status__idl__
+#define __battery_status__idl__
+
+
+
+const octet battery_status__BATTERY_SOURCE_POWER_MODULE = 0;
+const octet battery_status__BATTERY_SOURCE_EXTERNAL = 1;
+const octet battery_status__BATTERY_SOURCE_ESCS = 2;
+const octet battery_status__BATTERY_WARNING_NONE = 0;
+const octet battery_status__BATTERY_WARNING_LOW = 1;
+const octet battery_status__BATTERY_WARNING_CRITICAL = 2;
+const octet battery_status__BATTERY_WARNING_EMERGENCY = 3;
+const octet battery_status__BATTERY_WARNING_FAILED = 4;
+
+typedef float battery_status__float_array_10[10];
+
+struct battery_status
+{
+    unsigned long long timestamp_;
+    float voltage_v_;
+    float voltage_filtered_v_;
+    float current_a_;
+    float current_filtered_a_;
+    float average_current_a_;
+    float discharged_mah_;
+    float remaining_;
+    float scale_;
+    float temperature_;
+    long cell_count_;
+    boolean connected_;
+    octet source_;
+    octet priority_;
+    unsigned short capacity_;
+    unsigned short cycle_count_;
+    unsigned short run_time_to_empty_;
+    unsigned short average_time_to_empty_;
+    unsigned short serial_number_;
+    unsigned short state_of_health_;
+    unsigned short max_error_;
+    octet id_;
+    battery_status__float_array_10 voltage_cell_v;
+    float max_cell_voltage_delta_;
+    boolean is_powering_off_;
+    octet warning_;
+
+}; // struct battery_status
+
+#pragma keylist battery_status
+
+#endif  // __battery_status__idl__

@@ -1,0 +1,31 @@
+
+#ifndef __iridiumsbd_status__idl__
+#define __iridiumsbd_status__idl__
+
+
+
+
+
+struct iridiumsbd_status
+{
+    unsigned long long timestamp_;
+    unsigned long long last_heartbeat_;
+    unsigned short tx_buf_write_index_;
+    unsigned short rx_buf_read_index_;
+    unsigned short rx_buf_end_index_;
+    unsigned short failed_sbd_sessions_;
+    unsigned short successful_sbd_sessions_;
+    unsigned short num_tx_buf_reset_;
+    octet signal_quality_;
+    octet state_;
+    boolean ring_pending_;
+    boolean tx_buf_write_pending_;
+    boolean tx_session_pending_;
+    boolean rx_read_pending_;
+    boolean rx_session_pending_;
+
+}; // struct iridiumsbd_status
+
+#pragma keylist iridiumsbd_status
+
+#endif  // __iridiumsbd_status__idl__

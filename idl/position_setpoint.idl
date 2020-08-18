@@ -1,0 +1,59 @@
+
+#ifndef __position_setpoint__idl__
+#define __position_setpoint__idl__
+
+
+
+const octet position_setpoint__SETPOINT_TYPE_POSITION = 0;
+const octet position_setpoint__SETPOINT_TYPE_VELOCITY = 1;
+const octet position_setpoint__SETPOINT_TYPE_LOITER = 2;
+const octet position_setpoint__SETPOINT_TYPE_TAKEOFF = 3;
+const octet position_setpoint__SETPOINT_TYPE_LAND = 4;
+const octet position_setpoint__SETPOINT_TYPE_IDLE = 5;
+const octet position_setpoint__SETPOINT_TYPE_OFFBOARD = 6;
+const octet position_setpoint__SETPOINT_TYPE_FOLLOW_TARGET = 7;
+const octet position_setpoint__VELOCITY_FRAME_LOCAL_NED = 1;
+const octet position_setpoint__VELOCITY_FRAME_BODY_NED = 8;
+
+
+struct position_setpoint
+{
+    unsigned long long timestamp_;
+    boolean valid_;
+    octet type_;
+    float x_;
+    float y_;
+    float z_;
+    boolean position_valid_;
+    float vx_;
+    float vy_;
+    float vz_;
+    boolean velocity_valid_;
+    octet velocity_frame_;
+    boolean alt_valid_;
+    double lat_;
+    double lon_;
+    float alt_;
+    float yaw_;
+    boolean yaw_valid_;
+    float yawspeed_;
+    boolean yawspeed_valid_;
+    octet landing_gear_;
+    float loiter_radius_;
+    octet loiter_direction_;
+    float pitch_min_;
+    float a_x_;
+    float a_y_;
+    float a_z_;
+    boolean acceleration_valid_;
+    boolean acceleration_is_force_;
+    float acceptance_radius_;
+    float cruising_speed_;
+    float cruising_throttle_;
+    boolean disable_weather_vane_;
+
+}; // struct position_setpoint
+
+#pragma keylist position_setpoint
+
+#endif  // __position_setpoint__idl__

@@ -1,0 +1,24 @@
+
+#ifndef __adc_report__idl__
+#define __adc_report__idl__
+
+
+
+
+typedef short adc_report__short_array_12[12];
+typedef long adc_report__long_array_12[12];
+
+struct adc_report
+{
+    unsigned long long timestamp_;
+    unsigned long device_id_;
+    adc_report__short_array_12 channel_id;
+    adc_report__long_array_12 raw_data;
+    unsigned long resolution_;
+    float v_ref_;
+
+}; // struct adc_report
+
+#pragma keylist adc_report
+
+#endif  // __adc_report__idl__
