@@ -36,17 +36,17 @@ using namespace eprosima::fastcdr::exception;
 
 adc_report::adc_report()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4abdb505
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d8d30f7
     m_timestamp_ = 0;
-    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ce6a65d
+    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3e57cd70
     m_device_id_ = 0;
-    // m_channel_id com.eprosima.idl.parser.typecode.AliasTypeCode@1500955a
+    // m_channel_id com.eprosima.idl.parser.typecode.AliasTypeCode@9a7504c
     memset(&m_channel_id, 0, (12) * 2);
-    // m_raw_data com.eprosima.idl.parser.typecode.AliasTypeCode@e874448
+    // m_raw_data com.eprosima.idl.parser.typecode.AliasTypeCode@2c039ac6
     memset(&m_raw_data, 0, (12) * 4);
-    // m_resolution_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@29b5cd00
+    // m_resolution_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@587d1d39
     m_resolution_ = 0;
-    // m_v_ref_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60285225
+    // m_v_ref_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58c1670b
     m_v_ref_ = 0.0;
 
 }

@@ -458,6 +458,24 @@ public:
     eProsima_user_DllExport uint16_t& serial_number_();
 
     /*!
+     * @brief This function sets a value in member manufacture_date_
+     * @param _manufacture_date_ New value for member manufacture_date_
+     */
+    eProsima_user_DllExport void manufacture_date_(uint16_t _manufacture_date_);
+
+    /*!
+     * @brief This function returns the value of member manufacture_date_
+     * @return Value of member manufacture_date_
+     */
+    eProsima_user_DllExport uint16_t manufacture_date_() const;
+
+    /*!
+     * @brief This function returns a reference to member manufacture_date_
+     * @return Reference to member manufacture_date_
+     */
+    eProsima_user_DllExport uint16_t& manufacture_date_();
+
+    /*!
      * @brief This function sets a value in member state_of_health_
      * @param _state_of_health_ New value for member state_of_health_
      */
@@ -510,6 +528,24 @@ public:
      * @return Reference to member id_
      */
     eProsima_user_DllExport uint8_t& id_();
+
+    /*!
+     * @brief This function sets a value in member interface_error_
+     * @param _interface_error_ New value for member interface_error_
+     */
+    eProsima_user_DllExport void interface_error_(uint16_t _interface_error_);
+
+    /*!
+     * @brief This function returns the value of member interface_error_
+     * @return Value of member interface_error_
+     */
+    eProsima_user_DllExport uint16_t interface_error_() const;
+
+    /*!
+     * @brief This function returns a reference to member interface_error_
+     * @return Reference to member interface_error_
+     */
+    eProsima_user_DllExport uint16_t& interface_error_();
 
     /*!
      * @brief This function copies the value in member voltage_cell_v
@@ -659,9 +695,11 @@ private:
     uint16_t m_run_time_to_empty_;
     uint16_t m_average_time_to_empty_;
     uint16_t m_serial_number_;
+    uint16_t m_manufacture_date_;
     uint16_t m_state_of_health_;
     uint16_t m_max_error_;
     uint8_t m_id_;
+    uint16_t m_interface_error_;
     battery_status__float_array_10 m_voltage_cell_v;
     float m_max_cell_voltage_delta_;
     bool m_is_powering_off_;

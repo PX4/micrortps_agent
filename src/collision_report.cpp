@@ -34,21 +34,21 @@ using namespace eprosima::fastcdr::exception;
 
 collision_report::collision_report()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_src_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_src_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_src_ = 0;
-    // m_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_id_ = 0;
-    // m_action_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_action_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_action_ = 0;
-    // m_threat_level_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_threat_level_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_threat_level_ = 0;
-    // m_time_to_minimum_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b87ed94
+    // m_time_to_minimum_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
     m_time_to_minimum_delta_ = 0.0;
-    // m_altitude_minimum_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e0e048a
+    // m_altitude_minimum_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d907bac
     m_altitude_minimum_delta_ = 0.0;
-    // m_horizontal_minimum_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bc79255
+    // m_horizontal_minimum_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
     m_horizontal_minimum_delta_ = 0.0;
 
 }

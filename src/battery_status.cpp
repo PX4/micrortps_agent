@@ -43,63 +43,69 @@ using namespace eprosima::fastcdr::exception;
 
 battery_status::battery_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50d0686
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12cdcf4
     m_timestamp_ = 0;
-    // m_voltage_v_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a3d45bd
+    // m_voltage_v_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bcea91b
     m_voltage_v_ = 0.0;
-    // m_voltage_filtered_v_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e7c7811
+    // m_voltage_filtered_v_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f3a4b84
     m_voltage_filtered_v_ = 0.0;
-    // m_current_a_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77ec78b9
+    // m_current_a_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27f723
     m_current_a_ = 0.0;
-    // m_current_filtered_a_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a3869f4
+    // m_current_filtered_a_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@670b40af
     m_current_filtered_a_ = 0.0;
-    // m_average_current_a_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a38d7a3
+    // m_average_current_a_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4923ab24
     m_average_current_a_ = 0.0;
-    // m_discharged_mah_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77f99a05
+    // m_discharged_mah_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c8afef
     m_discharged_mah_ = 0.0;
-    // m_remaining_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63440df3
+    // m_remaining_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b69c6ba
     m_remaining_ = 0.0;
-    // m_scale_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3aeaafa6
+    // m_scale_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@46daef40
     m_scale_ = 0.0;
-    // m_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@76a3e297
+    // m_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12f41634
     m_temperature_ = 0.0;
-    // m_cell_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4d3167f4
+    // m_cell_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c27452
     m_cell_count_ = 0;
-    // m_connected_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@ed9d034
+    // m_connected_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@262b2c86
     m_connected_ = false;
-    // m_source_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6121c9d6
+    // m_source_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@371a67ec
     m_source_ = 0;
-    // m_priority_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@87f383f
+    // m_priority_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ed828d
     m_priority_ = 0;
-    // m_capacity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4eb7f003
+    // m_capacity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50d0686
     m_capacity_ = 0;
-    // m_cycle_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@612fc6eb
+    // m_cycle_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e7c7811
     m_cycle_count_ = 0;
-    // m_run_time_to_empty_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@e720b71
+    // m_run_time_to_empty_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77f99a05
     m_run_time_to_empty_ = 0;
-    // m_average_time_to_empty_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1b26f7b2
+    // m_average_time_to_empty_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63440df3
     m_average_time_to_empty_ = 0;
-    // m_serial_number_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@491cc5c9
+    // m_serial_number_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3aeaafa6
     m_serial_number_ = 0;
-    // m_state_of_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@74ad1f1f
+    // m_manufacture_date_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@76a3e297
+    m_manufacture_date_ = 0;
+    // m_state_of_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4d3167f4
     m_state_of_health_ = 0;
-    // m_max_error_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a1aab78
+    // m_max_error_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@ed9d034
     m_max_error_ = 0;
-    // m_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@462d5aee
+    // m_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6121c9d6
     m_id_ = 0;
-    // m_voltage_cell_v com.eprosima.idl.parser.typecode.AliasTypeCode@69b0fd6f
+    // m_interface_error_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@87f383f
+    m_interface_error_ = 0;
+    // m_voltage_cell_v com.eprosima.idl.parser.typecode.AliasTypeCode@4eb7f003
     memset(&m_voltage_cell_v, 0, (10) * 4);
-    // m_max_cell_voltage_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@757942a1
+    // m_max_cell_voltage_delta_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@eafc191
     m_max_cell_voltage_delta_ = 0.0;
-    // m_is_powering_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4a87761d
+    // m_is_powering_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@612fc6eb
     m_is_powering_off_ = false;
-    // m_warning_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@66d1af89
+    // m_warning_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1060b431
     m_warning_ = 0;
 
 }
 
 battery_status::~battery_status()
 {
+
+
 
 
 
@@ -149,9 +155,11 @@ battery_status::battery_status(const battery_status &x)
     m_run_time_to_empty_ = x.m_run_time_to_empty_;
     m_average_time_to_empty_ = x.m_average_time_to_empty_;
     m_serial_number_ = x.m_serial_number_;
+    m_manufacture_date_ = x.m_manufacture_date_;
     m_state_of_health_ = x.m_state_of_health_;
     m_max_error_ = x.m_max_error_;
     m_id_ = x.m_id_;
+    m_interface_error_ = x.m_interface_error_;
     m_voltage_cell_v = x.m_voltage_cell_v;
     m_max_cell_voltage_delta_ = x.m_max_cell_voltage_delta_;
     m_is_powering_off_ = x.m_is_powering_off_;
@@ -179,9 +187,11 @@ battery_status::battery_status(battery_status &&x)
     m_run_time_to_empty_ = x.m_run_time_to_empty_;
     m_average_time_to_empty_ = x.m_average_time_to_empty_;
     m_serial_number_ = x.m_serial_number_;
+    m_manufacture_date_ = x.m_manufacture_date_;
     m_state_of_health_ = x.m_state_of_health_;
     m_max_error_ = x.m_max_error_;
     m_id_ = x.m_id_;
+    m_interface_error_ = x.m_interface_error_;
     m_voltage_cell_v = std::move(x.m_voltage_cell_v);
     m_max_cell_voltage_delta_ = x.m_max_cell_voltage_delta_;
     m_is_powering_off_ = x.m_is_powering_off_;
@@ -210,9 +220,11 @@ battery_status& battery_status::operator=(const battery_status &x)
     m_run_time_to_empty_ = x.m_run_time_to_empty_;
     m_average_time_to_empty_ = x.m_average_time_to_empty_;
     m_serial_number_ = x.m_serial_number_;
+    m_manufacture_date_ = x.m_manufacture_date_;
     m_state_of_health_ = x.m_state_of_health_;
     m_max_error_ = x.m_max_error_;
     m_id_ = x.m_id_;
+    m_interface_error_ = x.m_interface_error_;
     m_voltage_cell_v = x.m_voltage_cell_v;
     m_max_cell_voltage_delta_ = x.m_max_cell_voltage_delta_;
     m_is_powering_off_ = x.m_is_powering_off_;
@@ -243,9 +255,11 @@ battery_status& battery_status::operator=(battery_status &&x)
     m_run_time_to_empty_ = x.m_run_time_to_empty_;
     m_average_time_to_empty_ = x.m_average_time_to_empty_;
     m_serial_number_ = x.m_serial_number_;
+    m_manufacture_date_ = x.m_manufacture_date_;
     m_state_of_health_ = x.m_state_of_health_;
     m_max_error_ = x.m_max_error_;
     m_id_ = x.m_id_;
+    m_interface_error_ = x.m_interface_error_;
     m_voltage_cell_v = std::move(x.m_voltage_cell_v);
     m_max_cell_voltage_delta_ = x.m_max_cell_voltage_delta_;
     m_is_powering_off_ = x.m_is_powering_off_;
@@ -322,7 +336,13 @@ size_t battery_status::getMaxCdrSerializedSize(size_t current_alignment)
     current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
+    current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
+
+
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
     current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -410,7 +430,13 @@ size_t battery_status::getCdrSerializedSize(const battery_status& data, size_t c
     current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
+    current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
+
+
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
     if ((10) > 0)
@@ -453,9 +479,11 @@ void battery_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_run_time_to_empty_;
     scdr << m_average_time_to_empty_;
     scdr << m_serial_number_;
+    scdr << m_manufacture_date_;
     scdr << m_state_of_health_;
     scdr << m_max_error_;
     scdr << m_id_;
+    scdr << m_interface_error_;
     scdr << m_voltage_cell_v;
 
     scdr << m_max_cell_voltage_delta_;
@@ -485,9 +513,11 @@ void battery_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_run_time_to_empty_;
     dcdr >> m_average_time_to_empty_;
     dcdr >> m_serial_number_;
+    dcdr >> m_manufacture_date_;
     dcdr >> m_state_of_health_;
     dcdr >> m_max_error_;
     dcdr >> m_id_;
+    dcdr >> m_interface_error_;
     dcdr >> m_voltage_cell_v;
 
     dcdr >> m_max_cell_voltage_delta_;
@@ -1009,6 +1039,33 @@ uint16_t& battery_status::serial_number_()
 }
 
 /*!
+ * @brief This function sets a value in member manufacture_date_
+ * @param _manufacture_date_ New value for member manufacture_date_
+ */
+void battery_status::manufacture_date_(uint16_t _manufacture_date_)
+{
+m_manufacture_date_ = _manufacture_date_;
+}
+
+/*!
+ * @brief This function returns the value of member manufacture_date_
+ * @return Value of member manufacture_date_
+ */
+uint16_t battery_status::manufacture_date_() const
+{
+    return m_manufacture_date_;
+}
+
+/*!
+ * @brief This function returns a reference to member manufacture_date_
+ * @return Reference to member manufacture_date_
+ */
+uint16_t& battery_status::manufacture_date_()
+{
+    return m_manufacture_date_;
+}
+
+/*!
  * @brief This function sets a value in member state_of_health_
  * @param _state_of_health_ New value for member state_of_health_
  */
@@ -1087,6 +1144,33 @@ uint8_t battery_status::id_() const
 uint8_t& battery_status::id_()
 {
     return m_id_;
+}
+
+/*!
+ * @brief This function sets a value in member interface_error_
+ * @param _interface_error_ New value for member interface_error_
+ */
+void battery_status::interface_error_(uint16_t _interface_error_)
+{
+m_interface_error_ = _interface_error_;
+}
+
+/*!
+ * @brief This function returns the value of member interface_error_
+ * @return Value of member interface_error_
+ */
+uint16_t battery_status::interface_error_() const
+{
+    return m_interface_error_;
+}
+
+/*!
+ * @brief This function returns a reference to member interface_error_
+ * @return Reference to member interface_error_
+ */
+uint16_t& battery_status::interface_error_()
+{
+    return m_interface_error_;
 }
 
 /*!
@@ -1238,6 +1322,8 @@ size_t battery_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
+
+
     return current_align;
 }
 
@@ -1249,6 +1335,8 @@ bool battery_status::isKeyDefined()
 void battery_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
+     
      
      
      

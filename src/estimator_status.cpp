@@ -70,61 +70,61 @@ using namespace eprosima::fastcdr::exception;
 
 estimator_status::estimator_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4923ab24
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60285225
     m_timestamp_ = 0;
-    // m_states com.eprosima.idl.parser.typecode.AliasTypeCode@44c8afef
+    // m_states com.eprosima.idl.parser.typecode.AliasTypeCode@7113b13f
     memset(&m_states, 0, (24) * 4);
-    // m_n_states_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b69c6ba
+    // m_n_states_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@45820e51
     m_n_states_ = 0;
-    // m_vibe com.eprosima.idl.parser.typecode.AliasTypeCode@46daef40
+    // m_vibe com.eprosima.idl.parser.typecode.AliasTypeCode@42d8062c
     memset(&m_vibe, 0, (3) * 4);
-    // m_covariances com.eprosima.idl.parser.typecode.AliasTypeCode@44c8afef
+    // m_covariances com.eprosima.idl.parser.typecode.AliasTypeCode@7113b13f
     memset(&m_covariances, 0, (24) * 4);
-    // m_output_tracking_error com.eprosima.idl.parser.typecode.AliasTypeCode@46daef40
+    // m_output_tracking_error com.eprosima.idl.parser.typecode.AliasTypeCode@42d8062c
     memset(&m_output_tracking_error, 0, (3) * 4);
-    // m_gps_check_fail_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12f41634
+    // m_gps_check_fail_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6043cd28
     m_gps_check_fail_flags_ = 0;
-    // m_control_mode_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c27452
+    // m_control_mode_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@cb51256
     m_control_mode_flags_ = 0;
-    // m_filter_fault_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@262b2c86
+    // m_filter_fault_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@59906517
     m_filter_fault_flags_ = 0;
-    // m_pos_horiz_accuracy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@371a67ec
+    // m_pos_horiz_accuracy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bfbf16f
     m_pos_horiz_accuracy_ = 0.0;
-    // m_pos_vert_accuracy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ed828d
+    // m_pos_vert_accuracy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@25af5db5
     m_pos_vert_accuracy_ = 0.0;
-    // m_innovation_check_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50d0686
+    // m_innovation_check_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12cdcf4
     m_innovation_check_flags_ = 0;
-    // m_mag_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a3d45bd
+    // m_mag_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bcea91b
     m_mag_test_ratio_ = 0.0;
-    // m_vel_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e7c7811
+    // m_vel_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f3a4b84
     m_vel_test_ratio_ = 0.0;
-    // m_pos_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77ec78b9
+    // m_pos_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27f723
     m_pos_test_ratio_ = 0.0;
-    // m_hgt_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a38d7a3
+    // m_hgt_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4923ab24
     m_hgt_test_ratio_ = 0.0;
-    // m_tas_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63440df3
+    // m_tas_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b69c6ba
     m_tas_test_ratio_ = 0.0;
-    // m_hagl_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3aeaafa6
+    // m_hagl_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@46daef40
     m_hagl_test_ratio_ = 0.0;
-    // m_beta_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@76a3e297
+    // m_beta_test_ratio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12f41634
     m_beta_test_ratio_ = 0.0;
-    // m_solution_status_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4d3167f4
+    // m_solution_status_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c27452
     m_solution_status_flags_ = 0;
-    // m_time_slip_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@87f383f
+    // m_time_slip_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ed828d
     m_time_slip_ = 0.0;
-    // m_pre_flt_fail_innov_heading_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4eb7f003
+    // m_pre_flt_fail_innov_heading_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50d0686
     m_pre_flt_fail_innov_heading_ = false;
-    // m_pre_flt_fail_innov_vel_horiz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@eafc191
+    // m_pre_flt_fail_innov_vel_horiz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a3d45bd
     m_pre_flt_fail_innov_vel_horiz_ = false;
-    // m_pre_flt_fail_innov_vel_vert_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@612fc6eb
+    // m_pre_flt_fail_innov_vel_vert_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e7c7811
     m_pre_flt_fail_innov_vel_vert_ = false;
-    // m_pre_flt_fail_innov_height_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1060b431
+    // m_pre_flt_fail_innov_height_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77ec78b9
     m_pre_flt_fail_innov_height_ = false;
-    // m_pre_flt_fail_mag_field_disturbed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@612679d6
+    // m_pre_flt_fail_mag_field_disturbed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a3869f4
     m_pre_flt_fail_mag_field_disturbed_ = false;
-    // m_health_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11758f2a
+    // m_health_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a38d7a3
     m_health_flags_ = 0;
-    // m_timeout_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@e720b71
+    // m_timeout_flags_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77f99a05
     m_timeout_flags_ = 0;
 
 }

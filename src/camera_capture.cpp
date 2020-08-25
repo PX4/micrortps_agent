@@ -35,23 +35,23 @@ using namespace eprosima::fastcdr::exception;
 
 camera_capture::camera_capture()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d8d30f7
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a8a8f7c
     m_timestamp_ = 0;
-    // m_timestamp_utc_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3e57cd70
+    // m_timestamp_utc_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2353b3e6
     m_timestamp_utc_ = 0;
-    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9a7504c
+    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@631330c
     m_seq_ = 0;
-    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2c039ac6
+    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@42f93a98
     m_lat_ = 0.0;
-    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@587d1d39
+    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@c46bcd4
     m_lon_ = 0.0;
-    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58c1670b
+    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3234e239
     m_alt_ = 0.0;
-    // m_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b57696f
+    // m_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d921e20
     m_ground_distance_ = 0.0;
-    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@6b9651f3
+    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@fad74ee
     memset(&m_q, 0, (4) * 4);
-    // m_result_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@687080dc
+    // m_result_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37d31475
     m_result_ = 0;
 
 }

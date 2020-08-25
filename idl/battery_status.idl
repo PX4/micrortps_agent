@@ -36,9 +36,11 @@ struct battery_status
     unsigned short run_time_to_empty_;
     unsigned short average_time_to_empty_;
     unsigned short serial_number_;
+    unsigned short manufacture_date_;
     unsigned short state_of_health_;
     unsigned short max_error_;
     octet id_;
+    unsigned short interface_error_;
     battery_status__float_array_10 voltage_cell_v;
     float max_cell_voltage_delta_;
     boolean is_powering_off_;

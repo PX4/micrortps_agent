@@ -42,21 +42,21 @@ using namespace eprosima::fastcdr::exception;
 
 obstacle_distance::obstacle_distance()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bfbf16f
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a9273a8
     m_timestamp_ = 0;
-    // m_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@25af5db5
+    // m_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@26a7b76d
     m_frame_ = 0;
-    // m_sensor_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12cdcf4
+    // m_sensor_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4abdb505
     m_sensor_type_ = 0;
-    // m_distances com.eprosima.idl.parser.typecode.AliasTypeCode@5bcea91b
+    // m_distances com.eprosima.idl.parser.typecode.AliasTypeCode@7ce6a65d
     memset(&m_distances, 0, (72) * 2);
-    // m_increment_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f3a4b84
+    // m_increment_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1500955a
     m_increment_ = 0.0;
-    // m_min_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27f723
+    // m_min_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@e874448
     m_min_distance_ = 0;
-    // m_max_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@670b40af
+    // m_max_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@29b5cd00
     m_max_distance_ = 0;
-    // m_angle_offset_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4923ab24
+    // m_angle_offset_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60285225
     m_angle_offset_ = 0.0;
 
 }

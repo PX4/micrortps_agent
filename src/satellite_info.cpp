@@ -36,19 +36,19 @@ using namespace eprosima::fastcdr::exception;
 
 satellite_info::satellite_info()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@59906517
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23d2a7e8
     m_timestamp_ = 0;
-    // m_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bfbf16f
+    // m_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a9273a8
     m_count_ = 0;
-    // m_svid com.eprosima.idl.parser.typecode.AliasTypeCode@25af5db5
+    // m_svid com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
     memset(&m_svid, 0, (20) * 1);
-    // m_used com.eprosima.idl.parser.typecode.AliasTypeCode@25af5db5
+    // m_used com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
     memset(&m_used, 0, (20) * 1);
-    // m_elevation com.eprosima.idl.parser.typecode.AliasTypeCode@25af5db5
+    // m_elevation com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
     memset(&m_elevation, 0, (20) * 1);
-    // m_azimuth com.eprosima.idl.parser.typecode.AliasTypeCode@25af5db5
+    // m_azimuth com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
     memset(&m_azimuth, 0, (20) * 1);
-    // m_snr com.eprosima.idl.parser.typecode.AliasTypeCode@25af5db5
+    // m_snr com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
     memset(&m_snr, 0, (20) * 1);
 
 }

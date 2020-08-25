@@ -54,29 +54,29 @@ using namespace eprosima::fastcdr::exception;
 
 distance_sensor::distance_sensor()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f3a4b84
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1500955a
     m_timestamp_ = 0;
-    // m_min_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27f723
+    // m_min_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@e874448
     m_min_distance_ = 0.0;
-    // m_max_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@670b40af
+    // m_max_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@29b5cd00
     m_max_distance_ = 0.0;
-    // m_current_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4923ab24
+    // m_current_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60285225
     m_current_distance_ = 0.0;
-    // m_variance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b69c6ba
+    // m_variance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@45820e51
     m_variance_ = 0.0;
-    // m_signal_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12f41634
+    // m_signal_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6043cd28
     m_signal_quality_ = 0;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c27452
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@cb51256
     m_type_ = 0;
-    // m_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@262b2c86
+    // m_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@59906517
     m_id_ = 0;
-    // m_h_fov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@371a67ec
+    // m_h_fov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bfbf16f
     m_h_fov_ = 0.0;
-    // m_v_fov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ed828d
+    // m_v_fov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@25af5db5
     m_v_fov_ = 0.0;
-    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@50d0686
+    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@12cdcf4
     memset(&m_q, 0, (4) * 4);
-    // m_orientation_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a3d45bd
+    // m_orientation_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bcea91b
     m_orientation_ = 0;
 
 }

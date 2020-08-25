@@ -160,24 +160,6 @@ public:
      */
     eProsima_user_DllExport uint32_t& gyro_device_id_();
 
-    /*!
-     * @brief This function sets a value in member mag_device_id_
-     * @param _mag_device_id_ New value for member mag_device_id_
-     */
-    eProsima_user_DllExport void mag_device_id_(uint32_t _mag_device_id_);
-
-    /*!
-     * @brief This function returns the value of member mag_device_id_
-     * @return Value of member mag_device_id_
-     */
-    eProsima_user_DllExport uint32_t mag_device_id_() const;
-
-    /*!
-     * @brief This function returns a reference to member mag_device_id_
-     * @return Reference to member mag_device_id_
-     */
-    eProsima_user_DllExport uint32_t& mag_device_id_();
-
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -233,7 +215,6 @@ private:
     uint64_t m_timestamp_;
     uint32_t m_accel_device_id_;
     uint32_t m_gyro_device_id_;
-    uint32_t m_mag_device_id_;
 };
 
 #endif // _SENSOR_SELECTION_H_

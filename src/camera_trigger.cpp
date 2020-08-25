@@ -34,13 +34,13 @@ using namespace eprosima::fastcdr::exception;
 
 camera_trigger::camera_trigger()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_timestamp_utc_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_timestamp_utc_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_timestamp_utc_ = 0;
-    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_seq_ = 0;
-    // m_feedback_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_feedback_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_feedback_ = false;
 
 }

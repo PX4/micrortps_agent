@@ -34,27 +34,27 @@ using namespace eprosima::fastcdr::exception;
 
 home_position::home_position()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_lat_ = 0.0;
-    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_lon_ = 0.0;
-    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_alt_ = 0.0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bc79255
+    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
     m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@47ef968d
+    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
     m_z_ = 0.0;
-    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23e028a9
+    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
     m_yaw_ = 0.0;
-    // m_valid_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3dd4520b
+    // m_valid_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
     m_valid_alt_ = false;
-    // m_valid_hpos_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ae63ade
+    // m_valid_hpos_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
     m_valid_hpos_ = false;
-    // m_manual_home_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@610694f1
+    // m_manual_home_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b9627bc
     m_manual_home_ = false;
 
 }

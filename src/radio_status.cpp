@@ -34,21 +34,21 @@ using namespace eprosima::fastcdr::exception;
 
 radio_status::radio_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_rssi_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_rssi_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_rssi_ = 0;
-    // m_remote_rssi_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_remote_rssi_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_remote_rssi_ = 0;
-    // m_txbuf_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_txbuf_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_txbuf_ = 0;
-    // m_noise_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_noise_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_noise_ = 0;
-    // m_remote_noise_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b87ed94
+    // m_remote_noise_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
     m_remote_noise_ = 0;
-    // m_rxerrors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e0e048a
+    // m_rxerrors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d907bac
     m_rxerrors_ = 0;
-    // m_fix_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bc79255
+    // m_fix_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
     m_fix_ = 0;
 
 }

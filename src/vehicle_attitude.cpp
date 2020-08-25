@@ -35,13 +35,13 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_attitude::vehicle_attitude()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32d2fa64
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@51e2adc7
     m_timestamp_ = 0;
-    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@1d8d30f7
+    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@1a8a8f7c
     memset(&m_q, 0, (4) * 4);
-    // m_delta_q_reset com.eprosima.idl.parser.typecode.AliasTypeCode@1d8d30f7
+    // m_delta_q_reset com.eprosima.idl.parser.typecode.AliasTypeCode@1a8a8f7c
     memset(&m_delta_q_reset, 0, (4) * 4);
-    // m_quat_reset_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3e57cd70
+    // m_quat_reset_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2353b3e6
     m_quat_reset_counter_ = 0;
 
 }

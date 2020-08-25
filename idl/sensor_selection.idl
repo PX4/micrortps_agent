@@ -11,7 +11,6 @@ struct sensor_selection
     unsigned long long timestamp_;
     unsigned long accel_device_id_;
     unsigned long gyro_device_id_;
-    unsigned long mag_device_id_;
 
 }; // struct sensor_selection
 

@@ -52,39 +52,39 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_visual_odometry::vehicle_visual_odometry()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@670b40af
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@29b5cd00
     m_timestamp_ = 0;
-    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4923ab24
+    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60285225
     m_timestamp_sample_ = 0;
-    // m_local_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c8afef
+    // m_local_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7113b13f
     m_local_frame_ = 0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@46daef40
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@42d8062c
     m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12f41634
+    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6043cd28
     m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c27452
+    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@cb51256
     m_z_ = 0.0;
-    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@262b2c86
+    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@59906517
     memset(&m_q, 0, (4) * 4);
-    // m_q_offset com.eprosima.idl.parser.typecode.AliasTypeCode@262b2c86
+    // m_q_offset com.eprosima.idl.parser.typecode.AliasTypeCode@59906517
     memset(&m_q_offset, 0, (4) * 4);
-    // m_pose_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@371a67ec
+    // m_pose_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@5bfbf16f
     memset(&m_pose_covariance, 0, (21) * 4);
-    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ed828d
+    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@25af5db5
     m_velocity_frame_ = 0;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50d0686
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12cdcf4
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a3d45bd
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bcea91b
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e7c7811
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f3a4b84
     m_vz_ = 0.0;
-    // m_rollspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77ec78b9
+    // m_rollspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27f723
     m_rollspeed_ = 0.0;
-    // m_pitchspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a3869f4
+    // m_pitchspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@670b40af
     m_pitchspeed_ = 0.0;
-    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77f99a05
+    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c8afef
     m_yawspeed_ = 0.0;
-    // m_velocity_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@371a67ec
+    // m_velocity_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@5bfbf16f
     memset(&m_velocity_covariance, 0, (21) * 4);
 
 }

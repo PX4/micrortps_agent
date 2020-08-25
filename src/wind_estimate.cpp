@@ -34,25 +34,25 @@ using namespace eprosima::fastcdr::exception;
 
 wind_estimate::wind_estimate()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_windspeed_north_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_windspeed_north_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_windspeed_north_ = 0.0;
-    // m_windspeed_east_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_windspeed_east_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_windspeed_east_ = 0.0;
-    // m_variance_north_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_variance_north_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_variance_north_ = 0.0;
-    // m_variance_east_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_variance_east_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_variance_east_ = 0.0;
-    // m_tas_innov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b87ed94
+    // m_tas_innov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
     m_tas_innov_ = 0.0;
-    // m_tas_innov_var_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@47ef968d
+    // m_tas_innov_var_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
     m_tas_innov_var_ = 0.0;
-    // m_tas_scale_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23e028a9
+    // m_tas_scale_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
     m_tas_scale_ = 0.0;
-    // m_beta_innov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3dd4520b
+    // m_beta_innov_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
     m_beta_innov_ = 0.0;
-    // m_beta_innov_var_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ae63ade
+    // m_beta_innov_var_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
     m_beta_innov_var_ = 0.0;
 
 }

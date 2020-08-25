@@ -34,15 +34,15 @@ using namespace eprosima::fastcdr::exception;
 
 airspeed::airspeed()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_indicated_airspeed_m_s_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_indicated_airspeed_m_s_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_indicated_airspeed_m_s_ = 0.0;
-    // m_true_airspeed_m_s_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_true_airspeed_m_s_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_true_airspeed_m_s_ = 0.0;
-    // m_air_temperature_celsius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_air_temperature_celsius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_air_temperature_celsius_ = 0.0;
-    // m_confidence_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_confidence_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_confidence_ = 0.0;
 
 }

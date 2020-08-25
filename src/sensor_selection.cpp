@@ -34,20 +34,17 @@ using namespace eprosima::fastcdr::exception;
 
 sensor_selection::sensor_selection()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57536d79
     m_timestamp_ = 0;
-    // m_accel_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_accel_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_accel_device_id_ = 0;
-    // m_gyro_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_gyro_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_gyro_device_id_ = 0;
-    // m_mag_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
-    m_mag_device_id_ = 0;
 
 }
 
 sensor_selection::~sensor_selection()
 {
-
 
 
 
@@ -58,7 +55,6 @@ sensor_selection::sensor_selection(const sensor_selection &x)
     m_timestamp_ = x.m_timestamp_;
     m_accel_device_id_ = x.m_accel_device_id_;
     m_gyro_device_id_ = x.m_gyro_device_id_;
-    m_mag_device_id_ = x.m_mag_device_id_;
 }
 
 sensor_selection::sensor_selection(sensor_selection &&x)
@@ -66,7 +62,6 @@ sensor_selection::sensor_selection(sensor_selection &&x)
     m_timestamp_ = x.m_timestamp_;
     m_accel_device_id_ = x.m_accel_device_id_;
     m_gyro_device_id_ = x.m_gyro_device_id_;
-    m_mag_device_id_ = x.m_mag_device_id_;
 }
 
 sensor_selection& sensor_selection::operator=(const sensor_selection &x)
@@ -75,7 +70,6 @@ sensor_selection& sensor_selection::operator=(const sensor_selection &x)
     m_timestamp_ = x.m_timestamp_;
     m_accel_device_id_ = x.m_accel_device_id_;
     m_gyro_device_id_ = x.m_gyro_device_id_;
-    m_mag_device_id_ = x.m_mag_device_id_;
 
     return *this;
 }
@@ -86,7 +80,6 @@ sensor_selection& sensor_selection::operator=(sensor_selection &&x)
     m_timestamp_ = x.m_timestamp_;
     m_accel_device_id_ = x.m_accel_device_id_;
     m_gyro_device_id_ = x.m_gyro_device_id_;
-    m_mag_device_id_ = x.m_mag_device_id_;
 
     return *this;
 }
@@ -97,9 +90,6 @@ size_t sensor_selection::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -127,9 +117,6 @@ size_t sensor_selection::getCdrSerializedSize(const sensor_selection& data, size
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
 
     return current_alignment - initial_alignment;
 }
@@ -140,7 +127,6 @@ void sensor_selection::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_timestamp_;
     scdr << m_accel_device_id_;
     scdr << m_gyro_device_id_;
-    scdr << m_mag_device_id_;
 }
 
 void sensor_selection::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -149,7 +135,6 @@ void sensor_selection::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_timestamp_;
     dcdr >> m_accel_device_id_;
     dcdr >> m_gyro_device_id_;
-    dcdr >> m_mag_device_id_;
 }
 
 /*!
@@ -233,38 +218,10 @@ uint32_t& sensor_selection::gyro_device_id_()
     return m_gyro_device_id_;
 }
 
-/*!
- * @brief This function sets a value in member mag_device_id_
- * @param _mag_device_id_ New value for member mag_device_id_
- */
-void sensor_selection::mag_device_id_(uint32_t _mag_device_id_)
-{
-m_mag_device_id_ = _mag_device_id_;
-}
-
-/*!
- * @brief This function returns the value of member mag_device_id_
- * @return Value of member mag_device_id_
- */
-uint32_t sensor_selection::mag_device_id_() const
-{
-    return m_mag_device_id_;
-}
-
-/*!
- * @brief This function returns a reference to member mag_device_id_
- * @return Reference to member mag_device_id_
- */
-uint32_t& sensor_selection::mag_device_id_()
-{
-    return m_mag_device_id_;
-}
-
 
 size_t sensor_selection::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
-
 
 
 
@@ -282,7 +239,6 @@ bool sensor_selection::isKeyDefined()
 void sensor_selection::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

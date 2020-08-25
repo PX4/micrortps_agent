@@ -34,11 +34,11 @@ using namespace eprosima::fastcdr::exception;
 
 cpuload::cpuload()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@65e2dbf3
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57536d79
     m_timestamp_ = 0;
-    // m_load_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_load_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_load_ = 0.0;
-    // m_ram_usage_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_ram_usage_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_ram_usage_ = 0.0;
 
 }

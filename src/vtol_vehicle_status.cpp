@@ -39,17 +39,17 @@ using namespace eprosima::fastcdr::exception;
 
 vtol_vehicle_status::vtol_vehicle_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e6c3152
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ae63ade
     m_timestamp_ = 0;
-    // m_vtol_in_rw_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50b494a6
+    // m_vtol_in_rw_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@610694f1
     m_vtol_in_rw_mode_ = false;
-    // m_vtol_in_trans_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3cef309d
+    // m_vtol_in_trans_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@43814d18
     m_vtol_in_trans_mode_ = false;
-    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32709393
+    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c5a1b69
     m_in_transition_to_fw_ = false;
-    // m_vtol_transition_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d99d22e
+    // m_vtol_transition_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3701eaf6
     m_vtol_transition_failsafe_ = false;
-    // m_fw_permanent_stab_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
+    // m_fw_permanent_stab_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
     m_fw_permanent_stab_ = false;
 
 }

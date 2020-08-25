@@ -34,17 +34,17 @@ using namespace eprosima::fastcdr::exception;
 
 sensor_baro::sensor_baro()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
     m_timestamp_sample_ = 0;
-    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
     m_device_id_ = 0;
-    // m_error_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_error_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_error_count_ = 0;
-    // m_pressure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_pressure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_pressure_ = 0.0;
-    // m_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b87ed94
+    // m_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
     m_temperature_ = 0.0;
 
 }

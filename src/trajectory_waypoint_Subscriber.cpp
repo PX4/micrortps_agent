@@ -66,8 +66,8 @@ bool trajectory_waypoint_Subscriber::init(uint8_t topic_ID, std::condition_varia
 
     // Create RTPSParticipant
     ParticipantAttributes PParam;
-    PParam.domainId = 0;
-    PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
+    PParam.rtps.builtin.domainId = 0;
+    PParam.rtps.builtin.leaseDuration = c_TimeInfinite;
     PParam.rtps.setName("trajectory_waypoint_subscriber");
     mp_participant = Domain::createParticipant(PParam);
     if(mp_participant == nullptr)

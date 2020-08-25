@@ -34,35 +34,35 @@ using namespace eprosima::fastcdr::exception;
 
 iridiumsbd_status::iridiumsbd_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_last_heartbeat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_last_heartbeat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_last_heartbeat_ = 0;
-    // m_tx_buf_write_index_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_tx_buf_write_index_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_tx_buf_write_index_ = 0;
-    // m_rx_buf_read_index_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b87ed94
+    // m_rx_buf_read_index_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
     m_rx_buf_read_index_ = 0;
-    // m_rx_buf_end_index_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e0e048a
+    // m_rx_buf_end_index_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d907bac
     m_rx_buf_end_index_ = 0;
-    // m_failed_sbd_sessions_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bc79255
+    // m_failed_sbd_sessions_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
     m_failed_sbd_sessions_ = 0;
-    // m_successful_sbd_sessions_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@47ef968d
+    // m_successful_sbd_sessions_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
     m_successful_sbd_sessions_ = 0;
-    // m_num_tx_buf_reset_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23e028a9
+    // m_num_tx_buf_reset_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
     m_num_tx_buf_reset_ = 0;
-    // m_signal_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3dd4520b
+    // m_signal_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
     m_signal_quality_ = 0;
-    // m_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ae63ade
+    // m_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
     m_state_ = 0;
-    // m_ring_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@610694f1
+    // m_ring_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b9627bc
     m_ring_pending_ = false;
-    // m_tx_buf_write_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@43814d18
+    // m_tx_buf_write_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@65e2dbf3
     m_tx_buf_write_pending_ = false;
-    // m_tx_session_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c5a1b69
+    // m_tx_session_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
     m_tx_session_pending_ = false;
-    // m_rx_read_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3701eaf6
+    // m_rx_read_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
     m_rx_read_pending_ = false;
-    // m_rx_session_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
+    // m_rx_session_pending_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
     m_rx_session_pending_ = false;
 
 }
