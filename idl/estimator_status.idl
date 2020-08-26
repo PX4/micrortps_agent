@@ -39,8 +39,8 @@ const octet estimator_status__CS_RNG_STUCK = 21;
 const octet estimator_status__CS_GPS_YAW = 22;
 const octet estimator_status__CS_MAG_ALIGNED = 23;
 
-typedef float estimator_status__float_array_24[24];
 typedef float estimator_status__float_array_3[3];
+typedef float estimator_status__float_array_24[24];
 
 struct estimator_status
 {

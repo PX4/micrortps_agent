@@ -98,8 +98,8 @@ const uint8_t estimator_status__CS_GND_EFFECT = 20;
 const uint8_t estimator_status__CS_RNG_STUCK = 21;
 const uint8_t estimator_status__CS_GPS_YAW = 22;
 const uint8_t estimator_status__CS_MAG_ALIGNED = 23;
-typedef std::array<float, 24> estimator_status__float_array_24;
 typedef std::array<float, 3> estimator_status__float_array_3;
+typedef std::array<float, 24> estimator_status__float_array_24;
 /*!
  * @brief This class represents the structure estimator_status defined by the user in the IDL file.
  * @ingroup ESTIMATOR_STATUS
