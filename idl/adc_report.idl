@@ -5,8 +5,8 @@
 
 
 
-typedef long adc_report__long_array_12[12];
 typedef short adc_report__short_array_12[12];
+typedef long adc_report__long_array_12[12];
 
 struct adc_report
 {
