@@ -66,8 +66,8 @@
 
 
 
-typedef std::array<float, 24> estimator_status__float_array_24;
 typedef std::array<float, 3> estimator_status__float_array_3;
+typedef std::array<float, 24> estimator_status__float_array_24;
 /*!
  * @brief This class represents the TopicDataType of the type estimator_status defined by the user in the IDL file.
  * @ingroup ESTIMATOR_STATUS
