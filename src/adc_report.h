@@ -64,8 +64,8 @@ namespace eprosima
 }
 
 
-typedef std::array<int32_t, 12> adc_report__long_array_12;
 typedef std::array<int16_t, 12> adc_report__short_array_12;
+typedef std::array<int32_t, 12> adc_report__long_array_12;
 /*!
  * @brief This class represents the structure adc_report defined by the user in the IDL file.
  * @ingroup ADC_REPORT

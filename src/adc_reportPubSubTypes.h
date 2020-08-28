@@ -32,8 +32,8 @@
 #error Generated adc_report is not compatible with current installed Fast-RTPS. Please, regenerate it with fastrtpsgen.
 #endif
 
-typedef std::array<int32_t, 12> adc_report__long_array_12;
 typedef std::array<int16_t, 12> adc_report__short_array_12;
+typedef std::array<int32_t, 12> adc_report__long_array_12;
 /*!
  * @brief This class represents the TopicDataType of the type adc_report defined by the user in the IDL file.
  * @ingroup ADC_REPORT
