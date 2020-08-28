@@ -41,13 +41,14 @@
 
 #include "microRTPS_timesync.h"
 
-TimeSync::TimeSync()
+TimeSync::TimeSync(bool debug)
     : _offset_ns(-1),
       _skew_ns_per_sync(0.0),
       _num_samples(0),
       _request_reset_counter(0),
       _last_msg_seq(0),
-      _last_remote_msg_seq(0)
+      _last_remote_msg_seq(0),
+      _debug(debug)
 { }
 
 TimeSync::~TimeSync() { stop(); }
@@ -91,7 +92,7 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 
 	if (_request_reset_counter > REQUEST_RESET_COUNTER_THRESHOLD) {
 		reset();
-		std::cout << "\033[1;33m[ micrortps__timesync ]\tTimesync clock changed, resetting\033[0m" << std::endl;
+		if (_debug) std::cout << "\033[1;33m[ micrortps__timesync ]\tTimesync clock changed, resetting\033[0m" << std::endl;
 	}
 
         if (_num_samples == 0) {
@@ -102,7 +103,7 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 	if (_num_samples >= WINDOW_SIZE) {
 		if (std::abs(measurement_offset - _offset_ns.load()) > TRIGGER_RESET_THRESHOLD_NS) {
 			_request_reset_counter++;
-			std::cout << "\033[1;33m[ micrortps__timesync ]\tTimesync offset outlier, discarding\033[0m" << std::endl;
+			if (_debug) std::cout << "\033[1;33m[ micrortps__timesync ]\tTimesync offset outlier, discarding\033[0m" << std::endl;
 			return false;
 		} else {
 			_request_reset_counter = 0;
@@ -111,7 +112,7 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 
 	// ignore if rtti > 50ms
 	if (rtti > 50ll * 1000ll * 1000ll) {
-		std::cout << "\033[1;33m[ micrortps__timesync ]\tRTTI too high for timesync: " << rtti / (1000ll * 1000ll) << "ms\033[0m" << std::endl;
+		if (_debug) std::cout << "\033[1;33m[ micrortps__timesync ]\tRTTI too high for timesync: " << rtti / (1000ll * 1000ll) << "ms\033[0m" << std::endl;
 		return false;
 	}
 
@@ -142,7 +143,7 @@ void TimeSync::processTimesyncMsg(timesync_msg_t * msg) {
 
 		if (getMsgTC1(msg) > 0) {
 			if (!addMeasurement(getMsgTS1(msg), getMsgTC1(msg), getMonoRawTimeNSec())) {
-				std::cerr << "\033[1;33m[ micrortps__timesync ]\tOffset not updated\033[0m" << std::endl;
+				if (_debug) std::cerr << "\033[1;33m[ micrortps__timesync ]\tOffset not updated\033[0m" << std::endl;
 			}
 
 		} else if (getMsgTC1(msg) == 0) {

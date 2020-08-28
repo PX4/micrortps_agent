@@ -69,9 +69,6 @@ Transport_node *transport_node = nullptr;
 RtpsTopics topics;
 uint32_t total_sent = 0, sent = 0;
 
-// Init timesync
-std::shared_ptr<TimeSync> timeSync = std::make_shared<TimeSync>();
-
 struct options {
     enum class eTransports
     {
@@ -153,7 +150,6 @@ void signal_handler(int signum)
    printf("\033[1;33m[   micrortps_agent   ]\tInterrupt signal (%d) received.\033[0m\n", signum);
    running = 0;
    transport_node->close();
-   timeSync->stop();
 }
 
 std::atomic<bool> exit_sender_thread(false);
@@ -246,6 +242,9 @@ int main(int argc, char** argv)
     uint8_t topic_ID = 255;
     std::chrono::time_point<std::chrono::steady_clock> start, end;
 
+    // Init timesync
+    std::shared_ptr<TimeSync> timeSync = std::make_shared<TimeSync>(_options.verbose_debug);
+
     topics.set_timesync(timeSync);
 
     topics.init(&t_send_queue_cv, &t_send_queue_mutex, &t_send_queue);
@@ -284,6 +283,7 @@ int main(int argc, char** argv)
     delete transport_node;
     transport_node = nullptr;
 
+    timeSync->stop();
     timeSync->reset();
 
     return 0;
