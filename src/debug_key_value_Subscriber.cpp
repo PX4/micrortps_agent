@@ -66,8 +66,8 @@ bool debug_key_value_Subscriber::init(uint8_t topic_ID, std::condition_variable*
 
     // Create RTPSParticipant
     ParticipantAttributes PParam;
-    PParam.rtps.builtin.domainId = 0;
-    PParam.rtps.builtin.leaseDuration = c_TimeInfinite;
+    PParam.domainId = 0;
+    PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
     PParam.rtps.setName("debug_key_value_subscriber");
     mp_participant = Domain::createParticipant(PParam);
     if(mp_participant == nullptr)
