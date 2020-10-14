@@ -259,6 +259,29 @@ public:
      * @return Reference to member snr
      */
     eProsima_user_DllExport satellite_info__octet_array_20& snr();
+    /*!
+     * @brief This function copies the value in member prn
+     * @param _prn New value to be copied in member prn
+     */
+    eProsima_user_DllExport void prn(const satellite_info__octet_array_20 &_prn);
+
+    /*!
+     * @brief This function moves the value in member prn
+     * @param _prn New value to be moved in member prn
+     */
+    eProsima_user_DllExport void prn(satellite_info__octet_array_20 &&_prn);
+
+    /*!
+     * @brief This function returns a constant reference to member prn
+     * @return Constant reference to member prn
+     */
+    eProsima_user_DllExport const satellite_info__octet_array_20& prn() const;
+
+    /*!
+     * @brief This function returns a reference to member prn
+     * @return Reference to member prn
+     */
+    eProsima_user_DllExport satellite_info__octet_array_20& prn();
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -318,6 +341,7 @@ private:
     satellite_info__octet_array_20 m_elevation;
     satellite_info__octet_array_20 m_azimuth;
     satellite_info__octet_array_20 m_snr;
+    satellite_info__octet_array_20 m_prn;
 };
 
 #endif // _SATELLITE_INFO_H_

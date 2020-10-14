@@ -50,11 +50,14 @@ satellite_info::satellite_info()
     memset(&m_azimuth, 0, (20) * 1);
     // m_snr com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
     memset(&m_snr, 0, (20) * 1);
+    // m_prn com.eprosima.idl.parser.typecode.AliasTypeCode@26a7b76d
+    memset(&m_prn, 0, (20) * 1);
 
 }
 
 satellite_info::~satellite_info()
 {
+
 
 
 
@@ -73,6 +76,7 @@ satellite_info::satellite_info(const satellite_info &x)
     m_elevation = x.m_elevation;
     m_azimuth = x.m_azimuth;
     m_snr = x.m_snr;
+    m_prn = x.m_prn;
 }
 
 satellite_info::satellite_info(satellite_info &&x)
@@ -84,6 +88,7 @@ satellite_info::satellite_info(satellite_info &&x)
     m_elevation = std::move(x.m_elevation);
     m_azimuth = std::move(x.m_azimuth);
     m_snr = std::move(x.m_snr);
+    m_prn = std::move(x.m_prn);
 }
 
 satellite_info& satellite_info::operator=(const satellite_info &x)
@@ -96,6 +101,7 @@ satellite_info& satellite_info::operator=(const satellite_info &x)
     m_elevation = x.m_elevation;
     m_azimuth = x.m_azimuth;
     m_snr = x.m_snr;
+    m_prn = x.m_prn;
 
     return *this;
 }
@@ -110,6 +116,7 @@ satellite_info& satellite_info::operator=(satellite_info &&x)
     m_elevation = std::move(x.m_elevation);
     m_azimuth = std::move(x.m_azimuth);
     m_snr = std::move(x.m_snr);
+    m_prn = std::move(x.m_prn);
 
     return *this;
 }
@@ -123,6 +130,9 @@ size_t satellite_info::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += ((20) * 1) + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += ((20) * 1) + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -181,6 +191,11 @@ size_t satellite_info::getCdrSerializedSize(const satellite_info& data, size_t c
         current_alignment += ((20) * 1) + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
     }
 
+    if ((20) > 0)
+    {
+        current_alignment += ((20) * 1) + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+    }
+
 
     return current_alignment - initial_alignment;
 }
@@ -200,6 +215,8 @@ void satellite_info::serialize(eprosima::fastcdr::Cdr &scdr) const
 
     scdr << m_snr;
 
+    scdr << m_prn;
+
 }
 
 void satellite_info::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -216,6 +233,8 @@ void satellite_info::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_azimuth;
 
     dcdr >> m_snr;
+
+    dcdr >> m_prn;
 
 }
 
@@ -448,10 +467,46 @@ satellite_info__octet_array_20& satellite_info::snr()
 {
     return m_snr;
 }
+/*!
+ * @brief This function copies the value in member prn
+ * @param _prn New value to be copied in member prn
+ */
+void satellite_info::prn(const satellite_info__octet_array_20 &_prn)
+{
+m_prn = _prn;
+}
+
+/*!
+ * @brief This function moves the value in member prn
+ * @param _prn New value to be moved in member prn
+ */
+void satellite_info::prn(satellite_info__octet_array_20 &&_prn)
+{
+m_prn = std::move(_prn);
+}
+
+/*!
+ * @brief This function returns a constant reference to member prn
+ * @return Constant reference to member prn
+ */
+const satellite_info__octet_array_20& satellite_info::prn() const
+{
+    return m_prn;
+}
+
+/*!
+ * @brief This function returns a reference to member prn
+ * @return Reference to member prn
+ */
+satellite_info__octet_array_20& satellite_info::prn()
+{
+    return m_prn;
+}
 
 size_t satellite_info::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
 
 
 
@@ -473,6 +528,7 @@ bool satellite_info::isKeyDefined()
 void satellite_info::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      

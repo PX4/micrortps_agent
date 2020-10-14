@@ -17,6 +17,7 @@ struct satellite_info
     satellite_info__octet_array_20 elevation;
     satellite_info__octet_array_20 azimuth;
     satellite_info__octet_array_20 snr;
+    satellite_info__octet_array_20 prn;
 
 }; // struct satellite_info
 
