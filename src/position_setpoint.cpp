@@ -44,71 +44,71 @@ using namespace eprosima::fastcdr::exception;
 
 position_setpoint::position_setpoint()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1060b431
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c5a1b69
     m_timestamp_ = 0;
-    // m_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@612679d6
+    // m_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3701eaf6
     m_valid_ = false;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11758f2a
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
     m_type_ = 0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@e720b71
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b552920
     m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1b26f7b2
+    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2758fe70
     m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@491cc5c9
+    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f36e637
     m_z_ = 0.0;
-    // m_position_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@74ad1f1f
+    // m_position_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@578486a3
     m_position_valid_ = false;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@462d5aee
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551aa95a
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@69b0fd6f
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35d176f7
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@757942a1
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dfe2924
     m_vz_ = 0.0;
-    // m_velocity_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4a87761d
+    // m_velocity_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ebc05a6
     m_velocity_valid_ = false;
-    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@8646db9
+    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e6c3152
     m_velocity_frame_ = 0;
-    // m_alt_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37374a5e
+    // m_alt_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50b494a6
     m_alt_valid_ = false;
-    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4671e53b
+    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3cef309d
     m_lat_ = 0.0;
-    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2db7a79b
+    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32709393
     m_lon_ = 0.0;
-    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@42eca56e
+    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
     m_alt_ = 0.0;
-    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@52f759d7
+    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6321e813
     m_yaw_ = 0.0;
-    // m_yaw_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7cbd213e
+    // m_yaw_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79be0360
     m_yaw_valid_ = false;
-    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@192d3247
+    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22a67b4
     m_yawspeed_ = 0.0;
-    // m_yawspeed_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3ecd23d9
+    // m_yawspeed_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
     m_yawspeed_valid_ = false;
-    // m_landing_gear_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@569cfc36
+    // m_landing_gear_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b084709
     m_landing_gear_ = 0;
-    // m_loiter_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@43bd930a
+    // m_loiter_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3224f60b
     m_loiter_radius_ = 0.0;
-    // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@33723e30
+    // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
     m_loiter_direction_ = 0;
-    // m_pitch_min_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@64f6106c
+    // m_pitch_min_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
     m_pitch_min_ = 0.0;
-    // m_a_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@553a3d88
+    // m_a_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
     m_a_x_ = 0.0;
-    // m_a_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a30d1e6
+    // m_a_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
     m_a_y_ = 0.0;
-    // m_a_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5891e32e
+    // m_a_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
     m_a_z_ = 0.0;
-    // m_acceleration_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@cb0ed20
+    // m_acceleration_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
     m_acceleration_valid_ = false;
-    // m_acceleration_is_force_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@8e24743
+    // m_acceleration_is_force_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
     m_acceleration_is_force_ = false;
-    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@74a10858
+    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
     m_acceptance_radius_ = 0.0;
-    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23fe1d71
+    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
     m_cruising_speed_ = 0.0;
-    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@28ac3dc3
+    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
     m_cruising_throttle_ = 0.0;
-    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32eebfca
+    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
     m_disable_weather_vane_ = false;
 
 }
