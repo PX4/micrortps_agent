@@ -58,13 +58,15 @@ satellite_info_Publisher::~satellite_info_Publisher()
     Domain::removeParticipant(mp_participant);
 }
 
-bool satellite_info_Publisher::init()
+bool satellite_info_Publisher::init(const std::string& ns)
 {
     // Create RTPSParticipant
     ParticipantAttributes PParam;
     PParam.domainId = 0;
     PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
-    PParam.rtps.setName("satellite_info_publisher");  //You can put here the name you want
+    std::string nodeName = ns;
+    nodeName.append("satellite_info_publisher");
+    PParam.rtps.setName(nodeName.c_str());
     mp_participant = Domain::createParticipant(PParam);
     if(mp_participant == nullptr)
         return false;
@@ -76,7 +78,9 @@ bool satellite_info_Publisher::init()
     PublisherAttributes Wparam;
     Wparam.topic.topicKind = NO_KEY;
     Wparam.topic.topicDataType = satellite_infoDataType.getName();
-    Wparam.topic.topicName = "satellite_infoPubSubTopic";
+    std::string topicName = ns;
+    topicName.append("satellite_infoPubSubTopic");
+    Wparam.topic.topicName = topicName;
     mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener*>(&m_listener));
     if(mp_publisher == nullptr)
         return false;

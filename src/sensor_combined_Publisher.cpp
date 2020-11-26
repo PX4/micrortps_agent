@@ -58,13 +58,15 @@ sensor_combined_Publisher::~sensor_combined_Publisher()
     Domain::removeParticipant(mp_participant);
 }
 
-bool sensor_combined_Publisher::init()
+bool sensor_combined_Publisher::init(const std::string& ns)
 {
     // Create RTPSParticipant
     ParticipantAttributes PParam;
     PParam.domainId = 0;
     PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
-    PParam.rtps.setName("sensor_combined_publisher");  //You can put here the name you want
+    std::string nodeName = ns;
+    nodeName.append("sensor_combined_publisher");
+    PParam.rtps.setName(nodeName.c_str());
     mp_participant = Domain::createParticipant(PParam);
     if(mp_participant == nullptr)
         return false;
@@ -76,7 +78,9 @@ bool sensor_combined_Publisher::init()
     PublisherAttributes Wparam;
     Wparam.topic.topicKind = NO_KEY;
     Wparam.topic.topicDataType = sensor_combinedDataType.getName();
-    Wparam.topic.topicName = "sensor_combinedPubSubTopic";
+    std::string topicName = ns;
+    topicName.append("sensor_combinedPubSubTopic");
+    Wparam.topic.topicName = topicName;
     mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener*>(&m_listener));
     if(mp_publisher == nullptr)
         return false;

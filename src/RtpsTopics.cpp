@@ -33,83 +33,83 @@
 
 #include "RtpsTopics.h"
 
-bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue)
+bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns)
 {
     // Initialise subscribers
     std::cout << "\033[0;36m---   Subscribers   ---\033[0m" << std::endl;
-    if (_debug_array_sub.init(12, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_debug_array_sub.init(12, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- debug_array subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting debug_array subscriber" << std::endl;
         return false;
     }
-    if (_debug_key_value_sub.init(13, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_debug_key_value_sub.init(13, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- debug_key_value subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting debug_key_value subscriber" << std::endl;
         return false;
     }
-    if (_debug_value_sub.init(14, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_debug_value_sub.init(14, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- debug_value subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting debug_value subscriber" << std::endl;
         return false;
     }
-    if (_debug_vect_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_debug_vect_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- debug_vect subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting debug_vect subscriber" << std::endl;
         return false;
     }
-    if (_optical_flow_sub.init(45, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_optical_flow_sub.init(45, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- optical_flow subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting optical_flow subscriber" << std::endl;
         return false;
     }
-    if (_position_setpoint_sub.init(50, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_position_setpoint_sub.init(50, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- position_setpoint subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting position_setpoint subscriber" << std::endl;
         return false;
     }
-    if (_position_setpoint_triplet_sub.init(51, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_position_setpoint_triplet_sub.init(51, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- position_setpoint_triplet subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting position_setpoint_triplet subscriber" << std::endl;
         return false;
     }
-    if (_timesync_sub.init(78, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_timesync_sub.init(78, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- timesync subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting timesync subscriber" << std::endl;
         return false;
     }
-    if (_trajectory_waypoint_sub.init(79, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_trajectory_waypoint_sub.init(79, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- trajectory_waypoint subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting trajectory_waypoint subscriber" << std::endl;
         return false;
     }
-    if (_vehicle_trajectory_waypoint_sub.init(104, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_vehicle_trajectory_waypoint_sub.init(104, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_trajectory_waypoint subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting vehicle_trajectory_waypoint subscriber" << std::endl;
         return false;
     }
-    if (_onboard_computer_status_sub.init(116, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_onboard_computer_status_sub.init(116, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- onboard_computer_status subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting onboard_computer_status subscriber" << std::endl;
         return false;
     }
-    if (_vehicle_mocap_odometry_sub.init(161, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_vehicle_mocap_odometry_sub.init(161, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_mocap_odometry subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting vehicle_mocap_odometry subscriber" << std::endl;
         return false;
     }
-    if (_vehicle_visual_odometry_sub.init(162, t_send_queue_cv, t_send_queue_mutex, t_send_queue)) {
+    if (_vehicle_visual_odometry_sub.init(162, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_visual_odometry subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting vehicle_visual_odometry subscriber" << std::endl;
@@ -118,32 +118,32 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
     std::cout << "\033[0;36m-----------------------\033[0m" << std::endl << std::endl;
     // Initialise publishers
     std::cout << "\033[0;36m----   Publishers  ----\033[0m" << std::endl;
-    if (_satellite_info_pub.init()) {
+    if (_satellite_info_pub.init(ns)) {
         std::cout << "- satellite_info publisher started" << std::endl;
     } else {
         std::cerr << "ERROR starting satellite_info publisher" << std::endl;
         return false;
     }
-    if (_sensor_combined_pub.init()) {
+    if (_sensor_combined_pub.init(ns)) {
         std::cout << "- sensor_combined publisher started" << std::endl;
     } else {
         std::cerr << "ERROR starting sensor_combined publisher" << std::endl;
         return false;
     }
-    if (_timesync_pub.init()) {
+    if (_timesync_pub.init(ns)) {
         std::cout << "- timesync publisher started" << std::endl;
         _timesync->start(&_timesync_pub);
     } else {
         std::cerr << "ERROR starting timesync publisher" << std::endl;
         return false;
     }
-    if (_vehicle_odometry_pub.init()) {
+    if (_vehicle_odometry_pub.init(ns)) {
         std::cout << "- vehicle_odometry publisher started" << std::endl;
     } else {
         std::cerr << "ERROR starting vehicle_odometry publisher" << std::endl;
         return false;
     }
-    if (_collision_constraints_pub.init()) {
+    if (_collision_constraints_pub.init(ns)) {
         std::cout << "- collision_constraints publisher started" << std::endl;
     } else {
         std::cerr << "ERROR starting collision_constraints publisher" << std::endl;

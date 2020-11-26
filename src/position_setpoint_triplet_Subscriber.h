@@ -62,7 +62,7 @@ class position_setpoint_triplet_Subscriber
 public:
     position_setpoint_triplet_Subscriber();
     virtual ~position_setpoint_triplet_Subscriber();
-    bool init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue);
+    bool init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns);
     void run();
     bool hasMsg();
     position_setpoint_triplet_msg_t getMsg();

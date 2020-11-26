@@ -62,7 +62,7 @@ class debug_vect_Subscriber
 public:
     debug_vect_Subscriber();
     virtual ~debug_vect_Subscriber();
-    bool init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue);
+    bool init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns);
     void run();
     bool hasMsg();
     debug_vect_msg_t getMsg();

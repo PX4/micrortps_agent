@@ -58,7 +58,7 @@ class collision_constraints_Publisher
 public:
     collision_constraints_Publisher();
     virtual ~collision_constraints_Publisher();
-    bool init();
+    bool init(const std::string& ns);
     void run();
     void publish(collision_constraints_msg_t* st);
 private:

@@ -58,7 +58,7 @@ class sensor_combined_Publisher
 public:
     sensor_combined_Publisher();
     virtual ~sensor_combined_Publisher();
-    bool init();
+    bool init(const std::string& ns);
     void run();
     void publish(sensor_combined_msg_t* st);
 private:

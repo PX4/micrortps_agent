@@ -78,7 +78,7 @@ using collision_constraints_msg_t = collision_constraints;
 
 class RtpsTopics {
 public:
-    bool init(std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue);
+    bool init(std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns);
     void set_timesync(const std::shared_ptr<TimeSync>& timesync) { _timesync = timesync; };
     void publish(uint8_t topic_ID, char data_buffer[], size_t len);
     bool getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr);

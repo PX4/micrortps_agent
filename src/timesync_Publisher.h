@@ -58,7 +58,7 @@ class timesync_Publisher
 public:
     timesync_Publisher();
     virtual ~timesync_Publisher();
-    bool init();
+    bool init(const std::string& ns);
     void run();
     void publish(timesync_msg_t* st);
 private:

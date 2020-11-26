@@ -57,7 +57,7 @@ optical_flow_Subscriber::~optical_flow_Subscriber()
     Domain::removeParticipant(mp_participant);
 }
 
-bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue)
+bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns)
 {
     m_listener.topic_ID = topic_ID;
     m_listener.t_send_queue_cv = t_send_queue_cv;
@@ -68,7 +68,9 @@ bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable* t_
     ParticipantAttributes PParam;
     PParam.domainId = 0;
     PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
-    PParam.rtps.setName("optical_flow_subscriber");
+    std::string nodeName = ns;
+    nodeName.append("optical_flow_subscriber");
+    PParam.rtps.setName(nodeName.c_str());
     mp_participant = Domain::createParticipant(PParam);
     if(mp_participant == nullptr)
             return false;
@@ -80,7 +82,9 @@ bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable* t_
     SubscriberAttributes Rparam;
     Rparam.topic.topicKind = NO_KEY;
     Rparam.topic.topicDataType = optical_flowDataType.getName();
-    Rparam.topic.topicName = "optical_flowPubSubTopic";
+    std::string topicName = ns;
+    topicName.append("optical_flowPubSubTopic");
+    Rparam.topic.topicName = topicName;
     mp_subscriber = Domain::createSubscriber(mp_participant, Rparam, static_cast<SubscriberListener*>(&m_listener));
     if(mp_subscriber == nullptr)
         return false;

@@ -86,22 +86,24 @@ struct options {
     bool sw_flow_control = false;
     bool hw_flow_control = false;
     bool verbose_debug = false;
+    std::string ns = "";
 } _options;
 
 static void usage(const char *name)
 {
     printf("usage: %s [options]\n\n"
-             "  -t <transport>          [UART|UDP] Default UART\n"
-             "  -d <device>             UART device. Default /dev/ttyACM0\n"
-             "  -w <sleep_time_us>      Time in us for which each iteration sleep. Default 1ms\n"
              "  -b <baudrate>           UART device baudrate. Default 460800\n"
+             "  -d <device>             UART device. Default /dev/ttyACM0\n"
+             "  -f <sw flow control>    Activates UART link SW flow control\n"
+             "  -h <hw flow control>    Activates UART link HW flow control\n"
+             "  -i <ip_address>         Target IP for UDP. Default 127.0.0.1\n"
+             "  -n <namespace>          ROS 2 topics namespace. Identifies the vehicle in a multi-agent network\n"
              "  -p <poll_ms>            Time in ms to poll over UART. Default 1ms\n"
              "  -r <reception port>     UDP port for receiving. Default 2019\n"
              "  -s <sending port>       UDP port for sending. Default 2020\n"
-             "  -i <ip_address>         Target IP for UDP. Default 127.0.0.1\n"
-             "  -f <sw flow control>    Activates UART link SW flow control\n"
-             "  -h <hw flow control>    Activates UART link HW flow control\n"
-             "  -v <debug verbosity>    Add more verbosity\n",
+             "  -t <transport>          [UART|UDP] Default UART\n"
+             "  -v <debug verbosity>    Add more verbosity\n"
+             "  -w <sleep_time_us>      Time in us for which each iteration sleep. Default 1ms\n",
              name);
 }
 
@@ -109,7 +111,7 @@ static int parse_options(int argc, char **argv)
 {
     int ch;
 
-    while ((ch = getopt(argc, argv, "t:d:w:b:p:r:s:i:fhv")) != EOF)
+    while ((ch = getopt(argc, argv, "t:d:w:b:p:r:s:i:fhvn:")) != EOF)
     {
         switch (ch)
         {
@@ -126,6 +128,7 @@ static int parse_options(int argc, char **argv)
             case 'f': _options.sw_flow_control = true;                          break;
             case 'h': _options.hw_flow_control = true;                          break;
             case 'v': _options.verbose_debug = true;                            break;
+            case 'n': if (nullptr != optarg) _options.ns = std::string(optarg) + "/"; break;
             default:
                 usage(argv[0]);
                 return -1;
@@ -247,7 +250,7 @@ int main(int argc, char** argv)
 
     topics.set_timesync(timeSync);
 
-    topics.init(&t_send_queue_cv, &t_send_queue_mutex, &t_send_queue);
+    topics.init(&t_send_queue_cv, &t_send_queue_mutex, &t_send_queue, _options.ns);
 
     running = true;
     std::thread sender_thread(t_send, nullptr);

@@ -58,7 +58,7 @@ class vehicle_odometry_Publisher
 public:
     vehicle_odometry_Publisher();
     virtual ~vehicle_odometry_Publisher();
-    bool init();
+    bool init(const std::string& ns);
     void run();
     void publish(vehicle_odometry_msg_t* st);
 private:

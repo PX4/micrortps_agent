@@ -58,7 +58,7 @@ class satellite_info_Publisher
 public:
     satellite_info_Publisher();
     virtual ~satellite_info_Publisher();
-    bool init();
+    bool init(const std::string& ns);
     void run();
     void publish(satellite_info_msg_t* st);
 private:
