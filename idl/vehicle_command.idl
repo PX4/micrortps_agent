@@ -1,0 +1,159 @@
+
+#ifndef __vehicle_command__idl__
+#define __vehicle_command__idl__
+
+
+
+const unsigned short vehicle_command__VEHICLE_CMD_CUSTOM_0 = 0;
+const unsigned short vehicle_command__VEHICLE_CMD_CUSTOM_1 = 1;
+const unsigned short vehicle_command__VEHICLE_CMD_CUSTOM_2 = 2;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_WAYPOINT = 16;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_LOITER_UNLIM = 17;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_LOITER_TURNS = 18;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_LOITER_TIME = 19;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_RETURN_TO_LAUNCH = 20;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_LAND = 21;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_TAKEOFF = 22;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_PRECLAND = 23;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_ORBIT = 34;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_ROI = 80;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_PATHPLANNING = 81;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_VTOL_TAKEOFF = 84;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_VTOL_LAND = 85;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_GUIDED_LIMITS = 90;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_GUIDED_MASTER = 91;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_GUIDED_ENABLE = 92;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_DELAY = 93;
+const unsigned short vehicle_command__VEHICLE_CMD_NAV_LAST = 95;
+const unsigned short vehicle_command__VEHICLE_CMD_CONDITION_DELAY = 112;
+const unsigned short vehicle_command__VEHICLE_CMD_CONDITION_CHANGE_ALT = 113;
+const unsigned short vehicle_command__VEHICLE_CMD_CONDITION_DISTANCE = 114;
+const unsigned short vehicle_command__VEHICLE_CMD_CONDITION_YAW = 115;
+const unsigned short vehicle_command__VEHICLE_CMD_CONDITION_LAST = 159;
+const unsigned short vehicle_command__VEHICLE_CMD_CONDITION_GATE = 4501;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_MODE = 176;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_JUMP = 177;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_CHANGE_SPEED = 178;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_HOME = 179;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_PARAMETER = 180;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_RELAY = 181;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_REPEAT_RELAY = 182;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_SERVO = 183;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_REPEAT_SERVO = 184;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_FLIGHTTERMINATION = 185;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_LAND_START = 189;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_GO_AROUND = 191;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_REPOSITION = 192;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_PAUSE_CONTINUE = 193;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_ROI_LOCATION = 195;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_ROI_WPNEXT_OFFSET = 196;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_ROI_NONE = 197;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_CONTROL_VIDEO = 200;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_ROI = 201;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_DIGICAM_CONTROL = 203;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_MOUNT_CONFIGURE = 204;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_MOUNT_CONTROL = 205;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_CAM_TRIGG_DIST = 206;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_FENCE_ENABLE = 207;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_PARACHUTE = 208;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_MOTOR_TEST = 209;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_INVERTED_FLIGHT = 210;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_SET_CAM_TRIGG_INTERVAL = 214;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_MOUNT_CONTROL_QUAT = 220;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_GUIDED_MASTER = 221;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_GUIDED_LIMITS = 222;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_LAST = 240;
+const unsigned short vehicle_command__VEHICLE_CMD_PREFLIGHT_CALIBRATION = 241;
+const unsigned short vehicle_command__PREFLIGHT_CALIBRATION_TEMPERATURE_CALIBRATION = 3;
+const unsigned short vehicle_command__VEHICLE_CMD_PREFLIGHT_SET_SENSOR_OFFSETS = 242;
+const unsigned short vehicle_command__VEHICLE_CMD_PREFLIGHT_UAVCAN = 243;
+const unsigned short vehicle_command__VEHICLE_CMD_PREFLIGHT_STORAGE = 245;
+const unsigned short vehicle_command__VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN = 246;
+const unsigned short vehicle_command__VEHICLE_CMD_OBLIQUE_SURVEY = 260;
+const unsigned short vehicle_command__VEHICLE_CMD_MISSION_START = 300;
+const unsigned short vehicle_command__VEHICLE_CMD_COMPONENT_ARM_DISARM = 400;
+const unsigned short vehicle_command__VEHICLE_CMD_INJECT_FAILURE = 420;
+const unsigned short vehicle_command__VEHICLE_CMD_START_RX_PAIR = 500;
+const unsigned short vehicle_command__VEHICLE_CMD_SET_CAMERA_MODE = 530;
+const unsigned short vehicle_command__VEHICLE_CMD_SET_CAMERA_ZOOM = 531;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_TRIGGER_CONTROL = 2003;
+const unsigned short vehicle_command__VEHICLE_CMD_LOGGING_START = 2510;
+const unsigned short vehicle_command__VEHICLE_CMD_LOGGING_STOP = 2511;
+const unsigned short vehicle_command__VEHICLE_CMD_CONTROL_HIGH_LATENCY = 2600;
+const unsigned short vehicle_command__VEHICLE_CMD_DO_VTOL_TRANSITION = 3000;
+const unsigned short vehicle_command__VEHICLE_CMD_ARM_AUTHORIZATION_REQUEST = 3001;
+const unsigned short vehicle_command__VEHICLE_CMD_PAYLOAD_PREPARE_DEPLOY = 30001;
+const unsigned short vehicle_command__VEHICLE_CMD_PAYLOAD_CONTROL_DEPLOY = 30002;
+const unsigned short vehicle_command__VEHICLE_CMD_FIXED_MAG_CAL_YAW = 42006;
+const octet vehicle_command__VEHICLE_CMD_RESULT_ACCEPTED = 0;
+const octet vehicle_command__VEHICLE_CMD_RESULT_TEMPORARILY_REJECTED = 1;
+const octet vehicle_command__VEHICLE_CMD_RESULT_DENIED = 2;
+const octet vehicle_command__VEHICLE_CMD_RESULT_UNSUPPORTED = 3;
+const octet vehicle_command__VEHICLE_CMD_RESULT_FAILED = 4;
+const octet vehicle_command__VEHICLE_CMD_RESULT_IN_PROGRESS = 5;
+const octet vehicle_command__VEHICLE_CMD_RESULT_ENUM_END = 6;
+const octet vehicle_command__VEHICLE_MOUNT_MODE_RETRACT = 0;
+const octet vehicle_command__VEHICLE_MOUNT_MODE_NEUTRAL = 1;
+const octet vehicle_command__VEHICLE_MOUNT_MODE_MAVLINK_TARGETING = 2;
+const octet vehicle_command__VEHICLE_MOUNT_MODE_RC_TARGETING = 3;
+const octet vehicle_command__VEHICLE_MOUNT_MODE_GPS_POINT = 4;
+const octet vehicle_command__VEHICLE_MOUNT_MODE_ENUM_END = 5;
+const octet vehicle_command__VEHICLE_ROI_NONE = 0;
+const octet vehicle_command__VEHICLE_ROI_WPNEXT = 1;
+const octet vehicle_command__VEHICLE_ROI_WPINDEX = 2;
+const octet vehicle_command__VEHICLE_ROI_LOCATION = 3;
+const octet vehicle_command__VEHICLE_ROI_TARGET = 4;
+const octet vehicle_command__VEHICLE_ROI_ENUM_END = 5;
+const octet vehicle_command__VEHICLE_CAMERA_ZOOM_TYPE_STEP = 0;
+const octet vehicle_command__VEHICLE_CAMERA_ZOOM_TYPE_CONTINUOUS = 1;
+const octet vehicle_command__VEHICLE_CAMERA_ZOOM_TYPE_RANGE = 2;
+const octet vehicle_command__VEHICLE_CAMERA_ZOOM_TYPE_FOCAL_LENGTH = 3;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_GYRO = 0;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_ACCEL = 1;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_MAG = 2;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_BARO = 3;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_GPS = 4;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_OPTICAL_FLOW = 5;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_VIO = 6;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_DISTANCE_SENSOR = 7;
+const octet vehicle_command__FAILURE_UNIT_SENSOR_AIRSPEED = 8;
+const octet vehicle_command__FAILURE_UNIT_SYSTEM_BATTERY = 100;
+const octet vehicle_command__FAILURE_UNIT_SYSTEM_MOTOR = 101;
+const octet vehicle_command__FAILURE_UNIT_SYSTEM_SERVO = 102;
+const octet vehicle_command__FAILURE_UNIT_SYSTEM_AVOIDANCE = 103;
+const octet vehicle_command__FAILURE_UNIT_SYSTEM_RC_SIGNAL = 104;
+const octet vehicle_command__FAILURE_UNIT_SYSTEM_MAVLINK_SIGNAL = 105;
+const octet vehicle_command__FAILURE_TYPE_OK = 0;
+const octet vehicle_command__FAILURE_TYPE_OFF = 1;
+const octet vehicle_command__FAILURE_TYPE_STUCK = 2;
+const octet vehicle_command__FAILURE_TYPE_GARBAGE = 3;
+const octet vehicle_command__FAILURE_TYPE_WRONG = 4;
+const octet vehicle_command__FAILURE_TYPE_SLOW = 5;
+const octet vehicle_command__FAILURE_TYPE_DELAYED = 6;
+const octet vehicle_command__FAILURE_TYPE_INTERMITTENT = 7;
+const octet vehicle_command__ORB_QUEUE_LENGTH = 4;
+
+
+struct vehicle_command
+{
+    unsigned long long timestamp_;
+    float param1_;
+    float param2_;
+    float param3_;
+    float param4_;
+    double param5_;
+    double param6_;
+    float param7_;
+    unsigned short command_;
+    octet target_system_;
+    octet target_component_;
+    octet source_system_;
+    octet source_component_;
+    octet confirmation_;
+    boolean from_external_;
+
+}; // struct vehicle_command
+
+#pragma keylist vehicle_command
+
+#endif  // __vehicle_command__idl__

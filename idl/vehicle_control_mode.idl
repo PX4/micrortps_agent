@@ -1,0 +1,34 @@
+
+#ifndef __vehicle_control_mode__idl__
+#define __vehicle_control_mode__idl__
+
+
+
+
+
+struct vehicle_control_mode
+{
+    unsigned long long timestamp_;
+    boolean flag_armed_;
+    boolean flag_external_manual_override_ok_;
+    boolean flag_control_manual_enabled_;
+    boolean flag_control_auto_enabled_;
+    boolean flag_control_offboard_enabled_;
+    boolean flag_control_rates_enabled_;
+    boolean flag_control_attitude_enabled_;
+    boolean flag_control_yawrate_override_enabled_;
+    boolean flag_control_rattitude_enabled_;
+    boolean flag_control_force_enabled_;
+    boolean flag_control_acceleration_enabled_;
+    boolean flag_control_velocity_enabled_;
+    boolean flag_control_position_enabled_;
+    boolean flag_control_altitude_enabled_;
+    boolean flag_control_climb_rate_enabled_;
+    boolean flag_control_termination_enabled_;
+    boolean flag_control_fixed_hdg_enabled_;
+
+}; // struct vehicle_control_mode
+
+#pragma keylist vehicle_control_mode
+
+#endif  // __vehicle_control_mode__idl__
