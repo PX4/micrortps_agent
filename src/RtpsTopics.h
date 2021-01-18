@@ -40,17 +40,20 @@
 #include "satellite_info_Publisher.h"
 #include "sensor_combined_Publisher.h"
 #include "timesync_Publisher.h"
+#include "vehicle_control_mode_Publisher.h"
 #include "vehicle_odometry_Publisher.h"
 #include "collision_constraints_Publisher.h"
 #include "debug_array_Subscriber.h"
 #include "debug_key_value_Subscriber.h"
 #include "debug_value_Subscriber.h"
 #include "debug_vect_Subscriber.h"
+#include "offboard_control_mode_Subscriber.h"
 #include "optical_flow_Subscriber.h"
 #include "position_setpoint_Subscriber.h"
 #include "position_setpoint_triplet_Subscriber.h"
 #include "timesync_Subscriber.h"
 #include "trajectory_waypoint_Subscriber.h"
+#include "vehicle_command_Subscriber.h"
 #include "vehicle_trajectory_waypoint_Subscriber.h"
 #include "onboard_computer_status_Subscriber.h"
 #include "vehicle_mocap_odometry_Subscriber.h"
@@ -61,11 +64,13 @@ using debug_array_msg_t = debug_array;
 using debug_key_value_msg_t = debug_key_value;
 using debug_value_msg_t = debug_value;
 using debug_vect_msg_t = debug_vect;
+using offboard_control_mode_msg_t = offboard_control_mode;
 using optical_flow_msg_t = optical_flow;
 using position_setpoint_msg_t = position_setpoint;
 using position_setpoint_triplet_msg_t = position_setpoint_triplet;
 using timesync_msg_t = timesync;
 using trajectory_waypoint_msg_t = trajectory_waypoint;
+using vehicle_command_msg_t = vehicle_command;
 using vehicle_trajectory_waypoint_msg_t = vehicle_trajectory_waypoint;
 using onboard_computer_status_msg_t = onboard_computer_status;
 using vehicle_mocap_odometry_msg_t = vehicle_mocap_odometry;
@@ -73,6 +78,7 @@ using vehicle_visual_odometry_msg_t = vehicle_visual_odometry;
 using satellite_info_msg_t = satellite_info;
 using sensor_combined_msg_t = sensor_combined;
 using timesync_msg_t = timesync;
+using vehicle_control_mode_msg_t = vehicle_control_mode;
 using vehicle_odometry_msg_t = vehicle_odometry;
 using collision_constraints_msg_t = collision_constraints;
 
@@ -88,6 +94,7 @@ private:
     satellite_info_Publisher _satellite_info_pub;
     sensor_combined_Publisher _sensor_combined_pub;
     timesync_Publisher _timesync_pub;
+    vehicle_control_mode_Publisher _vehicle_control_mode_pub;
     vehicle_odometry_Publisher _vehicle_odometry_pub;
     collision_constraints_Publisher _collision_constraints_pub;
 
@@ -96,11 +103,13 @@ private:
     debug_key_value_Subscriber _debug_key_value_sub;
     debug_value_Subscriber _debug_value_sub;
     debug_vect_Subscriber _debug_vect_sub;
+    offboard_control_mode_Subscriber _offboard_control_mode_sub;
     optical_flow_Subscriber _optical_flow_sub;
     position_setpoint_Subscriber _position_setpoint_sub;
     position_setpoint_triplet_Subscriber _position_setpoint_triplet_sub;
     timesync_Subscriber _timesync_sub;
     trajectory_waypoint_Subscriber _trajectory_waypoint_sub;
+    vehicle_command_Subscriber _vehicle_command_sub;
     vehicle_trajectory_waypoint_Subscriber _vehicle_trajectory_waypoint_sub;
     onboard_computer_status_Subscriber _onboard_computer_status_sub;
     vehicle_mocap_odometry_Subscriber _vehicle_mocap_odometry_sub;

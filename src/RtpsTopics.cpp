@@ -61,6 +61,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "Failed starting debug_vect subscriber" << std::endl;
         return false;
     }
+    if (_offboard_control_mode_sub.init(44, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- offboard_control_mode subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting offboard_control_mode subscriber" << std::endl;
+        return false;
+    }
     if (_optical_flow_sub.init(45, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- optical_flow subscriber started" << std::endl;
     } else {
@@ -91,6 +97,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "Failed starting trajectory_waypoint subscriber" << std::endl;
         return false;
     }
+    if (_vehicle_command_sub.init(89, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- vehicle_command subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting vehicle_command subscriber" << std::endl;
+        return false;
+    }
     if (_vehicle_trajectory_waypoint_sub.init(104, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_trajectory_waypoint subscriber started" << std::endl;
     } else {
@@ -103,13 +115,13 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "Failed starting onboard_computer_status subscriber" << std::endl;
         return false;
     }
-    if (_vehicle_mocap_odometry_sub.init(161, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+    if (_vehicle_mocap_odometry_sub.init(181, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_mocap_odometry subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting vehicle_mocap_odometry subscriber" << std::endl;
         return false;
     }
-    if (_vehicle_visual_odometry_sub.init(162, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+    if (_vehicle_visual_odometry_sub.init(182, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_visual_odometry subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting vehicle_visual_odometry subscriber" << std::endl;
@@ -135,6 +147,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         _timesync->start(&_timesync_pub);
     } else {
         std::cerr << "ERROR starting timesync publisher" << std::endl;
+        return false;
+    }
+    if (_vehicle_control_mode_pub.init(ns)) {
+        std::cout << "- vehicle_control_mode publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting vehicle_control_mode publisher" << std::endl;
         return false;
     }
     if (_vehicle_odometry_pub.init(ns)) {
@@ -198,6 +216,19 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             setMsgTimestamp(&st, timestamp);
             _timesync_pub.publish(&st);
             }
+        }
+        break;
+        case 92: // vehicle_control_mode
+        {
+            vehicle_control_mode_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _vehicle_control_mode_pub.publish(&st);
         }
         break;
         case 99: // vehicle_odometry
@@ -289,6 +320,19 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 _debug_vect_sub.unlockMsg();
             }
         break;
+        case 44: // offboard_control_mode
+            if (_offboard_control_mode_sub.hasMsg())
+            {
+                offboard_control_mode_msg_t msg = _offboard_control_mode_sub.getMsg();
+                // apply timestamp offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                msg.serialize(scdr);
+                ret = true;
+                _offboard_control_mode_sub.unlockMsg();
+            }
+        break;
         case 45: // optical_flow
             if (_optical_flow_sub.hasMsg())
             {
@@ -356,6 +400,19 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 _trajectory_waypoint_sub.unlockMsg();
             }
         break;
+        case 89: // vehicle_command
+            if (_vehicle_command_sub.hasMsg())
+            {
+                vehicle_command_msg_t msg = _vehicle_command_sub.getMsg();
+                // apply timestamp offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                msg.serialize(scdr);
+                ret = true;
+                _vehicle_command_sub.unlockMsg();
+            }
+        break;
         case 104: // vehicle_trajectory_waypoint
             if (_vehicle_trajectory_waypoint_sub.hasMsg())
             {
@@ -382,7 +439,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 _onboard_computer_status_sub.unlockMsg();
             }
         break;
-        case 161: // vehicle_mocap_odometry
+        case 181: // vehicle_mocap_odometry
             if (_vehicle_mocap_odometry_sub.hasMsg())
             {
                 vehicle_mocap_odometry_msg_t msg = _vehicle_mocap_odometry_sub.getMsg();
@@ -395,7 +452,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 _vehicle_mocap_odometry_sub.unlockMsg();
             }
         break;
-        case 162: // vehicle_visual_odometry
+        case 182: // vehicle_visual_odometry
             if (_vehicle_visual_odometry_sub.hasMsg())
             {
                 vehicle_visual_odometry_msg_t msg = _vehicle_visual_odometry_sub.getMsg();
