@@ -191,7 +191,7 @@ const uint8_t vehicle_command__FAILURE_TYPE_WRONG = 4;
 const uint8_t vehicle_command__FAILURE_TYPE_SLOW = 5;
 const uint8_t vehicle_command__FAILURE_TYPE_DELAYED = 6;
 const uint8_t vehicle_command__FAILURE_TYPE_INTERMITTENT = 7;
-const uint8_t vehicle_command__ORB_QUEUE_LENGTH = 4;
+const uint8_t vehicle_command__ORB_QUEUE_LENGTH = 8;
 /*!
  * @brief This class represents the structure vehicle_command defined by the user in the IDL file.
  * @ingroup VEHICLE_COMMAND
