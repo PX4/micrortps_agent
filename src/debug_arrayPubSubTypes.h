@@ -33,8 +33,8 @@
 #endif
 
 
-typedef std::array<float, 58> debug_array__float_array_58;
 typedef std::array<char, 10> debug_array__char_array_10;
+typedef std::array<float, 58> debug_array__float_array_58;
 /*!
  * @brief This class represents the TopicDataType of the type debug_array defined by the user in the IDL file.
  * @ingroup DEBUG_ARRAY
