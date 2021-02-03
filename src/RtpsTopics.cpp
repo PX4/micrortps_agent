@@ -130,6 +130,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
     std::cout << "\033[0;36m-----------------------\033[0m" << std::endl << std::endl;
     // Initialise publishers
     std::cout << "\033[0;36m----   Publishers  ----\033[0m" << std::endl;
+    if (_input_rc_pub.init(ns)) {
+        std::cout << "- input_rc publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting input_rc publisher" << std::endl;
+        return false;
+    }
     if (_satellite_info_pub.init(ns)) {
         std::cout << "- satellite_info publisher started" << std::endl;
     } else {
@@ -175,6 +181,19 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
 {
     switch (topic_ID)
     {
+        case 30: // input_rc
+        {
+            input_rc_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _input_rc_pub.publish(&st);
+        }
+        break;
         case 61: // satellite_info
         {
             satellite_info_msg_t st;

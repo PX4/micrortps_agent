@@ -37,6 +37,7 @@
 
 #include "microRTPS_timesync.h"
 
+#include "input_rc_Publisher.h"
 #include "satellite_info_Publisher.h"
 #include "sensor_combined_Publisher.h"
 #include "timesync_Publisher.h"
@@ -75,6 +76,7 @@ using vehicle_trajectory_waypoint_msg_t = vehicle_trajectory_waypoint;
 using onboard_computer_status_msg_t = onboard_computer_status;
 using vehicle_mocap_odometry_msg_t = vehicle_mocap_odometry;
 using vehicle_visual_odometry_msg_t = vehicle_visual_odometry;
+using input_rc_msg_t = input_rc;
 using satellite_info_msg_t = satellite_info;
 using sensor_combined_msg_t = sensor_combined;
 using timesync_msg_t = timesync;
@@ -91,6 +93,7 @@ public:
 
 private:
     /** Publishers **/
+    input_rc_Publisher _input_rc_pub;
     satellite_info_Publisher _satellite_info_pub;
     sensor_combined_Publisher _sensor_combined_pub;
     timesync_Publisher _timesync_pub;
