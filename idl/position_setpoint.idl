@@ -41,7 +41,6 @@ struct position_setpoint
     octet landing_gear_;
     float loiter_radius_;
     octet loiter_direction_;
-    float pitch_min_;
     float a_x_;
     float a_y_;
     float a_z_;

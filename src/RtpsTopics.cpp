@@ -291,10 +291,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_debug_array_sub.hasMsg())
             {
                 debug_array_msg_t msg = _debug_array_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _debug_array_sub.unlockMsg();
@@ -304,10 +307,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_debug_key_value_sub.hasMsg())
             {
                 debug_key_value_msg_t msg = _debug_key_value_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _debug_key_value_sub.unlockMsg();
@@ -317,10 +323,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_debug_value_sub.hasMsg())
             {
                 debug_value_msg_t msg = _debug_value_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _debug_value_sub.unlockMsg();
@@ -330,10 +339,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_debug_vect_sub.hasMsg())
             {
                 debug_vect_msg_t msg = _debug_vect_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _debug_vect_sub.unlockMsg();
@@ -343,10 +355,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_offboard_control_mode_sub.hasMsg())
             {
                 offboard_control_mode_msg_t msg = _offboard_control_mode_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _offboard_control_mode_sub.unlockMsg();
@@ -356,10 +371,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_optical_flow_sub.hasMsg())
             {
                 optical_flow_msg_t msg = _optical_flow_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _optical_flow_sub.unlockMsg();
@@ -369,10 +387,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_position_setpoint_sub.hasMsg())
             {
                 position_setpoint_msg_t msg = _position_setpoint_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _position_setpoint_sub.unlockMsg();
@@ -382,10 +403,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_position_setpoint_triplet_sub.hasMsg())
             {
                 position_setpoint_triplet_msg_t msg = _position_setpoint_triplet_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _position_setpoint_triplet_sub.unlockMsg();
@@ -396,10 +420,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             {
                 timesync_msg_t msg = _timesync_sub.getMsg();
                 if (getMsgSysID(&msg) == 0) {
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 }
@@ -410,10 +437,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_trajectory_waypoint_sub.hasMsg())
             {
                 trajectory_waypoint_msg_t msg = _trajectory_waypoint_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _trajectory_waypoint_sub.unlockMsg();
@@ -423,10 +453,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_vehicle_command_sub.hasMsg())
             {
                 vehicle_command_msg_t msg = _vehicle_command_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _vehicle_command_sub.unlockMsg();
@@ -436,10 +469,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_vehicle_trajectory_waypoint_sub.hasMsg())
             {
                 vehicle_trajectory_waypoint_msg_t msg = _vehicle_trajectory_waypoint_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _vehicle_trajectory_waypoint_sub.unlockMsg();
@@ -449,10 +485,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_onboard_computer_status_sub.hasMsg())
             {
                 onboard_computer_status_msg_t msg = _onboard_computer_status_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _onboard_computer_status_sub.unlockMsg();
@@ -462,10 +501,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_vehicle_mocap_odometry_sub.hasMsg())
             {
                 vehicle_mocap_odometry_msg_t msg = _vehicle_mocap_odometry_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _vehicle_mocap_odometry_sub.unlockMsg();
@@ -475,10 +517,13 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
             if (_vehicle_visual_odometry_sub.hasMsg())
             {
                 vehicle_visual_odometry_msg_t msg = _vehicle_visual_odometry_sub.getMsg();
-                // apply timestamp offset
+                // apply timestamps offset
                 uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
                 _timesync->addOffset(timestamp);
                 setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
                 msg.serialize(scdr);
                 ret = true;
                 _vehicle_visual_odometry_sub.unlockMsg();

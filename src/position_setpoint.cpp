@@ -90,32 +90,29 @@ position_setpoint::position_setpoint()
     m_loiter_radius_ = 0.0;
     // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
     m_loiter_direction_ = 0;
-    // m_pitch_min_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
-    m_pitch_min_ = 0.0;
-    // m_a_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
+    // m_a_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
     m_a_x_ = 0.0;
-    // m_a_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
+    // m_a_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
     m_a_y_ = 0.0;
-    // m_a_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
+    // m_a_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
     m_a_z_ = 0.0;
-    // m_acceleration_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
+    // m_acceleration_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
     m_acceleration_valid_ = false;
-    // m_acceleration_is_force_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
+    // m_acceleration_is_force_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
     m_acceleration_is_force_ = false;
-    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
+    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
     m_acceptance_radius_ = 0.0;
-    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
+    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
     m_cruising_speed_ = 0.0;
-    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
+    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
     m_cruising_throttle_ = 0.0;
-    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
+    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
     m_disable_weather_vane_ = false;
 
 }
 
 position_setpoint::~position_setpoint()
 {
-
 
 
 
@@ -175,7 +172,6 @@ position_setpoint::position_setpoint(const position_setpoint &x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_pitch_min_ = x.m_pitch_min_;
     m_a_x_ = x.m_a_x_;
     m_a_y_ = x.m_a_y_;
     m_a_z_ = x.m_a_z_;
@@ -212,7 +208,6 @@ position_setpoint::position_setpoint(position_setpoint &&x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_pitch_min_ = x.m_pitch_min_;
     m_a_x_ = x.m_a_x_;
     m_a_y_ = x.m_a_y_;
     m_a_z_ = x.m_a_z_;
@@ -250,7 +245,6 @@ position_setpoint& position_setpoint::operator=(const position_setpoint &x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_pitch_min_ = x.m_pitch_min_;
     m_a_x_ = x.m_a_x_;
     m_a_y_ = x.m_a_y_;
     m_a_z_ = x.m_a_z_;
@@ -290,7 +284,6 @@ position_setpoint& position_setpoint::operator=(position_setpoint &&x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_pitch_min_ = x.m_pitch_min_;
     m_a_x_ = x.m_a_x_;
     m_a_y_ = x.m_a_y_;
     m_a_z_ = x.m_a_z_;
@@ -376,9 +369,6 @@ size_t position_setpoint::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -496,9 +486,6 @@ size_t position_setpoint::getCdrSerializedSize(const position_setpoint& data, si
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
@@ -547,7 +534,6 @@ void position_setpoint::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_landing_gear_;
     scdr << m_loiter_radius_;
     scdr << m_loiter_direction_;
-    scdr << m_pitch_min_;
     scdr << m_a_x_;
     scdr << m_a_y_;
     scdr << m_a_z_;
@@ -585,7 +571,6 @@ void position_setpoint::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_landing_gear_;
     dcdr >> m_loiter_radius_;
     dcdr >> m_loiter_direction_;
-    dcdr >> m_pitch_min_;
     dcdr >> m_a_x_;
     dcdr >> m_a_y_;
     dcdr >> m_a_z_;
@@ -1219,33 +1204,6 @@ uint8_t& position_setpoint::loiter_direction_()
 }
 
 /*!
- * @brief This function sets a value in member pitch_min_
- * @param _pitch_min_ New value for member pitch_min_
- */
-void position_setpoint::pitch_min_(float _pitch_min_)
-{
-m_pitch_min_ = _pitch_min_;
-}
-
-/*!
- * @brief This function returns the value of member pitch_min_
- * @return Value of member pitch_min_
- */
-float position_setpoint::pitch_min_() const
-{
-    return m_pitch_min_;
-}
-
-/*!
- * @brief This function returns a reference to member pitch_min_
- * @return Reference to member pitch_min_
- */
-float& position_setpoint::pitch_min_()
-{
-    return m_pitch_min_;
-}
-
-/*!
  * @brief This function sets a value in member a_x_
  * @param _a_x_ New value for member a_x_
  */
@@ -1527,7 +1485,6 @@ size_t position_setpoint::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
     return current_align;
 }
 
@@ -1539,7 +1496,6 @@ bool position_setpoint::isKeyDefined()
 void position_setpoint::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

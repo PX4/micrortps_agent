@@ -531,24 +531,6 @@ public:
     eProsima_user_DllExport uint8_t& loiter_direction_();
 
     /*!
-     * @brief This function sets a value in member pitch_min_
-     * @param _pitch_min_ New value for member pitch_min_
-     */
-    eProsima_user_DllExport void pitch_min_(float _pitch_min_);
-
-    /*!
-     * @brief This function returns the value of member pitch_min_
-     * @return Value of member pitch_min_
-     */
-    eProsima_user_DllExport float pitch_min_() const;
-
-    /*!
-     * @brief This function returns a reference to member pitch_min_
-     * @return Reference to member pitch_min_
-     */
-    eProsima_user_DllExport float& pitch_min_();
-
-    /*!
      * @brief This function sets a value in member a_x_
      * @param _a_x_ New value for member a_x_
      */
@@ -785,7 +767,6 @@ private:
     uint8_t m_landing_gear_;
     float m_loiter_radius_;
     uint8_t m_loiter_direction_;
-    float m_pitch_min_;
     float m_a_x_;
     float m_a_y_;
     float m_a_z_;
