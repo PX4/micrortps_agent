@@ -45,6 +45,7 @@ using namespace eprosima::fastrtps::rtps;
 
 
 
+
 input_rcPubSubType::input_rcPubSubType()
 {
     setName("input_rc");

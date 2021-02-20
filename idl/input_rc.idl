@@ -19,6 +19,7 @@ const octet input_rc__RC_INPUT_SOURCE_PX4FMU_SUMD = 11;
 const octet input_rc__RC_INPUT_SOURCE_PX4FMU_DSM = 12;
 const octet input_rc__RC_INPUT_SOURCE_PX4IO_SUMD = 13;
 const octet input_rc__RC_INPUT_SOURCE_PX4FMU_CRSF = 14;
+const octet input_rc__RC_INPUT_SOURCE_PX4FMU_GHST = 15;
 const octet input_rc__RC_INPUT_MAX_CHANNELS = 18;
 
 typedef unsigned short input_rc__unsigned_short_array_18[18];

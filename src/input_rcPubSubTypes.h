@@ -48,6 +48,7 @@
 
 
 
+
 typedef std::array<uint16_t, 18> input_rc__unsigned_short_array_18;
 /*!
  * @brief This class represents the TopicDataType of the type input_rc defined by the user in the IDL file.

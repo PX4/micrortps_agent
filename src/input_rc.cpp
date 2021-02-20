@@ -49,6 +49,7 @@ using namespace eprosima::fastcdr::exception;
 
 
 
+
 input_rc::input_rc()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f3a4b84

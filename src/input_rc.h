@@ -79,6 +79,7 @@ const uint8_t input_rc__RC_INPUT_SOURCE_PX4FMU_SUMD = 11;
 const uint8_t input_rc__RC_INPUT_SOURCE_PX4FMU_DSM = 12;
 const uint8_t input_rc__RC_INPUT_SOURCE_PX4IO_SUMD = 13;
 const uint8_t input_rc__RC_INPUT_SOURCE_PX4FMU_CRSF = 14;
+const uint8_t input_rc__RC_INPUT_SOURCE_PX4FMU_GHST = 15;
 const uint8_t input_rc__RC_INPUT_MAX_CHANNELS = 18;
 typedef std::array<uint16_t, 18> input_rc__unsigned_short_array_18;
 /*!
