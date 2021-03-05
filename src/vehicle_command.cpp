@@ -164,6 +164,8 @@ using namespace eprosima::fastcdr::exception;
 
 
 
+
+
 vehicle_command::vehicle_command()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
@@ -329,7 +331,7 @@ size_t vehicle_command::getMaxCdrSerializedSize(size_t current_alignment)
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
-    current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -384,7 +386,7 @@ size_t vehicle_command::getCdrSerializedSize(const vehicle_command& data, size_t
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
-    current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -669,7 +671,7 @@ float& vehicle_command::param7_()
  * @brief This function sets a value in member command_
  * @param _command_ New value for member command_
  */
-void vehicle_command::command_(uint16_t _command_)
+void vehicle_command::command_(uint32_t _command_)
 {
 m_command_ = _command_;
 }
@@ -678,7 +680,7 @@ m_command_ = _command_;
  * @brief This function returns the value of member command_
  * @return Value of member command_
  */
-uint16_t vehicle_command::command_() const
+uint32_t vehicle_command::command_() const
 {
     return m_command_;
 }
@@ -687,7 +689,7 @@ uint16_t vehicle_command::command_() const
  * @brief This function returns a reference to member command_
  * @return Reference to member command_
  */
-uint16_t& vehicle_command::command_()
+uint32_t& vehicle_command::command_()
 {
     return m_command_;
 }

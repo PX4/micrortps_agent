@@ -64,6 +64,8 @@ namespace eprosima
 }
 
 
+const uint32_t vehicle_command__VEHICLE_CMD_PX4_INTERNAL_START = 65537;
+const uint32_t vehicle_command__VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN = 100000;
 const uint16_t vehicle_command__VEHICLE_CMD_CUSTOM_0 = 0;
 const uint16_t vehicle_command__VEHICLE_CMD_CUSTOM_1 = 1;
 const uint16_t vehicle_command__VEHICLE_CMD_CUSTOM_2 = 2;
@@ -386,19 +388,19 @@ public:
      * @brief This function sets a value in member command_
      * @param _command_ New value for member command_
      */
-    eProsima_user_DllExport void command_(uint16_t _command_);
+    eProsima_user_DllExport void command_(uint32_t _command_);
 
     /*!
      * @brief This function returns the value of member command_
      * @return Value of member command_
      */
-    eProsima_user_DllExport uint16_t command_() const;
+    eProsima_user_DllExport uint32_t command_() const;
 
     /*!
      * @brief This function returns a reference to member command_
      * @return Reference to member command_
      */
-    eProsima_user_DllExport uint16_t& command_();
+    eProsima_user_DllExport uint32_t& command_();
 
     /*!
      * @brief This function sets a value in member target_system_
@@ -568,7 +570,7 @@ private:
     double m_param5_;
     double m_param6_;
     float m_param7_;
-    uint16_t m_command_;
+    uint32_t m_command_;
     uint8_t m_target_system_;
     uint8_t m_target_component_;
     uint8_t m_source_system_;

@@ -4,6 +4,8 @@
 
 
 
+const unsigned long vehicle_command__VEHICLE_CMD_PX4_INTERNAL_START = 65537;
+const unsigned long vehicle_command__VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN = 100000;
 const unsigned short vehicle_command__VEHICLE_CMD_CUSTOM_0 = 0;
 const unsigned short vehicle_command__VEHICLE_CMD_CUSTOM_1 = 1;
 const unsigned short vehicle_command__VEHICLE_CMD_CUSTOM_2 = 2;
@@ -148,7 +150,7 @@ struct vehicle_command
     double param5_;
     double param6_;
     float param7_;
-    unsigned short command_;
+    unsigned long command_;
     octet target_system_;
     octet target_component_;
     octet source_system_;
