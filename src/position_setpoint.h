@@ -70,8 +70,7 @@ const uint8_t position_setpoint__SETPOINT_TYPE_LOITER = 2;
 const uint8_t position_setpoint__SETPOINT_TYPE_TAKEOFF = 3;
 const uint8_t position_setpoint__SETPOINT_TYPE_LAND = 4;
 const uint8_t position_setpoint__SETPOINT_TYPE_IDLE = 5;
-const uint8_t position_setpoint__SETPOINT_TYPE_OFFBOARD = 6;
-const uint8_t position_setpoint__SETPOINT_TYPE_FOLLOW_TARGET = 7;
+const uint8_t position_setpoint__SETPOINT_TYPE_FOLLOW_TARGET = 6;
 const uint8_t position_setpoint__VELOCITY_FRAME_LOCAL_NED = 1;
 const uint8_t position_setpoint__VELOCITY_FRAME_BODY_NED = 8;
 /*!
@@ -531,96 +530,6 @@ public:
     eProsima_user_DllExport uint8_t& loiter_direction_();
 
     /*!
-     * @brief This function sets a value in member a_x_
-     * @param _a_x_ New value for member a_x_
-     */
-    eProsima_user_DllExport void a_x_(float _a_x_);
-
-    /*!
-     * @brief This function returns the value of member a_x_
-     * @return Value of member a_x_
-     */
-    eProsima_user_DllExport float a_x_() const;
-
-    /*!
-     * @brief This function returns a reference to member a_x_
-     * @return Reference to member a_x_
-     */
-    eProsima_user_DllExport float& a_x_();
-
-    /*!
-     * @brief This function sets a value in member a_y_
-     * @param _a_y_ New value for member a_y_
-     */
-    eProsima_user_DllExport void a_y_(float _a_y_);
-
-    /*!
-     * @brief This function returns the value of member a_y_
-     * @return Value of member a_y_
-     */
-    eProsima_user_DllExport float a_y_() const;
-
-    /*!
-     * @brief This function returns a reference to member a_y_
-     * @return Reference to member a_y_
-     */
-    eProsima_user_DllExport float& a_y_();
-
-    /*!
-     * @brief This function sets a value in member a_z_
-     * @param _a_z_ New value for member a_z_
-     */
-    eProsima_user_DllExport void a_z_(float _a_z_);
-
-    /*!
-     * @brief This function returns the value of member a_z_
-     * @return Value of member a_z_
-     */
-    eProsima_user_DllExport float a_z_() const;
-
-    /*!
-     * @brief This function returns a reference to member a_z_
-     * @return Reference to member a_z_
-     */
-    eProsima_user_DllExport float& a_z_();
-
-    /*!
-     * @brief This function sets a value in member acceleration_valid_
-     * @param _acceleration_valid_ New value for member acceleration_valid_
-     */
-    eProsima_user_DllExport void acceleration_valid_(bool _acceleration_valid_);
-
-    /*!
-     * @brief This function returns the value of member acceleration_valid_
-     * @return Value of member acceleration_valid_
-     */
-    eProsima_user_DllExport bool acceleration_valid_() const;
-
-    /*!
-     * @brief This function returns a reference to member acceleration_valid_
-     * @return Reference to member acceleration_valid_
-     */
-    eProsima_user_DllExport bool& acceleration_valid_();
-
-    /*!
-     * @brief This function sets a value in member acceleration_is_force_
-     * @param _acceleration_is_force_ New value for member acceleration_is_force_
-     */
-    eProsima_user_DllExport void acceleration_is_force_(bool _acceleration_is_force_);
-
-    /*!
-     * @brief This function returns the value of member acceleration_is_force_
-     * @return Value of member acceleration_is_force_
-     */
-    eProsima_user_DllExport bool acceleration_is_force_() const;
-
-    /*!
-     * @brief This function returns a reference to member acceleration_is_force_
-     * @return Reference to member acceleration_is_force_
-     */
-    eProsima_user_DllExport bool& acceleration_is_force_();
-
-    /*!
      * @brief This function sets a value in member acceptance_radius_
      * @param _acceptance_radius_ New value for member acceptance_radius_
      */
@@ -767,11 +676,6 @@ private:
     uint8_t m_landing_gear_;
     float m_loiter_radius_;
     uint8_t m_loiter_direction_;
-    float m_a_x_;
-    float m_a_y_;
-    float m_a_z_;
-    bool m_acceleration_valid_;
-    bool m_acceleration_is_force_;
     float m_acceptance_radius_;
     float m_cruising_speed_;
     float m_cruising_throttle_;

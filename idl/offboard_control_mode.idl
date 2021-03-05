@@ -9,15 +9,11 @@
 struct offboard_control_mode
 {
     unsigned long long timestamp_;
-    boolean ignore_thrust_;
-    boolean ignore_attitude_;
-    boolean ignore_bodyrate_x_;
-    boolean ignore_bodyrate_y_;
-    boolean ignore_bodyrate_z_;
-    boolean ignore_position_;
-    boolean ignore_velocity_;
-    boolean ignore_acceleration_force_;
-    boolean ignore_alt_hold_;
+    boolean position_;
+    boolean velocity_;
+    boolean acceleration_;
+    boolean attitude_;
+    boolean body_rate_;
 
 }; // struct offboard_control_mode
 

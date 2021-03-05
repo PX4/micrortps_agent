@@ -82,7 +82,6 @@ const uint16_t vehicle_command__VEHICLE_CMD_NAV_VTOL_TAKEOFF = 84;
 const uint16_t vehicle_command__VEHICLE_CMD_NAV_VTOL_LAND = 85;
 const uint16_t vehicle_command__VEHICLE_CMD_NAV_GUIDED_LIMITS = 90;
 const uint16_t vehicle_command__VEHICLE_CMD_NAV_GUIDED_MASTER = 91;
-const uint16_t vehicle_command__VEHICLE_CMD_NAV_GUIDED_ENABLE = 92;
 const uint16_t vehicle_command__VEHICLE_CMD_NAV_DELAY = 93;
 const uint16_t vehicle_command__VEHICLE_CMD_NAV_LAST = 95;
 const uint16_t vehicle_command__VEHICLE_CMD_CONDITION_DELAY = 112;

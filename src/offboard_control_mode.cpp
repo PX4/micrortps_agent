@@ -36,24 +36,16 @@ offboard_control_mode::offboard_control_mode()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_ignore_thrust_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
-    m_ignore_thrust_ = false;
-    // m_ignore_attitude_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
-    m_ignore_attitude_ = false;
-    // m_ignore_bodyrate_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
-    m_ignore_bodyrate_x_ = false;
-    // m_ignore_bodyrate_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
-    m_ignore_bodyrate_y_ = false;
-    // m_ignore_bodyrate_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
-    m_ignore_bodyrate_z_ = false;
-    // m_ignore_position_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
-    m_ignore_position_ = false;
-    // m_ignore_velocity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
-    m_ignore_velocity_ = false;
-    // m_ignore_acceleration_force_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
-    m_ignore_acceleration_force_ = false;
-    // m_ignore_alt_hold_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
-    m_ignore_alt_hold_ = false;
+    // m_position_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
+    m_position_ = false;
+    // m_velocity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
+    m_velocity_ = false;
+    // m_acceleration_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
+    m_acceleration_ = false;
+    // m_attitude_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
+    m_attitude_ = false;
+    // m_body_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
+    m_body_rate_ = false;
 
 }
 
@@ -65,53 +57,37 @@ offboard_control_mode::~offboard_control_mode()
 
 
 
-
-
-
-
 }
 
 offboard_control_mode::offboard_control_mode(const offboard_control_mode &x)
 {
     m_timestamp_ = x.m_timestamp_;
-    m_ignore_thrust_ = x.m_ignore_thrust_;
-    m_ignore_attitude_ = x.m_ignore_attitude_;
-    m_ignore_bodyrate_x_ = x.m_ignore_bodyrate_x_;
-    m_ignore_bodyrate_y_ = x.m_ignore_bodyrate_y_;
-    m_ignore_bodyrate_z_ = x.m_ignore_bodyrate_z_;
-    m_ignore_position_ = x.m_ignore_position_;
-    m_ignore_velocity_ = x.m_ignore_velocity_;
-    m_ignore_acceleration_force_ = x.m_ignore_acceleration_force_;
-    m_ignore_alt_hold_ = x.m_ignore_alt_hold_;
+    m_position_ = x.m_position_;
+    m_velocity_ = x.m_velocity_;
+    m_acceleration_ = x.m_acceleration_;
+    m_attitude_ = x.m_attitude_;
+    m_body_rate_ = x.m_body_rate_;
 }
 
 offboard_control_mode::offboard_control_mode(offboard_control_mode &&x)
 {
     m_timestamp_ = x.m_timestamp_;
-    m_ignore_thrust_ = x.m_ignore_thrust_;
-    m_ignore_attitude_ = x.m_ignore_attitude_;
-    m_ignore_bodyrate_x_ = x.m_ignore_bodyrate_x_;
-    m_ignore_bodyrate_y_ = x.m_ignore_bodyrate_y_;
-    m_ignore_bodyrate_z_ = x.m_ignore_bodyrate_z_;
-    m_ignore_position_ = x.m_ignore_position_;
-    m_ignore_velocity_ = x.m_ignore_velocity_;
-    m_ignore_acceleration_force_ = x.m_ignore_acceleration_force_;
-    m_ignore_alt_hold_ = x.m_ignore_alt_hold_;
+    m_position_ = x.m_position_;
+    m_velocity_ = x.m_velocity_;
+    m_acceleration_ = x.m_acceleration_;
+    m_attitude_ = x.m_attitude_;
+    m_body_rate_ = x.m_body_rate_;
 }
 
 offboard_control_mode& offboard_control_mode::operator=(const offboard_control_mode &x)
 {
 
     m_timestamp_ = x.m_timestamp_;
-    m_ignore_thrust_ = x.m_ignore_thrust_;
-    m_ignore_attitude_ = x.m_ignore_attitude_;
-    m_ignore_bodyrate_x_ = x.m_ignore_bodyrate_x_;
-    m_ignore_bodyrate_y_ = x.m_ignore_bodyrate_y_;
-    m_ignore_bodyrate_z_ = x.m_ignore_bodyrate_z_;
-    m_ignore_position_ = x.m_ignore_position_;
-    m_ignore_velocity_ = x.m_ignore_velocity_;
-    m_ignore_acceleration_force_ = x.m_ignore_acceleration_force_;
-    m_ignore_alt_hold_ = x.m_ignore_alt_hold_;
+    m_position_ = x.m_position_;
+    m_velocity_ = x.m_velocity_;
+    m_acceleration_ = x.m_acceleration_;
+    m_attitude_ = x.m_attitude_;
+    m_body_rate_ = x.m_body_rate_;
 
     return *this;
 }
@@ -120,15 +96,11 @@ offboard_control_mode& offboard_control_mode::operator=(offboard_control_mode &&
 {
 
     m_timestamp_ = x.m_timestamp_;
-    m_ignore_thrust_ = x.m_ignore_thrust_;
-    m_ignore_attitude_ = x.m_ignore_attitude_;
-    m_ignore_bodyrate_x_ = x.m_ignore_bodyrate_x_;
-    m_ignore_bodyrate_y_ = x.m_ignore_bodyrate_y_;
-    m_ignore_bodyrate_z_ = x.m_ignore_bodyrate_z_;
-    m_ignore_position_ = x.m_ignore_position_;
-    m_ignore_velocity_ = x.m_ignore_velocity_;
-    m_ignore_acceleration_force_ = x.m_ignore_acceleration_force_;
-    m_ignore_alt_hold_ = x.m_ignore_alt_hold_;
+    m_position_ = x.m_position_;
+    m_velocity_ = x.m_velocity_;
+    m_acceleration_ = x.m_acceleration_;
+    m_attitude_ = x.m_attitude_;
+    m_body_rate_ = x.m_body_rate_;
 
     return *this;
 }
@@ -139,18 +111,6 @@ size_t offboard_control_mode::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -196,18 +156,6 @@ size_t offboard_control_mode::getCdrSerializedSize(const offboard_control_mode& 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
 
     return current_alignment - initial_alignment;
 }
@@ -216,30 +164,22 @@ void offboard_control_mode::serialize(eprosima::fastcdr::Cdr &scdr) const
 {
 
     scdr << m_timestamp_;
-    scdr << m_ignore_thrust_;
-    scdr << m_ignore_attitude_;
-    scdr << m_ignore_bodyrate_x_;
-    scdr << m_ignore_bodyrate_y_;
-    scdr << m_ignore_bodyrate_z_;
-    scdr << m_ignore_position_;
-    scdr << m_ignore_velocity_;
-    scdr << m_ignore_acceleration_force_;
-    scdr << m_ignore_alt_hold_;
+    scdr << m_position_;
+    scdr << m_velocity_;
+    scdr << m_acceleration_;
+    scdr << m_attitude_;
+    scdr << m_body_rate_;
 }
 
 void offboard_control_mode::deserialize(eprosima::fastcdr::Cdr &dcdr)
 {
 
     dcdr >> m_timestamp_;
-    dcdr >> m_ignore_thrust_;
-    dcdr >> m_ignore_attitude_;
-    dcdr >> m_ignore_bodyrate_x_;
-    dcdr >> m_ignore_bodyrate_y_;
-    dcdr >> m_ignore_bodyrate_z_;
-    dcdr >> m_ignore_position_;
-    dcdr >> m_ignore_velocity_;
-    dcdr >> m_ignore_acceleration_force_;
-    dcdr >> m_ignore_alt_hold_;
+    dcdr >> m_position_;
+    dcdr >> m_velocity_;
+    dcdr >> m_acceleration_;
+    dcdr >> m_attitude_;
+    dcdr >> m_body_rate_;
 }
 
 /*!
@@ -270,256 +210,144 @@ uint64_t& offboard_control_mode::timestamp_()
 }
 
 /*!
- * @brief This function sets a value in member ignore_thrust_
- * @param _ignore_thrust_ New value for member ignore_thrust_
+ * @brief This function sets a value in member position_
+ * @param _position_ New value for member position_
  */
-void offboard_control_mode::ignore_thrust_(bool _ignore_thrust_)
+void offboard_control_mode::position_(bool _position_)
 {
-m_ignore_thrust_ = _ignore_thrust_;
+m_position_ = _position_;
 }
 
 /*!
- * @brief This function returns the value of member ignore_thrust_
- * @return Value of member ignore_thrust_
+ * @brief This function returns the value of member position_
+ * @return Value of member position_
  */
-bool offboard_control_mode::ignore_thrust_() const
+bool offboard_control_mode::position_() const
 {
-    return m_ignore_thrust_;
+    return m_position_;
 }
 
 /*!
- * @brief This function returns a reference to member ignore_thrust_
- * @return Reference to member ignore_thrust_
+ * @brief This function returns a reference to member position_
+ * @return Reference to member position_
  */
-bool& offboard_control_mode::ignore_thrust_()
+bool& offboard_control_mode::position_()
 {
-    return m_ignore_thrust_;
+    return m_position_;
 }
 
 /*!
- * @brief This function sets a value in member ignore_attitude_
- * @param _ignore_attitude_ New value for member ignore_attitude_
+ * @brief This function sets a value in member velocity_
+ * @param _velocity_ New value for member velocity_
  */
-void offboard_control_mode::ignore_attitude_(bool _ignore_attitude_)
+void offboard_control_mode::velocity_(bool _velocity_)
 {
-m_ignore_attitude_ = _ignore_attitude_;
+m_velocity_ = _velocity_;
 }
 
 /*!
- * @brief This function returns the value of member ignore_attitude_
- * @return Value of member ignore_attitude_
+ * @brief This function returns the value of member velocity_
+ * @return Value of member velocity_
  */
-bool offboard_control_mode::ignore_attitude_() const
+bool offboard_control_mode::velocity_() const
 {
-    return m_ignore_attitude_;
+    return m_velocity_;
 }
 
 /*!
- * @brief This function returns a reference to member ignore_attitude_
- * @return Reference to member ignore_attitude_
+ * @brief This function returns a reference to member velocity_
+ * @return Reference to member velocity_
  */
-bool& offboard_control_mode::ignore_attitude_()
+bool& offboard_control_mode::velocity_()
 {
-    return m_ignore_attitude_;
+    return m_velocity_;
 }
 
 /*!
- * @brief This function sets a value in member ignore_bodyrate_x_
- * @param _ignore_bodyrate_x_ New value for member ignore_bodyrate_x_
+ * @brief This function sets a value in member acceleration_
+ * @param _acceleration_ New value for member acceleration_
  */
-void offboard_control_mode::ignore_bodyrate_x_(bool _ignore_bodyrate_x_)
+void offboard_control_mode::acceleration_(bool _acceleration_)
 {
-m_ignore_bodyrate_x_ = _ignore_bodyrate_x_;
+m_acceleration_ = _acceleration_;
 }
 
 /*!
- * @brief This function returns the value of member ignore_bodyrate_x_
- * @return Value of member ignore_bodyrate_x_
+ * @brief This function returns the value of member acceleration_
+ * @return Value of member acceleration_
  */
-bool offboard_control_mode::ignore_bodyrate_x_() const
+bool offboard_control_mode::acceleration_() const
 {
-    return m_ignore_bodyrate_x_;
+    return m_acceleration_;
 }
 
 /*!
- * @brief This function returns a reference to member ignore_bodyrate_x_
- * @return Reference to member ignore_bodyrate_x_
+ * @brief This function returns a reference to member acceleration_
+ * @return Reference to member acceleration_
  */
-bool& offboard_control_mode::ignore_bodyrate_x_()
+bool& offboard_control_mode::acceleration_()
 {
-    return m_ignore_bodyrate_x_;
+    return m_acceleration_;
 }
 
 /*!
- * @brief This function sets a value in member ignore_bodyrate_y_
- * @param _ignore_bodyrate_y_ New value for member ignore_bodyrate_y_
+ * @brief This function sets a value in member attitude_
+ * @param _attitude_ New value for member attitude_
  */
-void offboard_control_mode::ignore_bodyrate_y_(bool _ignore_bodyrate_y_)
+void offboard_control_mode::attitude_(bool _attitude_)
 {
-m_ignore_bodyrate_y_ = _ignore_bodyrate_y_;
+m_attitude_ = _attitude_;
 }
 
 /*!
- * @brief This function returns the value of member ignore_bodyrate_y_
- * @return Value of member ignore_bodyrate_y_
+ * @brief This function returns the value of member attitude_
+ * @return Value of member attitude_
  */
-bool offboard_control_mode::ignore_bodyrate_y_() const
+bool offboard_control_mode::attitude_() const
 {
-    return m_ignore_bodyrate_y_;
+    return m_attitude_;
 }
 
 /*!
- * @brief This function returns a reference to member ignore_bodyrate_y_
- * @return Reference to member ignore_bodyrate_y_
+ * @brief This function returns a reference to member attitude_
+ * @return Reference to member attitude_
  */
-bool& offboard_control_mode::ignore_bodyrate_y_()
+bool& offboard_control_mode::attitude_()
 {
-    return m_ignore_bodyrate_y_;
+    return m_attitude_;
 }
 
 /*!
- * @brief This function sets a value in member ignore_bodyrate_z_
- * @param _ignore_bodyrate_z_ New value for member ignore_bodyrate_z_
+ * @brief This function sets a value in member body_rate_
+ * @param _body_rate_ New value for member body_rate_
  */
-void offboard_control_mode::ignore_bodyrate_z_(bool _ignore_bodyrate_z_)
+void offboard_control_mode::body_rate_(bool _body_rate_)
 {
-m_ignore_bodyrate_z_ = _ignore_bodyrate_z_;
+m_body_rate_ = _body_rate_;
 }
 
 /*!
- * @brief This function returns the value of member ignore_bodyrate_z_
- * @return Value of member ignore_bodyrate_z_
+ * @brief This function returns the value of member body_rate_
+ * @return Value of member body_rate_
  */
-bool offboard_control_mode::ignore_bodyrate_z_() const
+bool offboard_control_mode::body_rate_() const
 {
-    return m_ignore_bodyrate_z_;
+    return m_body_rate_;
 }
 
 /*!
- * @brief This function returns a reference to member ignore_bodyrate_z_
- * @return Reference to member ignore_bodyrate_z_
+ * @brief This function returns a reference to member body_rate_
+ * @return Reference to member body_rate_
  */
-bool& offboard_control_mode::ignore_bodyrate_z_()
+bool& offboard_control_mode::body_rate_()
 {
-    return m_ignore_bodyrate_z_;
-}
-
-/*!
- * @brief This function sets a value in member ignore_position_
- * @param _ignore_position_ New value for member ignore_position_
- */
-void offboard_control_mode::ignore_position_(bool _ignore_position_)
-{
-m_ignore_position_ = _ignore_position_;
-}
-
-/*!
- * @brief This function returns the value of member ignore_position_
- * @return Value of member ignore_position_
- */
-bool offboard_control_mode::ignore_position_() const
-{
-    return m_ignore_position_;
-}
-
-/*!
- * @brief This function returns a reference to member ignore_position_
- * @return Reference to member ignore_position_
- */
-bool& offboard_control_mode::ignore_position_()
-{
-    return m_ignore_position_;
-}
-
-/*!
- * @brief This function sets a value in member ignore_velocity_
- * @param _ignore_velocity_ New value for member ignore_velocity_
- */
-void offboard_control_mode::ignore_velocity_(bool _ignore_velocity_)
-{
-m_ignore_velocity_ = _ignore_velocity_;
-}
-
-/*!
- * @brief This function returns the value of member ignore_velocity_
- * @return Value of member ignore_velocity_
- */
-bool offboard_control_mode::ignore_velocity_() const
-{
-    return m_ignore_velocity_;
-}
-
-/*!
- * @brief This function returns a reference to member ignore_velocity_
- * @return Reference to member ignore_velocity_
- */
-bool& offboard_control_mode::ignore_velocity_()
-{
-    return m_ignore_velocity_;
-}
-
-/*!
- * @brief This function sets a value in member ignore_acceleration_force_
- * @param _ignore_acceleration_force_ New value for member ignore_acceleration_force_
- */
-void offboard_control_mode::ignore_acceleration_force_(bool _ignore_acceleration_force_)
-{
-m_ignore_acceleration_force_ = _ignore_acceleration_force_;
-}
-
-/*!
- * @brief This function returns the value of member ignore_acceleration_force_
- * @return Value of member ignore_acceleration_force_
- */
-bool offboard_control_mode::ignore_acceleration_force_() const
-{
-    return m_ignore_acceleration_force_;
-}
-
-/*!
- * @brief This function returns a reference to member ignore_acceleration_force_
- * @return Reference to member ignore_acceleration_force_
- */
-bool& offboard_control_mode::ignore_acceleration_force_()
-{
-    return m_ignore_acceleration_force_;
-}
-
-/*!
- * @brief This function sets a value in member ignore_alt_hold_
- * @param _ignore_alt_hold_ New value for member ignore_alt_hold_
- */
-void offboard_control_mode::ignore_alt_hold_(bool _ignore_alt_hold_)
-{
-m_ignore_alt_hold_ = _ignore_alt_hold_;
-}
-
-/*!
- * @brief This function returns the value of member ignore_alt_hold_
- * @return Value of member ignore_alt_hold_
- */
-bool offboard_control_mode::ignore_alt_hold_() const
-{
-    return m_ignore_alt_hold_;
-}
-
-/*!
- * @brief This function returns a reference to member ignore_alt_hold_
- * @return Reference to member ignore_alt_hold_
- */
-bool& offboard_control_mode::ignore_alt_hold_()
-{
-    return m_ignore_alt_hold_;
+    return m_body_rate_;
 }
 
 
 size_t offboard_control_mode::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
-
-
-
-
 
 
 
@@ -540,10 +368,6 @@ bool offboard_control_mode::isKeyDefined()
 void offboard_control_mode::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
-     
-     
-     
      
      
      

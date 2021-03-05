@@ -37,7 +37,6 @@ using namespace eprosima::fastrtps::rtps;
 
 
 
-
 position_setpoint_tripletPubSubType::position_setpoint_tripletPubSubType()
 {
     setName("position_setpoint_triplet");

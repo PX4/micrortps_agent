@@ -41,7 +41,6 @@ using namespace eprosima::fastcdr::exception;
 
 
 
-
 position_setpoint::position_setpoint()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c5a1b69
@@ -90,34 +89,19 @@ position_setpoint::position_setpoint()
     m_loiter_radius_ = 0.0;
     // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
     m_loiter_direction_ = 0;
-    // m_a_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
-    m_a_x_ = 0.0;
-    // m_a_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
-    m_a_y_ = 0.0;
-    // m_a_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
-    m_a_z_ = 0.0;
-    // m_acceleration_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
-    m_acceleration_valid_ = false;
-    // m_acceleration_is_force_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
-    m_acceleration_is_force_ = false;
-    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
+    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
     m_acceptance_radius_ = 0.0;
-    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
+    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
     m_cruising_speed_ = 0.0;
-    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
+    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
     m_cruising_throttle_ = 0.0;
-    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
+    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
     m_disable_weather_vane_ = false;
 
 }
 
 position_setpoint::~position_setpoint()
 {
-
-
-
-
-
 
 
 
@@ -172,11 +156,6 @@ position_setpoint::position_setpoint(const position_setpoint &x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_a_x_ = x.m_a_x_;
-    m_a_y_ = x.m_a_y_;
-    m_a_z_ = x.m_a_z_;
-    m_acceleration_valid_ = x.m_acceleration_valid_;
-    m_acceleration_is_force_ = x.m_acceleration_is_force_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_cruising_throttle_ = x.m_cruising_throttle_;
@@ -208,11 +187,6 @@ position_setpoint::position_setpoint(position_setpoint &&x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_a_x_ = x.m_a_x_;
-    m_a_y_ = x.m_a_y_;
-    m_a_z_ = x.m_a_z_;
-    m_acceleration_valid_ = x.m_acceleration_valid_;
-    m_acceleration_is_force_ = x.m_acceleration_is_force_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_cruising_throttle_ = x.m_cruising_throttle_;
@@ -245,11 +219,6 @@ position_setpoint& position_setpoint::operator=(const position_setpoint &x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_a_x_ = x.m_a_x_;
-    m_a_y_ = x.m_a_y_;
-    m_a_z_ = x.m_a_z_;
-    m_acceleration_valid_ = x.m_acceleration_valid_;
-    m_acceleration_is_force_ = x.m_acceleration_is_force_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_cruising_throttle_ = x.m_cruising_throttle_;
@@ -284,11 +253,6 @@ position_setpoint& position_setpoint::operator=(position_setpoint &&x)
     m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
     m_loiter_direction_ = x.m_loiter_direction_;
-    m_a_x_ = x.m_a_x_;
-    m_a_y_ = x.m_a_y_;
-    m_a_z_ = x.m_a_z_;
-    m_acceleration_valid_ = x.m_acceleration_valid_;
-    m_acceleration_is_force_ = x.m_acceleration_is_force_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_cruising_throttle_ = x.m_cruising_throttle_;
@@ -366,21 +330,6 @@ size_t position_setpoint::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -489,21 +438,6 @@ size_t position_setpoint::getCdrSerializedSize(const position_setpoint& data, si
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
 
     return current_alignment - initial_alignment;
 }
@@ -534,11 +468,6 @@ void position_setpoint::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_landing_gear_;
     scdr << m_loiter_radius_;
     scdr << m_loiter_direction_;
-    scdr << m_a_x_;
-    scdr << m_a_y_;
-    scdr << m_a_z_;
-    scdr << m_acceleration_valid_;
-    scdr << m_acceleration_is_force_;
     scdr << m_acceptance_radius_;
     scdr << m_cruising_speed_;
     scdr << m_cruising_throttle_;
@@ -571,11 +500,6 @@ void position_setpoint::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_landing_gear_;
     dcdr >> m_loiter_radius_;
     dcdr >> m_loiter_direction_;
-    dcdr >> m_a_x_;
-    dcdr >> m_a_y_;
-    dcdr >> m_a_z_;
-    dcdr >> m_acceleration_valid_;
-    dcdr >> m_acceleration_is_force_;
     dcdr >> m_acceptance_radius_;
     dcdr >> m_cruising_speed_;
     dcdr >> m_cruising_throttle_;
@@ -1204,141 +1128,6 @@ uint8_t& position_setpoint::loiter_direction_()
 }
 
 /*!
- * @brief This function sets a value in member a_x_
- * @param _a_x_ New value for member a_x_
- */
-void position_setpoint::a_x_(float _a_x_)
-{
-m_a_x_ = _a_x_;
-}
-
-/*!
- * @brief This function returns the value of member a_x_
- * @return Value of member a_x_
- */
-float position_setpoint::a_x_() const
-{
-    return m_a_x_;
-}
-
-/*!
- * @brief This function returns a reference to member a_x_
- * @return Reference to member a_x_
- */
-float& position_setpoint::a_x_()
-{
-    return m_a_x_;
-}
-
-/*!
- * @brief This function sets a value in member a_y_
- * @param _a_y_ New value for member a_y_
- */
-void position_setpoint::a_y_(float _a_y_)
-{
-m_a_y_ = _a_y_;
-}
-
-/*!
- * @brief This function returns the value of member a_y_
- * @return Value of member a_y_
- */
-float position_setpoint::a_y_() const
-{
-    return m_a_y_;
-}
-
-/*!
- * @brief This function returns a reference to member a_y_
- * @return Reference to member a_y_
- */
-float& position_setpoint::a_y_()
-{
-    return m_a_y_;
-}
-
-/*!
- * @brief This function sets a value in member a_z_
- * @param _a_z_ New value for member a_z_
- */
-void position_setpoint::a_z_(float _a_z_)
-{
-m_a_z_ = _a_z_;
-}
-
-/*!
- * @brief This function returns the value of member a_z_
- * @return Value of member a_z_
- */
-float position_setpoint::a_z_() const
-{
-    return m_a_z_;
-}
-
-/*!
- * @brief This function returns a reference to member a_z_
- * @return Reference to member a_z_
- */
-float& position_setpoint::a_z_()
-{
-    return m_a_z_;
-}
-
-/*!
- * @brief This function sets a value in member acceleration_valid_
- * @param _acceleration_valid_ New value for member acceleration_valid_
- */
-void position_setpoint::acceleration_valid_(bool _acceleration_valid_)
-{
-m_acceleration_valid_ = _acceleration_valid_;
-}
-
-/*!
- * @brief This function returns the value of member acceleration_valid_
- * @return Value of member acceleration_valid_
- */
-bool position_setpoint::acceleration_valid_() const
-{
-    return m_acceleration_valid_;
-}
-
-/*!
- * @brief This function returns a reference to member acceleration_valid_
- * @return Reference to member acceleration_valid_
- */
-bool& position_setpoint::acceleration_valid_()
-{
-    return m_acceleration_valid_;
-}
-
-/*!
- * @brief This function sets a value in member acceleration_is_force_
- * @param _acceleration_is_force_ New value for member acceleration_is_force_
- */
-void position_setpoint::acceleration_is_force_(bool _acceleration_is_force_)
-{
-m_acceleration_is_force_ = _acceleration_is_force_;
-}
-
-/*!
- * @brief This function returns the value of member acceleration_is_force_
- * @return Value of member acceleration_is_force_
- */
-bool position_setpoint::acceleration_is_force_() const
-{
-    return m_acceleration_is_force_;
-}
-
-/*!
- * @brief This function returns a reference to member acceleration_is_force_
- * @return Reference to member acceleration_is_force_
- */
-bool& position_setpoint::acceleration_is_force_()
-{
-    return m_acceleration_is_force_;
-}
-
-/*!
  * @brief This function sets a value in member acceptance_radius_
  * @param _acceptance_radius_ New value for member acceptance_radius_
  */
@@ -1480,11 +1269,6 @@ size_t position_setpoint::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
-
-
-
-
     return current_align;
 }
 
@@ -1496,11 +1280,6 @@ bool position_setpoint::isKeyDefined()
 void position_setpoint::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
-     
-     
-     
-     
      
      
      

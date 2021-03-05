@@ -41,7 +41,6 @@ using namespace eprosima::fastcdr::exception;
 
 
 
-
 position_setpoint_triplet::position_setpoint_triplet()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58c1670b

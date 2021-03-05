@@ -16,16 +16,13 @@ struct vehicle_control_mode
     boolean flag_control_offboard_enabled_;
     boolean flag_control_rates_enabled_;
     boolean flag_control_attitude_enabled_;
-    boolean flag_control_yawrate_override_enabled_;
     boolean flag_control_rattitude_enabled_;
-    boolean flag_control_force_enabled_;
     boolean flag_control_acceleration_enabled_;
     boolean flag_control_velocity_enabled_;
     boolean flag_control_position_enabled_;
     boolean flag_control_altitude_enabled_;
     boolean flag_control_climb_rate_enabled_;
     boolean flag_control_termination_enabled_;
-    boolean flag_control_fixed_hdg_enabled_;
 
 }; // struct vehicle_control_mode
 

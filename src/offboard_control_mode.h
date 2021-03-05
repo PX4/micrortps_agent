@@ -125,166 +125,94 @@ public:
     eProsima_user_DllExport uint64_t& timestamp_();
 
     /*!
-     * @brief This function sets a value in member ignore_thrust_
-     * @param _ignore_thrust_ New value for member ignore_thrust_
+     * @brief This function sets a value in member position_
+     * @param _position_ New value for member position_
      */
-    eProsima_user_DllExport void ignore_thrust_(bool _ignore_thrust_);
+    eProsima_user_DllExport void position_(bool _position_);
 
     /*!
-     * @brief This function returns the value of member ignore_thrust_
-     * @return Value of member ignore_thrust_
+     * @brief This function returns the value of member position_
+     * @return Value of member position_
      */
-    eProsima_user_DllExport bool ignore_thrust_() const;
+    eProsima_user_DllExport bool position_() const;
 
     /*!
-     * @brief This function returns a reference to member ignore_thrust_
-     * @return Reference to member ignore_thrust_
+     * @brief This function returns a reference to member position_
+     * @return Reference to member position_
      */
-    eProsima_user_DllExport bool& ignore_thrust_();
+    eProsima_user_DllExport bool& position_();
 
     /*!
-     * @brief This function sets a value in member ignore_attitude_
-     * @param _ignore_attitude_ New value for member ignore_attitude_
+     * @brief This function sets a value in member velocity_
+     * @param _velocity_ New value for member velocity_
      */
-    eProsima_user_DllExport void ignore_attitude_(bool _ignore_attitude_);
+    eProsima_user_DllExport void velocity_(bool _velocity_);
 
     /*!
-     * @brief This function returns the value of member ignore_attitude_
-     * @return Value of member ignore_attitude_
+     * @brief This function returns the value of member velocity_
+     * @return Value of member velocity_
      */
-    eProsima_user_DllExport bool ignore_attitude_() const;
+    eProsima_user_DllExport bool velocity_() const;
 
     /*!
-     * @brief This function returns a reference to member ignore_attitude_
-     * @return Reference to member ignore_attitude_
+     * @brief This function returns a reference to member velocity_
+     * @return Reference to member velocity_
      */
-    eProsima_user_DllExport bool& ignore_attitude_();
+    eProsima_user_DllExport bool& velocity_();
 
     /*!
-     * @brief This function sets a value in member ignore_bodyrate_x_
-     * @param _ignore_bodyrate_x_ New value for member ignore_bodyrate_x_
+     * @brief This function sets a value in member acceleration_
+     * @param _acceleration_ New value for member acceleration_
      */
-    eProsima_user_DllExport void ignore_bodyrate_x_(bool _ignore_bodyrate_x_);
+    eProsima_user_DllExport void acceleration_(bool _acceleration_);
 
     /*!
-     * @brief This function returns the value of member ignore_bodyrate_x_
-     * @return Value of member ignore_bodyrate_x_
+     * @brief This function returns the value of member acceleration_
+     * @return Value of member acceleration_
      */
-    eProsima_user_DllExport bool ignore_bodyrate_x_() const;
+    eProsima_user_DllExport bool acceleration_() const;
 
     /*!
-     * @brief This function returns a reference to member ignore_bodyrate_x_
-     * @return Reference to member ignore_bodyrate_x_
+     * @brief This function returns a reference to member acceleration_
+     * @return Reference to member acceleration_
      */
-    eProsima_user_DllExport bool& ignore_bodyrate_x_();
+    eProsima_user_DllExport bool& acceleration_();
 
     /*!
-     * @brief This function sets a value in member ignore_bodyrate_y_
-     * @param _ignore_bodyrate_y_ New value for member ignore_bodyrate_y_
+     * @brief This function sets a value in member attitude_
+     * @param _attitude_ New value for member attitude_
      */
-    eProsima_user_DllExport void ignore_bodyrate_y_(bool _ignore_bodyrate_y_);
+    eProsima_user_DllExport void attitude_(bool _attitude_);
 
     /*!
-     * @brief This function returns the value of member ignore_bodyrate_y_
-     * @return Value of member ignore_bodyrate_y_
+     * @brief This function returns the value of member attitude_
+     * @return Value of member attitude_
      */
-    eProsima_user_DllExport bool ignore_bodyrate_y_() const;
+    eProsima_user_DllExport bool attitude_() const;
 
     /*!
-     * @brief This function returns a reference to member ignore_bodyrate_y_
-     * @return Reference to member ignore_bodyrate_y_
+     * @brief This function returns a reference to member attitude_
+     * @return Reference to member attitude_
      */
-    eProsima_user_DllExport bool& ignore_bodyrate_y_();
+    eProsima_user_DllExport bool& attitude_();
 
     /*!
-     * @brief This function sets a value in member ignore_bodyrate_z_
-     * @param _ignore_bodyrate_z_ New value for member ignore_bodyrate_z_
+     * @brief This function sets a value in member body_rate_
+     * @param _body_rate_ New value for member body_rate_
      */
-    eProsima_user_DllExport void ignore_bodyrate_z_(bool _ignore_bodyrate_z_);
+    eProsima_user_DllExport void body_rate_(bool _body_rate_);
 
     /*!
-     * @brief This function returns the value of member ignore_bodyrate_z_
-     * @return Value of member ignore_bodyrate_z_
+     * @brief This function returns the value of member body_rate_
+     * @return Value of member body_rate_
      */
-    eProsima_user_DllExport bool ignore_bodyrate_z_() const;
+    eProsima_user_DllExport bool body_rate_() const;
 
     /*!
-     * @brief This function returns a reference to member ignore_bodyrate_z_
-     * @return Reference to member ignore_bodyrate_z_
+     * @brief This function returns a reference to member body_rate_
+     * @return Reference to member body_rate_
      */
-    eProsima_user_DllExport bool& ignore_bodyrate_z_();
-
-    /*!
-     * @brief This function sets a value in member ignore_position_
-     * @param _ignore_position_ New value for member ignore_position_
-     */
-    eProsima_user_DllExport void ignore_position_(bool _ignore_position_);
-
-    /*!
-     * @brief This function returns the value of member ignore_position_
-     * @return Value of member ignore_position_
-     */
-    eProsima_user_DllExport bool ignore_position_() const;
-
-    /*!
-     * @brief This function returns a reference to member ignore_position_
-     * @return Reference to member ignore_position_
-     */
-    eProsima_user_DllExport bool& ignore_position_();
-
-    /*!
-     * @brief This function sets a value in member ignore_velocity_
-     * @param _ignore_velocity_ New value for member ignore_velocity_
-     */
-    eProsima_user_DllExport void ignore_velocity_(bool _ignore_velocity_);
-
-    /*!
-     * @brief This function returns the value of member ignore_velocity_
-     * @return Value of member ignore_velocity_
-     */
-    eProsima_user_DllExport bool ignore_velocity_() const;
-
-    /*!
-     * @brief This function returns a reference to member ignore_velocity_
-     * @return Reference to member ignore_velocity_
-     */
-    eProsima_user_DllExport bool& ignore_velocity_();
-
-    /*!
-     * @brief This function sets a value in member ignore_acceleration_force_
-     * @param _ignore_acceleration_force_ New value for member ignore_acceleration_force_
-     */
-    eProsima_user_DllExport void ignore_acceleration_force_(bool _ignore_acceleration_force_);
-
-    /*!
-     * @brief This function returns the value of member ignore_acceleration_force_
-     * @return Value of member ignore_acceleration_force_
-     */
-    eProsima_user_DllExport bool ignore_acceleration_force_() const;
-
-    /*!
-     * @brief This function returns a reference to member ignore_acceleration_force_
-     * @return Reference to member ignore_acceleration_force_
-     */
-    eProsima_user_DllExport bool& ignore_acceleration_force_();
-
-    /*!
-     * @brief This function sets a value in member ignore_alt_hold_
-     * @param _ignore_alt_hold_ New value for member ignore_alt_hold_
-     */
-    eProsima_user_DllExport void ignore_alt_hold_(bool _ignore_alt_hold_);
-
-    /*!
-     * @brief This function returns the value of member ignore_alt_hold_
-     * @return Value of member ignore_alt_hold_
-     */
-    eProsima_user_DllExport bool ignore_alt_hold_() const;
-
-    /*!
-     * @brief This function returns a reference to member ignore_alt_hold_
-     * @return Reference to member ignore_alt_hold_
-     */
-    eProsima_user_DllExport bool& ignore_alt_hold_();
+    eProsima_user_DllExport bool& body_rate_();
 
 
     /*!
@@ -339,15 +267,11 @@ public:
 
 private:
     uint64_t m_timestamp_;
-    bool m_ignore_thrust_;
-    bool m_ignore_attitude_;
-    bool m_ignore_bodyrate_x_;
-    bool m_ignore_bodyrate_y_;
-    bool m_ignore_bodyrate_z_;
-    bool m_ignore_position_;
-    bool m_ignore_velocity_;
-    bool m_ignore_acceleration_force_;
-    bool m_ignore_alt_hold_;
+    bool m_position_;
+    bool m_velocity_;
+    bool m_acceleration_;
+    bool m_attitude_;
+    bool m_body_rate_;
 };
 
 #endif // _OFFBOARD_CONTROL_MODE_H_
