@@ -251,24 +251,6 @@ public:
     eProsima_user_DllExport bool& flag_control_attitude_enabled_();
 
     /*!
-     * @brief This function sets a value in member flag_control_rattitude_enabled_
-     * @param _flag_control_rattitude_enabled_ New value for member flag_control_rattitude_enabled_
-     */
-    eProsima_user_DllExport void flag_control_rattitude_enabled_(bool _flag_control_rattitude_enabled_);
-
-    /*!
-     * @brief This function returns the value of member flag_control_rattitude_enabled_
-     * @return Value of member flag_control_rattitude_enabled_
-     */
-    eProsima_user_DllExport bool flag_control_rattitude_enabled_() const;
-
-    /*!
-     * @brief This function returns a reference to member flag_control_rattitude_enabled_
-     * @return Reference to member flag_control_rattitude_enabled_
-     */
-    eProsima_user_DllExport bool& flag_control_rattitude_enabled_();
-
-    /*!
      * @brief This function sets a value in member flag_control_acceleration_enabled_
      * @param _flag_control_acceleration_enabled_ New value for member flag_control_acceleration_enabled_
      */
@@ -436,7 +418,6 @@ private:
     bool m_flag_control_offboard_enabled_;
     bool m_flag_control_rates_enabled_;
     bool m_flag_control_attitude_enabled_;
-    bool m_flag_control_rattitude_enabled_;
     bool m_flag_control_acceleration_enabled_;
     bool m_flag_control_velocity_enabled_;
     bool m_flag_control_position_enabled_;

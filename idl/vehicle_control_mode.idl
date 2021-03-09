@@ -16,7 +16,6 @@ struct vehicle_control_mode
     boolean flag_control_offboard_enabled_;
     boolean flag_control_rates_enabled_;
     boolean flag_control_attitude_enabled_;
-    boolean flag_control_rattitude_enabled_;
     boolean flag_control_acceleration_enabled_;
     boolean flag_control_velocity_enabled_;
     boolean flag_control_position_enabled_;
