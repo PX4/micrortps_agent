@@ -170,78 +170,6 @@ public:
     eProsima_user_DllExport uint8_t& type_();
 
     /*!
-     * @brief This function sets a value in member x_
-     * @param _x_ New value for member x_
-     */
-    eProsima_user_DllExport void x_(float _x_);
-
-    /*!
-     * @brief This function returns the value of member x_
-     * @return Value of member x_
-     */
-    eProsima_user_DllExport float x_() const;
-
-    /*!
-     * @brief This function returns a reference to member x_
-     * @return Reference to member x_
-     */
-    eProsima_user_DllExport float& x_();
-
-    /*!
-     * @brief This function sets a value in member y_
-     * @param _y_ New value for member y_
-     */
-    eProsima_user_DllExport void y_(float _y_);
-
-    /*!
-     * @brief This function returns the value of member y_
-     * @return Value of member y_
-     */
-    eProsima_user_DllExport float y_() const;
-
-    /*!
-     * @brief This function returns a reference to member y_
-     * @return Reference to member y_
-     */
-    eProsima_user_DllExport float& y_();
-
-    /*!
-     * @brief This function sets a value in member z_
-     * @param _z_ New value for member z_
-     */
-    eProsima_user_DllExport void z_(float _z_);
-
-    /*!
-     * @brief This function returns the value of member z_
-     * @return Value of member z_
-     */
-    eProsima_user_DllExport float z_() const;
-
-    /*!
-     * @brief This function returns a reference to member z_
-     * @return Reference to member z_
-     */
-    eProsima_user_DllExport float& z_();
-
-    /*!
-     * @brief This function sets a value in member position_valid_
-     * @param _position_valid_ New value for member position_valid_
-     */
-    eProsima_user_DllExport void position_valid_(bool _position_valid_);
-
-    /*!
-     * @brief This function returns the value of member position_valid_
-     * @return Value of member position_valid_
-     */
-    eProsima_user_DllExport bool position_valid_() const;
-
-    /*!
-     * @brief This function returns a reference to member position_valid_
-     * @return Reference to member position_valid_
-     */
-    eProsima_user_DllExport bool& position_valid_();
-
-    /*!
      * @brief This function sets a value in member vx_
      * @param _vx_ New value for member vx_
      */
@@ -656,10 +584,6 @@ private:
     uint64_t m_timestamp_;
     bool m_valid_;
     uint8_t m_type_;
-    float m_x_;
-    float m_y_;
-    float m_z_;
-    bool m_position_valid_;
     float m_vx_;
     float m_vy_;
     float m_vz_;

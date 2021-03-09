@@ -49,63 +49,51 @@ position_setpoint::position_setpoint()
     m_valid_ = false;
     // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
     m_type_ = 0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b552920
-    m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2758fe70
-    m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f36e637
-    m_z_ = 0.0;
-    // m_position_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@578486a3
-    m_position_valid_ = false;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551aa95a
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b552920
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35d176f7
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2758fe70
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dfe2924
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f36e637
     m_vz_ = 0.0;
-    // m_velocity_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ebc05a6
+    // m_velocity_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@578486a3
     m_velocity_valid_ = false;
-    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e6c3152
+    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551aa95a
     m_velocity_frame_ = 0;
-    // m_alt_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50b494a6
+    // m_alt_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35d176f7
     m_alt_valid_ = false;
-    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3cef309d
+    // m_lat_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dfe2924
     m_lat_ = 0.0;
-    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32709393
+    // m_lon_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ebc05a6
     m_lon_ = 0.0;
-    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
+    // m_alt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e6c3152
     m_alt_ = 0.0;
-    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6321e813
+    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50b494a6
     m_yaw_ = 0.0;
-    // m_yaw_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79be0360
+    // m_yaw_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3cef309d
     m_yaw_valid_ = false;
-    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22a67b4
+    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32709393
     m_yawspeed_ = 0.0;
-    // m_yawspeed_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
+    // m_yawspeed_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
     m_yawspeed_valid_ = false;
-    // m_landing_gear_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b084709
+    // m_landing_gear_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6321e813
     m_landing_gear_ = 0;
-    // m_loiter_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3224f60b
+    // m_loiter_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79be0360
     m_loiter_radius_ = 0.0;
-    // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
+    // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22a67b4
     m_loiter_direction_ = 0;
-    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
+    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
     m_acceptance_radius_ = 0.0;
-    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
+    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b084709
     m_cruising_speed_ = 0.0;
-    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
+    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3224f60b
     m_cruising_throttle_ = 0.0;
-    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
+    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
     m_disable_weather_vane_ = false;
 
 }
 
 position_setpoint::~position_setpoint()
 {
-
-
-
-
 
 
 
@@ -136,10 +124,6 @@ position_setpoint::position_setpoint(const position_setpoint &x)
     m_timestamp_ = x.m_timestamp_;
     m_valid_ = x.m_valid_;
     m_type_ = x.m_type_;
-    m_x_ = x.m_x_;
-    m_y_ = x.m_y_;
-    m_z_ = x.m_z_;
-    m_position_valid_ = x.m_position_valid_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
@@ -167,10 +151,6 @@ position_setpoint::position_setpoint(position_setpoint &&x)
     m_timestamp_ = x.m_timestamp_;
     m_valid_ = x.m_valid_;
     m_type_ = x.m_type_;
-    m_x_ = x.m_x_;
-    m_y_ = x.m_y_;
-    m_z_ = x.m_z_;
-    m_position_valid_ = x.m_position_valid_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
@@ -199,10 +179,6 @@ position_setpoint& position_setpoint::operator=(const position_setpoint &x)
     m_timestamp_ = x.m_timestamp_;
     m_valid_ = x.m_valid_;
     m_type_ = x.m_type_;
-    m_x_ = x.m_x_;
-    m_y_ = x.m_y_;
-    m_z_ = x.m_z_;
-    m_position_valid_ = x.m_position_valid_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
@@ -233,10 +209,6 @@ position_setpoint& position_setpoint::operator=(position_setpoint &&x)
     m_timestamp_ = x.m_timestamp_;
     m_valid_ = x.m_valid_;
     m_type_ = x.m_type_;
-    m_x_ = x.m_x_;
-    m_y_ = x.m_y_;
-    m_z_ = x.m_z_;
-    m_position_valid_ = x.m_position_valid_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
@@ -270,18 +242,6 @@ size_t position_setpoint::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -378,18 +338,6 @@ size_t position_setpoint::getCdrSerializedSize(const position_setpoint& data, si
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
@@ -448,10 +396,6 @@ void position_setpoint::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_timestamp_;
     scdr << m_valid_;
     scdr << m_type_;
-    scdr << m_x_;
-    scdr << m_y_;
-    scdr << m_z_;
-    scdr << m_position_valid_;
     scdr << m_vx_;
     scdr << m_vy_;
     scdr << m_vz_;
@@ -480,10 +424,6 @@ void position_setpoint::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_timestamp_;
     dcdr >> m_valid_;
     dcdr >> m_type_;
-    dcdr >> m_x_;
-    dcdr >> m_y_;
-    dcdr >> m_z_;
-    dcdr >> m_position_valid_;
     dcdr >> m_vx_;
     dcdr >> m_vy_;
     dcdr >> m_vz_;
@@ -585,114 +525,6 @@ uint8_t position_setpoint::type_() const
 uint8_t& position_setpoint::type_()
 {
     return m_type_;
-}
-
-/*!
- * @brief This function sets a value in member x_
- * @param _x_ New value for member x_
- */
-void position_setpoint::x_(float _x_)
-{
-m_x_ = _x_;
-}
-
-/*!
- * @brief This function returns the value of member x_
- * @return Value of member x_
- */
-float position_setpoint::x_() const
-{
-    return m_x_;
-}
-
-/*!
- * @brief This function returns a reference to member x_
- * @return Reference to member x_
- */
-float& position_setpoint::x_()
-{
-    return m_x_;
-}
-
-/*!
- * @brief This function sets a value in member y_
- * @param _y_ New value for member y_
- */
-void position_setpoint::y_(float _y_)
-{
-m_y_ = _y_;
-}
-
-/*!
- * @brief This function returns the value of member y_
- * @return Value of member y_
- */
-float position_setpoint::y_() const
-{
-    return m_y_;
-}
-
-/*!
- * @brief This function returns a reference to member y_
- * @return Reference to member y_
- */
-float& position_setpoint::y_()
-{
-    return m_y_;
-}
-
-/*!
- * @brief This function sets a value in member z_
- * @param _z_ New value for member z_
- */
-void position_setpoint::z_(float _z_)
-{
-m_z_ = _z_;
-}
-
-/*!
- * @brief This function returns the value of member z_
- * @return Value of member z_
- */
-float position_setpoint::z_() const
-{
-    return m_z_;
-}
-
-/*!
- * @brief This function returns a reference to member z_
- * @return Reference to member z_
- */
-float& position_setpoint::z_()
-{
-    return m_z_;
-}
-
-/*!
- * @brief This function sets a value in member position_valid_
- * @param _position_valid_ New value for member position_valid_
- */
-void position_setpoint::position_valid_(bool _position_valid_)
-{
-m_position_valid_ = _position_valid_;
-}
-
-/*!
- * @brief This function returns the value of member position_valid_
- * @return Value of member position_valid_
- */
-bool position_setpoint::position_valid_() const
-{
-    return m_position_valid_;
-}
-
-/*!
- * @brief This function returns a reference to member position_valid_
- * @return Reference to member position_valid_
- */
-bool& position_setpoint::position_valid_()
-{
-    return m_position_valid_;
 }
 
 /*!
@@ -1265,10 +1097,6 @@ size_t position_setpoint::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
-
-
-
     return current_align;
 }
 
@@ -1280,10 +1108,6 @@ bool position_setpoint::isKeyDefined()
 void position_setpoint::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
-     
-     
-     
      
      
      

@@ -20,10 +20,6 @@ struct position_setpoint
     unsigned long long timestamp_;
     boolean valid_;
     octet type_;
-    float x_;
-    float y_;
-    float z_;
-    boolean position_valid_;
     float vx_;
     float vy_;
     float vz_;
