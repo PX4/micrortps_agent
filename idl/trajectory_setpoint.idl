@@ -1,0 +1,29 @@
+
+#ifndef __trajectory_setpoint__idl__
+#define __trajectory_setpoint__idl__
+
+
+
+
+typedef float trajectory_setpoint__float_array_3[3];
+
+struct trajectory_setpoint
+{
+    unsigned long long timestamp_;
+    float x_;
+    float y_;
+    float z_;
+    float yaw_;
+    float yawspeed_;
+    float vx_;
+    float vy_;
+    float vz_;
+    trajectory_setpoint__float_array_3 acceleration;
+    trajectory_setpoint__float_array_3 jerk;
+    trajectory_setpoint__float_array_3 thrust;
+
+}; // struct trajectory_setpoint
+
+#pragma keylist trajectory_setpoint
+
+#endif  // __trajectory_setpoint__idl__
