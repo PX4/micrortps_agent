@@ -103,6 +103,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "Failed starting vehicle_command subscriber" << std::endl;
         return false;
     }
+    if (_vehicle_local_position_setpoint_sub.init(97, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- vehicle_local_position_setpoint subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting vehicle_local_position_setpoint subscriber" << std::endl;
+        return false;
+    }
     if (_vehicle_trajectory_waypoint_sub.init(104, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- vehicle_trajectory_waypoint subscriber started" << std::endl;
     } else {
@@ -125,6 +131,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cout << "- vehicle_visual_odometry subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting vehicle_visual_odometry subscriber" << std::endl;
+        return false;
+    }
+    if (_trajectory_setpoint_sub.init(186, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- trajectory_setpoint subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting trajectory_setpoint subscriber" << std::endl;
         return false;
     }
     std::cout << "\033[0;36m-----------------------\033[0m" << std::endl << std::endl;
@@ -465,6 +477,22 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 _vehicle_command_sub.unlockMsg();
             }
         break;
+        case 97: // vehicle_local_position_setpoint
+            if (_vehicle_local_position_setpoint_sub.hasMsg())
+            {
+                vehicle_local_position_setpoint_msg_t msg = _vehicle_local_position_setpoint_sub.getMsg();
+                // apply timestamps offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
+                msg.serialize(scdr);
+                ret = true;
+                _vehicle_local_position_setpoint_sub.unlockMsg();
+            }
+        break;
         case 104: // vehicle_trajectory_waypoint
             if (_vehicle_trajectory_waypoint_sub.hasMsg())
             {
@@ -527,6 +555,22 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 msg.serialize(scdr);
                 ret = true;
                 _vehicle_visual_odometry_sub.unlockMsg();
+            }
+        break;
+        case 186: // trajectory_setpoint
+            if (_trajectory_setpoint_sub.hasMsg())
+            {
+                trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
+                // apply timestamps offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
+                msg.serialize(scdr);
+                ret = true;
+                _trajectory_setpoint_sub.unlockMsg();
             }
         break;
         default:
