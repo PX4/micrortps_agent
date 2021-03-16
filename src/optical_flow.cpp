@@ -32,45 +32,52 @@ using namespace eprosima::fastcdr::exception;
 
 #include <utility>
 
+
+
+
+
 optical_flow::optical_flow()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d907bac
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b552920
     m_timestamp_ = 0;
-    // m_sensor_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
+    // m_sensor_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2758fe70
     m_sensor_id_ = 0;
-    // m_pixel_flow_x_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
+    // m_pixel_flow_x_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f36e637
     m_pixel_flow_x_integral_ = 0.0;
-    // m_pixel_flow_y_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
+    // m_pixel_flow_y_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@578486a3
     m_pixel_flow_y_integral_ = 0.0;
-    // m_gyro_x_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
+    // m_gyro_x_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551aa95a
     m_gyro_x_rate_integral_ = 0.0;
-    // m_gyro_y_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
+    // m_gyro_y_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35d176f7
     m_gyro_y_rate_integral_ = 0.0;
-    // m_gyro_z_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b9627bc
+    // m_gyro_z_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dfe2924
     m_gyro_z_rate_integral_ = 0.0;
-    // m_ground_distance_m_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@65e2dbf3
+    // m_ground_distance_m_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ebc05a6
     m_ground_distance_m_ = 0.0;
-    // m_integration_timespan_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_integration_timespan_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e6c3152
     m_integration_timespan_ = 0;
-    // m_time_since_last_sonar_update_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_time_since_last_sonar_update_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50b494a6
     m_time_since_last_sonar_update_ = 0;
-    // m_frame_count_since_last_readout_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_frame_count_since_last_readout_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3cef309d
     m_frame_count_since_last_readout_ = 0;
-    // m_gyro_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_gyro_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32709393
     m_gyro_temperature_ = 0;
-    // m_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d99d22e
     m_quality_ = 0;
-    // m_max_flow_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b87ed94
+    // m_max_flow_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
     m_max_flow_rate_ = 0.0;
-    // m_min_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e0e048a
+    // m_min_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@cd2dae5
     m_min_ground_distance_ = 0.0;
-    // m_max_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@47ef968d
+    // m_max_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4973813a
     m_max_ground_distance_ = 0.0;
+    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
+    m_mode_ = 0;
 
 }
 
 optical_flow::~optical_flow()
 {
+
 
 
 
@@ -107,6 +114,7 @@ optical_flow::optical_flow(const optical_flow &x)
     m_max_flow_rate_ = x.m_max_flow_rate_;
     m_min_ground_distance_ = x.m_min_ground_distance_;
     m_max_ground_distance_ = x.m_max_ground_distance_;
+    m_mode_ = x.m_mode_;
 }
 
 optical_flow::optical_flow(optical_flow &&x)
@@ -127,6 +135,7 @@ optical_flow::optical_flow(optical_flow &&x)
     m_max_flow_rate_ = x.m_max_flow_rate_;
     m_min_ground_distance_ = x.m_min_ground_distance_;
     m_max_ground_distance_ = x.m_max_ground_distance_;
+    m_mode_ = x.m_mode_;
 }
 
 optical_flow& optical_flow::operator=(const optical_flow &x)
@@ -148,6 +157,7 @@ optical_flow& optical_flow::operator=(const optical_flow &x)
     m_max_flow_rate_ = x.m_max_flow_rate_;
     m_min_ground_distance_ = x.m_min_ground_distance_;
     m_max_ground_distance_ = x.m_max_ground_distance_;
+    m_mode_ = x.m_mode_;
 
     return *this;
 }
@@ -171,6 +181,7 @@ optical_flow& optical_flow::operator=(optical_flow &&x)
     m_max_flow_rate_ = x.m_max_flow_rate_;
     m_min_ground_distance_ = x.m_min_ground_distance_;
     m_max_ground_distance_ = x.m_max_ground_distance_;
+    m_mode_ = x.m_mode_;
 
     return *this;
 }
@@ -226,6 +237,9 @@ size_t optical_flow::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
 
@@ -286,6 +300,9 @@ size_t optical_flow::getCdrSerializedSize(const optical_flow& data, size_t curre
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -309,6 +326,7 @@ void optical_flow::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_max_flow_rate_;
     scdr << m_min_ground_distance_;
     scdr << m_max_ground_distance_;
+    scdr << m_mode_;
 }
 
 void optical_flow::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -330,6 +348,7 @@ void optical_flow::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_max_flow_rate_;
     dcdr >> m_min_ground_distance_;
     dcdr >> m_max_ground_distance_;
+    dcdr >> m_mode_;
 }
 
 /*!
@@ -764,10 +783,38 @@ float& optical_flow::max_ground_distance_()
     return m_max_ground_distance_;
 }
 
+/*!
+ * @brief This function sets a value in member mode_
+ * @param _mode_ New value for member mode_
+ */
+void optical_flow::mode_(uint8_t _mode_)
+{
+m_mode_ = _mode_;
+}
+
+/*!
+ * @brief This function returns the value of member mode_
+ * @return Value of member mode_
+ */
+uint8_t optical_flow::mode_() const
+{
+    return m_mode_;
+}
+
+/*!
+ * @brief This function returns a reference to member mode_
+ * @return Reference to member mode_
+ */
+uint8_t& optical_flow::mode_()
+{
+    return m_mode_;
+}
+
 
 size_t optical_flow::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
 
 
 
@@ -798,6 +845,7 @@ bool optical_flow::isKeyDefined()
 void optical_flow::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      

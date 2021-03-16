@@ -64,6 +64,10 @@ namespace eprosima
 }
 
 
+const uint8_t optical_flow__MODE_UNKNOWN = 0;
+const uint8_t optical_flow__MODE_BRIGHT = 1;
+const uint8_t optical_flow__MODE_LOWLIGHT = 2;
+const uint8_t optical_flow__MODE_SUPER_LOWLIGHT = 3;
 /*!
  * @brief This class represents the structure optical_flow defined by the user in the IDL file.
  * @ingroup OPTICAL_FLOW
@@ -394,6 +398,24 @@ public:
      */
     eProsima_user_DllExport float& max_ground_distance_();
 
+    /*!
+     * @brief This function sets a value in member mode_
+     * @param _mode_ New value for member mode_
+     */
+    eProsima_user_DllExport void mode_(uint8_t _mode_);
+
+    /*!
+     * @brief This function returns the value of member mode_
+     * @return Value of member mode_
+     */
+    eProsima_user_DllExport uint8_t mode_() const;
+
+    /*!
+     * @brief This function returns a reference to member mode_
+     * @return Reference to member mode_
+     */
+    eProsima_user_DllExport uint8_t& mode_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -462,6 +484,7 @@ private:
     float m_max_flow_rate_;
     float m_min_ground_distance_;
     float m_max_ground_distance_;
+    uint8_t m_mode_;
 };
 
 #endif // _OPTICAL_FLOW_H_
