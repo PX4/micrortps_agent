@@ -85,6 +85,12 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "Failed starting position_setpoint_triplet subscriber" << std::endl;
         return false;
     }
+    if (_telemetry_status_sub.init(76, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- telemetry_status subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting telemetry_status subscriber" << std::endl;
+        return false;
+    }
     if (_timesync_sub.init(78, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
         std::cout << "- timesync subscriber started" << std::endl;
     } else {
@@ -119,6 +125,18 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cout << "- onboard_computer_status subscriber started" << std::endl;
     } else {
         std::cerr << "Failed starting onboard_computer_status subscriber" << std::endl;
+        return false;
+    }
+    if (_trajectory_bezier_sub.init(126, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- trajectory_bezier subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting trajectory_bezier subscriber" << std::endl;
+        return false;
+    }
+    if (_vehicle_trajectory_bezier_sub.init(127, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+        std::cout << "- vehicle_trajectory_bezier subscriber started" << std::endl;
+    } else {
+        std::cerr << "Failed starting vehicle_trajectory_bezier subscriber" << std::endl;
         return false;
     }
     if (_vehicle_mocap_odometry_sub.init(181, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
@@ -167,10 +185,28 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "ERROR starting timesync publisher" << std::endl;
         return false;
     }
+    if (_trajectory_waypoint_pub.init(ns)) {
+        std::cout << "- trajectory_waypoint publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting trajectory_waypoint publisher" << std::endl;
+        return false;
+    }
+    if (_vehicle_attitude_pub.init(ns)) {
+        std::cout << "- vehicle_attitude publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting vehicle_attitude publisher" << std::endl;
+        return false;
+    }
     if (_vehicle_control_mode_pub.init(ns)) {
         std::cout << "- vehicle_control_mode publisher started" << std::endl;
     } else {
         std::cerr << "ERROR starting vehicle_control_mode publisher" << std::endl;
+        return false;
+    }
+    if (_vehicle_local_position_pub.init(ns)) {
+        std::cout << "- vehicle_local_position publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting vehicle_local_position publisher" << std::endl;
         return false;
     }
     if (_vehicle_odometry_pub.init(ns)) {
@@ -179,10 +215,28 @@ bool RtpsTopics::init(std::condition_variable* t_send_queue_cv, std::mutex* t_se
         std::cerr << "ERROR starting vehicle_odometry publisher" << std::endl;
         return false;
     }
+    if (_vehicle_status_pub.init(ns)) {
+        std::cout << "- vehicle_status publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting vehicle_status publisher" << std::endl;
+        return false;
+    }
     if (_collision_constraints_pub.init(ns)) {
         std::cout << "- collision_constraints publisher started" << std::endl;
     } else {
         std::cerr << "ERROR starting collision_constraints publisher" << std::endl;
+        return false;
+    }
+    if (_vehicle_angular_velocity_pub.init(ns)) {
+        std::cout << "- vehicle_angular_velocity publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting vehicle_angular_velocity publisher" << std::endl;
+        return false;
+    }
+    if (_vehicle_trajectory_waypoint_desired_pub.init(ns)) {
+        std::cout << "- vehicle_trajectory_waypoint_desired publisher started" << std::endl;
+    } else {
+        std::cerr << "ERROR starting vehicle_trajectory_waypoint_desired publisher" << std::endl;
         return false;
     }
     std::cout << "\033[0;36m-----------------------\033[0m" << std::endl;
@@ -249,6 +303,32 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             }
         }
         break;
+        case 79: // trajectory_waypoint
+        {
+            trajectory_waypoint_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _trajectory_waypoint_pub.publish(&st);
+        }
+        break;
+        case 87: // vehicle_attitude
+        {
+            vehicle_attitude_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _vehicle_attitude_pub.publish(&st);
+        }
+        break;
         case 92: // vehicle_control_mode
         {
             vehicle_control_mode_msg_t st;
@@ -260,6 +340,19 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
             _vehicle_control_mode_pub.publish(&st);
+        }
+        break;
+        case 96: // vehicle_local_position
+        {
+            vehicle_local_position_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _vehicle_local_position_pub.publish(&st);
         }
         break;
         case 99: // vehicle_odometry
@@ -275,6 +368,19 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             _vehicle_odometry_pub.publish(&st);
         }
         break;
+        case 102: // vehicle_status
+        {
+            vehicle_status_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _vehicle_status_pub.publish(&st);
+        }
+        break;
         case 107: // collision_constraints
         {
             collision_constraints_msg_t st;
@@ -286,6 +392,32 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
             _collision_constraints_pub.publish(&st);
+        }
+        break;
+        case 112: // vehicle_angular_velocity
+        {
+            vehicle_angular_velocity_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _vehicle_angular_velocity_pub.publish(&st);
+        }
+        break;
+        case 183: // vehicle_trajectory_waypoint_desired
+        {
+            vehicle_trajectory_waypoint_desired_msg_t st;
+            eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+            eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+            st.deserialize(cdr_des);
+            // apply timestamp offset
+            uint64_t timestamp = getMsgTimestamp(&st);
+            _timesync->subtractOffset(timestamp);
+            setMsgTimestamp(&st, timestamp);
+            _vehicle_trajectory_waypoint_desired_pub.publish(&st);
         }
         break;
         default:
@@ -427,6 +559,22 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 _position_setpoint_triplet_sub.unlockMsg();
             }
         break;
+        case 76: // telemetry_status
+            if (_telemetry_status_sub.hasMsg())
+            {
+                telemetry_status_msg_t msg = _telemetry_status_sub.getMsg();
+                // apply timestamps offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
+                msg.serialize(scdr);
+                ret = true;
+                _telemetry_status_sub.unlockMsg();
+            }
+        break;
         case 78: // timesync
             if (_timesync_sub.hasMsg())
             {
@@ -523,6 +671,38 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
                 msg.serialize(scdr);
                 ret = true;
                 _onboard_computer_status_sub.unlockMsg();
+            }
+        break;
+        case 126: // trajectory_bezier
+            if (_trajectory_bezier_sub.hasMsg())
+            {
+                trajectory_bezier_msg_t msg = _trajectory_bezier_sub.getMsg();
+                // apply timestamps offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
+                msg.serialize(scdr);
+                ret = true;
+                _trajectory_bezier_sub.unlockMsg();
+            }
+        break;
+        case 127: // vehicle_trajectory_bezier
+            if (_vehicle_trajectory_bezier_sub.hasMsg())
+            {
+                vehicle_trajectory_bezier_msg_t msg = _vehicle_trajectory_bezier_sub.getMsg();
+                // apply timestamps offset
+                uint64_t timestamp = getMsgTimestamp(&msg);
+                uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+                _timesync->addOffset(timestamp);
+                setMsgTimestamp(&msg, timestamp);
+                _timesync->addOffset(timestamp_sample);
+                setMsgTimestampSample(&msg, timestamp_sample);
+                msg.serialize(scdr);
+                ret = true;
+                _vehicle_trajectory_bezier_sub.unlockMsg();
             }
         break;
         case 181: // vehicle_mocap_odometry
