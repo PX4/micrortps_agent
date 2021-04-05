@@ -1,0 +1,22 @@
+
+#ifndef __vehicle_attitude__idl__
+#define __vehicle_attitude__idl__
+
+
+
+
+typedef float vehicle_attitude__float_array_4[4];
+
+struct vehicle_attitude
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_sample_;
+    vehicle_attitude__float_array_4 q;
+    vehicle_attitude__float_array_4 delta_q_reset;
+    octet quat_reset_counter_;
+
+}; // struct vehicle_attitude
+
+#pragma keylist vehicle_attitude
+
+#endif  // __vehicle_attitude__idl__

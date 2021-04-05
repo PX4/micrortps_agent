@@ -1,0 +1,64 @@
+
+#ifndef __vehicle_local_position__idl__
+#define __vehicle_local_position__idl__
+
+
+
+const octet vehicle_local_position__DIST_BOTTOM_SENSOR_NONE = 0;
+const octet vehicle_local_position__DIST_BOTTOM_SENSOR_RANGE = 1;
+const octet vehicle_local_position__DIST_BOTTOM_SENSOR_FLOW = 2;
+
+typedef float vehicle_local_position__float_array_2[2];
+
+struct vehicle_local_position
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_sample_;
+    boolean xy_valid_;
+    boolean z_valid_;
+    boolean v_xy_valid_;
+    boolean v_z_valid_;
+    float x_;
+    float y_;
+    float z_;
+    vehicle_local_position__float_array_2 delta_xy;
+    octet xy_reset_counter_;
+    float delta_z_;
+    octet z_reset_counter_;
+    float vx_;
+    float vy_;
+    float vz_;
+    float z_deriv_;
+    vehicle_local_position__float_array_2 delta_vxy;
+    octet vxy_reset_counter_;
+    float delta_vz_;
+    octet vz_reset_counter_;
+    float ax_;
+    float ay_;
+    float az_;
+    float heading_;
+    float delta_heading_;
+    octet heading_reset_counter_;
+    boolean xy_global_;
+    boolean z_global_;
+    unsigned long long ref_timestamp_;
+    double ref_lat_;
+    double ref_lon_;
+    float ref_alt_;
+    float dist_bottom_;
+    boolean dist_bottom_valid_;
+    octet dist_bottom_sensor_bitfield_;
+    float eph_;
+    float epv_;
+    float evh_;
+    float evv_;
+    float vxy_max_;
+    float vz_max_;
+    float hagl_min_;
+    float hagl_max_;
+
+}; // struct vehicle_local_position
+
+#pragma keylist vehicle_local_position
+
+#endif  // __vehicle_local_position__idl__

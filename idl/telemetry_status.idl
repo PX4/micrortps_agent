@@ -1,0 +1,59 @@
+
+#ifndef __telemetry_status__idl__
+#define __telemetry_status__idl__
+
+
+
+const unsigned long long telemetry_status__HEARTBEAT_TIMEOUT_US = 1500000;
+const octet telemetry_status__LINK_TYPE_GENERIC = 0;
+const octet telemetry_status__LINK_TYPE_UBIQUITY_BULLET = 1;
+const octet telemetry_status__LINK_TYPE_WIRE = 2;
+const octet telemetry_status__LINK_TYPE_USB = 3;
+const octet telemetry_status__LINK_TYPE_IRIDIUM = 4;
+
+
+struct telemetry_status
+{
+    unsigned long long timestamp_;
+    octet type_;
+    octet mode_;
+    boolean flow_control_;
+    boolean forwarding_;
+    boolean mavlink_v2_;
+    boolean ftp_;
+    octet streams_;
+    float data_rate_;
+    float rate_multiplier_;
+    float tx_rate_avg_;
+    float tx_error_rate_avg_;
+    unsigned long tx_message_count_;
+    unsigned long tx_buffer_overruns_;
+    float rx_rate_avg_;
+    unsigned long rx_message_count_;
+    unsigned long rx_message_count_supported_;
+    unsigned long rx_message_lost_count_;
+    unsigned long rx_buffer_overruns_;
+    unsigned long rx_parse_errors_;
+    unsigned long rx_packet_drop_count_;
+    float rx_message_lost_rate_;
+    boolean heartbeat_type_antenna_tracker_;
+    boolean heartbeat_type_gcs_;
+    boolean heartbeat_type_onboard_controller_;
+    boolean heartbeat_type_gimbal_;
+    boolean heartbeat_type_adsb_;
+    boolean heartbeat_type_camera_;
+    boolean heartbeat_component_telemetry_radio_;
+    boolean heartbeat_component_log_;
+    boolean heartbeat_component_osd_;
+    boolean heartbeat_component_obstacle_avoidance_;
+    boolean heartbeat_component_vio_;
+    boolean heartbeat_component_pairing_manager_;
+    boolean heartbeat_component_udp_bridge_;
+    boolean heartbeat_component_uart_bridge_;
+    boolean avoidance_system_healthy_;
+
+}; // struct telemetry_status
+
+#pragma keylist telemetry_status
+
+#endif  // __telemetry_status__idl__

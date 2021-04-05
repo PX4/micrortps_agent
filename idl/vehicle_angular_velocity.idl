@@ -1,0 +1,20 @@
+
+#ifndef __vehicle_angular_velocity__idl__
+#define __vehicle_angular_velocity__idl__
+
+
+
+
+typedef float vehicle_angular_velocity__float_array_3[3];
+
+struct vehicle_angular_velocity
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_sample_;
+    vehicle_angular_velocity__float_array_3 xyz;
+
+}; // struct vehicle_angular_velocity
+
+#pragma keylist vehicle_angular_velocity
+
+#endif  // __vehicle_angular_velocity__idl__

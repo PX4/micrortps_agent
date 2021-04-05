@@ -1,0 +1,26 @@
+
+#ifndef __vehicle_trajectory_bezier__idl__
+#define __vehicle_trajectory_bezier__idl__
+
+#include "trajectory_bezier.idl"
+
+const octet vehicle_trajectory_bezier__POINT_0 = 0;
+const octet vehicle_trajectory_bezier__POINT_1 = 1;
+const octet vehicle_trajectory_bezier__POINT_2 = 2;
+const octet vehicle_trajectory_bezier__POINT_3 = 3;
+const octet vehicle_trajectory_bezier__POINT_4 = 4;
+const octet vehicle_trajectory_bezier__NUMBER_POINTS = 5;
+
+typedef trajectory_bezier vehicle_trajectory_bezier__trajectory_bezier_array_5[5];
+
+struct vehicle_trajectory_bezier
+{
+    unsigned long long timestamp_;
+    vehicle_trajectory_bezier__trajectory_bezier_array_5 control_points;
+    octet bezier_order_;
+
+}; // struct vehicle_trajectory_bezier
+
+#pragma keylist vehicle_trajectory_bezier
+
+#endif  // __vehicle_trajectory_bezier__idl__

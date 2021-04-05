@@ -1,0 +1,21 @@
+
+#ifndef __trajectory_bezier__idl__
+#define __trajectory_bezier__idl__
+
+
+
+
+typedef float trajectory_bezier__float_array_3[3];
+
+struct trajectory_bezier
+{
+    unsigned long long timestamp_;
+    trajectory_bezier__float_array_3 position;
+    float yaw_;
+    float delta_;
+
+}; // struct trajectory_bezier
+
+#pragma keylist trajectory_bezier
+
+#endif  // __trajectory_bezier__idl__
