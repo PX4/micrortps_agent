@@ -401,24 +401,6 @@ public:
     eProsima_user_DllExport uint32_t& rx_message_count_();
 
     /*!
-     * @brief This function sets a value in member rx_message_count_supported_
-     * @param _rx_message_count_supported_ New value for member rx_message_count_supported_
-     */
-    eProsima_user_DllExport void rx_message_count_supported_(uint32_t _rx_message_count_supported_);
-
-    /*!
-     * @brief This function returns the value of member rx_message_count_supported_
-     * @return Value of member rx_message_count_supported_
-     */
-    eProsima_user_DllExport uint32_t rx_message_count_supported_() const;
-
-    /*!
-     * @brief This function returns a reference to member rx_message_count_supported_
-     * @return Reference to member rx_message_count_supported_
-     */
-    eProsima_user_DllExport uint32_t& rx_message_count_supported_();
-
-    /*!
      * @brief This function sets a value in member rx_message_lost_count_
      * @param _rx_message_lost_count_ New value for member rx_message_lost_count_
      */
@@ -846,7 +828,6 @@ private:
     uint32_t m_tx_buffer_overruns_;
     float m_rx_rate_avg_;
     uint32_t m_rx_message_count_;
-    uint32_t m_rx_message_count_supported_;
     uint32_t m_rx_message_lost_count_;
     uint32_t m_rx_buffer_overruns_;
     uint32_t m_rx_parse_errors_;

@@ -72,54 +72,51 @@ telemetry_status::telemetry_status()
     m_rx_rate_avg_ = 0.0;
     // m_rx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
     m_rx_message_count_ = 0;
-    // m_rx_message_count_supported_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6321e813
-    m_rx_message_count_supported_ = 0;
-    // m_rx_message_lost_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79be0360
+    // m_rx_message_lost_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6321e813
     m_rx_message_lost_count_ = 0;
-    // m_rx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22a67b4
+    // m_rx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79be0360
     m_rx_buffer_overruns_ = 0;
-    // m_rx_parse_errors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
+    // m_rx_parse_errors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22a67b4
     m_rx_parse_errors_ = 0;
-    // m_rx_packet_drop_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b084709
+    // m_rx_packet_drop_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
     m_rx_packet_drop_count_ = 0;
-    // m_rx_message_lost_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3224f60b
+    // m_rx_message_lost_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b084709
     m_rx_message_lost_rate_ = 0.0;
-    // m_heartbeat_type_antenna_tracker_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
+    // m_heartbeat_type_antenna_tracker_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3224f60b
     m_heartbeat_type_antenna_tracker_ = false;
-    // m_heartbeat_type_gcs_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
+    // m_heartbeat_type_gcs_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
     m_heartbeat_type_gcs_ = false;
-    // m_heartbeat_type_onboard_controller_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
+    // m_heartbeat_type_onboard_controller_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
     m_heartbeat_type_onboard_controller_ = false;
-    // m_heartbeat_type_gimbal_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
+    // m_heartbeat_type_gimbal_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
     m_heartbeat_type_gimbal_ = false;
-    // m_heartbeat_type_adsb_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
+    // m_heartbeat_type_adsb_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
     m_heartbeat_type_adsb_ = false;
-    // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
+    // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
     m_heartbeat_type_camera_ = false;
-    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
+    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
     m_heartbeat_component_telemetry_radio_ = false;
-    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
+    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
     m_heartbeat_component_log_ = false;
-    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
+    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
     m_heartbeat_component_osd_ = false;
-    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
+    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
     m_heartbeat_component_obstacle_avoidance_ = false;
-    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
+    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
     m_heartbeat_component_vio_ = false;
-    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8806ef
+    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
     m_heartbeat_component_pairing_manager_ = false;
-    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c49835d
+    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8806ef
     m_heartbeat_component_udp_bridge_ = false;
-    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e853265
+    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c49835d
     m_heartbeat_component_uart_bridge_ = false;
-    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67205a84
+    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e853265
     m_avoidance_system_healthy_ = false;
 
 }
 
 telemetry_status::~telemetry_status()
 {
-
 
 
 
@@ -176,7 +173,6 @@ telemetry_status::telemetry_status(const telemetry_status &x)
     m_tx_buffer_overruns_ = x.m_tx_buffer_overruns_;
     m_rx_rate_avg_ = x.m_rx_rate_avg_;
     m_rx_message_count_ = x.m_rx_message_count_;
-    m_rx_message_count_supported_ = x.m_rx_message_count_supported_;
     m_rx_message_lost_count_ = x.m_rx_message_lost_count_;
     m_rx_buffer_overruns_ = x.m_rx_buffer_overruns_;
     m_rx_parse_errors_ = x.m_rx_parse_errors_;
@@ -217,7 +213,6 @@ telemetry_status::telemetry_status(telemetry_status &&x)
     m_tx_buffer_overruns_ = x.m_tx_buffer_overruns_;
     m_rx_rate_avg_ = x.m_rx_rate_avg_;
     m_rx_message_count_ = x.m_rx_message_count_;
-    m_rx_message_count_supported_ = x.m_rx_message_count_supported_;
     m_rx_message_lost_count_ = x.m_rx_message_lost_count_;
     m_rx_buffer_overruns_ = x.m_rx_buffer_overruns_;
     m_rx_parse_errors_ = x.m_rx_parse_errors_;
@@ -259,7 +254,6 @@ telemetry_status& telemetry_status::operator=(const telemetry_status &x)
     m_tx_buffer_overruns_ = x.m_tx_buffer_overruns_;
     m_rx_rate_avg_ = x.m_rx_rate_avg_;
     m_rx_message_count_ = x.m_rx_message_count_;
-    m_rx_message_count_supported_ = x.m_rx_message_count_supported_;
     m_rx_message_lost_count_ = x.m_rx_message_lost_count_;
     m_rx_buffer_overruns_ = x.m_rx_buffer_overruns_;
     m_rx_parse_errors_ = x.m_rx_parse_errors_;
@@ -303,7 +297,6 @@ telemetry_status& telemetry_status::operator=(telemetry_status &&x)
     m_tx_buffer_overruns_ = x.m_tx_buffer_overruns_;
     m_rx_rate_avg_ = x.m_rx_rate_avg_;
     m_rx_message_count_ = x.m_rx_message_count_;
-    m_rx_message_count_supported_ = x.m_rx_message_count_supported_;
     m_rx_message_lost_count_ = x.m_rx_message_lost_count_;
     m_rx_buffer_overruns_ = x.m_rx_buffer_overruns_;
     m_rx_parse_errors_ = x.m_rx_parse_errors_;
@@ -355,9 +348,6 @@ size_t telemetry_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -517,9 +507,6 @@ size_t telemetry_status::getCdrSerializedSize(const telemetry_status& data, size
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
@@ -588,7 +575,6 @@ void telemetry_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_tx_buffer_overruns_;
     scdr << m_rx_rate_avg_;
     scdr << m_rx_message_count_;
-    scdr << m_rx_message_count_supported_;
     scdr << m_rx_message_lost_count_;
     scdr << m_rx_buffer_overruns_;
     scdr << m_rx_parse_errors_;
@@ -630,7 +616,6 @@ void telemetry_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_tx_buffer_overruns_;
     dcdr >> m_rx_rate_avg_;
     dcdr >> m_rx_message_count_;
-    dcdr >> m_rx_message_count_supported_;
     dcdr >> m_rx_message_lost_count_;
     dcdr >> m_rx_buffer_overruns_;
     dcdr >> m_rx_parse_errors_;
@@ -1083,33 +1068,6 @@ uint32_t telemetry_status::rx_message_count_() const
 uint32_t& telemetry_status::rx_message_count_()
 {
     return m_rx_message_count_;
-}
-
-/*!
- * @brief This function sets a value in member rx_message_count_supported_
- * @param _rx_message_count_supported_ New value for member rx_message_count_supported_
- */
-void telemetry_status::rx_message_count_supported_(uint32_t _rx_message_count_supported_)
-{
-m_rx_message_count_supported_ = _rx_message_count_supported_;
-}
-
-/*!
- * @brief This function returns the value of member rx_message_count_supported_
- * @return Value of member rx_message_count_supported_
- */
-uint32_t telemetry_status::rx_message_count_supported_() const
-{
-    return m_rx_message_count_supported_;
-}
-
-/*!
- * @brief This function returns a reference to member rx_message_count_supported_
- * @return Reference to member rx_message_count_supported_
- */
-uint32_t& telemetry_status::rx_message_count_supported_()
-{
-    return m_rx_message_count_supported_;
 }
 
 /*!
@@ -1695,7 +1653,6 @@ size_t telemetry_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
     return current_align;
 }
 
@@ -1707,7 +1664,6 @@ bool telemetry_status::isKeyDefined()
 void telemetry_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

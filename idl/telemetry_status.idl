@@ -30,7 +30,6 @@ struct telemetry_status
     unsigned long tx_buffer_overruns_;
     float rx_rate_avg_;
     unsigned long rx_message_count_;
-    unsigned long rx_message_count_supported_;
     unsigned long rx_message_lost_count_;
     unsigned long rx_buffer_overruns_;
     unsigned long rx_parse_errors_;
