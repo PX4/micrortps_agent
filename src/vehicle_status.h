@@ -579,6 +579,24 @@ public:
     eProsima_user_DllExport bool& mission_failure_();
 
     /*!
+     * @brief This function sets a value in member geofence_violated_
+     * @param _geofence_violated_ New value for member geofence_violated_
+     */
+    eProsima_user_DllExport void geofence_violated_(bool _geofence_violated_);
+
+    /*!
+     * @brief This function returns the value of member geofence_violated_
+     * @return Value of member geofence_violated_
+     */
+    eProsima_user_DllExport bool geofence_violated_() const;
+
+    /*!
+     * @brief This function returns a reference to member geofence_violated_
+     * @return Reference to member geofence_violated_
+     */
+    eProsima_user_DllExport bool& geofence_violated_();
+
+    /*!
      * @brief This function sets a value in member failure_detector_status_
      * @param _failure_detector_status_ New value for member failure_detector_status_
      */
@@ -797,6 +815,7 @@ private:
     bool m_high_latency_data_link_lost_;
     bool m_engine_failure_;
     bool m_mission_failure_;
+    bool m_geofence_violated_;
     uint8_t m_failure_detector_status_;
     uint32_t m_onboard_control_sensors_present_;
     uint32_t m_onboard_control_sensors_enabled_;

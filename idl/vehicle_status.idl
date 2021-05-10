@@ -89,6 +89,7 @@ struct vehicle_status
     boolean high_latency_data_link_lost_;
     boolean engine_failure_;
     boolean mission_failure_;
+    boolean geofence_violated_;
     octet failure_detector_status_;
     unsigned long onboard_control_sensors_present_;
     unsigned long onboard_control_sensors_enabled_;

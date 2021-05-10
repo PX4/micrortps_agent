@@ -138,27 +138,30 @@ vehicle_status::vehicle_status()
     m_engine_failure_ = false;
     // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
     m_mission_failure_ = false;
-    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
+    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
+    m_geofence_violated_ = false;
+    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
     m_failure_detector_status_ = 0;
-    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
+    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
     m_onboard_control_sensors_present_ = 0;
-    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
+    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
     m_onboard_control_sensors_enabled_ = 0;
-    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
+    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
     m_onboard_control_sensors_health_ = 0;
-    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
+    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
     m_latest_arming_reason_ = 0;
-    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
+    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8806ef
     m_latest_disarming_reason_ = 0;
-    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8806ef
+    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c49835d
     m_armed_time_ = 0;
-    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c49835d
+    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e853265
     m_takeoff_time_ = 0;
 
 }
 
 vehicle_status::~vehicle_status()
 {
+
 
 
 
@@ -217,6 +220,7 @@ vehicle_status::vehicle_status(const vehicle_status &x)
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
     m_engine_failure_ = x.m_engine_failure_;
     m_mission_failure_ = x.m_mission_failure_;
+    m_geofence_violated_ = x.m_geofence_violated_;
     m_failure_detector_status_ = x.m_failure_detector_status_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
@@ -252,6 +256,7 @@ vehicle_status::vehicle_status(vehicle_status &&x)
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
     m_engine_failure_ = x.m_engine_failure_;
     m_mission_failure_ = x.m_mission_failure_;
+    m_geofence_violated_ = x.m_geofence_violated_;
     m_failure_detector_status_ = x.m_failure_detector_status_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
@@ -288,6 +293,7 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
     m_engine_failure_ = x.m_engine_failure_;
     m_mission_failure_ = x.m_mission_failure_;
+    m_geofence_violated_ = x.m_geofence_violated_;
     m_failure_detector_status_ = x.m_failure_detector_status_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
@@ -326,6 +332,7 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
     m_engine_failure_ = x.m_engine_failure_;
     m_mission_failure_ = x.m_mission_failure_;
+    m_geofence_violated_ = x.m_geofence_violated_;
     m_failure_detector_status_ = x.m_failure_detector_status_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
@@ -362,6 +369,9 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -518,6 +528,9 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -569,6 +582,7 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_high_latency_data_link_lost_;
     scdr << m_engine_failure_;
     scdr << m_mission_failure_;
+    scdr << m_geofence_violated_;
     scdr << m_failure_detector_status_;
     scdr << m_onboard_control_sensors_present_;
     scdr << m_onboard_control_sensors_enabled_;
@@ -605,6 +619,7 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_high_latency_data_link_lost_;
     dcdr >> m_engine_failure_;
     dcdr >> m_mission_failure_;
+    dcdr >> m_geofence_violated_;
     dcdr >> m_failure_detector_status_;
     dcdr >> m_onboard_control_sensors_present_;
     dcdr >> m_onboard_control_sensors_enabled_;
@@ -1237,6 +1252,33 @@ bool& vehicle_status::mission_failure_()
 }
 
 /*!
+ * @brief This function sets a value in member geofence_violated_
+ * @param _geofence_violated_ New value for member geofence_violated_
+ */
+void vehicle_status::geofence_violated_(bool _geofence_violated_)
+{
+m_geofence_violated_ = _geofence_violated_;
+}
+
+/*!
+ * @brief This function returns the value of member geofence_violated_
+ * @return Value of member geofence_violated_
+ */
+bool vehicle_status::geofence_violated_() const
+{
+    return m_geofence_violated_;
+}
+
+/*!
+ * @brief This function returns a reference to member geofence_violated_
+ * @return Reference to member geofence_violated_
+ */
+bool& vehicle_status::geofence_violated_()
+{
+    return m_geofence_violated_;
+}
+
+/*!
  * @brief This function sets a value in member failure_detector_status_
  * @param _failure_detector_status_ New value for member failure_detector_status_
  */
@@ -1490,6 +1532,7 @@ size_t vehicle_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
+
     return current_align;
 }
 
@@ -1501,6 +1544,7 @@ bool vehicle_status::isKeyDefined()
 void vehicle_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      
