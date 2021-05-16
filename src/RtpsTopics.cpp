@@ -255,8 +255,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _input_rc_pub.publish(&st);
         }
         break;
@@ -268,8 +271,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _satellite_info_pub.publish(&st);
         }
         break;
@@ -281,8 +287,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _sensor_combined_pub.publish(&st);
         }
         break;
@@ -297,8 +306,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             if (getMsgSysID(&st) == 1) {
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _timesync_pub.publish(&st);
             }
         }
@@ -311,8 +323,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _trajectory_waypoint_pub.publish(&st);
         }
         break;
@@ -324,8 +339,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_attitude_pub.publish(&st);
         }
         break;
@@ -337,8 +355,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_control_mode_pub.publish(&st);
         }
         break;
@@ -350,8 +371,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_local_position_pub.publish(&st);
         }
         break;
@@ -363,8 +387,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_odometry_pub.publish(&st);
         }
         break;
@@ -376,8 +403,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_status_pub.publish(&st);
         }
         break;
@@ -389,8 +419,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _collision_constraints_pub.publish(&st);
         }
         break;
@@ -402,8 +435,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_angular_velocity_pub.publish(&st);
         }
         break;
@@ -415,8 +451,11 @@ void RtpsTopics::publish(uint8_t topic_ID, char data_buffer[], size_t len)
             st.deserialize(cdr_des);
             // apply timestamp offset
             uint64_t timestamp = getMsgTimestamp(&st);
+            uint64_t timestamp_sample = getMsgTimestampSample(&st);
             _timesync->subtractOffset(timestamp);
             setMsgTimestamp(&st, timestamp);
+            _timesync->subtractOffset(timestamp_sample);
+            setMsgTimestampSample(&st, timestamp_sample);
             _vehicle_trajectory_waypoint_desired_pub.publish(&st);
         }
         break;
