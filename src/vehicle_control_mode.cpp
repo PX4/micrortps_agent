@@ -36,37 +36,40 @@ vehicle_control_mode::vehicle_control_mode()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
     m_timestamp_ = 0;
-    // m_flag_armed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
+    // m_flag_armed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
     m_flag_armed_ = false;
     // m_flag_external_manual_override_ok_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
     m_flag_external_manual_override_ok_ = false;
-    // m_flag_control_manual_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
+    // m_flag_multicopter_position_control_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
+    m_flag_multicopter_position_control_enabled_ = false;
+    // m_flag_control_manual_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d907bac
     m_flag_control_manual_enabled_ = false;
-    // m_flag_control_auto_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d907bac
+    // m_flag_control_auto_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
     m_flag_control_auto_enabled_ = false;
-    // m_flag_control_offboard_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7791a895
+    // m_flag_control_offboard_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
     m_flag_control_offboard_enabled_ = false;
-    // m_flag_control_rates_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a5ed7a6
+    // m_flag_control_rates_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
     m_flag_control_rates_enabled_ = false;
-    // m_flag_control_attitude_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6325a3ee
+    // m_flag_control_attitude_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
     m_flag_control_attitude_enabled_ = false;
-    // m_flag_control_acceleration_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d16f93d
+    // m_flag_control_acceleration_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
     m_flag_control_acceleration_enabled_ = false;
-    // m_flag_control_velocity_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@67b92f0a
+    // m_flag_control_velocity_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b9627bc
     m_flag_control_velocity_enabled_ = false;
-    // m_flag_control_position_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b9627bc
+    // m_flag_control_position_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@65e2dbf3
     m_flag_control_position_enabled_ = false;
-    // m_flag_control_altitude_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@65e2dbf3
+    // m_flag_control_altitude_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
     m_flag_control_altitude_enabled_ = false;
-    // m_flag_control_climb_rate_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_flag_control_climb_rate_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
     m_flag_control_climb_rate_enabled_ = false;
-    // m_flag_control_termination_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
+    // m_flag_control_termination_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
     m_flag_control_termination_enabled_ = false;
 
 }
 
 vehicle_control_mode::~vehicle_control_mode()
 {
+
 
 
 
@@ -88,6 +91,7 @@ vehicle_control_mode::vehicle_control_mode(const vehicle_control_mode &x)
     m_timestamp_ = x.m_timestamp_;
     m_flag_armed_ = x.m_flag_armed_;
     m_flag_external_manual_override_ok_ = x.m_flag_external_manual_override_ok_;
+    m_flag_multicopter_position_control_enabled_ = x.m_flag_multicopter_position_control_enabled_;
     m_flag_control_manual_enabled_ = x.m_flag_control_manual_enabled_;
     m_flag_control_auto_enabled_ = x.m_flag_control_auto_enabled_;
     m_flag_control_offboard_enabled_ = x.m_flag_control_offboard_enabled_;
@@ -106,6 +110,7 @@ vehicle_control_mode::vehicle_control_mode(vehicle_control_mode &&x)
     m_timestamp_ = x.m_timestamp_;
     m_flag_armed_ = x.m_flag_armed_;
     m_flag_external_manual_override_ok_ = x.m_flag_external_manual_override_ok_;
+    m_flag_multicopter_position_control_enabled_ = x.m_flag_multicopter_position_control_enabled_;
     m_flag_control_manual_enabled_ = x.m_flag_control_manual_enabled_;
     m_flag_control_auto_enabled_ = x.m_flag_control_auto_enabled_;
     m_flag_control_offboard_enabled_ = x.m_flag_control_offboard_enabled_;
@@ -125,6 +130,7 @@ vehicle_control_mode& vehicle_control_mode::operator=(const vehicle_control_mode
     m_timestamp_ = x.m_timestamp_;
     m_flag_armed_ = x.m_flag_armed_;
     m_flag_external_manual_override_ok_ = x.m_flag_external_manual_override_ok_;
+    m_flag_multicopter_position_control_enabled_ = x.m_flag_multicopter_position_control_enabled_;
     m_flag_control_manual_enabled_ = x.m_flag_control_manual_enabled_;
     m_flag_control_auto_enabled_ = x.m_flag_control_auto_enabled_;
     m_flag_control_offboard_enabled_ = x.m_flag_control_offboard_enabled_;
@@ -146,6 +152,7 @@ vehicle_control_mode& vehicle_control_mode::operator=(vehicle_control_mode &&x)
     m_timestamp_ = x.m_timestamp_;
     m_flag_armed_ = x.m_flag_armed_;
     m_flag_external_manual_override_ok_ = x.m_flag_external_manual_override_ok_;
+    m_flag_multicopter_position_control_enabled_ = x.m_flag_multicopter_position_control_enabled_;
     m_flag_control_manual_enabled_ = x.m_flag_control_manual_enabled_;
     m_flag_control_auto_enabled_ = x.m_flag_control_auto_enabled_;
     m_flag_control_offboard_enabled_ = x.m_flag_control_offboard_enabled_;
@@ -167,6 +174,9 @@ size_t vehicle_control_mode::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -260,6 +270,9 @@ size_t vehicle_control_mode::getCdrSerializedSize(const vehicle_control_mode& da
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -270,6 +283,7 @@ void vehicle_control_mode::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_timestamp_;
     scdr << m_flag_armed_;
     scdr << m_flag_external_manual_override_ok_;
+    scdr << m_flag_multicopter_position_control_enabled_;
     scdr << m_flag_control_manual_enabled_;
     scdr << m_flag_control_auto_enabled_;
     scdr << m_flag_control_offboard_enabled_;
@@ -289,6 +303,7 @@ void vehicle_control_mode::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_timestamp_;
     dcdr >> m_flag_armed_;
     dcdr >> m_flag_external_manual_override_ok_;
+    dcdr >> m_flag_multicopter_position_control_enabled_;
     dcdr >> m_flag_control_manual_enabled_;
     dcdr >> m_flag_control_auto_enabled_;
     dcdr >> m_flag_control_offboard_enabled_;
@@ -381,6 +396,33 @@ bool vehicle_control_mode::flag_external_manual_override_ok_() const
 bool& vehicle_control_mode::flag_external_manual_override_ok_()
 {
     return m_flag_external_manual_override_ok_;
+}
+
+/*!
+ * @brief This function sets a value in member flag_multicopter_position_control_enabled_
+ * @param _flag_multicopter_position_control_enabled_ New value for member flag_multicopter_position_control_enabled_
+ */
+void vehicle_control_mode::flag_multicopter_position_control_enabled_(bool _flag_multicopter_position_control_enabled_)
+{
+m_flag_multicopter_position_control_enabled_ = _flag_multicopter_position_control_enabled_;
+}
+
+/*!
+ * @brief This function returns the value of member flag_multicopter_position_control_enabled_
+ * @return Value of member flag_multicopter_position_control_enabled_
+ */
+bool vehicle_control_mode::flag_multicopter_position_control_enabled_() const
+{
+    return m_flag_multicopter_position_control_enabled_;
+}
+
+/*!
+ * @brief This function returns a reference to member flag_multicopter_position_control_enabled_
+ * @return Reference to member flag_multicopter_position_control_enabled_
+ */
+bool& vehicle_control_mode::flag_multicopter_position_control_enabled_()
+{
+    return m_flag_multicopter_position_control_enabled_;
 }
 
 /*!
@@ -701,6 +743,7 @@ size_t vehicle_control_mode::getKeyMaxCdrSerializedSize(size_t current_alignment
 
 
 
+
     return current_align;
 }
 
@@ -712,6 +755,7 @@ bool vehicle_control_mode::isKeyDefined()
 void vehicle_control_mode::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      

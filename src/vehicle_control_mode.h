@@ -161,6 +161,24 @@ public:
     eProsima_user_DllExport bool& flag_external_manual_override_ok_();
 
     /*!
+     * @brief This function sets a value in member flag_multicopter_position_control_enabled_
+     * @param _flag_multicopter_position_control_enabled_ New value for member flag_multicopter_position_control_enabled_
+     */
+    eProsima_user_DllExport void flag_multicopter_position_control_enabled_(bool _flag_multicopter_position_control_enabled_);
+
+    /*!
+     * @brief This function returns the value of member flag_multicopter_position_control_enabled_
+     * @return Value of member flag_multicopter_position_control_enabled_
+     */
+    eProsima_user_DllExport bool flag_multicopter_position_control_enabled_() const;
+
+    /*!
+     * @brief This function returns a reference to member flag_multicopter_position_control_enabled_
+     * @return Reference to member flag_multicopter_position_control_enabled_
+     */
+    eProsima_user_DllExport bool& flag_multicopter_position_control_enabled_();
+
+    /*!
      * @brief This function sets a value in member flag_control_manual_enabled_
      * @param _flag_control_manual_enabled_ New value for member flag_control_manual_enabled_
      */
@@ -413,6 +431,7 @@ private:
     uint64_t m_timestamp_;
     bool m_flag_armed_;
     bool m_flag_external_manual_override_ok_;
+    bool m_flag_multicopter_position_control_enabled_;
     bool m_flag_control_manual_enabled_;
     bool m_flag_control_auto_enabled_;
     bool m_flag_control_offboard_enabled_;

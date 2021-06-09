@@ -11,6 +11,7 @@ struct vehicle_control_mode
     unsigned long long timestamp_;
     boolean flag_armed_;
     boolean flag_external_manual_override_ok_;
+    boolean flag_multicopter_position_control_enabled_;
     boolean flag_control_manual_enabled_;
     boolean flag_control_auto_enabled_;
     boolean flag_control_offboard_enabled_;
