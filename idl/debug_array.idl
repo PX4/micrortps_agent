@@ -6,8 +6,8 @@
 
 const octet debug_array__ARRAY_SIZE = 58;
 
-typedef float debug_array__float_array_58[58];
 typedef char debug_array__char_array_10[10];
+typedef float debug_array__float_array_58[58];
 
 struct debug_array
 {
