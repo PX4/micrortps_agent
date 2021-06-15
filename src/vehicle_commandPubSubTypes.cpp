@@ -162,6 +162,9 @@ using namespace eprosima::fastrtps::rtps;
 
 
 
+
+
+
 vehicle_commandPubSubType::vehicle_commandPubSubType()
 {
     setName("vehicle_command");

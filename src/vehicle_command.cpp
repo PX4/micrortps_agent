@@ -166,6 +166,9 @@ using namespace eprosima::fastcdr::exception;
 
 
 
+
+
+
 vehicle_command::vehicle_command()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
