@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- * Copyright (c) 2020 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2020-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -44,7 +44,6 @@
 #include <thread>
 
 #include "timesync_Publisher.h"
-#include "timesync_Subscriber.h"
 
 static constexpr double ALPHA_INITIAL = 0.05;
 static constexpr double ALPHA_FINAL = 0.003;
@@ -58,7 +57,8 @@ static constexpr int REQUEST_RESET_COUNTER_THRESHOLD = 5;
 using timesync_msg_t = timesync;
 using TimesyncPublisher = timesync_Publisher;
 
-class TimeSync {
+class TimeSync
+{
 public:
 	TimeSync(bool debug);
 	virtual ~TimeSync();
@@ -67,7 +67,7 @@ public:
 	 * @brief Starts the timesync publishing thread
 	 * @param[in] pub The timesync publisher entity to use
 	 */
-	void start(const TimesyncPublisher* pub);
+	void start(TimesyncPublisher *pub);
 
 	/**
 	 * @brief Resets the filter
@@ -104,7 +104,7 @@ public:
 	 * @brief Processes DDS timesync message
 	 * @param[in,out] msg The timestamp msg to be processed
 	 */
-	void processTimesyncMsg(timesync_msg_t* msg);
+	void processTimesyncMsg(timesync_msg_t *msg, TimesyncPublisher *pub);
 
 	/**
 	 * @brief Creates a new timesync DDS message to be sent from the agent to the client
@@ -122,13 +122,13 @@ public:
 	 * @brief Sums the time sync offset to the timestamp
 	 * @param[in,out] timestamp The timestamp to add the offset to
 	 */
-	inline void addOffset(uint64_t& timestamp) { timestamp = (timestamp * 1000LL + _offset_ns.load()) / 1000ULL; }
+	inline void addOffset(uint64_t &timestamp) { timestamp = (timestamp * 1000LL + _offset_ns.load()) / 1000ULL; }
 
 	/**
 	 * @brief Substracts the time sync offset to the timestamp
 	 * @param[in,out] timestamp The timestamp to subtract the offset of
 	 */
-	inline void subtractOffset(uint64_t& timestamp) { timestamp = (timestamp * 1000LL - _offset_ns.load()) / 1000ULL; }
+	inline void subtractOffset(uint64_t &timestamp) { timestamp = (timestamp * 1000LL - _offset_ns.load()) / 1000ULL; }
 
 private:
 	std::atomic<int64_t> _offset_ns;
@@ -141,9 +141,6 @@ private:
 
 	bool _debug;
 
-	timesync_Publisher _timesync_pub;
-	timesync_Subscriber _timesync_sub;
-
 	std::unique_ptr<std::thread> _send_timesync_thread;
 	std::atomic<bool> _request_stop{false};
 
@@ -151,19 +148,19 @@ private:
 	 * @brief Updates the offset of the time sync filter
 	 * @param[in] offset The value of the offset to update to
 	 */
-	inline void updateOffset(const uint64_t& offset) { _offset_ns.store(offset, std::memory_order_relaxed); }
+	inline void updateOffset(const uint64_t &offset) { _offset_ns.store(offset, std::memory_order_relaxed); }
 
 	/** Timesync msg Getters **/
-	inline uint64_t getMsgTimestamp(const timesync_msg_t* msg) { return msg->timestamp_(); }
-	inline uint8_t getMsgSysID(const timesync_msg_t* msg) { return msg->sys_id_(); }
-	inline uint8_t getMsgSeq(const timesync_msg_t* msg) { return msg->seq_(); }
-	inline int64_t getMsgTC1(const timesync_msg_t* msg) { return msg->tc1_(); }
-	inline int64_t getMsgTS1(const timesync_msg_t* msg) { return msg->ts1_(); }
+	inline uint64_t getMsgTimestamp(const timesync_msg_t *msg) { return msg->timestamp_(); }
+	inline uint8_t getMsgSysID(const timesync_msg_t *msg) { return msg->sys_id_(); }
+	inline uint8_t getMsgSeq(const timesync_msg_t *msg) { return msg->seq_(); }
+	inline int64_t getMsgTC1(const timesync_msg_t *msg) { return msg->tc1_(); }
+	inline int64_t getMsgTS1(const timesync_msg_t *msg) { return msg->ts1_(); }
 
 	/** Timesync msg Setters **/
-	inline void setMsgTimestamp(timesync_msg_t* msg, const uint64_t& timestamp) { msg->timestamp_() = timestamp; }
-	inline void setMsgSysID(timesync_msg_t* msg, const uint8_t& sys_id) { msg->sys_id_() = sys_id; }
-	inline void setMsgSeq(timesync_msg_t* msg, const uint8_t& seq) { msg->seq_() = seq; }
-	inline void setMsgTC1(timesync_msg_t* msg, const int64_t& tc1) { msg->tc1_() = tc1; }
-	inline void setMsgTS1(timesync_msg_t* msg, const int64_t& ts1) { msg->ts1_() = ts1; }
+	inline void setMsgTimestamp(timesync_msg_t *msg, const uint64_t &timestamp) { msg->timestamp_() = timestamp; }
+	inline void setMsgSysID(timesync_msg_t *msg, const uint8_t &sys_id) { msg->sys_id_() = sys_id; }
+	inline void setMsgSeq(timesync_msg_t *msg, const uint8_t &seq) { msg->seq_() = seq; }
+	inline void setMsgTC1(timesync_msg_t *msg, const int64_t &tc1) { msg->tc1_() = tc1; }
+	inline void setMsgTS1(timesync_msg_t *msg, const int64_t &ts1) { msg->ts1_() = ts1; }
 };

@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -56,24 +56,24 @@ using sensor_combined_msg_datatype = sensor_combinedPubSubType;
 class sensor_combined_Publisher
 {
 public:
-    sensor_combined_Publisher();
-    virtual ~sensor_combined_Publisher();
-    bool init(const std::string& ns);
-    void run();
-    void publish(sensor_combined_msg_t* st);
+	sensor_combined_Publisher();
+	virtual ~sensor_combined_Publisher();
+	bool init(const std::string &ns);
+	void run();
+	void publish(sensor_combined_msg_t *st);
 private:
-    Participant *mp_participant;
-    Publisher *mp_publisher;
+	Participant *mp_participant;
+	Publisher *mp_publisher;
 
-    class PubListener : public PublisherListener
-    {
-    public:
-        PubListener() : n_matched(0){};
-        ~PubListener(){};
-        void onPublicationMatched(Publisher* pub, MatchingInfo& info);
-        int n_matched;
-    } m_listener;
-    sensor_combined_msg_datatype sensor_combinedDataType;
+	class PubListener : public PublisherListener
+	{
+	public:
+		PubListener() : n_matched(0) {};
+		~PubListener() {};
+		void onPublicationMatched(Publisher *pub, MatchingInfo &info);
+		int n_matched;
+	} m_listener;
+	sensor_combined_msg_datatype sensor_combinedDataType;
 };
 
 #endif // _sensor_combined__PUBLISHER_H_

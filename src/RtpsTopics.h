@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -61,7 +61,6 @@
 #include "position_setpoint_triplet_Subscriber.h"
 #include "telemetry_status_Subscriber.h"
 #include "timesync_Subscriber.h"
-#include "trajectory_waypoint_Subscriber.h"
 #include "vehicle_command_Subscriber.h"
 #include "vehicle_local_position_setpoint_Subscriber.h"
 #include "vehicle_trajectory_waypoint_Subscriber.h"
@@ -83,7 +82,6 @@ using position_setpoint_msg_t = position_setpoint;
 using position_setpoint_triplet_msg_t = position_setpoint_triplet;
 using telemetry_status_msg_t = telemetry_status;
 using timesync_msg_t = timesync;
-using trajectory_waypoint_msg_t = trajectory_waypoint;
 using vehicle_command_msg_t = vehicle_command;
 using vehicle_local_position_setpoint_msg_t = vehicle_local_position_setpoint;
 using vehicle_trajectory_waypoint_msg_t = vehicle_trajectory_waypoint;
@@ -107,109 +105,110 @@ using collision_constraints_msg_t = collision_constraints;
 using vehicle_angular_velocity_msg_t = vehicle_angular_velocity;
 using vehicle_trajectory_waypoint_desired_msg_t = vehicle_trajectory_waypoint_desired;
 
-class RtpsTopics {
+class RtpsTopics
+{
 public:
-    bool init(std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns);
-    void set_timesync(const std::shared_ptr<TimeSync>& timesync) { _timesync = timesync; };
-    void publish(uint8_t topic_ID, char data_buffer[], size_t len);
-    bool getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr);
+	bool init(std::condition_variable *t_send_queue_cv, std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue,
+		  const std::string &ns);
+	void set_timesync(const std::shared_ptr<TimeSync> &timesync) { _timesync = timesync; };
+	void publish(const uint8_t topic_ID, char data_buffer[], size_t len);
+	bool getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr);
 
 private:
-    /** Publishers **/
-    input_rc_Publisher _input_rc_pub;
-    satellite_info_Publisher _satellite_info_pub;
-    sensor_combined_Publisher _sensor_combined_pub;
-    timesync_Publisher _timesync_pub;
-    trajectory_waypoint_Publisher _trajectory_waypoint_pub;
-    vehicle_attitude_Publisher _vehicle_attitude_pub;
-    vehicle_control_mode_Publisher _vehicle_control_mode_pub;
-    vehicle_local_position_Publisher _vehicle_local_position_pub;
-    vehicle_odometry_Publisher _vehicle_odometry_pub;
-    vehicle_status_Publisher _vehicle_status_pub;
-    collision_constraints_Publisher _collision_constraints_pub;
-    vehicle_angular_velocity_Publisher _vehicle_angular_velocity_pub;
-    vehicle_trajectory_waypoint_desired_Publisher _vehicle_trajectory_waypoint_desired_pub;
+	/** Publishers **/
+	input_rc_Publisher _input_rc_pub;
+	satellite_info_Publisher _satellite_info_pub;
+	sensor_combined_Publisher _sensor_combined_pub;
+	timesync_Publisher _timesync_pub;
+	trajectory_waypoint_Publisher _trajectory_waypoint_pub;
+	vehicle_attitude_Publisher _vehicle_attitude_pub;
+	vehicle_control_mode_Publisher _vehicle_control_mode_pub;
+	vehicle_local_position_Publisher _vehicle_local_position_pub;
+	vehicle_odometry_Publisher _vehicle_odometry_pub;
+	vehicle_status_Publisher _vehicle_status_pub;
+	collision_constraints_Publisher _collision_constraints_pub;
+	vehicle_angular_velocity_Publisher _vehicle_angular_velocity_pub;
+	vehicle_trajectory_waypoint_desired_Publisher _vehicle_trajectory_waypoint_desired_pub;
 
-    /** Subscribers **/
-    debug_array_Subscriber _debug_array_sub;
-    debug_key_value_Subscriber _debug_key_value_sub;
-    debug_value_Subscriber _debug_value_sub;
-    debug_vect_Subscriber _debug_vect_sub;
-    offboard_control_mode_Subscriber _offboard_control_mode_sub;
-    optical_flow_Subscriber _optical_flow_sub;
-    position_setpoint_Subscriber _position_setpoint_sub;
-    position_setpoint_triplet_Subscriber _position_setpoint_triplet_sub;
-    telemetry_status_Subscriber _telemetry_status_sub;
-    timesync_Subscriber _timesync_sub;
-    trajectory_waypoint_Subscriber _trajectory_waypoint_sub;
-    vehicle_command_Subscriber _vehicle_command_sub;
-    vehicle_local_position_setpoint_Subscriber _vehicle_local_position_setpoint_sub;
-    vehicle_trajectory_waypoint_Subscriber _vehicle_trajectory_waypoint_sub;
-    onboard_computer_status_Subscriber _onboard_computer_status_sub;
-    trajectory_bezier_Subscriber _trajectory_bezier_sub;
-    vehicle_trajectory_bezier_Subscriber _vehicle_trajectory_bezier_sub;
-    vehicle_mocap_odometry_Subscriber _vehicle_mocap_odometry_sub;
-    vehicle_visual_odometry_Subscriber _vehicle_visual_odometry_sub;
-    trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
+	/** Subscribers **/
+	debug_array_Subscriber _debug_array_sub;
+	debug_key_value_Subscriber _debug_key_value_sub;
+	debug_value_Subscriber _debug_value_sub;
+	debug_vect_Subscriber _debug_vect_sub;
+	offboard_control_mode_Subscriber _offboard_control_mode_sub;
+	optical_flow_Subscriber _optical_flow_sub;
+	position_setpoint_Subscriber _position_setpoint_sub;
+	position_setpoint_triplet_Subscriber _position_setpoint_triplet_sub;
+	telemetry_status_Subscriber _telemetry_status_sub;
+	timesync_Subscriber _timesync_sub;
+	vehicle_command_Subscriber _vehicle_command_sub;
+	vehicle_local_position_setpoint_Subscriber _vehicle_local_position_setpoint_sub;
+	vehicle_trajectory_waypoint_Subscriber _vehicle_trajectory_waypoint_sub;
+	onboard_computer_status_Subscriber _onboard_computer_status_sub;
+	trajectory_bezier_Subscriber _trajectory_bezier_sub;
+	vehicle_trajectory_bezier_Subscriber _vehicle_trajectory_bezier_sub;
+	vehicle_mocap_odometry_Subscriber _vehicle_mocap_odometry_sub;
+	vehicle_visual_odometry_Subscriber _vehicle_visual_odometry_sub;
+	trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
 
-    // SFINAE
-    template<typename T> struct hasTimestampSample{
-    private:
-        template<typename U,
-                typename = decltype(std::declval<U>().timestamp_sample(int64_t()))>
-        static std::true_type detect(int);
-        template<typename U>
-        static std::false_type detect(...);
-    public:
-        static constexpr bool value = decltype(detect<T>(0))::value;
-    };
+	// SFINAE
+	template<typename T> struct hasTimestampSample{
+	private:
+		template<typename U,
+            typename = decltype(std::declval<U>().timestamp_sample(int64_t()))>
+		static std::true_type detect(int);
+		template<typename U>
+		static std::false_type detect(...);
+	public:
+		static constexpr bool value = decltype(detect<T>(0))::value;
+  };
 
-    template<typename T>
-    inline typename std::enable_if<!hasTimestampSample<T>::value, uint64_t>::type
-    getMsgTimestampSample_impl(const T*) { return 0; }
+	template<typename T>
+	inline typename std::enable_if < !hasTimestampSample<T>::value, uint64_t >::type
+	getMsgTimestampSample_impl(const T *) { return 0; }
 
-    /** Msg metada Getters **/
-    template <class T>
-    inline uint64_t getMsgTimestamp(const T* msg) { return msg->timestamp_(); }
+	/** Msg metada Getters **/
+	template <class T>
+	inline uint64_t getMsgTimestamp(const T *msg) { return msg->timestamp_(); }
 
-    template<typename T>
-    inline typename std::enable_if<hasTimestampSample<T>::value, uint64_t>::type
-    getMsgTimestampSample_impl(const T* msg) { return msg->timestamp_sample_(); }
+	template<typename T>
+	inline typename std::enable_if<hasTimestampSample<T>::value, uint64_t>::type
+	getMsgTimestampSample_impl(const T *msg) { return msg->timestamp_sample_(); }
 
-    template <class T>
-    inline uint8_t getMsgSysID(const T* msg) { return msg->sys_id_(); }
+	template <class T>
+	inline uint8_t getMsgSysID(const T *msg) { return msg->sys_id_(); }
 
-    template <class T>
-    inline uint8_t getMsgSeq(const T* msg) { return msg->seq_(); }
+	template <class T>
+	inline uint8_t getMsgSeq(const T *msg) { return msg->seq_(); }
 
-    template <class T>
-    inline uint64_t getMsgTimestampSample(const T* msg) { return getMsgTimestampSample_impl(msg); }
+	template <class T>
+	inline uint64_t getMsgTimestampSample(const T *msg) { return getMsgTimestampSample_impl(msg); }
 
-    template<typename T>
-    inline typename std::enable_if<!hasTimestampSample<T>::value, void>::type
-    setMsgTimestampSample_impl(T*, const uint64_t&) {}
+	template<typename T>
+	inline typename std::enable_if <!hasTimestampSample<T>::value, void>::type
+	setMsgTimestampSample_impl(T *, const uint64_t &) {}
 
-    /** Msg metadata Setters **/
-    template <class T>
-    inline void setMsgTimestamp(T* msg, const uint64_t& timestamp) { msg->timestamp_() = timestamp; }
+	/** Msg metadata Setters **/
+	template <class T>
+	inline void setMsgTimestamp(T *msg, const uint64_t &timestamp) { msg->timestamp_() = timestamp; }
 
-    template <class T>
-    inline typename std::enable_if<hasTimestampSample<T>::value, void>::type
-    setMsgTimestampSample_impl(T* msg, const uint64_t& timestamp_sample) { msg->timestamp_sample_() = timestamp_sample; }
+	template <class T>
+	inline typename std::enable_if<hasTimestampSample<T>::value, void>::type
+	setMsgTimestampSample_impl(T *msg, const uint64_t &timestamp_sample) { msg->timestamp_sample_() = timestamp_sample; }
 
-    template <class T>
-    inline void setMsgSysID(T* msg, const uint8_t& sys_id) { msg->sys_id_() = sys_id; }
+	template <class T>
+	inline void setMsgSysID(T *msg, const uint8_t &sys_id) { msg->sys_id_() = sys_id; }
 
-    template <class T>
-    inline void setMsgSeq(T* msg, const uint8_t& seq) { msg->seq_() = seq; }
+	template <class T>
+	inline void setMsgSeq(T *msg, const uint8_t &seq) { msg->seq_() = seq; }
 
-    template <class T>
-    inline void setMsgTimestampSample(T* msg, const uint64_t& timestamp_sample) { setMsgTimestampSample_impl(msg, timestamp_sample); }
+	template <class T>
+	inline void setMsgTimestampSample(T *msg, const uint64_t &timestamp_sample) { setMsgTimestampSample_impl(msg, timestamp_sample); }
 
-    /**
-     * @brief Timesync object ptr.
-     *         This object is used to compuyte and apply the time offsets to the
-     *         messages timestamps.
-     */
-    std::shared_ptr<TimeSync> _timesync;
+	/**
+	 * @brief Timesync object ptr.
+	 *         This object is used to compuyte and apply the time offsets to the
+	 *         messages timestamps.
+	 */
+	std::shared_ptr<TimeSync> _timesync;
 };

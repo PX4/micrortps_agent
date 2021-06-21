@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -38,80 +38,92 @@
  * This file was adapted from the fastcdrgen tool.
  */
 
+#include "vehicle_local_position_Publisher.h"
 
+#include <fastrtps/Domain.h>
 #include <fastrtps/participant/Participant.h>
 #include <fastrtps/attributes/ParticipantAttributes.h>
 #include <fastrtps/publisher/Publisher.h>
 #include <fastrtps/attributes/PublisherAttributes.h>
+#include <fastrtps/transport/UDPv4TransportDescriptor.h>
+#include <fastdds/rtps/transport/shared_mem/SharedMemTransportDescriptor.h>
 
-#include <fastrtps/Domain.h>
+using SharedMemTransportDescriptor = eprosima::fastdds::rtps::SharedMemTransportDescriptor;
 
-#include "vehicle_local_position_Publisher.h"
 
 vehicle_local_position_Publisher::vehicle_local_position_Publisher()
-    : mp_participant(nullptr),
-      mp_publisher(nullptr)
+	: mp_participant(nullptr),
+	  mp_publisher(nullptr)
 { }
 
 vehicle_local_position_Publisher::~vehicle_local_position_Publisher()
 {
-    Domain::removeParticipant(mp_participant);
+	Domain::removeParticipant(mp_participant);
 }
 
-bool vehicle_local_position_Publisher::init(const std::string& ns)
+bool vehicle_local_position_Publisher::init(const std::string &ns)
 {
-    // Create RTPSParticipant
-    ParticipantAttributes PParam;
-    PParam.domainId = 0;
-    PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
-    std::string nodeName = ns;
-    nodeName.append("vehicle_local_position_publisher");
-    PParam.rtps.setName(nodeName.c_str());
-    mp_participant = Domain::createParticipant(PParam);
-    if(mp_participant == nullptr)
-        return false;
+	// Create RTPSParticipant
+	ParticipantAttributes PParam;
+	PParam.domainId = 0;
+	PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
+	std::string nodeName = ns;
+	nodeName.append("vehicle_local_position_publisher");
+	PParam.rtps.setName(nodeName.c_str());
 
-    // Register the type
-    Domain::registerType(mp_participant, static_cast<TopicDataType*>(&vehicle_local_positionDataType));
 
-    // Create Publisher
-    PublisherAttributes Wparam;
-    Wparam.topic.topicKind = NO_KEY;
-    Wparam.topic.topicDataType = vehicle_local_positionDataType.getName();
-    std::string topicName = ns;
-    topicName.append("vehicle_local_positionPubSubTopic");
-    Wparam.topic.topicName = topicName;
-    mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener*>(&m_listener));
-    if(mp_publisher == nullptr)
-        return false;
-    return true;
+	mp_participant = Domain::createParticipant(PParam);
+
+	if (mp_participant == nullptr) {
+		return false;
+	}
+
+	// Register the type
+	Domain::registerType(mp_participant, static_cast<TopicDataType *>(&vehicle_local_positionDataType));
+
+	// Create Publisher
+	PublisherAttributes Wparam;
+	Wparam.topic.topicKind = NO_KEY;
+	Wparam.topic.topicDataType = vehicle_local_positionDataType.getName();
+	std::string topicName = ns;
+	topicName.append("vehicle_local_positionPubSubTopic");
+	Wparam.topic.topicName = topicName;
+	mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener *>(&m_listener));
+
+	if (mp_publisher == nullptr) {
+		return false;
+	}
+
+	return true;
 }
 
-void vehicle_local_position_Publisher::PubListener::onPublicationMatched(Publisher* pub, MatchingInfo& info)
+void vehicle_local_position_Publisher::PubListener::onPublicationMatched(Publisher *pub, MatchingInfo &info)
 {
-    // The first 6 values of the ID guidPrefix of an entity in a DDS-RTPS Domain
-    // are the same for all its subcomponents (publishers, subscribers)
-    bool is_different_endpoint = false;
-    for (size_t i = 0; i < 6; i++) {
-        if (pub->getGuid().guidPrefix.value[i] != info.remoteEndpointGuid.guidPrefix.value[i]) {
-            is_different_endpoint = true;
-            break;
-        }
-    }
+	// The first 6 values of the ID guidPrefix of an entity in a DDS-RTPS Domain
+	// are the same for all its subcomponents (publishers, subscribers)
+	bool is_different_endpoint = false;
 
-    // If the matching happens for the same entity, do not make a match
-    if (is_different_endpoint) {
-        if (info.status == MATCHED_MATCHING) {
-            n_matched++;
-            std::cout << "\033[0;37m[   micrortps_agent   ]\tvehicle_local_position publisher matched\033[0m" << std::endl;
-        } else {
-            n_matched--;
-            std::cout << "\033[0;37m[   micrortps_agent   ]\tvehicle_local_position publisher unmatched\033[0m" << std::endl;
-        }
-    }
+	for (size_t i = 0; i < 6; i++) {
+		if (pub->getGuid().guidPrefix.value[i] != info.remoteEndpointGuid.guidPrefix.value[i]) {
+			is_different_endpoint = true;
+			break;
+		}
+	}
+
+	// If the matching happens for the same entity, do not make a match
+	if (is_different_endpoint) {
+		if (info.status == MATCHED_MATCHING) {
+			n_matched++;
+			std::cout << "\033[0;37m[   micrortps_agent   ]\tvehicle_local_position publisher matched\033[0m" << std::endl;
+
+		} else {
+			n_matched--;
+			std::cout << "\033[0;37m[   micrortps_agent   ]\tvehicle_local_position publisher unmatched\033[0m" << std::endl;
+		}
+	}
 }
 
-void vehicle_local_position_Publisher::publish(vehicle_local_position_msg_t* st)
+void vehicle_local_position_Publisher::publish(vehicle_local_position_msg_t *st)
 {
-    mp_publisher->write(st);
+	mp_publisher->write(st);
 }

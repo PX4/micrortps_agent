@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -60,39 +60,40 @@ using vehicle_command_msg_datatype = vehicle_commandPubSubType;
 class vehicle_command_Subscriber
 {
 public:
-    vehicle_command_Subscriber();
-    virtual ~vehicle_command_Subscriber();
-    bool init(uint8_t topic_ID, std::condition_variable* t_send_queue_cv, std::mutex* t_send_queue_mutex, std::queue<uint8_t>* t_send_queue, const std::string& ns);
-    void run();
-    bool hasMsg();
-    vehicle_command_msg_t getMsg();
-    void unlockMsg();
+	vehicle_command_Subscriber();
+	virtual ~vehicle_command_Subscriber();
+	bool init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv, std::mutex *t_send_queue_mutex,
+		  std::queue<uint8_t> *t_send_queue, const std::string &ns);
+	void run();
+	bool hasMsg();
+	vehicle_command_msg_t getMsg();
+	void unlockMsg();
 
 private:
-    Participant *mp_participant;
-    Subscriber *mp_subscriber;
+	Participant *mp_participant;
+	Subscriber *mp_subscriber;
 
-    class SubListener : public SubscriberListener
-    {
-    public:
-        SubListener() : n_matched(0), n_msg(0), has_msg(false){};
-        ~SubListener(){};
-        void onSubscriptionMatched(Subscriber* sub, MatchingInfo& info);
-        void onNewDataMessage(Subscriber* sub);
-        SampleInfo_t m_info;
-        int n_matched;
-        int n_msg;
-        vehicle_command_msg_t msg;
-        std::atomic_bool has_msg;
-        uint8_t topic_ID;
-        std::condition_variable* t_send_queue_cv;
-        std::mutex* t_send_queue_mutex;
-        std::queue<uint8_t>* t_send_queue;
-        std::condition_variable has_msg_cv;
-        std::mutex has_msg_mutex;
+	class SubListener : public SubscriberListener
+	{
+	public:
+		SubListener() : n_matched(0), n_msg(0), has_msg(false) {};
+		~SubListener() {};
+		void onSubscriptionMatched(Subscriber *sub, MatchingInfo &info);
+		void onNewDataMessage(Subscriber *sub);
+		SampleInfo_t m_info;
+		int n_matched;
+		int n_msg;
+		vehicle_command_msg_t msg;
+		std::atomic_bool has_msg;
+		uint8_t topic_ID;
+		std::condition_variable *t_send_queue_cv;
+		std::mutex *t_send_queue_mutex;
+		std::queue<uint8_t> *t_send_queue;
+		std::condition_variable has_msg_cv;
+		std::mutex has_msg_mutex;
 
-    } m_listener;
-    vehicle_command_msg_datatype vehicle_commandDataType;
+	} m_listener;
+	vehicle_command_msg_datatype vehicle_commandDataType;
 };
 
 #endif // _vehicle_command__SUBSCRIBER_H_

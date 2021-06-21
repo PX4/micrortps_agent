@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -56,24 +56,24 @@ using vehicle_trajectory_waypoint_desired_msg_datatype = vehicle_trajectory_wayp
 class vehicle_trajectory_waypoint_desired_Publisher
 {
 public:
-    vehicle_trajectory_waypoint_desired_Publisher();
-    virtual ~vehicle_trajectory_waypoint_desired_Publisher();
-    bool init(const std::string& ns);
-    void run();
-    void publish(vehicle_trajectory_waypoint_desired_msg_t* st);
+	vehicle_trajectory_waypoint_desired_Publisher();
+	virtual ~vehicle_trajectory_waypoint_desired_Publisher();
+	bool init(const std::string &ns);
+	void run();
+	void publish(vehicle_trajectory_waypoint_desired_msg_t *st);
 private:
-    Participant *mp_participant;
-    Publisher *mp_publisher;
+	Participant *mp_participant;
+	Publisher *mp_publisher;
 
-    class PubListener : public PublisherListener
-    {
-    public:
-        PubListener() : n_matched(0){};
-        ~PubListener(){};
-        void onPublicationMatched(Publisher* pub, MatchingInfo& info);
-        int n_matched;
-    } m_listener;
-    vehicle_trajectory_waypoint_desired_msg_datatype vehicle_trajectory_waypoint_desiredDataType;
+	class PubListener : public PublisherListener
+	{
+	public:
+		PubListener() : n_matched(0) {};
+		~PubListener() {};
+		void onPublicationMatched(Publisher *pub, MatchingInfo &info);
+		int n_matched;
+	} m_listener;
+	vehicle_trajectory_waypoint_desired_msg_datatype vehicle_trajectory_waypoint_desiredDataType;
 };
 
 #endif // _vehicle_trajectory_waypoint_desired__PUBLISHER_H_

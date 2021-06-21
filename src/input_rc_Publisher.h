@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -56,24 +56,24 @@ using input_rc_msg_datatype = input_rcPubSubType;
 class input_rc_Publisher
 {
 public:
-    input_rc_Publisher();
-    virtual ~input_rc_Publisher();
-    bool init(const std::string& ns);
-    void run();
-    void publish(input_rc_msg_t* st);
+	input_rc_Publisher();
+	virtual ~input_rc_Publisher();
+	bool init(const std::string &ns);
+	void run();
+	void publish(input_rc_msg_t *st);
 private:
-    Participant *mp_participant;
-    Publisher *mp_publisher;
+	Participant *mp_participant;
+	Publisher *mp_publisher;
 
-    class PubListener : public PublisherListener
-    {
-    public:
-        PubListener() : n_matched(0){};
-        ~PubListener(){};
-        void onPublicationMatched(Publisher* pub, MatchingInfo& info);
-        int n_matched;
-    } m_listener;
-    input_rc_msg_datatype input_rcDataType;
+	class PubListener : public PublisherListener
+	{
+	public:
+		PubListener() : n_matched(0) {};
+		~PubListener() {};
+		void onPublicationMatched(Publisher *pub, MatchingInfo &info);
+		int n_matched;
+	} m_listener;
+	input_rc_msg_datatype input_rcDataType;
 };
 
 #endif // _input_rc__PUBLISHER_H_

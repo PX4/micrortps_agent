@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -56,24 +56,24 @@ using collision_constraints_msg_datatype = collision_constraintsPubSubType;
 class collision_constraints_Publisher
 {
 public:
-    collision_constraints_Publisher();
-    virtual ~collision_constraints_Publisher();
-    bool init(const std::string& ns);
-    void run();
-    void publish(collision_constraints_msg_t* st);
+	collision_constraints_Publisher();
+	virtual ~collision_constraints_Publisher();
+	bool init(const std::string &ns);
+	void run();
+	void publish(collision_constraints_msg_t *st);
 private:
-    Participant *mp_participant;
-    Publisher *mp_publisher;
+	Participant *mp_participant;
+	Publisher *mp_publisher;
 
-    class PubListener : public PublisherListener
-    {
-    public:
-        PubListener() : n_matched(0){};
-        ~PubListener(){};
-        void onPublicationMatched(Publisher* pub, MatchingInfo& info);
-        int n_matched;
-    } m_listener;
-    collision_constraints_msg_datatype collision_constraintsDataType;
+	class PubListener : public PublisherListener
+	{
+	public:
+		PubListener() : n_matched(0) {};
+		~PubListener() {};
+		void onPublicationMatched(Publisher *pub, MatchingInfo &info);
+		int n_matched;
+	} m_listener;
+	collision_constraints_msg_datatype collision_constraintsDataType;
 };
 
 #endif // _collision_constraints__PUBLISHER_H_

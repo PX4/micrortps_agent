@@ -1,7 +1,7 @@
 /****************************************************************************
  *
  * Copyright 2017 Proyectos y Sistemas de Mantenimiento SL (eProsima).
- * Copyright (c) 2018-2019 PX4 Development Team. All rights reserved.
+ * Copyright (c) 2018-2021 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -56,24 +56,24 @@ using vehicle_control_mode_msg_datatype = vehicle_control_modePubSubType;
 class vehicle_control_mode_Publisher
 {
 public:
-    vehicle_control_mode_Publisher();
-    virtual ~vehicle_control_mode_Publisher();
-    bool init(const std::string& ns);
-    void run();
-    void publish(vehicle_control_mode_msg_t* st);
+	vehicle_control_mode_Publisher();
+	virtual ~vehicle_control_mode_Publisher();
+	bool init(const std::string &ns);
+	void run();
+	void publish(vehicle_control_mode_msg_t *st);
 private:
-    Participant *mp_participant;
-    Publisher *mp_publisher;
+	Participant *mp_participant;
+	Publisher *mp_publisher;
 
-    class PubListener : public PublisherListener
-    {
-    public:
-        PubListener() : n_matched(0){};
-        ~PubListener(){};
-        void onPublicationMatched(Publisher* pub, MatchingInfo& info);
-        int n_matched;
-    } m_listener;
-    vehicle_control_mode_msg_datatype vehicle_control_modeDataType;
+	class PubListener : public PublisherListener
+	{
+	public:
+		PubListener() : n_matched(0) {};
+		~PubListener() {};
+		void onPublicationMatched(Publisher *pub, MatchingInfo &info);
+		int n_matched;
+	} m_listener;
+	vehicle_control_mode_msg_datatype vehicle_control_modeDataType;
 };
 
 #endif // _vehicle_control_mode__PUBLISHER_H_
