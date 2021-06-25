@@ -183,7 +183,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_mocap_odometry_sub.init(181, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_mocap_odometry_sub.init(191, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_mocap_odometry subscriber started" << std::endl;
 
 	} else {
@@ -192,7 +192,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_visual_odometry_sub.init(182, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_visual_odometry_sub.init(192, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_visual_odometry subscriber started" << std::endl;
 
 	} else {
@@ -201,7 +201,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_trajectory_setpoint_sub.init(186, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_trajectory_setpoint_sub.init(196, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- trajectory_setpoint subscriber started" << std::endl;
 
 	} else {
@@ -535,7 +535,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 183: { // vehicle_trajectory_waypoint_desired
+	case 193: { // vehicle_trajectory_waypoint_desired
 		vehicle_trajectory_waypoint_desired_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -840,7 +840,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 181: // vehicle_mocap_odometry
+	case 191: // vehicle_mocap_odometry
 		if (_vehicle_mocap_odometry_sub.hasMsg()) {
 			vehicle_mocap_odometry_msg_t msg = _vehicle_mocap_odometry_sub.getMsg();
 				// apply timestamps offset
@@ -857,7 +857,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 182: // vehicle_visual_odometry
+	case 192: // vehicle_visual_odometry
 		if (_vehicle_visual_odometry_sub.hasMsg()) {
 			vehicle_visual_odometry_msg_t msg = _vehicle_visual_odometry_sub.getMsg();
 				// apply timestamps offset
@@ -874,7 +874,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 186: // trajectory_setpoint
+	case 196: // trajectory_setpoint
 		if (_trajectory_setpoint_sub.hasMsg()) {
 			trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
 				// apply timestamps offset
