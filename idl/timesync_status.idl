@@ -1,0 +1,24 @@
+
+#ifndef __timesync_status__idl__
+#define __timesync_status__idl__
+
+
+
+const octet timesync_status__SOURCE_PROTOCOL_MAVLINK = 0;
+const octet timesync_status__SOURCE_PROTOCOL_RTPS = 1;
+
+
+struct timesync_status
+{
+    unsigned long long timestamp_;
+    octet source_protocol_;
+    unsigned long long remote_timestamp_;
+    long long observed_offset_;
+    long long estimated_offset_;
+    unsigned long round_trip_time_;
+
+}; // struct timesync_status
+
+#pragma keylist timesync_status
+
+#endif  // __timesync_status__idl__
