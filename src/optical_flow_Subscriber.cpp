@@ -35,7 +35,7 @@
  * @file optical_flow_Subscriber.cpp
  * This file contains the implementation of the subscriber functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 #include "optical_flow_Subscriber.h"
@@ -62,7 +62,8 @@ optical_flow_Subscriber::~optical_flow_Subscriber()
 }
 
 bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv,
-			       std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue, const std::string &ns)
+			       std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue, const std::string &ns,
+			       std::string topic_name)
 {
 	m_listener.topic_ID = topic_ID;
 	m_listener.t_send_queue_cv = t_send_queue_cv;
@@ -92,7 +93,7 @@ bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_
 	Rparam.topic.topicKind = NO_KEY;
 	Rparam.topic.topicDataType = optical_flowDataType.getName();
 	std::string topicName = ns;
-	topicName.append("optical_flowPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/optical_flow/in") : topicName.append(topic_name);
 	Rparam.topic.topicName = topicName;
 	mp_subscriber = Domain::createSubscriber(mp_participant, Rparam, static_cast<SubscriberListener *>(&m_listener));
 

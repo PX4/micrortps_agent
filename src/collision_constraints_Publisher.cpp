@@ -35,7 +35,7 @@
  * @file collision_constraints_Publisher.cpp
  * This file contains the implementation of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 #include "collision_constraints_Publisher.h"
@@ -61,7 +61,7 @@ collision_constraints_Publisher::~collision_constraints_Publisher()
 	Domain::removeParticipant(mp_participant);
 }
 
-bool collision_constraints_Publisher::init(const std::string &ns)
+bool collision_constraints_Publisher::init(const std::string &ns, std::string topic_name)
 {
 	// Create RTPSParticipant
 	ParticipantAttributes PParam;
@@ -86,7 +86,7 @@ bool collision_constraints_Publisher::init(const std::string &ns)
 	Wparam.topic.topicKind = NO_KEY;
 	Wparam.topic.topicDataType = collision_constraintsDataType.getName();
 	std::string topicName = ns;
-	topicName.append("collision_constraintsPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/collision_constraints/out") : topicName.append(topic_name);
 	Wparam.topic.topicName = topicName;
 	mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener *>(&m_listener));
 

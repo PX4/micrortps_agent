@@ -57,6 +57,7 @@ void TimeSync::start(TimesyncPublisher *pub)
 {
 	stop();
 
+
 	auto run = [this, pub]() {
 		while (!_request_stop) {
 			timesync_msg_t msg = newTimesyncMsg();
@@ -70,11 +71,27 @@ void TimeSync::start(TimesyncPublisher *pub)
 	_send_timesync_thread.reset(new std::thread(run));
 }
 
+void TimeSync::init_status_pub(TimesyncStatusPublisher *status_pub)
+{
+	auto run = [this, status_pub]() {
+		while (!_request_stop) {
+			timesync_status_msg_t status_msg = newTimesyncStatusMsg();
+
+			status_pub->publish(&status_msg);
+
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		}
+	};
+	_request_stop = false;
+	_send_timesync_status_thread.reset(new std::thread(run));
+}
+
 void TimeSync::stop()
 {
 	_request_stop = true;
 
 	if (_send_timesync_thread && _send_timesync_thread->joinable()) { _send_timesync_thread->join(); }
+	if (_send_timesync_status_thread && _send_timesync_status_thread->joinable()) { _send_timesync_status_thread->join(); }
 }
 
 void TimeSync::reset()
@@ -83,13 +100,13 @@ void TimeSync::reset()
 	_request_reset_counter = 0;
 }
 
-int64_t TimeSync::getTimeNSec()
+uint64_t TimeSync::getSteadyTimeNSec() const
 {
 	auto time = std::chrono::steady_clock::now();
 	return std::chrono::time_point_cast<std::chrono::nanoseconds>(time).time_since_epoch().count();
 }
 
-int64_t TimeSync::getTimeUSec()
+uint64_t TimeSync::getSteadyTimeUSec() const
 {
 	auto time = std::chrono::steady_clock::now();
 	return std::chrono::time_point_cast<std::chrono::microseconds>(time).time_since_epoch().count();
@@ -97,10 +114,11 @@ int64_t TimeSync::getTimeUSec()
 
 bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t local_t3_ns)
 {
-	int64_t rtti = local_t3_ns - local_t1_ns;
+	_rtti = local_t3_ns - local_t1_ns;
+	_remote_time_stamp = remote_t2_ns;
 
 	// assume rtti is evenly split both directions
-	int64_t remote_t3_ns = remote_t2_ns + rtti / 2ll;
+	int64_t remote_t3_ns = remote_t2_ns + _rtti.load() / 2ll;
 
 	int64_t measurement_offset = remote_t3_ns - local_t3_ns;
 
@@ -129,8 +147,8 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 	}
 
 	// ignore if rtti > 50ms
-	if (rtti > 50ll * 1000ll * 1000ll) {
-		if (_debug) { std::cout << "\033[1;33m[ micrortps__timesync ]\tRTTI too high for timesync: " << rtti / (1000ll * 1000ll) << "ms\033[0m" << std::endl; }
+	if (_rtti.load() > 50ll * 1000ll * 1000ll) {
+		if (_debug) { std::cout << "\033[1;33m[ micrortps__timesync ]\tRTTI too high for timesync: " << _rtti.load() / (1000ll * 1000ll) << "ms\033[0m" << std::endl; }
 
 		return false;
 	}
@@ -145,11 +163,11 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 		beta = (1. - s) * BETA_INITIAL + s * BETA_FINAL;
 	}
 
-	int64_t offset_prev = _offset_ns.load();
+	_offset_prev = _offset_ns.load();
 	updateOffset(static_cast<int64_t>((_skew_ns_per_sync + _offset_ns.load()) * (1. - alpha) +
 					  measurement_offset * alpha));
 	_skew_ns_per_sync =
-		static_cast<int64_t>(beta * (_offset_ns.load() - offset_prev) + (1. - beta) * _skew_ns_per_sync);
+		static_cast<int64_t>(beta * (_offset_ns.load() - _offset_prev.load()) + (1. - beta) * _skew_ns_per_sync);
 
 	_num_samples++;
 
@@ -158,19 +176,18 @@ bool TimeSync::addMeasurement(int64_t local_t1_ns, int64_t remote_t2_ns, int64_t
 
 void TimeSync::processTimesyncMsg(timesync_msg_t *msg, TimesyncPublisher *pub)
 {
-	if (getMsgSysID(msg) == 1 && getMsgSeq(msg) != _last_remote_msg_seq) {
+	if (getMsgSeq(msg) != _last_remote_msg_seq) {
 		_last_remote_msg_seq = getMsgSeq(msg);
 
 		if (getMsgTC1(msg) > 0) {
-			if (!addMeasurement(getMsgTS1(msg), getMsgTC1(msg), getTimeNSec())) {
+			if (!addMeasurement(getMsgTS1(msg), getMsgTC1(msg), getSteadyTimeNSec())) {
 				if (_debug) { std::cerr << "\033[1;33m[ micrortps__timesync ]\tOffset not updated\033[0m" << std::endl; }
 			}
 
 		} else if (getMsgTC1(msg) == 0) {
-			setMsgTimestamp(msg, getTimeUSec());
-			setMsgSysID(msg, 0);
+			setMsgTimestamp(msg, getSteadyTimeUSec());
 			setMsgSeq(msg, getMsgSeq(msg) + 1);
-			setMsgTC1(msg, getTimeNSec());
+			setMsgTC1(msg, getSteadyTimeNSec());
 
 			pub->publish(msg);
 		}
@@ -181,13 +198,26 @@ timesync_msg_t TimeSync::newTimesyncMsg()
 {
 	timesync_msg_t msg{};
 
-	setMsgTimestamp(&msg, getTimeUSec());
-	setMsgSysID(&msg, 0);
+	setMsgTimestamp(&msg, getSteadyTimeUSec());
 	setMsgSeq(&msg, _last_msg_seq);
 	setMsgTC1(&msg, 0);
-	setMsgTS1(&msg, getTimeNSec());
+	setMsgTS1(&msg, getSteadyTimeNSec());
 
 	_last_msg_seq++;
+
+	return msg;
+}
+
+timesync_status_msg_t TimeSync::newTimesyncStatusMsg()
+{
+	timesync_status_msg_t msg{};
+
+	setMsgTimestamp(&msg, getSteadyTimeUSec());
+	setMsgSourceProtocol(&msg, 1); // SOURCE_PROTOCOL_RTPS
+	setMsgRemoteTimeStamp(&msg, _remote_time_stamp.load() / 1000ULL);
+	setMsgObservedOffset(&msg, _offset_prev.load());
+	setMsgEstimatedOffset(&msg, _offset_ns.load());
+	setMsgRoundTripTime(&msg, _rtti.load() / 1000ll);
 
 	return msg;
 }

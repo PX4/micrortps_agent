@@ -35,7 +35,7 @@
  * @file vehicle_trajectory_waypoint_desired_Publisher.cpp
  * This file contains the implementation of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 #include "vehicle_trajectory_waypoint_desired_Publisher.h"
@@ -61,7 +61,7 @@ vehicle_trajectory_waypoint_desired_Publisher::~vehicle_trajectory_waypoint_desi
 	Domain::removeParticipant(mp_participant);
 }
 
-bool vehicle_trajectory_waypoint_desired_Publisher::init(const std::string &ns)
+bool vehicle_trajectory_waypoint_desired_Publisher::init(const std::string &ns, std::string topic_name)
 {
 	// Create RTPSParticipant
 	ParticipantAttributes PParam;
@@ -86,7 +86,7 @@ bool vehicle_trajectory_waypoint_desired_Publisher::init(const std::string &ns)
 	Wparam.topic.topicKind = NO_KEY;
 	Wparam.topic.topicDataType = vehicle_trajectory_waypoint_desiredDataType.getName();
 	std::string topicName = ns;
-	topicName.append("vehicle_trajectory_waypoint_desiredPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/vehicle_trajectory_waypoint_desired/out") : topicName.append(topic_name);
 	Wparam.topic.topicName = topicName;
 	mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener *>(&m_listener));
 

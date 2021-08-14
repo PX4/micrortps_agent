@@ -35,7 +35,7 @@
  * @file vehicle_control_mode_Publisher.h
  * This header file contains the declaration of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 
@@ -58,7 +58,7 @@ class vehicle_control_mode_Publisher
 public:
 	vehicle_control_mode_Publisher();
 	virtual ~vehicle_control_mode_Publisher();
-	bool init(const std::string &ns);
+	bool init(const std::string &ns, std::string topic_name = "");
 	void run();
 	void publish(vehicle_control_mode_msg_t *st);
 private:

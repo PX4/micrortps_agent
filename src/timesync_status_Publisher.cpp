@@ -32,13 +32,13 @@
  ****************************************************************************/
 
 /*!
- * @file vehicle_local_position_Publisher.cpp
+ * @file timesync_status_Publisher.cpp
  * This file contains the implementation of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
-#include "vehicle_local_position_Publisher.h"
+#include "timesync_status_Publisher.h"
 
 #include <fastrtps/Domain.h>
 #include <fastrtps/participant/Participant.h>
@@ -51,24 +51,24 @@
 using SharedMemTransportDescriptor = eprosima::fastdds::rtps::SharedMemTransportDescriptor;
 
 
-vehicle_local_position_Publisher::vehicle_local_position_Publisher()
+timesync_status_Publisher::timesync_status_Publisher()
 	: mp_participant(nullptr),
 	  mp_publisher(nullptr)
 { }
 
-vehicle_local_position_Publisher::~vehicle_local_position_Publisher()
+timesync_status_Publisher::~timesync_status_Publisher()
 {
 	Domain::removeParticipant(mp_participant);
 }
 
-bool vehicle_local_position_Publisher::init(const std::string &ns)
+bool timesync_status_Publisher::init(const std::string &ns, std::string topic_name)
 {
 	// Create RTPSParticipant
 	ParticipantAttributes PParam;
 	PParam.domainId = 0;
 	PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
 	std::string nodeName = ns;
-	nodeName.append("vehicle_local_position_publisher");
+	nodeName.append("timesync_status_publisher");
 	PParam.rtps.setName(nodeName.c_str());
 
 
@@ -79,14 +79,14 @@ bool vehicle_local_position_Publisher::init(const std::string &ns)
 	}
 
 	// Register the type
-	Domain::registerType(mp_participant, static_cast<TopicDataType *>(&vehicle_local_positionDataType));
+	Domain::registerType(mp_participant, static_cast<TopicDataType *>(&timesync_statusDataType));
 
 	// Create Publisher
 	PublisherAttributes Wparam;
 	Wparam.topic.topicKind = NO_KEY;
-	Wparam.topic.topicDataType = vehicle_local_positionDataType.getName();
+	Wparam.topic.topicDataType = timesync_statusDataType.getName();
 	std::string topicName = ns;
-	topicName.append("vehicle_local_positionPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/timesync_status/out") : topicName.append(topic_name);
 	Wparam.topic.topicName = topicName;
 	mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener *>(&m_listener));
 
@@ -97,7 +97,7 @@ bool vehicle_local_position_Publisher::init(const std::string &ns)
 	return true;
 }
 
-void vehicle_local_position_Publisher::PubListener::onPublicationMatched(Publisher *pub, MatchingInfo &info)
+void timesync_status_Publisher::PubListener::onPublicationMatched(Publisher *pub, MatchingInfo &info)
 {
 	// The first 6 values of the ID guidPrefix of an entity in a DDS-RTPS Domain
 	// are the same for all its subcomponents (publishers, subscribers)
@@ -114,16 +114,16 @@ void vehicle_local_position_Publisher::PubListener::onPublicationMatched(Publish
 	if (is_different_endpoint) {
 		if (info.status == MATCHED_MATCHING) {
 			n_matched++;
-			std::cout << "\033[0;37m[   micrortps_agent   ]\tvehicle_local_position publisher matched\033[0m" << std::endl;
+			std::cout << "\033[0;37m[   micrortps_agent   ]\ttimesync_status publisher matched\033[0m" << std::endl;
 
 		} else {
 			n_matched--;
-			std::cout << "\033[0;37m[   micrortps_agent   ]\tvehicle_local_position publisher unmatched\033[0m" << std::endl;
+			std::cout << "\033[0;37m[   micrortps_agent   ]\ttimesync_status publisher unmatched\033[0m" << std::endl;
 		}
 	}
 }
 
-void vehicle_local_position_Publisher::publish(vehicle_local_position_msg_t *st)
+void timesync_status_Publisher::publish(timesync_status_msg_t *st)
 {
 	mp_publisher->write(st);
 }

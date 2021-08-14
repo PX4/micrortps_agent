@@ -44,6 +44,7 @@
 #include <thread>
 
 #include "timesync_Publisher.h"
+#include "timesync_status_Publisher.h"
 
 static constexpr double ALPHA_INITIAL = 0.05;
 static constexpr double ALPHA_FINAL = 0.003;
@@ -55,7 +56,9 @@ static constexpr int64_t TRIGGER_RESET_THRESHOLD_NS = 100ll * 1000ll * 1000ll;
 static constexpr int REQUEST_RESET_COUNTER_THRESHOLD = 5;
 
 using timesync_msg_t = timesync;
+using timesync_status_msg_t = timesync_status;
 using TimesyncPublisher = timesync_Publisher;
+using TimesyncStatusPublisher = timesync_status_Publisher;
 
 class TimeSync
 {
@@ -70,6 +73,12 @@ public:
 	void start(TimesyncPublisher *pub);
 
 	/**
+	 * @brief Init and run the timesync status publisher thread
+	 * @param[in] pub The timesync status publisher entity to use
+	 */
+	void init_status_pub(TimesyncStatusPublisher *status_pub);
+
+	/**
 	 * @brief Resets the filter
 	 */
 	void reset();
@@ -81,15 +90,15 @@ public:
 
 	/**
 	 * @brief Get clock monotonic time (raw) in nanoseconds
-	 * @return System CLOCK_MONOTONIC time in nanoseconds
+	 * @return Steady CLOCK_MONOTONIC time in nanoseconds
 	 */
-	static int64_t getTimeNSec();
+	uint64_t getSteadyTimeNSec() const;
 
 	/**
-	 * @brief Get system monotonic time in microseconds
-	 * @return System CLOCK_MONOTONIC time in microseconds
+	 * @brief Get clock monotonic time (raw) in microseconds
+	 * @return Steady CLOCK_MONOTONIC time in microseconds
 	 */
-	static int64_t getTimeUSec();
+	uint64_t getSteadyTimeUSec() const;
 
 	/**
 	 * @brief Adds a time offset measurement to be filtered
@@ -113,6 +122,12 @@ public:
 	timesync_msg_t newTimesyncMsg();
 
 	/**
+	 * @brief Creates a new timesync status DDS message to be sent from the agent to the client
+	 * @return A new timesync status message with the origin in the agent and with the agent timestamp
+	 */
+	timesync_status_msg_t newTimesyncStatusMsg();
+
+	/**
 	 * @brief Get the time sync offset in nanoseconds
 	 * @return The offset in nanoseconds
 	 */
@@ -132,6 +147,11 @@ public:
 
 private:
 	std::atomic<int64_t> _offset_ns;
+	std::atomic<int64_t> _offset_prev;
+	std::atomic<uint64_t> _remote_time_stamp;
+	std::atomic<uint32_t> _rtti;
+
+
 	int64_t _skew_ns_per_sync;
 	int64_t _num_samples;
 
@@ -142,6 +162,7 @@ private:
 	bool _debug;
 
 	std::unique_ptr<std::thread> _send_timesync_thread;
+	std::unique_ptr<std::thread> _send_timesync_status_thread;
 	std::atomic<bool> _request_stop{false};
 
 	/**
@@ -152,15 +173,23 @@ private:
 
 	/** Timesync msg Getters **/
 	inline uint64_t getMsgTimestamp(const timesync_msg_t *msg) { return msg->timestamp_(); }
-	inline uint8_t getMsgSysID(const timesync_msg_t *msg) { return msg->sys_id_(); }
 	inline uint8_t getMsgSeq(const timesync_msg_t *msg) { return msg->seq_(); }
 	inline int64_t getMsgTC1(const timesync_msg_t *msg) { return msg->tc1_(); }
 	inline int64_t getMsgTS1(const timesync_msg_t *msg) { return msg->ts1_(); }
 
+	/** Common timestamp setter **/
+	template <typename T>
+	inline void setMsgTimestamp(T *msg, const uint64_t &timestamp) { msg->timestamp_() = timestamp; }
+
 	/** Timesync msg Setters **/
-	inline void setMsgTimestamp(timesync_msg_t *msg, const uint64_t &timestamp) { msg->timestamp_() = timestamp; }
-	inline void setMsgSysID(timesync_msg_t *msg, const uint8_t &sys_id) { msg->sys_id_() = sys_id; }
 	inline void setMsgSeq(timesync_msg_t *msg, const uint8_t &seq) { msg->seq_() = seq; }
 	inline void setMsgTC1(timesync_msg_t *msg, const int64_t &tc1) { msg->tc1_() = tc1; }
 	inline void setMsgTS1(timesync_msg_t *msg, const int64_t &ts1) { msg->ts1_() = ts1; }
+
+	/** Timesync Status msg Setters **/
+	inline void setMsgSourceProtocol(timesync_status_msg_t *msg, const uint8_t &source_protocol) { msg->source_protocol_() = source_protocol; }
+	inline void setMsgRemoteTimeStamp(timesync_status_msg_t *msg, const uint64_t &remote_timestamp) { msg->remote_timestamp_() = remote_timestamp; }
+	inline void setMsgObservedOffset(timesync_status_msg_t *msg, const int64_t &observed_offset) { msg->observed_offset_() = observed_offset; }
+	inline void setMsgEstimatedOffset(timesync_status_msg_t *msg, const int64_t &estimated_offset) { msg->estimated_offset_() = estimated_offset; }
+	inline void setMsgRoundTripTime(timesync_status_msg_t *msg, const uint32_t &round_trip_time) { msg->round_trip_time_() = round_trip_time; }
 };

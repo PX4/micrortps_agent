@@ -34,17 +34,17 @@ using namespace eprosima::fastcdr::exception;
 
 offboard_control_mode::offboard_control_mode()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b0143d3
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@28701274
     m_timestamp_ = 0;
-    // m_position_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8e6209
+    // m_position_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c9d689
     m_position_ = false;
-    // m_velocity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b4523f8
+    // m_velocity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3754a4bf
     m_velocity_ = false;
-    // m_acceleration_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@731a74c
+    // m_acceleration_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@62379589
     m_acceleration_ = false;
-    // m_attitude_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@369f73a2
+    // m_attitude_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4afcd809
     m_attitude_ = false;
-    // m_body_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f28c152
+    // m_body_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@175c2241
     m_body_rate_ = false;
 
 }

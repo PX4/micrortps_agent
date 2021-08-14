@@ -35,7 +35,7 @@
  * @file vehicle_odometry_Publisher.cpp
  * This file contains the implementation of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 #include "vehicle_odometry_Publisher.h"
@@ -61,7 +61,7 @@ vehicle_odometry_Publisher::~vehicle_odometry_Publisher()
 	Domain::removeParticipant(mp_participant);
 }
 
-bool vehicle_odometry_Publisher::init(const std::string &ns)
+bool vehicle_odometry_Publisher::init(const std::string &ns, std::string topic_name)
 {
 	// Create RTPSParticipant
 	ParticipantAttributes PParam;
@@ -86,7 +86,7 @@ bool vehicle_odometry_Publisher::init(const std::string &ns)
 	Wparam.topic.topicKind = NO_KEY;
 	Wparam.topic.topicDataType = vehicle_odometryDataType.getName();
 	std::string topicName = ns;
-	topicName.append("vehicle_odometryPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/vehicle_odometry/out") : topicName.append(topic_name);
 	Wparam.topic.topicName = topicName;
 	mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener *>(&m_listener));
 

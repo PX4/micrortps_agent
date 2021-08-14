@@ -35,7 +35,7 @@
  * @file collision_constraints_Publisher.h
  * This header file contains the declaration of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 
@@ -58,7 +58,7 @@ class collision_constraints_Publisher
 public:
 	collision_constraints_Publisher();
 	virtual ~collision_constraints_Publisher();
-	bool init(const std::string &ns);
+	bool init(const std::string &ns, std::string topic_name = "");
 	void run();
 	void publish(collision_constraints_msg_t *st);
 private:

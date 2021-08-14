@@ -38,18 +38,13 @@
 
 #include "microRTPS_timesync.h"
 
-#include "input_rc_Publisher.h"
-#include "satellite_info_Publisher.h"
-#include "sensor_combined_Publisher.h"
 #include "timesync_Publisher.h"
 #include "trajectory_waypoint_Publisher.h"
-#include "vehicle_attitude_Publisher.h"
 #include "vehicle_control_mode_Publisher.h"
-#include "vehicle_local_position_Publisher.h"
 #include "vehicle_odometry_Publisher.h"
 #include "vehicle_status_Publisher.h"
 #include "collision_constraints_Publisher.h"
-#include "vehicle_angular_velocity_Publisher.h"
+#include "timesync_status_Publisher.h"
 #include "vehicle_trajectory_waypoint_desired_Publisher.h"
 #include "debug_array_Subscriber.h"
 #include "debug_key_value_Subscriber.h"
@@ -67,9 +62,9 @@
 #include "onboard_computer_status_Subscriber.h"
 #include "trajectory_bezier_Subscriber.h"
 #include "vehicle_trajectory_bezier_Subscriber.h"
+#include "trajectory_setpoint_Subscriber.h"
 #include "vehicle_mocap_odometry_Subscriber.h"
 #include "vehicle_visual_odometry_Subscriber.h"
-#include "trajectory_setpoint_Subscriber.h"
 
 
 using debug_array_msg_t = debug_array;
@@ -88,21 +83,16 @@ using vehicle_trajectory_waypoint_msg_t = vehicle_trajectory_waypoint;
 using onboard_computer_status_msg_t = onboard_computer_status;
 using trajectory_bezier_msg_t = trajectory_bezier;
 using vehicle_trajectory_bezier_msg_t = vehicle_trajectory_bezier;
+using trajectory_setpoint_msg_t = trajectory_setpoint;
 using vehicle_mocap_odometry_msg_t = vehicle_mocap_odometry;
 using vehicle_visual_odometry_msg_t = vehicle_visual_odometry;
-using trajectory_setpoint_msg_t = trajectory_setpoint;
-using input_rc_msg_t = input_rc;
-using satellite_info_msg_t = satellite_info;
-using sensor_combined_msg_t = sensor_combined;
 using timesync_msg_t = timesync;
 using trajectory_waypoint_msg_t = trajectory_waypoint;
-using vehicle_attitude_msg_t = vehicle_attitude;
 using vehicle_control_mode_msg_t = vehicle_control_mode;
-using vehicle_local_position_msg_t = vehicle_local_position;
 using vehicle_odometry_msg_t = vehicle_odometry;
 using vehicle_status_msg_t = vehicle_status;
 using collision_constraints_msg_t = collision_constraints;
-using vehicle_angular_velocity_msg_t = vehicle_angular_velocity;
+using timesync_status_msg_t = timesync_status;
 using vehicle_trajectory_waypoint_desired_msg_t = vehicle_trajectory_waypoint_desired;
 
 class RtpsTopics
@@ -111,23 +101,23 @@ public:
 	bool init(std::condition_variable *t_send_queue_cv, std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue,
 		  const std::string &ns);
 	void set_timesync(const std::shared_ptr<TimeSync> &timesync) { _timesync = timesync; };
+	template <typename T>
+	void sync_timestamp_of_incoming_data(T &msg);
 	void publish(const uint8_t topic_ID, char data_buffer[], size_t len);
+	template <typename T>
+	void sync_timestamp_of_outgoing_data(T &msg);
 	bool getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr);
 
 private:
 	/** Publishers **/
-	input_rc_Publisher _input_rc_pub;
-	satellite_info_Publisher _satellite_info_pub;
-	sensor_combined_Publisher _sensor_combined_pub;
 	timesync_Publisher _timesync_pub;
+	timesync_Publisher _timesync_fmu_in_pub;
 	trajectory_waypoint_Publisher _trajectory_waypoint_pub;
-	vehicle_attitude_Publisher _vehicle_attitude_pub;
 	vehicle_control_mode_Publisher _vehicle_control_mode_pub;
-	vehicle_local_position_Publisher _vehicle_local_position_pub;
 	vehicle_odometry_Publisher _vehicle_odometry_pub;
 	vehicle_status_Publisher _vehicle_status_pub;
 	collision_constraints_Publisher _collision_constraints_pub;
-	vehicle_angular_velocity_Publisher _vehicle_angular_velocity_pub;
+	timesync_status_Publisher _timesync_status_pub;
 	vehicle_trajectory_waypoint_desired_Publisher _vehicle_trajectory_waypoint_desired_pub;
 
 	/** Subscribers **/
@@ -147,9 +137,9 @@ private:
 	onboard_computer_status_Subscriber _onboard_computer_status_sub;
 	trajectory_bezier_Subscriber _trajectory_bezier_sub;
 	vehicle_trajectory_bezier_Subscriber _vehicle_trajectory_bezier_sub;
+	trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
 	vehicle_mocap_odometry_Subscriber _vehicle_mocap_odometry_sub;
 	vehicle_visual_odometry_Subscriber _vehicle_visual_odometry_sub;
-	trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
 
 	// SFINAE
 	template<typename T> struct hasTimestampSample{

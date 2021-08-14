@@ -125,24 +125,6 @@ public:
     eProsima_user_DllExport uint64_t& timestamp_();
 
     /*!
-     * @brief This function sets a value in member sys_id_
-     * @param _sys_id_ New value for member sys_id_
-     */
-    eProsima_user_DllExport void sys_id_(uint8_t _sys_id_);
-
-    /*!
-     * @brief This function returns the value of member sys_id_
-     * @return Value of member sys_id_
-     */
-    eProsima_user_DllExport uint8_t sys_id_() const;
-
-    /*!
-     * @brief This function returns a reference to member sys_id_
-     * @return Reference to member sys_id_
-     */
-    eProsima_user_DllExport uint8_t& sys_id_();
-
-    /*!
      * @brief This function sets a value in member seq_
      * @param _seq_ New value for member seq_
      */
@@ -249,7 +231,6 @@ public:
 
 private:
     uint64_t m_timestamp_;
-    uint8_t m_sys_id_;
     uint8_t m_seq_;
     int64_t m_tc1_;
     int64_t m_ts1_;

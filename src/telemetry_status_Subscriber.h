@@ -35,7 +35,7 @@
  * @file telemetry_status_Subscriber.h
  * This header file contains the declaration of the subscriber functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 
@@ -63,7 +63,7 @@ public:
 	telemetry_status_Subscriber();
 	virtual ~telemetry_status_Subscriber();
 	bool init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv, std::mutex *t_send_queue_mutex,
-		  std::queue<uint8_t> *t_send_queue, const std::string &ns);
+		  std::queue<uint8_t> *t_send_queue, const std::string &ns, std::string topic_name = "");
 	void run();
 	bool hasMsg();
 	telemetry_status_msg_t getMsg();

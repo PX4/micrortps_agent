@@ -35,7 +35,7 @@
  * @file timesync_Subscriber.cpp
  * This file contains the implementation of the subscriber functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 #include "timesync_Subscriber.h"
@@ -62,7 +62,8 @@ timesync_Subscriber::~timesync_Subscriber()
 }
 
 bool timesync_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv,
-			       std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue, const std::string &ns)
+			       std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue, const std::string &ns,
+			       std::string topic_name)
 {
 	m_listener.topic_ID = topic_ID;
 	m_listener.t_send_queue_cv = t_send_queue_cv;
@@ -92,7 +93,7 @@ bool timesync_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_send
 	Rparam.topic.topicKind = NO_KEY;
 	Rparam.topic.topicDataType = timesyncDataType.getName();
 	std::string topicName = ns;
-	topicName.append("timesyncPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/timesync/in") : topicName.append(topic_name);
 	Rparam.topic.topicName = topicName;
 	mp_subscriber = Domain::createSubscriber(mp_participant, Rparam, static_cast<SubscriberListener *>(&m_listener));
 

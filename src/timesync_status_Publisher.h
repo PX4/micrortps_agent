@@ -32,35 +32,35 @@
  ****************************************************************************/
 
 /*!
- * @file vehicle_local_position_Publisher.h
+ * @file timesync_status_Publisher.h
  * This header file contains the declaration of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 
-#ifndef _vehicle_local_position__PUBLISHER_H_
-#define _vehicle_local_position__PUBLISHER_H_
+#ifndef _timesync_status__PUBLISHER_H_
+#define _timesync_status__PUBLISHER_H_
 
 #include <fastrtps/fastrtps_fwd.h>
 #include <fastrtps/publisher/PublisherListener.h>
 
-#include "vehicle_local_positionPubSubTypes.h"
+#include "timesync_statusPubSubTypes.h"
 
 using namespace eprosima::fastrtps;
 using namespace eprosima::fastrtps::rtps;
 
-using vehicle_local_position_msg_t = vehicle_local_position;
-using vehicle_local_position_msg_datatype = vehicle_local_positionPubSubType;
+using timesync_status_msg_t = timesync_status;
+using timesync_status_msg_datatype = timesync_statusPubSubType;
 
-class vehicle_local_position_Publisher
+class timesync_status_Publisher
 {
 public:
-	vehicle_local_position_Publisher();
-	virtual ~vehicle_local_position_Publisher();
-	bool init(const std::string &ns);
+	timesync_status_Publisher();
+	virtual ~timesync_status_Publisher();
+	bool init(const std::string &ns, std::string topic_name = "");
 	void run();
-	void publish(vehicle_local_position_msg_t *st);
+	void publish(timesync_status_msg_t *st);
 private:
 	Participant *mp_participant;
 	Publisher *mp_publisher;
@@ -73,7 +73,7 @@ private:
 		void onPublicationMatched(Publisher *pub, MatchingInfo &info);
 		int n_matched;
 	} m_listener;
-	vehicle_local_position_msg_datatype vehicle_local_positionDataType;
+	timesync_status_msg_datatype timesync_statusDataType;
 };
 
-#endif // _vehicle_local_position__PUBLISHER_H_
+#endif // _timesync_status__PUBLISHER_H_

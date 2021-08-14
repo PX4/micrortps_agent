@@ -39,7 +39,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	// Initialise subscribers
 	std::cout << "\033[0;36m---   Subscribers   ---\033[0m" << std::endl;
 
-	if (_debug_array_sub.init(12, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_debug_array_sub.init(1, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- debug_array subscriber started" << std::endl;
 
 	} else {
@@ -48,7 +48,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_debug_key_value_sub.init(13, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_debug_key_value_sub.init(2, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- debug_key_value subscriber started" << std::endl;
 
 	} else {
@@ -57,7 +57,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_debug_value_sub.init(14, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_debug_value_sub.init(3, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- debug_value subscriber started" << std::endl;
 
 	} else {
@@ -66,7 +66,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_debug_vect_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_debug_vect_sub.init(4, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- debug_vect subscriber started" << std::endl;
 
 	} else {
@@ -75,7 +75,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_offboard_control_mode_sub.init(44, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_offboard_control_mode_sub.init(5, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- offboard_control_mode subscriber started" << std::endl;
 
 	} else {
@@ -84,7 +84,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_optical_flow_sub.init(45, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_optical_flow_sub.init(6, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- optical_flow subscriber started" << std::endl;
 
 	} else {
@@ -93,7 +93,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_position_setpoint_sub.init(50, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_position_setpoint_sub.init(7, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- position_setpoint subscriber started" << std::endl;
 
 	} else {
@@ -102,7 +102,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_position_setpoint_triplet_sub.init(51, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_position_setpoint_triplet_sub.init(8, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- position_setpoint_triplet subscriber started" << std::endl;
 
 	} else {
@@ -111,7 +111,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_telemetry_status_sub.init(76, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_telemetry_status_sub.init(9, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- telemetry_status subscriber started" << std::endl;
 
 	} else {
@@ -120,7 +120,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_timesync_sub.init(78, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_timesync_sub.init(10, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- timesync subscriber started" << std::endl;
 
 	} else {
@@ -129,7 +129,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_command_sub.init(89, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_command_sub.init(12, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_command subscriber started" << std::endl;
 
 	} else {
@@ -138,7 +138,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_local_position_setpoint_sub.init(97, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_local_position_setpoint_sub.init(14, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_local_position_setpoint subscriber started" << std::endl;
 
 	} else {
@@ -147,7 +147,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_trajectory_waypoint_sub.init(104, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_trajectory_waypoint_sub.init(20, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_trajectory_waypoint subscriber started" << std::endl;
 
 	} else {
@@ -156,7 +156,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_onboard_computer_status_sub.init(116, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_onboard_computer_status_sub.init(23, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- onboard_computer_status subscriber started" << std::endl;
 
 	} else {
@@ -165,7 +165,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_trajectory_bezier_sub.init(126, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_trajectory_bezier_sub.init(24, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- trajectory_bezier subscriber started" << std::endl;
 
 	} else {
@@ -174,7 +174,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_trajectory_bezier_sub.init(127, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_trajectory_bezier_sub.init(25, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_trajectory_bezier subscriber started" << std::endl;
 
 	} else {
@@ -183,7 +183,16 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_mocap_odometry_sub.init(191, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_trajectory_setpoint_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+		std::cout << "- trajectory_setpoint subscriber started" << std::endl;
+
+	} else {
+		std::cerr << "Failed starting trajectory_setpoint subscriber" << std::endl;
+		return false;
+	}
+
+
+	if (_vehicle_mocap_odometry_sub.init(17, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_mocap_odometry subscriber started" << std::endl;
 
 	} else {
@@ -192,7 +201,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_visual_odometry_sub.init(192, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_visual_odometry_sub.init(18, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_visual_odometry subscriber started" << std::endl;
 
 	} else {
@@ -200,49 +209,16 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 		return false;
 	}
 
-
-	if (_trajectory_setpoint_sub.init(196, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
-		std::cout << "- trajectory_setpoint subscriber started" << std::endl;
-
-	} else {
-		std::cerr << "Failed starting trajectory_setpoint subscriber" << std::endl;
-		return false;
-	}
-
 	std::cout << "\033[0;36m-----------------------\033[0m" << std::endl << std::endl;
+
 	// Initialise publishers
 	std::cout << "\033[0;36m----   Publishers  ----\033[0m" << std::endl;
 
-	if (_input_rc_pub.init(ns)) {
-		std::cout << "- input_rc publisher started" << std::endl;
-
-	} else {
-		std::cerr << "ERROR starting input_rc publisher" << std::endl;
-		return false;
-	}
-
-
-	if (_satellite_info_pub.init(ns)) {
-		std::cout << "- satellite_info publisher started" << std::endl;
-
-	} else {
-		std::cerr << "ERROR starting satellite_info publisher" << std::endl;
-		return false;
-	}
-
-
-	if (_sensor_combined_pub.init(ns)) {
-		std::cout << "- sensor_combined publisher started" << std::endl;
-
-	} else {
-		std::cerr << "ERROR starting sensor_combined publisher" << std::endl;
-		return false;
-	}
-
-
 	if (_timesync_pub.init(ns)) {
-		std::cout << "- timesync publisher started" << std::endl;
-		_timesync->start(&_timesync_pub);
+		if (_timesync_fmu_in_pub.init(ns, std::string("fmu/timesync/in"))) {
+			_timesync->start(&_timesync_fmu_in_pub);
+			std::cout << "- timesync publishers started" << std::endl;
+		}
 
 	} else {
 		std::cerr << "ERROR starting timesync publisher" << std::endl;
@@ -259,29 +235,11 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_attitude_pub.init(ns)) {
-		std::cout << "- vehicle_attitude publisher started" << std::endl;
-
-	} else {
-		std::cerr << "ERROR starting vehicle_attitude publisher" << std::endl;
-		return false;
-	}
-
-
 	if (_vehicle_control_mode_pub.init(ns)) {
 		std::cout << "- vehicle_control_mode publisher started" << std::endl;
 
 	} else {
 		std::cerr << "ERROR starting vehicle_control_mode publisher" << std::endl;
-		return false;
-	}
-
-
-	if (_vehicle_local_position_pub.init(ns)) {
-		std::cout << "- vehicle_local_position publisher started" << std::endl;
-
-	} else {
-		std::cerr << "ERROR starting vehicle_local_position publisher" << std::endl;
 		return false;
 	}
 
@@ -313,11 +271,12 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_angular_velocity_pub.init(ns)) {
-		std::cout << "- vehicle_angular_velocity publisher started" << std::endl;
+	if (_timesync_status_pub.init(ns, std::string("timesync_status"))) {
+		_timesync->init_status_pub(&_timesync_status_pub);
+		std::cout << "- timesync_status publisher started" << std::endl;
 
 	} else {
-		std::cerr << "ERROR starting vehicle_angular_velocity publisher" << std::endl;
+		std::cerr << "ERROR starting timesync_status publisher" << std::endl;
 		return false;
 	}
 
@@ -334,220 +293,122 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	return true;
 }
 
+template <typename T>
+void RtpsTopics::sync_timestamp_of_incoming_data(T &msg) {
+	uint64_t timestamp = getMsgTimestamp(&msg);
+	uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+	_timesync->subtractOffset(timestamp);
+	setMsgTimestamp(&msg, timestamp);
+	_timesync->subtractOffset(timestamp_sample);
+	setMsgTimestampSample(&msg, timestamp_sample);
+}
+
 void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 {
 	switch (topic_ID) {
 
-	case 30: { // input_rc
-		input_rc_msg_t st;
-		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
-		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
-		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_input_rc_pub.publish(&st);
-	}
-	break;
-
-	case 61: { // satellite_info
-		satellite_info_msg_t st;
-		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
-		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
-		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_satellite_info_pub.publish(&st);
-	}
-	break;
-
-	case 65: { // sensor_combined
-		sensor_combined_msg_t st;
-		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
-		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
-		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_sensor_combined_pub.publish(&st);
-	}
-	break;
-
-	case 78: { // timesync
+	case 10: { // timesync publisher
 		timesync_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
 		_timesync->processTimesyncMsg(&st, &_timesync_pub);
 
-		if (getMsgSysID(&st) == 1) {
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_timesync_pub.publish(&st);
-		}
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
 
+		_timesync_pub.publish(&st);
 	}
 	break;
 
-	case 79: { // trajectory_waypoint
+	case 11: { // trajectory_waypoint publisher
 		trajectory_waypoint_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_trajectory_waypoint_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_trajectory_waypoint_pub.publish(&st);
 	}
 	break;
 
-	case 87: { // vehicle_attitude
-		vehicle_attitude_msg_t st;
-		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
-		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
-		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_attitude_pub.publish(&st);
-	}
-	break;
-
-	case 92: { // vehicle_control_mode
+	case 13: { // vehicle_control_mode publisher
 		vehicle_control_mode_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_control_mode_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_vehicle_control_mode_pub.publish(&st);
 	}
 	break;
 
-	case 96: { // vehicle_local_position
-		vehicle_local_position_msg_t st;
-		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
-		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
-		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_local_position_pub.publish(&st);
-	}
-	break;
-
-	case 99: { // vehicle_odometry
+	case 16: { // vehicle_odometry publisher
 		vehicle_odometry_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_odometry_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_vehicle_odometry_pub.publish(&st);
 	}
 	break;
 
-	case 102: { // vehicle_status
+	case 19: { // vehicle_status publisher
 		vehicle_status_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_status_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_vehicle_status_pub.publish(&st);
 	}
 	break;
 
-	case 107: { // collision_constraints
+	case 22: { // collision_constraints publisher
 		collision_constraints_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_collision_constraints_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_collision_constraints_pub.publish(&st);
 	}
 	break;
 
-	case 112: { // vehicle_angular_velocity
-		vehicle_angular_velocity_msg_t st;
+	case 26: { // timesync_status publisher
+		timesync_status_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_angular_velocity_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_timesync_status_pub.publish(&st);
 	}
 	break;
 
-	case 193: { // vehicle_trajectory_waypoint_desired
+	case 21: { // vehicle_trajectory_waypoint_desired publisher
 		vehicle_trajectory_waypoint_desired_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
 		st.deserialize(cdr_des);
-			// apply timestamp offset
-			uint64_t timestamp = getMsgTimestamp(&st);
-			uint64_t timestamp_sample = getMsgTimestampSample(&st);
-			_timesync->subtractOffset(timestamp);
-			setMsgTimestamp(&st, timestamp);
-			_timesync->subtractOffset(timestamp_sample);
-			setMsgTimestampSample(&st, timestamp_sample);
-			_vehicle_trajectory_waypoint_desired_pub.publish(&st);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_vehicle_trajectory_waypoint_desired_pub.publish(&st);
 	}
 	break;
 
@@ -557,6 +418,15 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 		break;
 	}
 }
+template <typename T>
+void RtpsTopics::sync_timestamp_of_outgoing_data(T &msg) {
+	uint64_t timestamp = getMsgTimestamp(&msg);
+	uint64_t timestamp_sample = getMsgTimestampSample(&msg);
+	_timesync->addOffset(timestamp);
+	setMsgTimestamp(&msg, timestamp);
+	_timesync->addOffset(timestamp_sample);
+	setMsgTimestampSample(&msg, timestamp_sample);
+}
 
 bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 {
@@ -564,329 +434,287 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 	switch (topic_ID) {
 
-	case 12: // debug_array
+	case 1: // debug_array subscriber
 		if (_debug_array_sub.hasMsg()) {
 			debug_array_msg_t msg = _debug_array_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_debug_array_sub.unlockMsg();
 		}
 
 		break;
 
-	case 13: // debug_key_value
+	case 2: // debug_key_value subscriber
 		if (_debug_key_value_sub.hasMsg()) {
 			debug_key_value_msg_t msg = _debug_key_value_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_debug_key_value_sub.unlockMsg();
 		}
 
 		break;
 
-	case 14: // debug_value
+	case 3: // debug_value subscriber
 		if (_debug_value_sub.hasMsg()) {
 			debug_value_msg_t msg = _debug_value_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_debug_value_sub.unlockMsg();
 		}
 
 		break;
 
-	case 15: // debug_vect
+	case 4: // debug_vect subscriber
 		if (_debug_vect_sub.hasMsg()) {
 			debug_vect_msg_t msg = _debug_vect_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_debug_vect_sub.unlockMsg();
 		}
 
 		break;
 
-	case 44: // offboard_control_mode
+	case 5: // offboard_control_mode subscriber
 		if (_offboard_control_mode_sub.hasMsg()) {
 			offboard_control_mode_msg_t msg = _offboard_control_mode_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_offboard_control_mode_sub.unlockMsg();
 		}
 
 		break;
 
-	case 45: // optical_flow
+	case 6: // optical_flow subscriber
 		if (_optical_flow_sub.hasMsg()) {
 			optical_flow_msg_t msg = _optical_flow_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_optical_flow_sub.unlockMsg();
 		}
 
 		break;
 
-	case 50: // position_setpoint
+	case 7: // position_setpoint subscriber
 		if (_position_setpoint_sub.hasMsg()) {
 			position_setpoint_msg_t msg = _position_setpoint_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_position_setpoint_sub.unlockMsg();
 		}
 
 		break;
 
-	case 51: // position_setpoint_triplet
+	case 8: // position_setpoint_triplet subscriber
 		if (_position_setpoint_triplet_sub.hasMsg()) {
 			position_setpoint_triplet_msg_t msg = _position_setpoint_triplet_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_position_setpoint_triplet_sub.unlockMsg();
 		}
 
 		break;
 
-	case 76: // telemetry_status
+	case 9: // telemetry_status subscriber
 		if (_telemetry_status_sub.hasMsg()) {
 			telemetry_status_msg_t msg = _telemetry_status_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_telemetry_status_sub.unlockMsg();
 		}
 
 		break;
 
-	case 78: // timesync
+	case 10: // timesync subscriber
 		if (_timesync_sub.hasMsg()) {
 			timesync_msg_t msg = _timesync_sub.getMsg();
 
-			if (getMsgSysID(&msg) == 0) {
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
-			}
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
 
 			_timesync_sub.unlockMsg();
 		}
 
 		break;
 
-	case 89: // vehicle_command
+	case 12: // vehicle_command subscriber
 		if (_vehicle_command_sub.hasMsg()) {
 			vehicle_command_msg_t msg = _vehicle_command_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_vehicle_command_sub.unlockMsg();
 		}
 
 		break;
 
-	case 97: // vehicle_local_position_setpoint
+	case 14: // vehicle_local_position_setpoint subscriber
 		if (_vehicle_local_position_setpoint_sub.hasMsg()) {
 			vehicle_local_position_setpoint_msg_t msg = _vehicle_local_position_setpoint_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_vehicle_local_position_setpoint_sub.unlockMsg();
 		}
 
 		break;
 
-	case 104: // vehicle_trajectory_waypoint
+	case 20: // vehicle_trajectory_waypoint subscriber
 		if (_vehicle_trajectory_waypoint_sub.hasMsg()) {
 			vehicle_trajectory_waypoint_msg_t msg = _vehicle_trajectory_waypoint_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_vehicle_trajectory_waypoint_sub.unlockMsg();
 		}
 
 		break;
 
-	case 116: // onboard_computer_status
+	case 23: // onboard_computer_status subscriber
 		if (_onboard_computer_status_sub.hasMsg()) {
 			onboard_computer_status_msg_t msg = _onboard_computer_status_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_onboard_computer_status_sub.unlockMsg();
 		}
 
 		break;
 
-	case 126: // trajectory_bezier
+	case 24: // trajectory_bezier subscriber
 		if (_trajectory_bezier_sub.hasMsg()) {
 			trajectory_bezier_msg_t msg = _trajectory_bezier_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_trajectory_bezier_sub.unlockMsg();
 		}
 
 		break;
 
-	case 127: // vehicle_trajectory_bezier
+	case 25: // vehicle_trajectory_bezier subscriber
 		if (_vehicle_trajectory_bezier_sub.hasMsg()) {
 			vehicle_trajectory_bezier_msg_t msg = _vehicle_trajectory_bezier_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_vehicle_trajectory_bezier_sub.unlockMsg();
 		}
 
 		break;
 
-	case 191: // vehicle_mocap_odometry
+	case 15: // trajectory_setpoint subscriber
+		if (_trajectory_setpoint_sub.hasMsg()) {
+			trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
+			_trajectory_setpoint_sub.unlockMsg();
+		}
+
+		break;
+
+	case 17: // vehicle_mocap_odometry subscriber
 		if (_vehicle_mocap_odometry_sub.hasMsg()) {
 			vehicle_mocap_odometry_msg_t msg = _vehicle_mocap_odometry_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_vehicle_mocap_odometry_sub.unlockMsg();
 		}
 
 		break;
 
-	case 192: // vehicle_visual_odometry
+	case 18: // vehicle_visual_odometry subscriber
 		if (_vehicle_visual_odometry_sub.hasMsg()) {
 			vehicle_visual_odometry_msg_t msg = _vehicle_visual_odometry_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
 			_vehicle_visual_odometry_sub.unlockMsg();
-		}
-
-		break;
-
-	case 196: // trajectory_setpoint
-		if (_trajectory_setpoint_sub.hasMsg()) {
-			trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
-				// apply timestamps offset
-				uint64_t timestamp = getMsgTimestamp(&msg);
-				uint64_t timestamp_sample = getMsgTimestampSample(&msg);
-				_timesync->addOffset(timestamp);
-				setMsgTimestamp(&msg, timestamp);
-				_timesync->addOffset(timestamp_sample);
-				setMsgTimestampSample(&msg, timestamp_sample);
-				msg.serialize(scdr);
-				ret = true;
-			_trajectory_setpoint_sub.unlockMsg();
 		}
 
 		break;

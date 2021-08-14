@@ -35,7 +35,7 @@
  * @file timesync_Publisher.cpp
  * This file contains the implementation of the publisher functions.
  *
- * This file was adapted from the fastcdrgen tool.
+ * This file was adapted from the fastrtpsgen tool.
  */
 
 #include "timesync_Publisher.h"
@@ -61,7 +61,7 @@ timesync_Publisher::~timesync_Publisher()
 	Domain::removeParticipant(mp_participant);
 }
 
-bool timesync_Publisher::init(const std::string &ns)
+bool timesync_Publisher::init(const std::string &ns, std::string topic_name)
 {
 	// Create RTPSParticipant
 	ParticipantAttributes PParam;
@@ -86,7 +86,7 @@ bool timesync_Publisher::init(const std::string &ns)
 	Wparam.topic.topicKind = NO_KEY;
 	Wparam.topic.topicDataType = timesyncDataType.getName();
 	std::string topicName = ns;
-	topicName.append("timesyncPubSubTopic");
+	topic_name.empty() ? topicName.append("fmu/timesync/out") : topicName.append(topic_name);
 	Wparam.topic.topicName = topicName;
 	mp_publisher = Domain::createPublisher(mp_participant, Wparam, static_cast<PublisherListener *>(&m_listener));
 

@@ -34,15 +34,13 @@ using namespace eprosima::fastcdr::exception;
 
 timesync::timesync()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f970963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a400542
     m_timestamp_ = 0;
-    // m_sys_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61f8bee4
-    m_sys_id_ = 0;
-    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b49cea0
+    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6580cfdd
     m_seq_ = 0;
-    // m_tc1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@887af79
+    // m_tc1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e0b85f9
     m_tc1_ = 0;
-    // m_ts1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fac631b
+    // m_ts1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63355449
     m_ts1_ = 0;
 
 }
@@ -53,13 +51,11 @@ timesync::~timesync()
 
 
 
-
 }
 
 timesync::timesync(const timesync &x)
 {
     m_timestamp_ = x.m_timestamp_;
-    m_sys_id_ = x.m_sys_id_;
     m_seq_ = x.m_seq_;
     m_tc1_ = x.m_tc1_;
     m_ts1_ = x.m_ts1_;
@@ -68,7 +64,6 @@ timesync::timesync(const timesync &x)
 timesync::timesync(timesync &&x)
 {
     m_timestamp_ = x.m_timestamp_;
-    m_sys_id_ = x.m_sys_id_;
     m_seq_ = x.m_seq_;
     m_tc1_ = x.m_tc1_;
     m_ts1_ = x.m_ts1_;
@@ -78,7 +73,6 @@ timesync& timesync::operator=(const timesync &x)
 {
 
     m_timestamp_ = x.m_timestamp_;
-    m_sys_id_ = x.m_sys_id_;
     m_seq_ = x.m_seq_;
     m_tc1_ = x.m_tc1_;
     m_ts1_ = x.m_ts1_;
@@ -90,7 +84,6 @@ timesync& timesync::operator=(timesync &&x)
 {
 
     m_timestamp_ = x.m_timestamp_;
-    m_sys_id_ = x.m_sys_id_;
     m_seq_ = x.m_seq_;
     m_tc1_ = x.m_tc1_;
     m_ts1_ = x.m_ts1_;
@@ -104,9 +97,6 @@ size_t timesync::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -134,9 +124,6 @@ size_t timesync::getCdrSerializedSize(const timesync& data, size_t current_align
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
@@ -151,7 +138,6 @@ void timesync::serialize(eprosima::fastcdr::Cdr &scdr) const
 {
 
     scdr << m_timestamp_;
-    scdr << m_sys_id_;
     scdr << m_seq_;
     scdr << m_tc1_;
     scdr << m_ts1_;
@@ -161,7 +147,6 @@ void timesync::deserialize(eprosima::fastcdr::Cdr &dcdr)
 {
 
     dcdr >> m_timestamp_;
-    dcdr >> m_sys_id_;
     dcdr >> m_seq_;
     dcdr >> m_tc1_;
     dcdr >> m_ts1_;
@@ -192,33 +177,6 @@ uint64_t timesync::timestamp_() const
 uint64_t& timesync::timestamp_()
 {
     return m_timestamp_;
-}
-
-/*!
- * @brief This function sets a value in member sys_id_
- * @param _sys_id_ New value for member sys_id_
- */
-void timesync::sys_id_(uint8_t _sys_id_)
-{
-m_sys_id_ = _sys_id_;
-}
-
-/*!
- * @brief This function returns the value of member sys_id_
- * @return Value of member sys_id_
- */
-uint8_t timesync::sys_id_() const
-{
-    return m_sys_id_;
-}
-
-/*!
- * @brief This function returns a reference to member sys_id_
- * @return Reference to member sys_id_
- */
-uint8_t& timesync::sys_id_()
-{
-    return m_sys_id_;
 }
 
 /*!
@@ -313,7 +271,6 @@ size_t timesync::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
     return current_align;
 }
 
@@ -325,7 +282,6 @@ bool timesync::isKeyDefined()
 void timesync::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

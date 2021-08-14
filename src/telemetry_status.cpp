@@ -40,77 +40,77 @@ using namespace eprosima::fastcdr::exception;
 
 telemetry_status::telemetry_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c5a1b69
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@689604d9
     m_timestamp_ = 0;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3701eaf6
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@18078bef
     m_type_ = 0;
-    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@627551fb
+    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@799f10e1
     m_mode_ = 0;
-    // m_flow_control_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b552920
+    // m_flow_control_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c371370
     m_flow_control_ = false;
-    // m_forwarding_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2758fe70
+    // m_forwarding_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@145f66e3
     m_forwarding_ = false;
-    // m_mavlink_v2_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f36e637
+    // m_mavlink_v2_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3023df74
     m_mavlink_v2_ = false;
-    // m_ftp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@578486a3
+    // m_ftp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@313ac989
     m_ftp_ = false;
-    // m_streams_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551aa95a
+    // m_streams_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4562e04d
     m_streams_ = 0;
-    // m_data_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35d176f7
+    // m_data_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a65fe7c
     m_data_rate_ = 0.0;
-    // m_rate_multiplier_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dfe2924
+    // m_rate_multiplier_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4135c3b
     m_rate_multiplier_ = 0.0;
-    // m_tx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ebc05a6
+    // m_tx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6302bbb1
     m_tx_rate_avg_ = 0.0;
-    // m_tx_error_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e6c3152
+    // m_tx_error_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@31304f14
     m_tx_error_rate_avg_ = 0.0;
-    // m_tx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50b494a6
+    // m_tx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@34a3d150
     m_tx_message_count_ = 0;
-    // m_tx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3cef309d
+    // m_tx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a4fb17b
     m_tx_buffer_overruns_ = 0;
-    // m_rx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32709393
+    // m_rx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c6648b0
     m_rx_rate_avg_ = 0.0;
-    // m_rx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49fc609f
+    // m_rx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6f1de4c7
     m_rx_message_count_ = 0;
-    // m_rx_message_lost_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6321e813
+    // m_rx_message_lost_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@459e9125
     m_rx_message_lost_count_ = 0;
-    // m_rx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79be0360
+    // m_rx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@128d2484
     m_rx_buffer_overruns_ = 0;
-    // m_rx_parse_errors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22a67b4
+    // m_rx_parse_errors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7cc0cdad
     m_rx_parse_errors_ = 0;
-    // m_rx_packet_drop_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57855c9a
+    // m_rx_packet_drop_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c7b252e
     m_rx_packet_drop_count_ = 0;
-    // m_rx_message_lost_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b084709
+    // m_rx_message_lost_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4d5d943d
     m_rx_message_lost_rate_ = 0.0;
-    // m_heartbeat_type_antenna_tracker_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3224f60b
+    // m_heartbeat_type_antenna_tracker_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@368f2016
     m_heartbeat_type_antenna_tracker_ = false;
-    // m_heartbeat_type_gcs_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63e2203c
+    // m_heartbeat_type_gcs_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c583ecf
     m_heartbeat_type_gcs_ = false;
-    // m_heartbeat_type_onboard_controller_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efed156
+    // m_heartbeat_type_onboard_controller_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@692f203f
     m_heartbeat_type_onboard_controller_ = false;
-    // m_heartbeat_type_gimbal_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6737fd8f
+    // m_heartbeat_type_gimbal_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48f2bd5b
     m_heartbeat_type_gimbal_ = false;
-    // m_heartbeat_type_adsb_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72b6cbcc
+    // m_heartbeat_type_adsb_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7b2bbc3
     m_heartbeat_type_adsb_ = false;
-    // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a7e666
+    // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a1153bc
     m_heartbeat_type_camera_ = false;
-    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68bbe345
+    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1aafa419
     m_heartbeat_component_telemetry_radio_ = false;
-    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@30b8a058
+    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@47eaca72
     m_heartbeat_component_log_ = false;
-    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7494e528
+    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55141def
     m_heartbeat_component_osd_ = false;
-    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4bbfb90a
+    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55182842
     m_heartbeat_component_obstacle_avoidance_ = false;
-    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c29daf3
+    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3270d194
     m_heartbeat_component_vio_ = false;
-    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@9660f4e
+    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@235834f2
     m_heartbeat_component_pairing_manager_ = false;
-    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5a8806ef
+    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5656be13
     m_heartbeat_component_udp_bridge_ = false;
-    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c49835d
+    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4218d6a3
     m_heartbeat_component_uart_bridge_ = false;
-    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e853265
+    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@76505305
     m_avoidance_system_healthy_ = false;
 
 }
