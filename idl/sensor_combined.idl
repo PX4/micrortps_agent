@@ -1,0 +1,28 @@
+
+#ifndef __sensor_combined__idl__
+#define __sensor_combined__idl__
+
+
+
+const long sensor_combined__RELATIVE_TIMESTAMP_INVALID = 2147483647;
+const octet sensor_combined__CLIPPING_X = 1;
+const octet sensor_combined__CLIPPING_Y = 2;
+const octet sensor_combined__CLIPPING_Z = 4;
+
+typedef float sensor_combined__float_array_3[3];
+
+struct sensor_combined
+{
+    unsigned long long timestamp_;
+    sensor_combined__float_array_3 gyro_rad;
+    unsigned long gyro_integral_dt_;
+    long accelerometer_timestamp_relative_;
+    sensor_combined__float_array_3 accelerometer_m_s2;
+    unsigned long accelerometer_integral_dt_;
+    octet accelerometer_clipping_;
+
+}; // struct sensor_combined
+
+#pragma keylist sensor_combined
+
+#endif  // __sensor_combined__idl__
