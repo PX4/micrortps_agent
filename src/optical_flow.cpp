@@ -38,39 +38,39 @@ using namespace eprosima::fastcdr::exception;
 
 optical_flow::optical_flow()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6aba2b86
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b81ce95
     m_timestamp_ = 0;
-    // m_sensor_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@158da8e
+    // m_sensor_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a798d51
     m_sensor_id_ = 0;
-    // m_pixel_flow_x_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@74e52303
+    // m_pixel_flow_x_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6d763516
     m_pixel_flow_x_integral_ = 0.0;
-    // m_pixel_flow_y_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@47af7f3d
+    // m_pixel_flow_y_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@52bf72b5
     m_pixel_flow_y_integral_ = 0.0;
-    // m_gyro_x_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c729a55
+    // m_gyro_x_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37afeb11
     m_gyro_x_rate_integral_ = 0.0;
-    // m_gyro_y_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bb9a3ff
+    // m_gyro_y_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@515aebb0
     m_gyro_y_rate_integral_ = 0.0;
-    // m_gyro_z_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@661972b0
+    // m_gyro_z_rate_integral_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd8ba08
     m_gyro_z_rate_integral_ = 0.0;
-    // m_ground_distance_m_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5af3afd9
+    // m_ground_distance_m_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@245b4bdc
     m_ground_distance_m_ = 0.0;
-    // m_integration_timespan_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@323b36e0
+    // m_integration_timespan_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c64cb25
     m_integration_timespan_ = 0;
-    // m_time_since_last_sonar_update_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44ebcd03
+    // m_time_since_last_sonar_update_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ae5aa72
     m_time_since_last_sonar_update_ = 0;
-    // m_frame_count_since_last_readout_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@694abbdc
+    // m_frame_count_since_last_readout_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@222545dc
     m_frame_count_since_last_readout_ = 0;
-    // m_gyro_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2e005c4b
+    // m_gyro_temperature_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c5eefef
     m_gyro_temperature_ = 0;
-    // m_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4567f35d
+    // m_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@16293aa2
     m_quality_ = 0;
-    // m_max_flow_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ffead27
+    // m_max_flow_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5158b42f
     m_max_flow_rate_ = 0.0;
-    // m_min_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6356695f
+    // m_min_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@595b007d
     m_min_ground_distance_ = 0.0;
-    // m_max_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f18837a
+    // m_max_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72d1ad2e
     m_max_ground_distance_ = 0.0;
-    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@359f7cdf
+    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2d7275fc
     m_mode_ = 0;
 
 }

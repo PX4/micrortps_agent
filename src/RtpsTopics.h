@@ -45,6 +45,7 @@
 #include "vehicle_status_Publisher.h"
 #include "collision_constraints_Publisher.h"
 #include "timesync_status_Publisher.h"
+#include "sensor_combined_Publisher.h"
 #include "vehicle_trajectory_waypoint_desired_Publisher.h"
 #include "debug_array_Subscriber.h"
 #include "debug_key_value_Subscriber.h"
@@ -93,6 +94,7 @@ using vehicle_odometry_msg_t = vehicle_odometry;
 using vehicle_status_msg_t = vehicle_status;
 using collision_constraints_msg_t = collision_constraints;
 using timesync_status_msg_t = timesync_status;
+using sensor_combined_msg_t = sensor_combined;
 using vehicle_trajectory_waypoint_desired_msg_t = vehicle_trajectory_waypoint_desired;
 
 class RtpsTopics
@@ -118,6 +120,7 @@ private:
 	vehicle_status_Publisher _vehicle_status_pub;
 	collision_constraints_Publisher _collision_constraints_pub;
 	timesync_status_Publisher _timesync_status_pub;
+	sensor_combined_Publisher _sensor_combined_pub;
 	vehicle_trajectory_waypoint_desired_Publisher _vehicle_trajectory_waypoint_desired_pub;
 
 	/** Subscribers **/

@@ -281,6 +281,15 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
+	if (_sensor_combined_pub.init(ns)) {
+		std::cout << "- sensor_combined publisher started" << std::endl;
+
+	} else {
+		std::cerr << "ERROR starting sensor_combined publisher" << std::endl;
+		return false;
+	}
+
+
 	if (_vehicle_trajectory_waypoint_desired_pub.init(ns)) {
 		std::cout << "- vehicle_trajectory_waypoint_desired publisher started" << std::endl;
 
@@ -396,6 +405,19 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 		sync_timestamp_of_incoming_data(st);
 
 		_timesync_status_pub.publish(&st);
+	}
+	break;
+
+	case 27: { // sensor_combined publisher
+		sensor_combined_msg_t st;
+		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
+		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
+		st.deserialize(cdr_des);
+
+		// apply timestamp offset
+		sync_timestamp_of_incoming_data(st);
+
+		_sensor_combined_pub.publish(&st);
 	}
 	break;
 
