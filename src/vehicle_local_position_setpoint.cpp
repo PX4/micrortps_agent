@@ -35,9 +35,9 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_local_position_setpoint::vehicle_local_position_setpoint()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dd02175
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@62fdb4a6
     m_timestamp_ = 0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@31206beb
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11e21d0e
     m_x_ = 0.0;
     // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3e77a1ed
     m_y_ = 0.0;
