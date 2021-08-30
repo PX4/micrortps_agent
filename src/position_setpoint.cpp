@@ -43,21 +43,21 @@ using namespace eprosima::fastcdr::exception;
 
 position_setpoint::position_setpoint()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@530612ba
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f4168b8
     m_timestamp_ = 0;
-    // m_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a40cd94
+    // m_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bd94634
     m_valid_ = false;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f4168b8
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58a90037
     m_type_ = 0;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bd94634
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@74294adb
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58a90037
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@70a9f84e
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@74294adb
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@130f889
     m_vz_ = 0.0;
-    // m_velocity_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@70a9f84e
+    // m_velocity_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1188e820
     m_velocity_valid_ = false;
-    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@130f889
+    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2f490758
     m_velocity_frame_ = 0;
     // m_alt_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@101df177
     m_alt_valid_ = false;
