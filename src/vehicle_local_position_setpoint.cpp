@@ -35,29 +35,29 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_local_position_setpoint::vehicle_local_position_setpoint()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@62fdb4a6
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dd02175
     m_timestamp_ = 0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11e21d0e
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@31206beb
     m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1dd02175
+    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3e77a1ed
     m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@31206beb
+    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3ffcd140
     m_z_ = 0.0;
-    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3e77a1ed
+    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23bb8443
     m_yaw_ = 0.0;
-    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3ffcd140
+    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1176dcec
     m_yawspeed_ = 0.0;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23bb8443
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@120d6fe6
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1176dcec
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4ba2ca36
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@120d6fe6
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3444d69d
     m_vz_ = 0.0;
-    // m_acceleration com.eprosima.idl.parser.typecode.AliasTypeCode@4ba2ca36
+    // m_acceleration com.eprosima.idl.parser.typecode.AliasTypeCode@1372ed45
     memset(&m_acceleration, 0, (3) * 4);
-    // m_jerk com.eprosima.idl.parser.typecode.AliasTypeCode@4ba2ca36
+    // m_jerk com.eprosima.idl.parser.typecode.AliasTypeCode@1372ed45
     memset(&m_jerk, 0, (3) * 4);
-    // m_thrust com.eprosima.idl.parser.typecode.AliasTypeCode@4ba2ca36
+    // m_thrust com.eprosima.idl.parser.typecode.AliasTypeCode@1372ed45
     memset(&m_thrust, 0, (3) * 4);
 
 }
