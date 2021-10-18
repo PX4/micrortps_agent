@@ -102,6 +102,7 @@ const uint16_t vehicle_command__VEHICLE_CMD_DO_REPEAT_RELAY = 182;
 const uint16_t vehicle_command__VEHICLE_CMD_DO_SET_SERVO = 183;
 const uint16_t vehicle_command__VEHICLE_CMD_DO_REPEAT_SERVO = 184;
 const uint16_t vehicle_command__VEHICLE_CMD_DO_FLIGHTTERMINATION = 185;
+const uint16_t vehicle_command__VEHICLE_CMD_DO_SET_ACTUATOR = 187;
 const uint16_t vehicle_command__VEHICLE_CMD_DO_LAND_START = 189;
 const uint16_t vehicle_command__VEHICLE_CMD_DO_GO_AROUND = 191;
 const uint16_t vehicle_command__VEHICLE_CMD_DO_REPOSITION = 192;
