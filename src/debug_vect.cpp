@@ -35,7 +35,7 @@ using namespace eprosima::fastcdr::exception;
 
 debug_vect::debug_vect()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5123a213
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6fb0d3ed
     m_timestamp_ = 0;
     // m_name com.eprosima.idl.parser.typecode.AliasTypeCode@52525845
     memset(&m_name, 0, (10) * 1);
