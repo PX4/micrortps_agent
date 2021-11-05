@@ -90,6 +90,9 @@
 
 
 
+
+
+
 /*!
  * @brief This class represents the TopicDataType of the type vehicle_status defined by the user in the IDL file.
  * @ingroup VEHICLE_STATUS

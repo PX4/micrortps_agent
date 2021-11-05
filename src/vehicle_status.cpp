@@ -90,6 +90,9 @@ using namespace eprosima::fastcdr::exception;
 
 
 
+
+
+
 vehicle_status::vehicle_status()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@358c99f5
