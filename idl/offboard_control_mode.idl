@@ -14,6 +14,7 @@ struct offboard_control_mode
     boolean acceleration_;
     boolean attitude_;
     boolean body_rate_;
+    boolean actuator_;
 
 }; // struct offboard_control_mode
 

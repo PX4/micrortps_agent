@@ -46,11 +46,14 @@ offboard_control_mode::offboard_control_mode()
     m_attitude_ = false;
     // m_body_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c03695
     m_body_rate_ = false;
+    // m_actuator_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e6f74c
+    m_actuator_ = false;
 
 }
 
 offboard_control_mode::~offboard_control_mode()
 {
+
 
 
 
@@ -67,6 +70,7 @@ offboard_control_mode::offboard_control_mode(const offboard_control_mode &x)
     m_acceleration_ = x.m_acceleration_;
     m_attitude_ = x.m_attitude_;
     m_body_rate_ = x.m_body_rate_;
+    m_actuator_ = x.m_actuator_;
 }
 
 offboard_control_mode::offboard_control_mode(offboard_control_mode &&x)
@@ -77,6 +81,7 @@ offboard_control_mode::offboard_control_mode(offboard_control_mode &&x)
     m_acceleration_ = x.m_acceleration_;
     m_attitude_ = x.m_attitude_;
     m_body_rate_ = x.m_body_rate_;
+    m_actuator_ = x.m_actuator_;
 }
 
 offboard_control_mode& offboard_control_mode::operator=(const offboard_control_mode &x)
@@ -88,6 +93,7 @@ offboard_control_mode& offboard_control_mode::operator=(const offboard_control_m
     m_acceleration_ = x.m_acceleration_;
     m_attitude_ = x.m_attitude_;
     m_body_rate_ = x.m_body_rate_;
+    m_actuator_ = x.m_actuator_;
 
     return *this;
 }
@@ -101,6 +107,7 @@ offboard_control_mode& offboard_control_mode::operator=(offboard_control_mode &&
     m_acceleration_ = x.m_acceleration_;
     m_attitude_ = x.m_attitude_;
     m_body_rate_ = x.m_body_rate_;
+    m_actuator_ = x.m_actuator_;
 
     return *this;
 }
@@ -111,6 +118,9 @@ size_t offboard_control_mode::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -156,6 +166,9 @@ size_t offboard_control_mode::getCdrSerializedSize(const offboard_control_mode& 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -169,6 +182,7 @@ void offboard_control_mode::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_acceleration_;
     scdr << m_attitude_;
     scdr << m_body_rate_;
+    scdr << m_actuator_;
 }
 
 void offboard_control_mode::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -180,6 +194,7 @@ void offboard_control_mode::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_acceleration_;
     dcdr >> m_attitude_;
     dcdr >> m_body_rate_;
+    dcdr >> m_actuator_;
 }
 
 /*!
@@ -344,10 +359,38 @@ bool& offboard_control_mode::body_rate_()
     return m_body_rate_;
 }
 
+/*!
+ * @brief This function sets a value in member actuator_
+ * @param _actuator_ New value for member actuator_
+ */
+void offboard_control_mode::actuator_(bool _actuator_)
+{
+m_actuator_ = _actuator_;
+}
+
+/*!
+ * @brief This function returns the value of member actuator_
+ * @return Value of member actuator_
+ */
+bool offboard_control_mode::actuator_() const
+{
+    return m_actuator_;
+}
+
+/*!
+ * @brief This function returns a reference to member actuator_
+ * @return Reference to member actuator_
+ */
+bool& offboard_control_mode::actuator_()
+{
+    return m_actuator_;
+}
+
 
 size_t offboard_control_mode::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
 
 
 
@@ -368,6 +411,7 @@ bool offboard_control_mode::isKeyDefined()
 void offboard_control_mode::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      

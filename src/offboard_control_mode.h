@@ -214,6 +214,24 @@ public:
      */
     eProsima_user_DllExport bool& body_rate_();
 
+    /*!
+     * @brief This function sets a value in member actuator_
+     * @param _actuator_ New value for member actuator_
+     */
+    eProsima_user_DllExport void actuator_(bool _actuator_);
+
+    /*!
+     * @brief This function returns the value of member actuator_
+     * @return Value of member actuator_
+     */
+    eProsima_user_DllExport bool actuator_() const;
+
+    /*!
+     * @brief This function returns a reference to member actuator_
+     * @return Reference to member actuator_
+     */
+    eProsima_user_DllExport bool& actuator_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -272,6 +290,7 @@ private:
     bool m_acceleration_;
     bool m_attitude_;
     bool m_body_rate_;
+    bool m_actuator_;
 };
 
 #endif // _OFFBOARD_CONTROL_MODE_H_
