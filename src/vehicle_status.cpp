@@ -90,9 +90,6 @@ using namespace eprosima::fastcdr::exception;
 
 
 
-
-
-
 vehicle_status::vehicle_status()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@358c99f5
@@ -129,42 +126,39 @@ vehicle_status::vehicle_status()
     m_in_transition_to_fw_ = false;
     // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6646153
     m_rc_signal_lost_ = false;
-    // m_rc_input_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@21507a04
-    m_rc_input_mode_ = 0;
-    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@143640d5
+    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@21507a04
     m_data_link_lost_ = false;
-    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6295d394
+    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@143640d5
     m_data_link_lost_counter_ = 0;
-    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@475e586c
+    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6295d394
     m_high_latency_data_link_lost_ = false;
-    // m_engine_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@657c8ad9
+    // m_engine_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@475e586c
     m_engine_failure_ = false;
-    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@436a4e4b
+    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@657c8ad9
     m_mission_failure_ = false;
-    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f2f2cc1
+    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@436a4e4b
     m_geofence_violated_ = false;
-    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a079870
+    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f2f2cc1
     m_failure_detector_status_ = 0;
-    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b2cf7ab
+    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a079870
     m_onboard_control_sensors_present_ = 0;
-    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa5fe93
+    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b2cf7ab
     m_onboard_control_sensors_enabled_ = 0;
-    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c1a8622
+    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa5fe93
     m_onboard_control_sensors_health_ = 0;
-    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ad851c9
+    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c1a8622
     m_latest_arming_reason_ = 0;
-    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6156496
+    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ad851c9
     m_latest_disarming_reason_ = 0;
-    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3c153a1
+    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6156496
     m_armed_time_ = 0;
-    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@b62fe6d
+    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3c153a1
     m_takeoff_time_ = 0;
 
 }
 
 vehicle_status::~vehicle_status()
 {
-
 
 
 
@@ -217,7 +211,6 @@ vehicle_status::vehicle_status(const vehicle_status &x)
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
-    m_rc_input_mode_ = x.m_rc_input_mode_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
@@ -253,7 +246,6 @@ vehicle_status::vehicle_status(vehicle_status &&x)
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
-    m_rc_input_mode_ = x.m_rc_input_mode_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
@@ -290,7 +282,6 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
-    m_rc_input_mode_ = x.m_rc_input_mode_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
@@ -329,7 +320,6 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
-    m_rc_input_mode_ = x.m_rc_input_mode_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
@@ -372,9 +362,6 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -531,9 +518,6 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -579,7 +563,6 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_in_transition_mode_;
     scdr << m_in_transition_to_fw_;
     scdr << m_rc_signal_lost_;
-    scdr << m_rc_input_mode_;
     scdr << m_data_link_lost_;
     scdr << m_data_link_lost_counter_;
     scdr << m_high_latency_data_link_lost_;
@@ -616,7 +599,6 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_in_transition_mode_;
     dcdr >> m_in_transition_to_fw_;
     dcdr >> m_rc_signal_lost_;
-    dcdr >> m_rc_input_mode_;
     dcdr >> m_data_link_lost_;
     dcdr >> m_data_link_lost_counter_;
     dcdr >> m_high_latency_data_link_lost_;
@@ -1093,33 +1075,6 @@ bool& vehicle_status::rc_signal_lost_()
 }
 
 /*!
- * @brief This function sets a value in member rc_input_mode_
- * @param _rc_input_mode_ New value for member rc_input_mode_
- */
-void vehicle_status::rc_input_mode_(uint8_t _rc_input_mode_)
-{
-m_rc_input_mode_ = _rc_input_mode_;
-}
-
-/*!
- * @brief This function returns the value of member rc_input_mode_
- * @return Value of member rc_input_mode_
- */
-uint8_t vehicle_status::rc_input_mode_() const
-{
-    return m_rc_input_mode_;
-}
-
-/*!
- * @brief This function returns a reference to member rc_input_mode_
- * @return Reference to member rc_input_mode_
- */
-uint8_t& vehicle_status::rc_input_mode_()
-{
-    return m_rc_input_mode_;
-}
-
-/*!
  * @brief This function sets a value in member data_link_lost_
  * @param _data_link_lost_ New value for member data_link_lost_
  */
@@ -1535,7 +1490,6 @@ size_t vehicle_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
     return current_align;
 }
 
@@ -1547,7 +1501,6 @@ bool vehicle_status::isKeyDefined()
 void vehicle_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

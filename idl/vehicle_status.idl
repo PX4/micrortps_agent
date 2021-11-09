@@ -43,9 +43,6 @@ const octet vehicle_status__NAVIGATION_STATE_AUTO_FOLLOW_TARGET = 19;
 const octet vehicle_status__NAVIGATION_STATE_AUTO_PRECLAND = 20;
 const octet vehicle_status__NAVIGATION_STATE_ORBIT = 21;
 const octet vehicle_status__NAVIGATION_STATE_MAX = 22;
-const octet vehicle_status__RC_IN_MODE_DEFAULT = 0;
-const octet vehicle_status__RC_IN_MODE_OFF = 1;
-const octet vehicle_status__RC_IN_MODE_GENERATED = 2;
 const octet vehicle_status__VEHICLE_TYPE_UNKNOWN = 0;
 const octet vehicle_status__VEHICLE_TYPE_ROTARY_WING = 1;
 const octet vehicle_status__VEHICLE_TYPE_FIXED_WING = 2;
@@ -86,7 +83,6 @@ struct vehicle_status
     boolean in_transition_mode_;
     boolean in_transition_to_fw_;
     boolean rc_signal_lost_;
-    octet rc_input_mode_;
     boolean data_link_lost_;
     octet data_link_lost_counter_;
     boolean high_latency_data_link_lost_;

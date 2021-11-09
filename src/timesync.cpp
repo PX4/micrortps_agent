@@ -34,13 +34,13 @@ using namespace eprosima::fastcdr::exception;
 
 timesync::timesync()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a400542
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@654f0d9c
     m_timestamp_ = 0;
-    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6580cfdd
+    // m_seq_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a400542
     m_seq_ = 0;
-    // m_tc1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e0b85f9
+    // m_tc1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6580cfdd
     m_tc1_ = 0;
-    // m_ts1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63355449
+    // m_ts1_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e0b85f9
     m_ts1_ = 0;
 
 }

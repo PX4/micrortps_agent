@@ -141,6 +141,8 @@ const octet vehicle_command__FAILURE_TYPE_WRONG = 4;
 const octet vehicle_command__FAILURE_TYPE_SLOW = 5;
 const octet vehicle_command__FAILURE_TYPE_DELAYED = 6;
 const octet vehicle_command__FAILURE_TYPE_INTERMITTENT = 7;
+const octet vehicle_command__ARMING_ACTION_DISARM = 0;
+const octet vehicle_command__ARMING_ACTION_ARM = 1;
 const octet vehicle_command__ORB_QUEUE_LENGTH = 8;
 
 

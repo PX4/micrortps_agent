@@ -103,9 +103,6 @@ const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_FOLLOW_TARGET = 19;
 const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_PRECLAND = 20;
 const uint8_t vehicle_status__NAVIGATION_STATE_ORBIT = 21;
 const uint8_t vehicle_status__NAVIGATION_STATE_MAX = 22;
-const uint8_t vehicle_status__RC_IN_MODE_DEFAULT = 0;
-const uint8_t vehicle_status__RC_IN_MODE_OFF = 1;
-const uint8_t vehicle_status__RC_IN_MODE_GENERATED = 2;
 const uint8_t vehicle_status__VEHICLE_TYPE_UNKNOWN = 0;
 const uint8_t vehicle_status__VEHICLE_TYPE_ROTARY_WING = 1;
 const uint8_t vehicle_status__VEHICLE_TYPE_FIXED_WING = 2;
@@ -474,24 +471,6 @@ public:
     eProsima_user_DllExport bool& rc_signal_lost_();
 
     /*!
-     * @brief This function sets a value in member rc_input_mode_
-     * @param _rc_input_mode_ New value for member rc_input_mode_
-     */
-    eProsima_user_DllExport void rc_input_mode_(uint8_t _rc_input_mode_);
-
-    /*!
-     * @brief This function returns the value of member rc_input_mode_
-     * @return Value of member rc_input_mode_
-     */
-    eProsima_user_DllExport uint8_t rc_input_mode_() const;
-
-    /*!
-     * @brief This function returns a reference to member rc_input_mode_
-     * @return Reference to member rc_input_mode_
-     */
-    eProsima_user_DllExport uint8_t& rc_input_mode_();
-
-    /*!
      * @brief This function sets a value in member data_link_lost_
      * @param _data_link_lost_ New value for member data_link_lost_
      */
@@ -812,7 +791,6 @@ private:
     bool m_in_transition_mode_;
     bool m_in_transition_to_fw_;
     bool m_rc_signal_lost_;
-    uint8_t m_rc_input_mode_;
     bool m_data_link_lost_;
     uint8_t m_data_link_lost_counter_;
     bool m_high_latency_data_link_lost_;
