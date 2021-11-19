@@ -94,29 +94,35 @@ telemetry_status::telemetry_status()
     m_heartbeat_type_adsb_ = false;
     // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b2ea799
     m_heartbeat_type_camera_ = false;
-    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@411f53a0
+    // m_heartbeat_type_parachute_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@411f53a0
+    m_heartbeat_type_parachute_ = false;
+    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b71e916
     m_heartbeat_component_telemetry_radio_ = false;
-    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b71e916
+    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@36fc695d
     m_heartbeat_component_log_ = false;
-    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@36fc695d
+    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@28701274
     m_heartbeat_component_osd_ = false;
-    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@28701274
+    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c9d689
     m_heartbeat_component_obstacle_avoidance_ = false;
-    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13c9d689
+    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3754a4bf
     m_heartbeat_component_vio_ = false;
-    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3754a4bf
+    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@62379589
     m_heartbeat_component_pairing_manager_ = false;
-    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@62379589
+    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4afcd809
     m_heartbeat_component_udp_bridge_ = false;
-    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4afcd809
+    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@175c2241
     m_heartbeat_component_uart_bridge_ = false;
-    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@175c2241
+    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bf0d49
     m_avoidance_system_healthy_ = false;
+    // m_parachute_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b7a5baa
+    m_parachute_system_healthy_ = false;
 
 }
 
 telemetry_status::~telemetry_status()
 {
+
+
 
 
 
@@ -184,6 +190,7 @@ telemetry_status::telemetry_status(const telemetry_status &x)
     m_heartbeat_type_gimbal_ = x.m_heartbeat_type_gimbal_;
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
+    m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -193,6 +200,7 @@ telemetry_status::telemetry_status(const telemetry_status &x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 }
 
 telemetry_status::telemetry_status(telemetry_status &&x)
@@ -224,6 +232,7 @@ telemetry_status::telemetry_status(telemetry_status &&x)
     m_heartbeat_type_gimbal_ = x.m_heartbeat_type_gimbal_;
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
+    m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -233,6 +242,7 @@ telemetry_status::telemetry_status(telemetry_status &&x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 }
 
 telemetry_status& telemetry_status::operator=(const telemetry_status &x)
@@ -265,6 +275,7 @@ telemetry_status& telemetry_status::operator=(const telemetry_status &x)
     m_heartbeat_type_gimbal_ = x.m_heartbeat_type_gimbal_;
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
+    m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -274,6 +285,7 @@ telemetry_status& telemetry_status::operator=(const telemetry_status &x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 
     return *this;
 }
@@ -308,6 +320,7 @@ telemetry_status& telemetry_status::operator=(telemetry_status &&x)
     m_heartbeat_type_gimbal_ = x.m_heartbeat_type_gimbal_;
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
+    m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -317,6 +330,7 @@ telemetry_status& telemetry_status::operator=(telemetry_status &&x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 
     return *this;
 }
@@ -387,6 +401,12 @@ size_t telemetry_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -552,6 +572,12 @@ size_t telemetry_status::getCdrSerializedSize(const telemetry_status& data, size
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -586,6 +612,7 @@ void telemetry_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_heartbeat_type_gimbal_;
     scdr << m_heartbeat_type_adsb_;
     scdr << m_heartbeat_type_camera_;
+    scdr << m_heartbeat_type_parachute_;
     scdr << m_heartbeat_component_telemetry_radio_;
     scdr << m_heartbeat_component_log_;
     scdr << m_heartbeat_component_osd_;
@@ -595,6 +622,7 @@ void telemetry_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_heartbeat_component_udp_bridge_;
     scdr << m_heartbeat_component_uart_bridge_;
     scdr << m_avoidance_system_healthy_;
+    scdr << m_parachute_system_healthy_;
 }
 
 void telemetry_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -627,6 +655,7 @@ void telemetry_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_heartbeat_type_gimbal_;
     dcdr >> m_heartbeat_type_adsb_;
     dcdr >> m_heartbeat_type_camera_;
+    dcdr >> m_heartbeat_type_parachute_;
     dcdr >> m_heartbeat_component_telemetry_radio_;
     dcdr >> m_heartbeat_component_log_;
     dcdr >> m_heartbeat_component_osd_;
@@ -636,6 +665,7 @@ void telemetry_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_heartbeat_component_udp_bridge_;
     dcdr >> m_heartbeat_component_uart_bridge_;
     dcdr >> m_avoidance_system_healthy_;
+    dcdr >> m_parachute_system_healthy_;
 }
 
 /*!
@@ -1368,6 +1398,33 @@ bool& telemetry_status::heartbeat_type_camera_()
 }
 
 /*!
+ * @brief This function sets a value in member heartbeat_type_parachute_
+ * @param _heartbeat_type_parachute_ New value for member heartbeat_type_parachute_
+ */
+void telemetry_status::heartbeat_type_parachute_(bool _heartbeat_type_parachute_)
+{
+m_heartbeat_type_parachute_ = _heartbeat_type_parachute_;
+}
+
+/*!
+ * @brief This function returns the value of member heartbeat_type_parachute_
+ * @return Value of member heartbeat_type_parachute_
+ */
+bool telemetry_status::heartbeat_type_parachute_() const
+{
+    return m_heartbeat_type_parachute_;
+}
+
+/*!
+ * @brief This function returns a reference to member heartbeat_type_parachute_
+ * @return Reference to member heartbeat_type_parachute_
+ */
+bool& telemetry_status::heartbeat_type_parachute_()
+{
+    return m_heartbeat_type_parachute_;
+}
+
+/*!
  * @brief This function sets a value in member heartbeat_component_telemetry_radio_
  * @param _heartbeat_component_telemetry_radio_ New value for member heartbeat_component_telemetry_radio_
  */
@@ -1610,10 +1667,39 @@ bool& telemetry_status::avoidance_system_healthy_()
     return m_avoidance_system_healthy_;
 }
 
+/*!
+ * @brief This function sets a value in member parachute_system_healthy_
+ * @param _parachute_system_healthy_ New value for member parachute_system_healthy_
+ */
+void telemetry_status::parachute_system_healthy_(bool _parachute_system_healthy_)
+{
+m_parachute_system_healthy_ = _parachute_system_healthy_;
+}
+
+/*!
+ * @brief This function returns the value of member parachute_system_healthy_
+ * @return Value of member parachute_system_healthy_
+ */
+bool telemetry_status::parachute_system_healthy_() const
+{
+    return m_parachute_system_healthy_;
+}
+
+/*!
+ * @brief This function returns a reference to member parachute_system_healthy_
+ * @return Reference to member parachute_system_healthy_
+ */
+bool& telemetry_status::parachute_system_healthy_()
+{
+    return m_parachute_system_healthy_;
+}
+
 
 size_t telemetry_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
+
 
 
 
@@ -1664,6 +1750,8 @@ bool telemetry_status::isKeyDefined()
 void telemetry_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
+     
      
      
      

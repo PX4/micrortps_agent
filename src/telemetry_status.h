@@ -599,6 +599,24 @@ public:
     eProsima_user_DllExport bool& heartbeat_type_camera_();
 
     /*!
+     * @brief This function sets a value in member heartbeat_type_parachute_
+     * @param _heartbeat_type_parachute_ New value for member heartbeat_type_parachute_
+     */
+    eProsima_user_DllExport void heartbeat_type_parachute_(bool _heartbeat_type_parachute_);
+
+    /*!
+     * @brief This function returns the value of member heartbeat_type_parachute_
+     * @return Value of member heartbeat_type_parachute_
+     */
+    eProsima_user_DllExport bool heartbeat_type_parachute_() const;
+
+    /*!
+     * @brief This function returns a reference to member heartbeat_type_parachute_
+     * @return Reference to member heartbeat_type_parachute_
+     */
+    eProsima_user_DllExport bool& heartbeat_type_parachute_();
+
+    /*!
      * @brief This function sets a value in member heartbeat_component_telemetry_radio_
      * @param _heartbeat_component_telemetry_radio_ New value for member heartbeat_component_telemetry_radio_
      */
@@ -760,6 +778,24 @@ public:
      */
     eProsima_user_DllExport bool& avoidance_system_healthy_();
 
+    /*!
+     * @brief This function sets a value in member parachute_system_healthy_
+     * @param _parachute_system_healthy_ New value for member parachute_system_healthy_
+     */
+    eProsima_user_DllExport void parachute_system_healthy_(bool _parachute_system_healthy_);
+
+    /*!
+     * @brief This function returns the value of member parachute_system_healthy_
+     * @return Value of member parachute_system_healthy_
+     */
+    eProsima_user_DllExport bool parachute_system_healthy_() const;
+
+    /*!
+     * @brief This function returns a reference to member parachute_system_healthy_
+     * @return Reference to member parachute_system_healthy_
+     */
+    eProsima_user_DllExport bool& parachute_system_healthy_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -839,6 +875,7 @@ private:
     bool m_heartbeat_type_gimbal_;
     bool m_heartbeat_type_adsb_;
     bool m_heartbeat_type_camera_;
+    bool m_heartbeat_type_parachute_;
     bool m_heartbeat_component_telemetry_radio_;
     bool m_heartbeat_component_log_;
     bool m_heartbeat_component_osd_;
@@ -848,6 +885,7 @@ private:
     bool m_heartbeat_component_udp_bridge_;
     bool m_heartbeat_component_uart_bridge_;
     bool m_avoidance_system_healthy_;
+    bool m_parachute_system_healthy_;
 };
 
 #endif // _TELEMETRY_STATUS_H_
