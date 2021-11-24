@@ -64,12 +64,12 @@ namespace eprosima
 }
 
 
-typedef std::array<uint8_t, 8> onboard_computer_status__octet_array_8;
-typedef std::array<uint32_t, 6> onboard_computer_status__unsigned_long_array_6;
-typedef std::array<uint8_t, 10> onboard_computer_status__octet_array_10;
 typedef std::array<uint8_t, 4> onboard_computer_status__octet_array_4;
-typedef std::array<int16_t, 4> onboard_computer_status__short_array_4;
 typedef std::array<uint32_t, 4> onboard_computer_status__unsigned_long_array_4;
+typedef std::array<uint32_t, 6> onboard_computer_status__unsigned_long_array_6;
+typedef std::array<int16_t, 4> onboard_computer_status__short_array_4;
+typedef std::array<uint8_t, 10> onboard_computer_status__octet_array_10;
+typedef std::array<uint8_t, 8> onboard_computer_status__octet_array_8;
 /*!
  * @brief This class represents the structure onboard_computer_status defined by the user in the IDL file.
  * @ingroup ONBOARD_COMPUTER_STATUS
