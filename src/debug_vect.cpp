@@ -39,11 +39,11 @@ debug_vect::debug_vect()
     m_timestamp_ = 0;
     // m_name com.eprosima.idl.parser.typecode.AliasTypeCode@6dde5c8c
     memset(&m_name, 0, (10) * 1);
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@24b1d79b
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@52525845
     m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@281e3708
+    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@24b1d79b
     m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35a50a4c
+    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68ceda24
     m_z_ = 0.0;
 
 }
