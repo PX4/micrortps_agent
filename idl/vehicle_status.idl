@@ -90,9 +90,9 @@ struct vehicle_status
     boolean mission_failure_;
     boolean geofence_violated_;
     octet failure_detector_status_;
-    unsigned long onboard_control_sensors_present_;
-    unsigned long onboard_control_sensors_enabled_;
-    unsigned long onboard_control_sensors_health_;
+    unsigned long long onboard_control_sensors_present_;
+    unsigned long long onboard_control_sensors_enabled_;
+    unsigned long long onboard_control_sensors_health_;
     octet latest_arming_reason_;
     octet latest_disarming_reason_;
     unsigned long long armed_time_;

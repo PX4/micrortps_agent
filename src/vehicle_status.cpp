@@ -415,13 +415,13 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -518,13 +518,13 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -1267,7 +1267,7 @@ uint8_t& vehicle_status::failure_detector_status_()
  * @brief This function sets a value in member onboard_control_sensors_present_
  * @param _onboard_control_sensors_present_ New value for member onboard_control_sensors_present_
  */
-void vehicle_status::onboard_control_sensors_present_(uint32_t _onboard_control_sensors_present_)
+void vehicle_status::onboard_control_sensors_present_(uint64_t _onboard_control_sensors_present_)
 {
 m_onboard_control_sensors_present_ = _onboard_control_sensors_present_;
 }
@@ -1276,7 +1276,7 @@ m_onboard_control_sensors_present_ = _onboard_control_sensors_present_;
  * @brief This function returns the value of member onboard_control_sensors_present_
  * @return Value of member onboard_control_sensors_present_
  */
-uint32_t vehicle_status::onboard_control_sensors_present_() const
+uint64_t vehicle_status::onboard_control_sensors_present_() const
 {
     return m_onboard_control_sensors_present_;
 }
@@ -1285,7 +1285,7 @@ uint32_t vehicle_status::onboard_control_sensors_present_() const
  * @brief This function returns a reference to member onboard_control_sensors_present_
  * @return Reference to member onboard_control_sensors_present_
  */
-uint32_t& vehicle_status::onboard_control_sensors_present_()
+uint64_t& vehicle_status::onboard_control_sensors_present_()
 {
     return m_onboard_control_sensors_present_;
 }
@@ -1294,7 +1294,7 @@ uint32_t& vehicle_status::onboard_control_sensors_present_()
  * @brief This function sets a value in member onboard_control_sensors_enabled_
  * @param _onboard_control_sensors_enabled_ New value for member onboard_control_sensors_enabled_
  */
-void vehicle_status::onboard_control_sensors_enabled_(uint32_t _onboard_control_sensors_enabled_)
+void vehicle_status::onboard_control_sensors_enabled_(uint64_t _onboard_control_sensors_enabled_)
 {
 m_onboard_control_sensors_enabled_ = _onboard_control_sensors_enabled_;
 }
@@ -1303,7 +1303,7 @@ m_onboard_control_sensors_enabled_ = _onboard_control_sensors_enabled_;
  * @brief This function returns the value of member onboard_control_sensors_enabled_
  * @return Value of member onboard_control_sensors_enabled_
  */
-uint32_t vehicle_status::onboard_control_sensors_enabled_() const
+uint64_t vehicle_status::onboard_control_sensors_enabled_() const
 {
     return m_onboard_control_sensors_enabled_;
 }
@@ -1312,7 +1312,7 @@ uint32_t vehicle_status::onboard_control_sensors_enabled_() const
  * @brief This function returns a reference to member onboard_control_sensors_enabled_
  * @return Reference to member onboard_control_sensors_enabled_
  */
-uint32_t& vehicle_status::onboard_control_sensors_enabled_()
+uint64_t& vehicle_status::onboard_control_sensors_enabled_()
 {
     return m_onboard_control_sensors_enabled_;
 }
@@ -1321,7 +1321,7 @@ uint32_t& vehicle_status::onboard_control_sensors_enabled_()
  * @brief This function sets a value in member onboard_control_sensors_health_
  * @param _onboard_control_sensors_health_ New value for member onboard_control_sensors_health_
  */
-void vehicle_status::onboard_control_sensors_health_(uint32_t _onboard_control_sensors_health_)
+void vehicle_status::onboard_control_sensors_health_(uint64_t _onboard_control_sensors_health_)
 {
 m_onboard_control_sensors_health_ = _onboard_control_sensors_health_;
 }
@@ -1330,7 +1330,7 @@ m_onboard_control_sensors_health_ = _onboard_control_sensors_health_;
  * @brief This function returns the value of member onboard_control_sensors_health_
  * @return Value of member onboard_control_sensors_health_
  */
-uint32_t vehicle_status::onboard_control_sensors_health_() const
+uint64_t vehicle_status::onboard_control_sensors_health_() const
 {
     return m_onboard_control_sensors_health_;
 }
@@ -1339,7 +1339,7 @@ uint32_t vehicle_status::onboard_control_sensors_health_() const
  * @brief This function returns a reference to member onboard_control_sensors_health_
  * @return Reference to member onboard_control_sensors_health_
  */
-uint32_t& vehicle_status::onboard_control_sensors_health_()
+uint64_t& vehicle_status::onboard_control_sensors_health_()
 {
     return m_onboard_control_sensors_health_;
 }

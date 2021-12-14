@@ -600,55 +600,55 @@ public:
      * @brief This function sets a value in member onboard_control_sensors_present_
      * @param _onboard_control_sensors_present_ New value for member onboard_control_sensors_present_
      */
-    eProsima_user_DllExport void onboard_control_sensors_present_(uint32_t _onboard_control_sensors_present_);
+    eProsima_user_DllExport void onboard_control_sensors_present_(uint64_t _onboard_control_sensors_present_);
 
     /*!
      * @brief This function returns the value of member onboard_control_sensors_present_
      * @return Value of member onboard_control_sensors_present_
      */
-    eProsima_user_DllExport uint32_t onboard_control_sensors_present_() const;
+    eProsima_user_DllExport uint64_t onboard_control_sensors_present_() const;
 
     /*!
      * @brief This function returns a reference to member onboard_control_sensors_present_
      * @return Reference to member onboard_control_sensors_present_
      */
-    eProsima_user_DllExport uint32_t& onboard_control_sensors_present_();
+    eProsima_user_DllExport uint64_t& onboard_control_sensors_present_();
 
     /*!
      * @brief This function sets a value in member onboard_control_sensors_enabled_
      * @param _onboard_control_sensors_enabled_ New value for member onboard_control_sensors_enabled_
      */
-    eProsima_user_DllExport void onboard_control_sensors_enabled_(uint32_t _onboard_control_sensors_enabled_);
+    eProsima_user_DllExport void onboard_control_sensors_enabled_(uint64_t _onboard_control_sensors_enabled_);
 
     /*!
      * @brief This function returns the value of member onboard_control_sensors_enabled_
      * @return Value of member onboard_control_sensors_enabled_
      */
-    eProsima_user_DllExport uint32_t onboard_control_sensors_enabled_() const;
+    eProsima_user_DllExport uint64_t onboard_control_sensors_enabled_() const;
 
     /*!
      * @brief This function returns a reference to member onboard_control_sensors_enabled_
      * @return Reference to member onboard_control_sensors_enabled_
      */
-    eProsima_user_DllExport uint32_t& onboard_control_sensors_enabled_();
+    eProsima_user_DllExport uint64_t& onboard_control_sensors_enabled_();
 
     /*!
      * @brief This function sets a value in member onboard_control_sensors_health_
      * @param _onboard_control_sensors_health_ New value for member onboard_control_sensors_health_
      */
-    eProsima_user_DllExport void onboard_control_sensors_health_(uint32_t _onboard_control_sensors_health_);
+    eProsima_user_DllExport void onboard_control_sensors_health_(uint64_t _onboard_control_sensors_health_);
 
     /*!
      * @brief This function returns the value of member onboard_control_sensors_health_
      * @return Value of member onboard_control_sensors_health_
      */
-    eProsima_user_DllExport uint32_t onboard_control_sensors_health_() const;
+    eProsima_user_DllExport uint64_t onboard_control_sensors_health_() const;
 
     /*!
      * @brief This function returns a reference to member onboard_control_sensors_health_
      * @return Reference to member onboard_control_sensors_health_
      */
-    eProsima_user_DllExport uint32_t& onboard_control_sensors_health_();
+    eProsima_user_DllExport uint64_t& onboard_control_sensors_health_();
 
     /*!
      * @brief This function sets a value in member latest_arming_reason_
@@ -798,9 +798,9 @@ private:
     bool m_mission_failure_;
     bool m_geofence_violated_;
     uint8_t m_failure_detector_status_;
-    uint32_t m_onboard_control_sensors_present_;
-    uint32_t m_onboard_control_sensors_enabled_;
-    uint32_t m_onboard_control_sensors_health_;
+    uint64_t m_onboard_control_sensors_present_;
+    uint64_t m_onboard_control_sensors_enabled_;
+    uint64_t m_onboard_control_sensors_health_;
     uint8_t m_latest_arming_reason_;
     uint8_t m_latest_disarming_reason_;
     uint64_t m_armed_time_;
