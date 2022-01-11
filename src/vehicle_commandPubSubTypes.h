@@ -174,6 +174,9 @@
 
 
 
+
+
+
 /*!
  * @brief This class represents the TopicDataType of the type vehicle_command defined by the user in the IDL file.
  * @ingroup VEHICLE_COMMAND
