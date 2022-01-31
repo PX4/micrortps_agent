@@ -43,6 +43,7 @@ struct vehicle_visual_odometry
     float pitchspeed_;
     float yawspeed_;
     vehicle_visual_odometry__float_array_21 velocity_covariance;
+    octet reset_counter_;
 
 }; // struct vehicle_visual_odometry
 

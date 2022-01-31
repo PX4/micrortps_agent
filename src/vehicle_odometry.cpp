@@ -52,45 +52,48 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_odometry::vehicle_odometry()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@769e7ee8
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5276e6b0
     m_timestamp_ = 0;
-    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5276e6b0
+    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@71b1176b
     m_timestamp_sample_ = 0;
-    // m_local_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@71b1176b
+    // m_local_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6193932a
     m_local_frame_ = 0;
-    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6193932a
+    // m_x_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@647fd8ce
     m_x_ = 0.0;
-    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@647fd8ce
+    // m_y_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@159f197
     m_y_ = 0.0;
-    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@159f197
+    // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78aab498
     m_z_ = 0.0;
-    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@78aab498
+    // m_q com.eprosima.idl.parser.typecode.AliasTypeCode@5dd6264
     memset(&m_q, 0, (4) * 4);
-    // m_q_offset com.eprosima.idl.parser.typecode.AliasTypeCode@78aab498
+    // m_q_offset com.eprosima.idl.parser.typecode.AliasTypeCode@5dd6264
     memset(&m_q_offset, 0, (4) * 4);
-    // m_pose_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@5dd6264
+    // m_pose_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@1ffe63b9
     memset(&m_pose_covariance, 0, (21) * 4);
-    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1ffe63b9
+    // m_velocity_frame_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@51e5fc98
     m_velocity_frame_ = 0;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@51e5fc98
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c469c48
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c469c48
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12e61fe6
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@12e61fe6
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ee955a8
     m_vz_ = 0.0;
-    // m_rollspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ee955a8
+    // m_rollspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1677d1
     m_rollspeed_ = 0.0;
-    // m_pitchspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1677d1
+    // m_pitchspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48fa0f47
     m_pitchspeed_ = 0.0;
-    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48fa0f47
+    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ac13091
     m_yawspeed_ = 0.0;
-    // m_velocity_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@5dd6264
+    // m_velocity_covariance com.eprosima.idl.parser.typecode.AliasTypeCode@1ffe63b9
     memset(&m_velocity_covariance, 0, (21) * 4);
+    // m_reset_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e316c74
+    m_reset_counter_ = 0;
 
 }
 
 vehicle_odometry::~vehicle_odometry()
 {
+
 
 
 
@@ -129,6 +132,7 @@ vehicle_odometry::vehicle_odometry(const vehicle_odometry &x)
     m_pitchspeed_ = x.m_pitchspeed_;
     m_yawspeed_ = x.m_yawspeed_;
     m_velocity_covariance = x.m_velocity_covariance;
+    m_reset_counter_ = x.m_reset_counter_;
 }
 
 vehicle_odometry::vehicle_odometry(vehicle_odometry &&x)
@@ -150,6 +154,7 @@ vehicle_odometry::vehicle_odometry(vehicle_odometry &&x)
     m_pitchspeed_ = x.m_pitchspeed_;
     m_yawspeed_ = x.m_yawspeed_;
     m_velocity_covariance = std::move(x.m_velocity_covariance);
+    m_reset_counter_ = x.m_reset_counter_;
 }
 
 vehicle_odometry& vehicle_odometry::operator=(const vehicle_odometry &x)
@@ -172,6 +177,7 @@ vehicle_odometry& vehicle_odometry::operator=(const vehicle_odometry &x)
     m_pitchspeed_ = x.m_pitchspeed_;
     m_yawspeed_ = x.m_yawspeed_;
     m_velocity_covariance = x.m_velocity_covariance;
+    m_reset_counter_ = x.m_reset_counter_;
 
     return *this;
 }
@@ -196,6 +202,7 @@ vehicle_odometry& vehicle_odometry::operator=(vehicle_odometry &&x)
     m_pitchspeed_ = x.m_pitchspeed_;
     m_yawspeed_ = x.m_yawspeed_;
     m_velocity_covariance = std::move(x.m_velocity_covariance);
+    m_reset_counter_ = x.m_reset_counter_;
 
     return *this;
 }
@@ -254,6 +261,9 @@ size_t vehicle_odometry::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += ((21) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
 
@@ -325,6 +335,9 @@ size_t vehicle_odometry::getCdrSerializedSize(const vehicle_odometry& data, size
         current_alignment += ((21) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
     }
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -353,6 +366,7 @@ void vehicle_odometry::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_yawspeed_;
     scdr << m_velocity_covariance;
 
+    scdr << m_reset_counter_;
 }
 
 void vehicle_odometry::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -379,6 +393,7 @@ void vehicle_odometry::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_yawspeed_;
     dcdr >> m_velocity_covariance;
 
+    dcdr >> m_reset_counter_;
 }
 
 /*!
@@ -872,10 +887,38 @@ vehicle_odometry__float_array_21& vehicle_odometry::velocity_covariance()
 {
     return m_velocity_covariance;
 }
+/*!
+ * @brief This function sets a value in member reset_counter_
+ * @param _reset_counter_ New value for member reset_counter_
+ */
+void vehicle_odometry::reset_counter_(uint8_t _reset_counter_)
+{
+m_reset_counter_ = _reset_counter_;
+}
+
+/*!
+ * @brief This function returns the value of member reset_counter_
+ * @return Value of member reset_counter_
+ */
+uint8_t vehicle_odometry::reset_counter_() const
+{
+    return m_reset_counter_;
+}
+
+/*!
+ * @brief This function returns a reference to member reset_counter_
+ * @return Reference to member reset_counter_
+ */
+uint8_t& vehicle_odometry::reset_counter_()
+{
+    return m_reset_counter_;
+}
+
 
 size_t vehicle_odometry::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
 
 
 
@@ -907,6 +950,7 @@ bool vehicle_odometry::isKeyDefined()
 void vehicle_odometry::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      

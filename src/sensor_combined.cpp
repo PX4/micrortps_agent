@@ -39,19 +39,19 @@ using namespace eprosima::fastcdr::exception;
 
 sensor_combined::sensor_combined()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7714e963
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@56620197
     m_timestamp_ = 0;
-    // m_gyro_rad com.eprosima.idl.parser.typecode.AliasTypeCode@20ce78ec
+    // m_gyro_rad com.eprosima.idl.parser.typecode.AliasTypeCode@6eda5c9
     memset(&m_gyro_rad, 0, (3) * 4);
-    // m_gyro_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@393671df
+    // m_gyro_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55b7a4e0
     m_gyro_integral_dt_ = 0;
-    // m_accelerometer_timestamp_relative_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@56620197
+    // m_accelerometer_timestamp_relative_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f058f00
     m_accelerometer_timestamp_relative_ = 0;
-    // m_accelerometer_m_s2 com.eprosima.idl.parser.typecode.AliasTypeCode@20ce78ec
+    // m_accelerometer_m_s2 com.eprosima.idl.parser.typecode.AliasTypeCode@6eda5c9
     memset(&m_accelerometer_m_s2, 0, (3) * 4);
-    // m_accelerometer_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6eda5c9
+    // m_accelerometer_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@192d43ce
     m_accelerometer_integral_dt_ = 0;
-    // m_accelerometer_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55b7a4e0
+    // m_accelerometer_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72057ecf
     m_accelerometer_clipping_ = 0;
 
 }

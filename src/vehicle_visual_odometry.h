@@ -450,6 +450,24 @@ public:
      * @return Reference to member velocity_covariance
      */
     eProsima_user_DllExport vehicle_visual_odometry__float_array_21& velocity_covariance();
+    /*!
+     * @brief This function sets a value in member reset_counter_
+     * @param _reset_counter_ New value for member reset_counter_
+     */
+    eProsima_user_DllExport void reset_counter_(uint8_t _reset_counter_);
+
+    /*!
+     * @brief This function returns the value of member reset_counter_
+     * @return Value of member reset_counter_
+     */
+    eProsima_user_DllExport uint8_t reset_counter_() const;
+
+    /*!
+     * @brief This function returns a reference to member reset_counter_
+     * @return Reference to member reset_counter_
+     */
+    eProsima_user_DllExport uint8_t& reset_counter_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -519,6 +537,7 @@ private:
     float m_pitchspeed_;
     float m_yawspeed_;
     vehicle_visual_odometry__float_array_21 m_velocity_covariance;
+    uint8_t m_reset_counter_;
 };
 
 #endif // _VEHICLE_VISUAL_ODOMETRY_H_
