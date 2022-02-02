@@ -40,45 +40,45 @@ using namespace eprosima::fastcdr::exception;
 
 onboard_computer_status::onboard_computer_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@64485a47
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ec8211c
     m_timestamp_ = 0;
-    // m_uptime_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@25bbf683
+    // m_uptime_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7276c8cd
     m_uptime_ = 0;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ec8211c
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@544a2ea6
     m_type_ = 0;
-    // m_cpu_cores com.eprosima.idl.parser.typecode.AliasTypeCode@7276c8cd
+    // m_cpu_cores com.eprosima.idl.parser.typecode.AliasTypeCode@2e3fc542
     memset(&m_cpu_cores, 0, (8) * 1);
-    // m_cpu_combined com.eprosima.idl.parser.typecode.AliasTypeCode@2e3fc542
+    // m_cpu_combined com.eprosima.idl.parser.typecode.AliasTypeCode@4524411f
     memset(&m_cpu_combined, 0, (10) * 1);
-    // m_gpu_cores com.eprosima.idl.parser.typecode.AliasTypeCode@4524411f
+    // m_gpu_cores com.eprosima.idl.parser.typecode.AliasTypeCode@10dba097
     memset(&m_gpu_cores, 0, (4) * 1);
-    // m_gpu_combined com.eprosima.idl.parser.typecode.AliasTypeCode@2e3fc542
+    // m_gpu_combined com.eprosima.idl.parser.typecode.AliasTypeCode@4524411f
     memset(&m_gpu_combined, 0, (10) * 1);
-    // m_temperature_board_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10dba097
+    // m_temperature_board_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@704d6e83
     m_temperature_board_ = 0;
-    // m_temperature_core com.eprosima.idl.parser.typecode.AliasTypeCode@7276c8cd
+    // m_temperature_core com.eprosima.idl.parser.typecode.AliasTypeCode@2e3fc542
     memset(&m_temperature_core, 0, (8) * 1);
-    // m_fan_speed com.eprosima.idl.parser.typecode.AliasTypeCode@1786f9d5
+    // m_fan_speed com.eprosima.idl.parser.typecode.AliasTypeCode@43a0cee9
     memset(&m_fan_speed, 0, (4) * 2);
-    // m_ram_usage_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@704d6e83
+    // m_ram_usage_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@eb21112
     m_ram_usage_ = 0;
-    // m_ram_total_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@43a0cee9
+    // m_ram_total_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2eda0940
     m_ram_total_ = 0;
-    // m_storage_type com.eprosima.idl.parser.typecode.AliasTypeCode@eb21112
+    // m_storage_type com.eprosima.idl.parser.typecode.AliasTypeCode@3578436e
     memset(&m_storage_type, 0, (4) * 4);
-    // m_storage_usage com.eprosima.idl.parser.typecode.AliasTypeCode@eb21112
+    // m_storage_usage com.eprosima.idl.parser.typecode.AliasTypeCode@3578436e
     memset(&m_storage_usage, 0, (4) * 4);
-    // m_storage_total com.eprosima.idl.parser.typecode.AliasTypeCode@eb21112
+    // m_storage_total com.eprosima.idl.parser.typecode.AliasTypeCode@3578436e
     memset(&m_storage_total, 0, (4) * 4);
-    // m_link_type com.eprosima.idl.parser.typecode.AliasTypeCode@2eda0940
+    // m_link_type com.eprosima.idl.parser.typecode.AliasTypeCode@706a04ae
     memset(&m_link_type, 0, (6) * 4);
-    // m_link_tx_rate com.eprosima.idl.parser.typecode.AliasTypeCode@2eda0940
+    // m_link_tx_rate com.eprosima.idl.parser.typecode.AliasTypeCode@706a04ae
     memset(&m_link_tx_rate, 0, (6) * 4);
-    // m_link_rx_rate com.eprosima.idl.parser.typecode.AliasTypeCode@2eda0940
+    // m_link_rx_rate com.eprosima.idl.parser.typecode.AliasTypeCode@706a04ae
     memset(&m_link_rx_rate, 0, (6) * 4);
-    // m_link_tx_max com.eprosima.idl.parser.typecode.AliasTypeCode@2eda0940
+    // m_link_tx_max com.eprosima.idl.parser.typecode.AliasTypeCode@706a04ae
     memset(&m_link_tx_max, 0, (6) * 4);
-    // m_link_rx_max com.eprosima.idl.parser.typecode.AliasTypeCode@2eda0940
+    // m_link_rx_max com.eprosima.idl.parser.typecode.AliasTypeCode@706a04ae
     memset(&m_link_rx_max, 0, (6) * 4);
 
 }
