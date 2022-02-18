@@ -4,7 +4,7 @@
 
 
 
-const unsigned long long telemetry_status__HEARTBEAT_TIMEOUT_US = 1500000;
+const unsigned long long telemetry_status__HEARTBEAT_TIMEOUT_US = 2500000;
 const octet telemetry_status__LINK_TYPE_GENERIC = 0;
 const octet telemetry_status__LINK_TYPE_UBIQUITY_BULLET = 1;
 const octet telemetry_status__LINK_TYPE_WIRE = 2;

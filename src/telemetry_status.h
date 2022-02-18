@@ -64,7 +64,7 @@ namespace eprosima
 }
 
 
-const uint64_t telemetry_status__HEARTBEAT_TIMEOUT_US = 1500000;
+const uint64_t telemetry_status__HEARTBEAT_TIMEOUT_US = 2500000;
 const uint8_t telemetry_status__LINK_TYPE_GENERIC = 0;
 const uint8_t telemetry_status__LINK_TYPE_UBIQUITY_BULLET = 1;
 const uint8_t telemetry_status__LINK_TYPE_WIRE = 2;
