@@ -247,42 +247,6 @@ public:
      */
     eProsima_user_DllExport uint8_t& accelerometer_clipping_();
 
-    /*!
-     * @brief This function sets a value in member accel_calibration_count_
-     * @param _accel_calibration_count_ New value for member accel_calibration_count_
-     */
-    eProsima_user_DllExport void accel_calibration_count_(uint8_t _accel_calibration_count_);
-
-    /*!
-     * @brief This function returns the value of member accel_calibration_count_
-     * @return Value of member accel_calibration_count_
-     */
-    eProsima_user_DllExport uint8_t accel_calibration_count_() const;
-
-    /*!
-     * @brief This function returns a reference to member accel_calibration_count_
-     * @return Reference to member accel_calibration_count_
-     */
-    eProsima_user_DllExport uint8_t& accel_calibration_count_();
-
-    /*!
-     * @brief This function sets a value in member gyro_calibration_count_
-     * @param _gyro_calibration_count_ New value for member gyro_calibration_count_
-     */
-    eProsima_user_DllExport void gyro_calibration_count_(uint8_t _gyro_calibration_count_);
-
-    /*!
-     * @brief This function returns the value of member gyro_calibration_count_
-     * @return Value of member gyro_calibration_count_
-     */
-    eProsima_user_DllExport uint8_t gyro_calibration_count_() const;
-
-    /*!
-     * @brief This function returns a reference to member gyro_calibration_count_
-     * @return Reference to member gyro_calibration_count_
-     */
-    eProsima_user_DllExport uint8_t& gyro_calibration_count_();
-
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -342,8 +306,6 @@ private:
     sensor_combined__float_array_3 m_accelerometer_m_s2;
     uint32_t m_accelerometer_integral_dt_;
     uint8_t m_accelerometer_clipping_;
-    uint8_t m_accel_calibration_count_;
-    uint8_t m_gyro_calibration_count_;
 };
 
 #endif // _SENSOR_COMBINED_H_

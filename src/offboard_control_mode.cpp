@@ -34,19 +34,19 @@ using namespace eprosima::fastcdr::exception;
 
 offboard_control_mode::offboard_control_mode()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e6f74c
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6150c3ec
     m_timestamp_ = 0;
-    // m_position_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd05255
+    // m_position_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c03695
     m_position_ = false;
-    // m_velocity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a78afa0
+    // m_velocity_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e6f74c
     m_velocity_ = false;
-    // m_acceleration_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2f4948e4
+    // m_acceleration_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd05255
     m_acceleration_ = false;
-    // m_attitude_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f2586d6
+    // m_attitude_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a78afa0
     m_attitude_ = false;
-    // m_body_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10683d9d
+    // m_body_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2f4948e4
     m_body_rate_ = false;
-    // m_actuator_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3fc2959f
+    // m_actuator_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f2586d6
     m_actuator_ = false;
 
 }
