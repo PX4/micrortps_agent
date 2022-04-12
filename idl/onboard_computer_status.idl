@@ -5,11 +5,11 @@
 
 
 
-typedef octet onboard_computer_status__octet_array_4[4];
 typedef short onboard_computer_status__short_array_4[4];
 typedef octet onboard_computer_status__octet_array_10[10];
-typedef unsigned long onboard_computer_status__unsigned_long_array_6[6];
 typedef unsigned long onboard_computer_status__unsigned_long_array_4[4];
+typedef unsigned long onboard_computer_status__unsigned_long_array_6[6];
+typedef octet onboard_computer_status__octet_array_4[4];
 typedef octet onboard_computer_status__octet_array_8[8];
 
 struct onboard_computer_status
