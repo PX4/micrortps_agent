@@ -80,8 +80,8 @@ const uint8_t vehicle_mocap_odometry__LOCAL_FRAME_NED = 0;
 const uint8_t vehicle_mocap_odometry__LOCAL_FRAME_FRD = 1;
 const uint8_t vehicle_mocap_odometry__LOCAL_FRAME_OTHER = 2;
 const uint8_t vehicle_mocap_odometry__BODY_FRAME_FRD = 3;
-typedef std::array<float, 21> vehicle_mocap_odometry__float_array_21;
 typedef std::array<float, 4> vehicle_mocap_odometry__float_array_4;
+typedef std::array<float, 21> vehicle_mocap_odometry__float_array_21;
 /*!
  * @brief This class represents the structure vehicle_mocap_odometry defined by the user in the IDL file.
  * @ingroup VEHICLE_MOCAP_ODOMETRY
