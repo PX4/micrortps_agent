@@ -86,7 +86,6 @@ using namespace eprosima::fastrtps::rtps;
 
 
 
-
 vehicle_statusPubSubType::vehicle_statusPubSubType()
 {
     setName("vehicle_status");
