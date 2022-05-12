@@ -64,6 +64,15 @@ namespace eprosima
 }
 
 
+const uint16_t vehicle_status__FAILURE_NONE = 0;
+const uint16_t vehicle_status__FAILURE_ROLL = 1;
+const uint16_t vehicle_status__FAILURE_PITCH = 2;
+const uint16_t vehicle_status__FAILURE_ALT = 4;
+const uint16_t vehicle_status__FAILURE_EXT = 8;
+const uint16_t vehicle_status__FAILURE_ARM_ESC = 16;
+const uint16_t vehicle_status__FAILURE_BATTERY = 32;
+const uint16_t vehicle_status__FAILURE_IMBALANCED_PROP = 64;
+const uint16_t vehicle_status__FAILURE_MOTOR = 128;
 const uint8_t vehicle_status__ARMING_STATE_INIT = 0;
 const uint8_t vehicle_status__ARMING_STATE_STANDBY = 1;
 const uint8_t vehicle_status__ARMING_STATE_ARMED = 2;
@@ -71,14 +80,6 @@ const uint8_t vehicle_status__ARMING_STATE_STANDBY_ERROR = 3;
 const uint8_t vehicle_status__ARMING_STATE_SHUTDOWN = 4;
 const uint8_t vehicle_status__ARMING_STATE_IN_AIR_RESTORE = 5;
 const uint8_t vehicle_status__ARMING_STATE_MAX = 6;
-const uint8_t vehicle_status__FAILURE_NONE = 0;
-const uint8_t vehicle_status__FAILURE_ROLL = 1;
-const uint8_t vehicle_status__FAILURE_PITCH = 2;
-const uint8_t vehicle_status__FAILURE_ALT = 4;
-const uint8_t vehicle_status__FAILURE_EXT = 8;
-const uint8_t vehicle_status__FAILURE_ARM_ESC = 16;
-const uint8_t vehicle_status__FAILURE_BATTERY = 32;
-const uint8_t vehicle_status__FAILURE_IMBALANCED_PROP = 64;
 const uint8_t vehicle_status__HIL_STATE_OFF = 0;
 const uint8_t vehicle_status__HIL_STATE_ON = 1;
 const uint8_t vehicle_status__NAVIGATION_STATE_MANUAL = 0;
@@ -87,7 +88,7 @@ const uint8_t vehicle_status__NAVIGATION_STATE_POSCTL = 2;
 const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_MISSION = 3;
 const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_LOITER = 4;
 const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_RTL = 5;
-const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_LANDENGFAIL = 8;
+const uint8_t vehicle_status__NAVIGATION_STATE_UNUSED3 = 8;
 const uint8_t vehicle_status__NAVIGATION_STATE_UNUSED = 9;
 const uint8_t vehicle_status__NAVIGATION_STATE_ACRO = 10;
 const uint8_t vehicle_status__NAVIGATION_STATE_UNUSED1 = 11;
@@ -525,24 +526,6 @@ public:
     eProsima_user_DllExport bool& high_latency_data_link_lost_();
 
     /*!
-     * @brief This function sets a value in member engine_failure_
-     * @param _engine_failure_ New value for member engine_failure_
-     */
-    eProsima_user_DllExport void engine_failure_(bool _engine_failure_);
-
-    /*!
-     * @brief This function returns the value of member engine_failure_
-     * @return Value of member engine_failure_
-     */
-    eProsima_user_DllExport bool engine_failure_() const;
-
-    /*!
-     * @brief This function returns a reference to member engine_failure_
-     * @return Reference to member engine_failure_
-     */
-    eProsima_user_DllExport bool& engine_failure_();
-
-    /*!
      * @brief This function sets a value in member mission_failure_
      * @param _mission_failure_ New value for member mission_failure_
      */
@@ -582,19 +565,19 @@ public:
      * @brief This function sets a value in member failure_detector_status_
      * @param _failure_detector_status_ New value for member failure_detector_status_
      */
-    eProsima_user_DllExport void failure_detector_status_(uint8_t _failure_detector_status_);
+    eProsima_user_DllExport void failure_detector_status_(uint16_t _failure_detector_status_);
 
     /*!
      * @brief This function returns the value of member failure_detector_status_
      * @return Value of member failure_detector_status_
      */
-    eProsima_user_DllExport uint8_t failure_detector_status_() const;
+    eProsima_user_DllExport uint16_t failure_detector_status_() const;
 
     /*!
      * @brief This function returns a reference to member failure_detector_status_
      * @return Reference to member failure_detector_status_
      */
-    eProsima_user_DllExport uint8_t& failure_detector_status_();
+    eProsima_user_DllExport uint16_t& failure_detector_status_();
 
     /*!
      * @brief This function sets a value in member onboard_control_sensors_present_
@@ -794,10 +777,9 @@ private:
     bool m_data_link_lost_;
     uint8_t m_data_link_lost_counter_;
     bool m_high_latency_data_link_lost_;
-    bool m_engine_failure_;
     bool m_mission_failure_;
     bool m_geofence_violated_;
-    uint8_t m_failure_detector_status_;
+    uint16_t m_failure_detector_status_;
     uint64_t m_onboard_control_sensors_present_;
     uint64_t m_onboard_control_sensors_enabled_;
     uint64_t m_onboard_control_sensors_health_;

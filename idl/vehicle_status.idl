@@ -4,6 +4,15 @@
 
 
 
+const unsigned short vehicle_status__FAILURE_NONE = 0;
+const unsigned short vehicle_status__FAILURE_ROLL = 1;
+const unsigned short vehicle_status__FAILURE_PITCH = 2;
+const unsigned short vehicle_status__FAILURE_ALT = 4;
+const unsigned short vehicle_status__FAILURE_EXT = 8;
+const unsigned short vehicle_status__FAILURE_ARM_ESC = 16;
+const unsigned short vehicle_status__FAILURE_BATTERY = 32;
+const unsigned short vehicle_status__FAILURE_IMBALANCED_PROP = 64;
+const unsigned short vehicle_status__FAILURE_MOTOR = 128;
 const octet vehicle_status__ARMING_STATE_INIT = 0;
 const octet vehicle_status__ARMING_STATE_STANDBY = 1;
 const octet vehicle_status__ARMING_STATE_ARMED = 2;
@@ -11,14 +20,6 @@ const octet vehicle_status__ARMING_STATE_STANDBY_ERROR = 3;
 const octet vehicle_status__ARMING_STATE_SHUTDOWN = 4;
 const octet vehicle_status__ARMING_STATE_IN_AIR_RESTORE = 5;
 const octet vehicle_status__ARMING_STATE_MAX = 6;
-const octet vehicle_status__FAILURE_NONE = 0;
-const octet vehicle_status__FAILURE_ROLL = 1;
-const octet vehicle_status__FAILURE_PITCH = 2;
-const octet vehicle_status__FAILURE_ALT = 4;
-const octet vehicle_status__FAILURE_EXT = 8;
-const octet vehicle_status__FAILURE_ARM_ESC = 16;
-const octet vehicle_status__FAILURE_BATTERY = 32;
-const octet vehicle_status__FAILURE_IMBALANCED_PROP = 64;
 const octet vehicle_status__HIL_STATE_OFF = 0;
 const octet vehicle_status__HIL_STATE_ON = 1;
 const octet vehicle_status__NAVIGATION_STATE_MANUAL = 0;
@@ -27,7 +28,7 @@ const octet vehicle_status__NAVIGATION_STATE_POSCTL = 2;
 const octet vehicle_status__NAVIGATION_STATE_AUTO_MISSION = 3;
 const octet vehicle_status__NAVIGATION_STATE_AUTO_LOITER = 4;
 const octet vehicle_status__NAVIGATION_STATE_AUTO_RTL = 5;
-const octet vehicle_status__NAVIGATION_STATE_AUTO_LANDENGFAIL = 8;
+const octet vehicle_status__NAVIGATION_STATE_UNUSED3 = 8;
 const octet vehicle_status__NAVIGATION_STATE_UNUSED = 9;
 const octet vehicle_status__NAVIGATION_STATE_ACRO = 10;
 const octet vehicle_status__NAVIGATION_STATE_UNUSED1 = 11;
@@ -86,10 +87,9 @@ struct vehicle_status
     boolean data_link_lost_;
     octet data_link_lost_counter_;
     boolean high_latency_data_link_lost_;
-    boolean engine_failure_;
     boolean mission_failure_;
     boolean geofence_violated_;
-    octet failure_detector_status_;
+    unsigned short failure_detector_status_;
     unsigned long long onboard_control_sensors_present_;
     unsigned long long onboard_control_sensors_enabled_;
     unsigned long long onboard_control_sensors_health_;
