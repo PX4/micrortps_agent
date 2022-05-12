@@ -43,28 +43,25 @@ vehicle_local_position_setpoint::vehicle_local_position_setpoint()
     m_y_ = 0.0;
     // m_z_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3ffcd140
     m_z_ = 0.0;
-    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23bb8443
-    m_yaw_ = 0.0;
-    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1176dcec
-    m_yawspeed_ = 0.0;
-    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@120d6fe6
+    // m_vx_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23bb8443
     m_vx_ = 0.0;
-    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4ba2ca36
+    // m_vy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1176dcec
     m_vy_ = 0.0;
-    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3444d69d
+    // m_vz_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@120d6fe6
     m_vz_ = 0.0;
-    // m_acceleration com.eprosima.idl.parser.typecode.AliasTypeCode@1372ed45
+    // m_acceleration com.eprosima.idl.parser.typecode.AliasTypeCode@4ba2ca36
     memset(&m_acceleration, 0, (3) * 4);
-    // m_jerk com.eprosima.idl.parser.typecode.AliasTypeCode@1372ed45
-    memset(&m_jerk, 0, (3) * 4);
-    // m_thrust com.eprosima.idl.parser.typecode.AliasTypeCode@1372ed45
+    // m_thrust com.eprosima.idl.parser.typecode.AliasTypeCode@4ba2ca36
     memset(&m_thrust, 0, (3) * 4);
+    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3444d69d
+    m_yaw_ = 0.0;
+    // m_yawspeed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1372ed45
+    m_yawspeed_ = 0.0;
 
 }
 
 vehicle_local_position_setpoint::~vehicle_local_position_setpoint()
 {
-
 
 
 
@@ -84,14 +81,13 @@ vehicle_local_position_setpoint::vehicle_local_position_setpoint(const vehicle_l
     m_x_ = x.m_x_;
     m_y_ = x.m_y_;
     m_z_ = x.m_z_;
-    m_yaw_ = x.m_yaw_;
-    m_yawspeed_ = x.m_yawspeed_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
     m_acceleration = x.m_acceleration;
-    m_jerk = x.m_jerk;
     m_thrust = x.m_thrust;
+    m_yaw_ = x.m_yaw_;
+    m_yawspeed_ = x.m_yawspeed_;
 }
 
 vehicle_local_position_setpoint::vehicle_local_position_setpoint(vehicle_local_position_setpoint &&x)
@@ -100,14 +96,13 @@ vehicle_local_position_setpoint::vehicle_local_position_setpoint(vehicle_local_p
     m_x_ = x.m_x_;
     m_y_ = x.m_y_;
     m_z_ = x.m_z_;
-    m_yaw_ = x.m_yaw_;
-    m_yawspeed_ = x.m_yawspeed_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
     m_acceleration = std::move(x.m_acceleration);
-    m_jerk = std::move(x.m_jerk);
     m_thrust = std::move(x.m_thrust);
+    m_yaw_ = x.m_yaw_;
+    m_yawspeed_ = x.m_yawspeed_;
 }
 
 vehicle_local_position_setpoint& vehicle_local_position_setpoint::operator=(const vehicle_local_position_setpoint &x)
@@ -117,14 +112,13 @@ vehicle_local_position_setpoint& vehicle_local_position_setpoint::operator=(cons
     m_x_ = x.m_x_;
     m_y_ = x.m_y_;
     m_z_ = x.m_z_;
-    m_yaw_ = x.m_yaw_;
-    m_yawspeed_ = x.m_yawspeed_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
     m_acceleration = x.m_acceleration;
-    m_jerk = x.m_jerk;
     m_thrust = x.m_thrust;
+    m_yaw_ = x.m_yaw_;
+    m_yawspeed_ = x.m_yawspeed_;
 
     return *this;
 }
@@ -136,14 +130,13 @@ vehicle_local_position_setpoint& vehicle_local_position_setpoint::operator=(vehi
     m_x_ = x.m_x_;
     m_y_ = x.m_y_;
     m_z_ = x.m_z_;
-    m_yaw_ = x.m_yaw_;
-    m_yawspeed_ = x.m_yawspeed_;
     m_vx_ = x.m_vx_;
     m_vy_ = x.m_vy_;
     m_vz_ = x.m_vz_;
     m_acceleration = std::move(x.m_acceleration);
-    m_jerk = std::move(x.m_jerk);
     m_thrust = std::move(x.m_thrust);
+    m_yaw_ = x.m_yaw_;
+    m_yawspeed_ = x.m_yawspeed_;
 
     return *this;
 }
@@ -174,19 +167,16 @@ size_t vehicle_local_position_setpoint::getMaxCdrSerializedSize(size_t current_a
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
+    current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
 
@@ -220,26 +210,21 @@ size_t vehicle_local_position_setpoint::getCdrSerializedSize(const vehicle_local
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
+    if ((3) > 0)
+    {
+        current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    }
+
+    if ((3) > 0)
+    {
+        current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    }
+
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
-
-    if ((3) > 0)
-    {
-        current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-    }
-
-    if ((3) > 0)
-    {
-        current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-    }
-
-    if ((3) > 0)
-    {
-        current_alignment += ((3) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-    }
 
 
     return current_alignment - initial_alignment;
@@ -252,17 +237,15 @@ void vehicle_local_position_setpoint::serialize(eprosima::fastcdr::Cdr &scdr) co
     scdr << m_x_;
     scdr << m_y_;
     scdr << m_z_;
-    scdr << m_yaw_;
-    scdr << m_yawspeed_;
     scdr << m_vx_;
     scdr << m_vy_;
     scdr << m_vz_;
     scdr << m_acceleration;
 
-    scdr << m_jerk;
-
     scdr << m_thrust;
 
+    scdr << m_yaw_;
+    scdr << m_yawspeed_;
 }
 
 void vehicle_local_position_setpoint::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -272,17 +255,15 @@ void vehicle_local_position_setpoint::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_x_;
     dcdr >> m_y_;
     dcdr >> m_z_;
-    dcdr >> m_yaw_;
-    dcdr >> m_yawspeed_;
     dcdr >> m_vx_;
     dcdr >> m_vy_;
     dcdr >> m_vz_;
     dcdr >> m_acceleration;
 
-    dcdr >> m_jerk;
-
     dcdr >> m_thrust;
 
+    dcdr >> m_yaw_;
+    dcdr >> m_yawspeed_;
 }
 
 /*!
@@ -391,60 +372,6 @@ float vehicle_local_position_setpoint::z_() const
 float& vehicle_local_position_setpoint::z_()
 {
     return m_z_;
-}
-
-/*!
- * @brief This function sets a value in member yaw_
- * @param _yaw_ New value for member yaw_
- */
-void vehicle_local_position_setpoint::yaw_(float _yaw_)
-{
-m_yaw_ = _yaw_;
-}
-
-/*!
- * @brief This function returns the value of member yaw_
- * @return Value of member yaw_
- */
-float vehicle_local_position_setpoint::yaw_() const
-{
-    return m_yaw_;
-}
-
-/*!
- * @brief This function returns a reference to member yaw_
- * @return Reference to member yaw_
- */
-float& vehicle_local_position_setpoint::yaw_()
-{
-    return m_yaw_;
-}
-
-/*!
- * @brief This function sets a value in member yawspeed_
- * @param _yawspeed_ New value for member yawspeed_
- */
-void vehicle_local_position_setpoint::yawspeed_(float _yawspeed_)
-{
-m_yawspeed_ = _yawspeed_;
-}
-
-/*!
- * @brief This function returns the value of member yawspeed_
- * @return Value of member yawspeed_
- */
-float vehicle_local_position_setpoint::yawspeed_() const
-{
-    return m_yawspeed_;
-}
-
-/*!
- * @brief This function returns a reference to member yawspeed_
- * @return Reference to member yawspeed_
- */
-float& vehicle_local_position_setpoint::yawspeed_()
-{
-    return m_yawspeed_;
 }
 
 /*!
@@ -564,41 +491,6 @@ vehicle_local_position_setpoint__float_array_3& vehicle_local_position_setpoint:
     return m_acceleration;
 }
 /*!
- * @brief This function copies the value in member jerk
- * @param _jerk New value to be copied in member jerk
- */
-void vehicle_local_position_setpoint::jerk(const vehicle_local_position_setpoint__float_array_3 &_jerk)
-{
-m_jerk = _jerk;
-}
-
-/*!
- * @brief This function moves the value in member jerk
- * @param _jerk New value to be moved in member jerk
- */
-void vehicle_local_position_setpoint::jerk(vehicle_local_position_setpoint__float_array_3 &&_jerk)
-{
-m_jerk = std::move(_jerk);
-}
-
-/*!
- * @brief This function returns a constant reference to member jerk
- * @return Constant reference to member jerk
- */
-const vehicle_local_position_setpoint__float_array_3& vehicle_local_position_setpoint::jerk() const
-{
-    return m_jerk;
-}
-
-/*!
- * @brief This function returns a reference to member jerk
- * @return Reference to member jerk
- */
-vehicle_local_position_setpoint__float_array_3& vehicle_local_position_setpoint::jerk()
-{
-    return m_jerk;
-}
-/*!
  * @brief This function copies the value in member thrust
  * @param _thrust New value to be copied in member thrust
  */
@@ -633,11 +525,64 @@ vehicle_local_position_setpoint__float_array_3& vehicle_local_position_setpoint:
 {
     return m_thrust;
 }
+/*!
+ * @brief This function sets a value in member yaw_
+ * @param _yaw_ New value for member yaw_
+ */
+void vehicle_local_position_setpoint::yaw_(float _yaw_)
+{
+m_yaw_ = _yaw_;
+}
+
+/*!
+ * @brief This function returns the value of member yaw_
+ * @return Value of member yaw_
+ */
+float vehicle_local_position_setpoint::yaw_() const
+{
+    return m_yaw_;
+}
+
+/*!
+ * @brief This function returns a reference to member yaw_
+ * @return Reference to member yaw_
+ */
+float& vehicle_local_position_setpoint::yaw_()
+{
+    return m_yaw_;
+}
+
+/*!
+ * @brief This function sets a value in member yawspeed_
+ * @param _yawspeed_ New value for member yawspeed_
+ */
+void vehicle_local_position_setpoint::yawspeed_(float _yawspeed_)
+{
+m_yawspeed_ = _yawspeed_;
+}
+
+/*!
+ * @brief This function returns the value of member yawspeed_
+ * @return Value of member yawspeed_
+ */
+float vehicle_local_position_setpoint::yawspeed_() const
+{
+    return m_yawspeed_;
+}
+
+/*!
+ * @brief This function returns a reference to member yawspeed_
+ * @return Reference to member yawspeed_
+ */
+float& vehicle_local_position_setpoint::yawspeed_()
+{
+    return m_yawspeed_;
+}
+
 
 size_t vehicle_local_position_setpoint::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
-
 
 
 
@@ -663,7 +608,6 @@ bool vehicle_local_position_setpoint::isKeyDefined()
 void vehicle_local_position_setpoint::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

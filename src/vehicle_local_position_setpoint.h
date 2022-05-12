@@ -180,42 +180,6 @@ public:
     eProsima_user_DllExport float& z_();
 
     /*!
-     * @brief This function sets a value in member yaw_
-     * @param _yaw_ New value for member yaw_
-     */
-    eProsima_user_DllExport void yaw_(float _yaw_);
-
-    /*!
-     * @brief This function returns the value of member yaw_
-     * @return Value of member yaw_
-     */
-    eProsima_user_DllExport float yaw_() const;
-
-    /*!
-     * @brief This function returns a reference to member yaw_
-     * @return Reference to member yaw_
-     */
-    eProsima_user_DllExport float& yaw_();
-
-    /*!
-     * @brief This function sets a value in member yawspeed_
-     * @param _yawspeed_ New value for member yawspeed_
-     */
-    eProsima_user_DllExport void yawspeed_(float _yawspeed_);
-
-    /*!
-     * @brief This function returns the value of member yawspeed_
-     * @return Value of member yawspeed_
-     */
-    eProsima_user_DllExport float yawspeed_() const;
-
-    /*!
-     * @brief This function returns a reference to member yawspeed_
-     * @return Reference to member yawspeed_
-     */
-    eProsima_user_DllExport float& yawspeed_();
-
-    /*!
      * @brief This function sets a value in member vx_
      * @param _vx_ New value for member vx_
      */
@@ -293,29 +257,6 @@ public:
      */
     eProsima_user_DllExport vehicle_local_position_setpoint__float_array_3& acceleration();
     /*!
-     * @brief This function copies the value in member jerk
-     * @param _jerk New value to be copied in member jerk
-     */
-    eProsima_user_DllExport void jerk(const vehicle_local_position_setpoint__float_array_3 &_jerk);
-
-    /*!
-     * @brief This function moves the value in member jerk
-     * @param _jerk New value to be moved in member jerk
-     */
-    eProsima_user_DllExport void jerk(vehicle_local_position_setpoint__float_array_3 &&_jerk);
-
-    /*!
-     * @brief This function returns a constant reference to member jerk
-     * @return Constant reference to member jerk
-     */
-    eProsima_user_DllExport const vehicle_local_position_setpoint__float_array_3& jerk() const;
-
-    /*!
-     * @brief This function returns a reference to member jerk
-     * @return Reference to member jerk
-     */
-    eProsima_user_DllExport vehicle_local_position_setpoint__float_array_3& jerk();
-    /*!
      * @brief This function copies the value in member thrust
      * @param _thrust New value to be copied in member thrust
      */
@@ -338,6 +279,42 @@ public:
      * @return Reference to member thrust
      */
     eProsima_user_DllExport vehicle_local_position_setpoint__float_array_3& thrust();
+    /*!
+     * @brief This function sets a value in member yaw_
+     * @param _yaw_ New value for member yaw_
+     */
+    eProsima_user_DllExport void yaw_(float _yaw_);
+
+    /*!
+     * @brief This function returns the value of member yaw_
+     * @return Value of member yaw_
+     */
+    eProsima_user_DllExport float yaw_() const;
+
+    /*!
+     * @brief This function returns a reference to member yaw_
+     * @return Reference to member yaw_
+     */
+    eProsima_user_DllExport float& yaw_();
+
+    /*!
+     * @brief This function sets a value in member yawspeed_
+     * @param _yawspeed_ New value for member yawspeed_
+     */
+    eProsima_user_DllExport void yawspeed_(float _yawspeed_);
+
+    /*!
+     * @brief This function returns the value of member yawspeed_
+     * @return Value of member yawspeed_
+     */
+    eProsima_user_DllExport float yawspeed_() const;
+
+    /*!
+     * @brief This function returns a reference to member yawspeed_
+     * @return Reference to member yawspeed_
+     */
+    eProsima_user_DllExport float& yawspeed_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -394,14 +371,13 @@ private:
     float m_x_;
     float m_y_;
     float m_z_;
-    float m_yaw_;
-    float m_yawspeed_;
     float m_vx_;
     float m_vy_;
     float m_vz_;
     vehicle_local_position_setpoint__float_array_3 m_acceleration;
-    vehicle_local_position_setpoint__float_array_3 m_jerk;
     vehicle_local_position_setpoint__float_array_3 m_thrust;
+    float m_yaw_;
+    float m_yawspeed_;
 };
 
 #endif // _VEHICLE_LOCAL_POSITION_SETPOINT_H_

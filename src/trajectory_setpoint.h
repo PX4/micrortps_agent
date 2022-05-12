@@ -126,149 +126,51 @@ public:
     eProsima_user_DllExport uint64_t& timestamp_();
 
     /*!
-     * @brief This function sets a value in member x_
-     * @param _x_ New value for member x_
+     * @brief This function copies the value in member position
+     * @param _position New value to be copied in member position
      */
-    eProsima_user_DllExport void x_(float _x_);
+    eProsima_user_DllExport void position(const trajectory_setpoint__float_array_3 &_position);
 
     /*!
-     * @brief This function returns the value of member x_
-     * @return Value of member x_
+     * @brief This function moves the value in member position
+     * @param _position New value to be moved in member position
      */
-    eProsima_user_DllExport float x_() const;
+    eProsima_user_DllExport void position(trajectory_setpoint__float_array_3 &&_position);
 
     /*!
-     * @brief This function returns a reference to member x_
-     * @return Reference to member x_
+     * @brief This function returns a constant reference to member position
+     * @return Constant reference to member position
      */
-    eProsima_user_DllExport float& x_();
+    eProsima_user_DllExport const trajectory_setpoint__float_array_3& position() const;
 
     /*!
-     * @brief This function sets a value in member y_
-     * @param _y_ New value for member y_
+     * @brief This function returns a reference to member position
+     * @return Reference to member position
      */
-    eProsima_user_DllExport void y_(float _y_);
+    eProsima_user_DllExport trajectory_setpoint__float_array_3& position();
+    /*!
+     * @brief This function copies the value in member velocity
+     * @param _velocity New value to be copied in member velocity
+     */
+    eProsima_user_DllExport void velocity(const trajectory_setpoint__float_array_3 &_velocity);
 
     /*!
-     * @brief This function returns the value of member y_
-     * @return Value of member y_
+     * @brief This function moves the value in member velocity
+     * @param _velocity New value to be moved in member velocity
      */
-    eProsima_user_DllExport float y_() const;
+    eProsima_user_DllExport void velocity(trajectory_setpoint__float_array_3 &&_velocity);
 
     /*!
-     * @brief This function returns a reference to member y_
-     * @return Reference to member y_
+     * @brief This function returns a constant reference to member velocity
+     * @return Constant reference to member velocity
      */
-    eProsima_user_DllExport float& y_();
+    eProsima_user_DllExport const trajectory_setpoint__float_array_3& velocity() const;
 
     /*!
-     * @brief This function sets a value in member z_
-     * @param _z_ New value for member z_
+     * @brief This function returns a reference to member velocity
+     * @return Reference to member velocity
      */
-    eProsima_user_DllExport void z_(float _z_);
-
-    /*!
-     * @brief This function returns the value of member z_
-     * @return Value of member z_
-     */
-    eProsima_user_DllExport float z_() const;
-
-    /*!
-     * @brief This function returns a reference to member z_
-     * @return Reference to member z_
-     */
-    eProsima_user_DllExport float& z_();
-
-    /*!
-     * @brief This function sets a value in member yaw_
-     * @param _yaw_ New value for member yaw_
-     */
-    eProsima_user_DllExport void yaw_(float _yaw_);
-
-    /*!
-     * @brief This function returns the value of member yaw_
-     * @return Value of member yaw_
-     */
-    eProsima_user_DllExport float yaw_() const;
-
-    /*!
-     * @brief This function returns a reference to member yaw_
-     * @return Reference to member yaw_
-     */
-    eProsima_user_DllExport float& yaw_();
-
-    /*!
-     * @brief This function sets a value in member yawspeed_
-     * @param _yawspeed_ New value for member yawspeed_
-     */
-    eProsima_user_DllExport void yawspeed_(float _yawspeed_);
-
-    /*!
-     * @brief This function returns the value of member yawspeed_
-     * @return Value of member yawspeed_
-     */
-    eProsima_user_DllExport float yawspeed_() const;
-
-    /*!
-     * @brief This function returns a reference to member yawspeed_
-     * @return Reference to member yawspeed_
-     */
-    eProsima_user_DllExport float& yawspeed_();
-
-    /*!
-     * @brief This function sets a value in member vx_
-     * @param _vx_ New value for member vx_
-     */
-    eProsima_user_DllExport void vx_(float _vx_);
-
-    /*!
-     * @brief This function returns the value of member vx_
-     * @return Value of member vx_
-     */
-    eProsima_user_DllExport float vx_() const;
-
-    /*!
-     * @brief This function returns a reference to member vx_
-     * @return Reference to member vx_
-     */
-    eProsima_user_DllExport float& vx_();
-
-    /*!
-     * @brief This function sets a value in member vy_
-     * @param _vy_ New value for member vy_
-     */
-    eProsima_user_DllExport void vy_(float _vy_);
-
-    /*!
-     * @brief This function returns the value of member vy_
-     * @return Value of member vy_
-     */
-    eProsima_user_DllExport float vy_() const;
-
-    /*!
-     * @brief This function returns a reference to member vy_
-     * @return Reference to member vy_
-     */
-    eProsima_user_DllExport float& vy_();
-
-    /*!
-     * @brief This function sets a value in member vz_
-     * @param _vz_ New value for member vz_
-     */
-    eProsima_user_DllExport void vz_(float _vz_);
-
-    /*!
-     * @brief This function returns the value of member vz_
-     * @return Value of member vz_
-     */
-    eProsima_user_DllExport float vz_() const;
-
-    /*!
-     * @brief This function returns a reference to member vz_
-     * @return Reference to member vz_
-     */
-    eProsima_user_DllExport float& vz_();
-
+    eProsima_user_DllExport trajectory_setpoint__float_array_3& velocity();
     /*!
      * @brief This function copies the value in member acceleration
      * @param _acceleration New value to be copied in member acceleration
@@ -316,28 +218,41 @@ public:
      */
     eProsima_user_DllExport trajectory_setpoint__float_array_3& jerk();
     /*!
-     * @brief This function copies the value in member thrust
-     * @param _thrust New value to be copied in member thrust
+     * @brief This function sets a value in member yaw_
+     * @param _yaw_ New value for member yaw_
      */
-    eProsima_user_DllExport void thrust(const trajectory_setpoint__float_array_3 &_thrust);
+    eProsima_user_DllExport void yaw_(float _yaw_);
 
     /*!
-     * @brief This function moves the value in member thrust
-     * @param _thrust New value to be moved in member thrust
+     * @brief This function returns the value of member yaw_
+     * @return Value of member yaw_
      */
-    eProsima_user_DllExport void thrust(trajectory_setpoint__float_array_3 &&_thrust);
+    eProsima_user_DllExport float yaw_() const;
 
     /*!
-     * @brief This function returns a constant reference to member thrust
-     * @return Constant reference to member thrust
+     * @brief This function returns a reference to member yaw_
+     * @return Reference to member yaw_
      */
-    eProsima_user_DllExport const trajectory_setpoint__float_array_3& thrust() const;
+    eProsima_user_DllExport float& yaw_();
 
     /*!
-     * @brief This function returns a reference to member thrust
-     * @return Reference to member thrust
+     * @brief This function sets a value in member yawspeed_
+     * @param _yawspeed_ New value for member yawspeed_
      */
-    eProsima_user_DllExport trajectory_setpoint__float_array_3& thrust();
+    eProsima_user_DllExport void yawspeed_(float _yawspeed_);
+
+    /*!
+     * @brief This function returns the value of member yawspeed_
+     * @return Value of member yawspeed_
+     */
+    eProsima_user_DllExport float yawspeed_() const;
+
+    /*!
+     * @brief This function returns a reference to member yawspeed_
+     * @return Reference to member yawspeed_
+     */
+    eProsima_user_DllExport float& yawspeed_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -391,17 +306,12 @@ public:
 
 private:
     uint64_t m_timestamp_;
-    float m_x_;
-    float m_y_;
-    float m_z_;
-    float m_yaw_;
-    float m_yawspeed_;
-    float m_vx_;
-    float m_vy_;
-    float m_vz_;
+    trajectory_setpoint__float_array_3 m_position;
+    trajectory_setpoint__float_array_3 m_velocity;
     trajectory_setpoint__float_array_3 m_acceleration;
     trajectory_setpoint__float_array_3 m_jerk;
-    trajectory_setpoint__float_array_3 m_thrust;
+    float m_yaw_;
+    float m_yawspeed_;
 };
 
 #endif // _TRAJECTORY_SETPOINT_H_

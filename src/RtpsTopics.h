@@ -59,11 +59,11 @@
 #include "timesync_Subscriber.h"
 #include "vehicle_command_Subscriber.h"
 #include "vehicle_local_position_setpoint_Subscriber.h"
+#include "trajectory_setpoint_Subscriber.h"
 #include "vehicle_trajectory_waypoint_Subscriber.h"
 #include "onboard_computer_status_Subscriber.h"
 #include "trajectory_bezier_Subscriber.h"
 #include "vehicle_trajectory_bezier_Subscriber.h"
-#include "trajectory_setpoint_Subscriber.h"
 #include "vehicle_mocap_odometry_Subscriber.h"
 #include "vehicle_visual_odometry_Subscriber.h"
 
@@ -80,11 +80,11 @@ using telemetry_status_msg_t = telemetry_status;
 using timesync_msg_t = timesync;
 using vehicle_command_msg_t = vehicle_command;
 using vehicle_local_position_setpoint_msg_t = vehicle_local_position_setpoint;
+using trajectory_setpoint_msg_t = trajectory_setpoint;
 using vehicle_trajectory_waypoint_msg_t = vehicle_trajectory_waypoint;
 using onboard_computer_status_msg_t = onboard_computer_status;
 using trajectory_bezier_msg_t = trajectory_bezier;
 using vehicle_trajectory_bezier_msg_t = vehicle_trajectory_bezier;
-using trajectory_setpoint_msg_t = trajectory_setpoint;
 using vehicle_mocap_odometry_msg_t = vehicle_mocap_odometry;
 using vehicle_visual_odometry_msg_t = vehicle_visual_odometry;
 using timesync_msg_t = timesync;
@@ -136,11 +136,11 @@ private:
 	timesync_Subscriber _timesync_sub;
 	vehicle_command_Subscriber _vehicle_command_sub;
 	vehicle_local_position_setpoint_Subscriber _vehicle_local_position_setpoint_sub;
+	trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
 	vehicle_trajectory_waypoint_Subscriber _vehicle_trajectory_waypoint_sub;
 	onboard_computer_status_Subscriber _onboard_computer_status_sub;
 	trajectory_bezier_Subscriber _trajectory_bezier_sub;
 	vehicle_trajectory_bezier_Subscriber _vehicle_trajectory_bezier_sub;
-	trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
 	vehicle_mocap_odometry_Subscriber _vehicle_mocap_odometry_sub;
 	vehicle_visual_odometry_Subscriber _vehicle_visual_odometry_sub;
 

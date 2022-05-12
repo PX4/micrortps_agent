@@ -147,6 +147,15 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
+	if (_trajectory_setpoint_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+		std::cout << "- trajectory_setpoint subscriber started" << std::endl;
+
+	} else {
+		std::cerr << "Failed starting trajectory_setpoint subscriber" << std::endl;
+		return false;
+	}
+
+
 	if (_vehicle_trajectory_waypoint_sub.init(20, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_trajectory_waypoint subscriber started" << std::endl;
 
@@ -179,15 +188,6 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 
 	} else {
 		std::cerr << "Failed starting vehicle_trajectory_bezier subscriber" << std::endl;
-		return false;
-	}
-
-
-	if (_trajectory_setpoint_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
-		std::cout << "- trajectory_setpoint subscriber started" << std::endl;
-
-	} else {
-		std::cerr << "Failed starting trajectory_setpoint subscriber" << std::endl;
 		return false;
 	}
 
@@ -636,6 +636,21 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
+	case 15: // trajectory_setpoint subscriber
+		if (_trajectory_setpoint_sub.hasMsg()) {
+			trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
+			_trajectory_setpoint_sub.unlockMsg();
+		}
+
+		break;
+
 	case 20: // vehicle_trajectory_waypoint subscriber
 		if (_vehicle_trajectory_waypoint_sub.hasMsg()) {
 			vehicle_trajectory_waypoint_msg_t msg = _vehicle_trajectory_waypoint_sub.getMsg();
@@ -692,21 +707,6 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 			ret = true;
 
 			_vehicle_trajectory_bezier_sub.unlockMsg();
-		}
-
-		break;
-
-	case 15: // trajectory_setpoint subscriber
-		if (_trajectory_setpoint_sub.hasMsg()) {
-			trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
-
-			// apply timestamp offset
-			sync_timestamp_of_outgoing_data(msg);
-
-			msg.serialize(scdr);
-			ret = true;
-
-			_trajectory_setpoint_sub.unlockMsg();
 		}
 
 		break;
