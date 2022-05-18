@@ -400,24 +400,6 @@ public:
     eProsima_user_DllExport bool& is_vtol_tailsitter_();
 
     /*!
-     * @brief This function sets a value in member vtol_fw_permanent_stab_
-     * @param _vtol_fw_permanent_stab_ New value for member vtol_fw_permanent_stab_
-     */
-    eProsima_user_DllExport void vtol_fw_permanent_stab_(bool _vtol_fw_permanent_stab_);
-
-    /*!
-     * @brief This function returns the value of member vtol_fw_permanent_stab_
-     * @return Value of member vtol_fw_permanent_stab_
-     */
-    eProsima_user_DllExport bool vtol_fw_permanent_stab_() const;
-
-    /*!
-     * @brief This function returns a reference to member vtol_fw_permanent_stab_
-     * @return Reference to member vtol_fw_permanent_stab_
-     */
-    eProsima_user_DllExport bool& vtol_fw_permanent_stab_();
-
-    /*!
      * @brief This function sets a value in member in_transition_mode_
      * @param _in_transition_mode_ New value for member in_transition_mode_
      */
@@ -770,7 +752,6 @@ private:
     uint8_t m_vehicle_type_;
     bool m_is_vtol_;
     bool m_is_vtol_tailsitter_;
-    bool m_vtol_fw_permanent_stab_;
     bool m_in_transition_mode_;
     bool m_in_transition_to_fw_;
     bool m_rc_signal_lost_;

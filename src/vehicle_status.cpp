@@ -119,46 +119,43 @@ vehicle_status::vehicle_status()
     m_is_vtol_ = false;
     // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55a561cf
     m_is_vtol_tailsitter_ = false;
-    // m_vtol_fw_permanent_stab_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b938003
-    m_vtol_fw_permanent_stab_ = false;
-    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6f3b5d16
+    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b938003
     m_in_transition_mode_ = false;
-    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b1cc93
+    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6f3b5d16
     m_in_transition_to_fw_ = false;
-    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6646153
+    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b1cc93
     m_rc_signal_lost_ = false;
-    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@21507a04
+    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6646153
     m_data_link_lost_ = false;
-    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@143640d5
+    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@21507a04
     m_data_link_lost_counter_ = 0;
-    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6295d394
+    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@143640d5
     m_high_latency_data_link_lost_ = false;
-    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@475e586c
+    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6295d394
     m_mission_failure_ = false;
-    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@657c8ad9
+    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@475e586c
     m_geofence_violated_ = false;
-    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@436a4e4b
+    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@657c8ad9
     m_failure_detector_status_ = 0;
-    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f2f2cc1
+    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@436a4e4b
     m_onboard_control_sensors_present_ = 0;
-    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a079870
+    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f2f2cc1
     m_onboard_control_sensors_enabled_ = 0;
-    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b2cf7ab
+    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a079870
     m_onboard_control_sensors_health_ = 0;
-    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa5fe93
+    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b2cf7ab
     m_latest_arming_reason_ = 0;
-    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c1a8622
+    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa5fe93
     m_latest_disarming_reason_ = 0;
-    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ad851c9
+    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c1a8622
     m_armed_time_ = 0;
-    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6156496
+    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ad851c9
     m_takeoff_time_ = 0;
 
 }
 
 vehicle_status::~vehicle_status()
 {
-
 
 
 
@@ -205,7 +202,6 @@ vehicle_status::vehicle_status(const vehicle_status &x)
     m_vehicle_type_ = x.m_vehicle_type_;
     m_is_vtol_ = x.m_is_vtol_;
     m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_vtol_fw_permanent_stab_ = x.m_vtol_fw_permanent_stab_;
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
@@ -239,7 +235,6 @@ vehicle_status::vehicle_status(vehicle_status &&x)
     m_vehicle_type_ = x.m_vehicle_type_;
     m_is_vtol_ = x.m_is_vtol_;
     m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_vtol_fw_permanent_stab_ = x.m_vtol_fw_permanent_stab_;
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
@@ -274,7 +269,6 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
     m_vehicle_type_ = x.m_vehicle_type_;
     m_is_vtol_ = x.m_is_vtol_;
     m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_vtol_fw_permanent_stab_ = x.m_vtol_fw_permanent_stab_;
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
@@ -311,7 +305,6 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
     m_vehicle_type_ = x.m_vehicle_type_;
     m_is_vtol_ = x.m_is_vtol_;
     m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_vtol_fw_permanent_stab_ = x.m_vtol_fw_permanent_stab_;
     m_in_transition_mode_ = x.m_in_transition_mode_;
     m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
@@ -356,9 +349,6 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -500,9 +490,6 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
     current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
@@ -547,7 +534,6 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_vehicle_type_;
     scdr << m_is_vtol_;
     scdr << m_is_vtol_tailsitter_;
-    scdr << m_vtol_fw_permanent_stab_;
     scdr << m_in_transition_mode_;
     scdr << m_in_transition_to_fw_;
     scdr << m_rc_signal_lost_;
@@ -582,7 +568,6 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_vehicle_type_;
     dcdr >> m_is_vtol_;
     dcdr >> m_is_vtol_tailsitter_;
-    dcdr >> m_vtol_fw_permanent_stab_;
     dcdr >> m_in_transition_mode_;
     dcdr >> m_in_transition_to_fw_;
     dcdr >> m_rc_signal_lost_;
@@ -950,33 +935,6 @@ bool vehicle_status::is_vtol_tailsitter_() const
 bool& vehicle_status::is_vtol_tailsitter_()
 {
     return m_is_vtol_tailsitter_;
-}
-
-/*!
- * @brief This function sets a value in member vtol_fw_permanent_stab_
- * @param _vtol_fw_permanent_stab_ New value for member vtol_fw_permanent_stab_
- */
-void vehicle_status::vtol_fw_permanent_stab_(bool _vtol_fw_permanent_stab_)
-{
-m_vtol_fw_permanent_stab_ = _vtol_fw_permanent_stab_;
-}
-
-/*!
- * @brief This function returns the value of member vtol_fw_permanent_stab_
- * @return Value of member vtol_fw_permanent_stab_
- */
-bool vehicle_status::vtol_fw_permanent_stab_() const
-{
-    return m_vtol_fw_permanent_stab_;
-}
-
-/*!
- * @brief This function returns a reference to member vtol_fw_permanent_stab_
- * @return Reference to member vtol_fw_permanent_stab_
- */
-bool& vehicle_status::vtol_fw_permanent_stab_()
-{
-    return m_vtol_fw_permanent_stab_;
 }
 
 /*!
@@ -1447,7 +1405,6 @@ size_t vehicle_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
     return current_align;
 }
 
@@ -1459,7 +1416,6 @@ bool vehicle_status::isKeyDefined()
 void vehicle_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

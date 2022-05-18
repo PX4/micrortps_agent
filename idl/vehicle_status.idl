@@ -80,7 +80,6 @@ struct vehicle_status
     octet vehicle_type_;
     boolean is_vtol_;
     boolean is_vtol_tailsitter_;
-    boolean vtol_fw_permanent_stab_;
     boolean in_transition_mode_;
     boolean in_transition_to_fw_;
     boolean rc_signal_lost_;
