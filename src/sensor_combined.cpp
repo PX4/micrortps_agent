@@ -53,15 +53,18 @@ sensor_combined::sensor_combined()
     m_accelerometer_integral_dt_ = 0;
     // m_accelerometer_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f058f00
     m_accelerometer_clipping_ = 0;
-    // m_accel_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@192d43ce
+    // m_gyro_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@192d43ce
+    m_gyro_clipping_ = 0;
+    // m_accel_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72057ecf
     m_accel_calibration_count_ = 0;
-    // m_gyro_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@72057ecf
+    // m_gyro_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1afd44cb
     m_gyro_calibration_count_ = 0;
 
 }
 
 sensor_combined::~sensor_combined()
 {
+
 
 
 
@@ -82,6 +85,7 @@ sensor_combined::sensor_combined(const sensor_combined &x)
     m_accelerometer_m_s2 = x.m_accelerometer_m_s2;
     m_accelerometer_integral_dt_ = x.m_accelerometer_integral_dt_;
     m_accelerometer_clipping_ = x.m_accelerometer_clipping_;
+    m_gyro_clipping_ = x.m_gyro_clipping_;
     m_accel_calibration_count_ = x.m_accel_calibration_count_;
     m_gyro_calibration_count_ = x.m_gyro_calibration_count_;
 }
@@ -95,6 +99,7 @@ sensor_combined::sensor_combined(sensor_combined &&x)
     m_accelerometer_m_s2 = std::move(x.m_accelerometer_m_s2);
     m_accelerometer_integral_dt_ = x.m_accelerometer_integral_dt_;
     m_accelerometer_clipping_ = x.m_accelerometer_clipping_;
+    m_gyro_clipping_ = x.m_gyro_clipping_;
     m_accel_calibration_count_ = x.m_accel_calibration_count_;
     m_gyro_calibration_count_ = x.m_gyro_calibration_count_;
 }
@@ -109,6 +114,7 @@ sensor_combined& sensor_combined::operator=(const sensor_combined &x)
     m_accelerometer_m_s2 = x.m_accelerometer_m_s2;
     m_accelerometer_integral_dt_ = x.m_accelerometer_integral_dt_;
     m_accelerometer_clipping_ = x.m_accelerometer_clipping_;
+    m_gyro_clipping_ = x.m_gyro_clipping_;
     m_accel_calibration_count_ = x.m_accel_calibration_count_;
     m_gyro_calibration_count_ = x.m_gyro_calibration_count_;
 
@@ -125,6 +131,7 @@ sensor_combined& sensor_combined::operator=(sensor_combined &&x)
     m_accelerometer_m_s2 = std::move(x.m_accelerometer_m_s2);
     m_accelerometer_integral_dt_ = x.m_accelerometer_integral_dt_;
     m_accelerometer_clipping_ = x.m_accelerometer_clipping_;
+    m_gyro_clipping_ = x.m_gyro_clipping_;
     m_accel_calibration_count_ = x.m_accel_calibration_count_;
     m_gyro_calibration_count_ = x.m_gyro_calibration_count_;
 
@@ -152,6 +159,9 @@ size_t sensor_combined::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -204,6 +214,9 @@ size_t sensor_combined::getCdrSerializedSize(const sensor_combined& data, size_t
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -220,6 +233,7 @@ void sensor_combined::serialize(eprosima::fastcdr::Cdr &scdr) const
 
     scdr << m_accelerometer_integral_dt_;
     scdr << m_accelerometer_clipping_;
+    scdr << m_gyro_clipping_;
     scdr << m_accel_calibration_count_;
     scdr << m_gyro_calibration_count_;
 }
@@ -236,6 +250,7 @@ void sensor_combined::deserialize(eprosima::fastcdr::Cdr &dcdr)
 
     dcdr >> m_accelerometer_integral_dt_;
     dcdr >> m_accelerometer_clipping_;
+    dcdr >> m_gyro_clipping_;
     dcdr >> m_accel_calibration_count_;
     dcdr >> m_gyro_calibration_count_;
 }
@@ -446,6 +461,33 @@ uint8_t& sensor_combined::accelerometer_clipping_()
 }
 
 /*!
+ * @brief This function sets a value in member gyro_clipping_
+ * @param _gyro_clipping_ New value for member gyro_clipping_
+ */
+void sensor_combined::gyro_clipping_(uint8_t _gyro_clipping_)
+{
+m_gyro_clipping_ = _gyro_clipping_;
+}
+
+/*!
+ * @brief This function returns the value of member gyro_clipping_
+ * @return Value of member gyro_clipping_
+ */
+uint8_t sensor_combined::gyro_clipping_() const
+{
+    return m_gyro_clipping_;
+}
+
+/*!
+ * @brief This function returns a reference to member gyro_clipping_
+ * @return Reference to member gyro_clipping_
+ */
+uint8_t& sensor_combined::gyro_clipping_()
+{
+    return m_gyro_clipping_;
+}
+
+/*!
  * @brief This function sets a value in member accel_calibration_count_
  * @param _accel_calibration_count_ New value for member accel_calibration_count_
  */
@@ -515,6 +557,7 @@ size_t sensor_combined::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
+
     return current_align;
 }
 
@@ -526,6 +569,7 @@ bool sensor_combined::isKeyDefined()
 void sensor_combined::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
      
      
      

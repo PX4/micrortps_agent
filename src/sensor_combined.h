@@ -248,6 +248,24 @@ public:
     eProsima_user_DllExport uint8_t& accelerometer_clipping_();
 
     /*!
+     * @brief This function sets a value in member gyro_clipping_
+     * @param _gyro_clipping_ New value for member gyro_clipping_
+     */
+    eProsima_user_DllExport void gyro_clipping_(uint8_t _gyro_clipping_);
+
+    /*!
+     * @brief This function returns the value of member gyro_clipping_
+     * @return Value of member gyro_clipping_
+     */
+    eProsima_user_DllExport uint8_t gyro_clipping_() const;
+
+    /*!
+     * @brief This function returns a reference to member gyro_clipping_
+     * @return Reference to member gyro_clipping_
+     */
+    eProsima_user_DllExport uint8_t& gyro_clipping_();
+
+    /*!
      * @brief This function sets a value in member accel_calibration_count_
      * @param _accel_calibration_count_ New value for member accel_calibration_count_
      */
@@ -342,6 +360,7 @@ private:
     sensor_combined__float_array_3 m_accelerometer_m_s2;
     uint32_t m_accelerometer_integral_dt_;
     uint8_t m_accelerometer_clipping_;
+    uint8_t m_gyro_clipping_;
     uint8_t m_accel_calibration_count_;
     uint8_t m_gyro_calibration_count_;
 };

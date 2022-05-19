@@ -20,6 +20,7 @@ struct sensor_combined
     sensor_combined__float_array_3 accelerometer_m_s2;
     unsigned long accelerometer_integral_dt_;
     octet accelerometer_clipping_;
+    octet gyro_clipping_;
     octet accel_calibration_count_;
     octet gyro_calibration_count_;
 
