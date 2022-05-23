@@ -687,6 +687,42 @@ public:
      */
     eProsima_user_DllExport uint64_t& takeoff_time_();
 
+    /*!
+     * @brief This function sets a value in member safety_button_available_
+     * @param _safety_button_available_ New value for member safety_button_available_
+     */
+    eProsima_user_DllExport void safety_button_available_(bool _safety_button_available_);
+
+    /*!
+     * @brief This function returns the value of member safety_button_available_
+     * @return Value of member safety_button_available_
+     */
+    eProsima_user_DllExport bool safety_button_available_() const;
+
+    /*!
+     * @brief This function returns a reference to member safety_button_available_
+     * @return Reference to member safety_button_available_
+     */
+    eProsima_user_DllExport bool& safety_button_available_();
+
+    /*!
+     * @brief This function sets a value in member safety_off_
+     * @param _safety_off_ New value for member safety_off_
+     */
+    eProsima_user_DllExport void safety_off_(bool _safety_off_);
+
+    /*!
+     * @brief This function returns the value of member safety_off_
+     * @return Value of member safety_off_
+     */
+    eProsima_user_DllExport bool safety_off_() const;
+
+    /*!
+     * @brief This function returns a reference to member safety_off_
+     * @return Reference to member safety_off_
+     */
+    eProsima_user_DllExport bool& safety_off_();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -768,6 +804,8 @@ private:
     uint8_t m_latest_disarming_reason_;
     uint64_t m_armed_time_;
     uint64_t m_takeoff_time_;
+    bool m_safety_button_available_;
+    bool m_safety_off_;
 };
 
 #endif // _VEHICLE_STATUS_H_

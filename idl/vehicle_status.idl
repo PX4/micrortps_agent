@@ -96,6 +96,8 @@ struct vehicle_status
     octet latest_disarming_reason_;
     unsigned long long armed_time_;
     unsigned long long takeoff_time_;
+    boolean safety_button_available_;
+    boolean safety_off_;
 
 }; // struct vehicle_status
 

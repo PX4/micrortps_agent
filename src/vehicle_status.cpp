@@ -151,11 +151,17 @@ vehicle_status::vehicle_status()
     m_armed_time_ = 0;
     // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ad851c9
     m_takeoff_time_ = 0;
+    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6156496
+    m_safety_button_available_ = false;
+    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3c153a1
+    m_safety_off_ = false;
 
 }
 
 vehicle_status::~vehicle_status()
 {
+
+
 
 
 
@@ -218,6 +224,8 @@ vehicle_status::vehicle_status(const vehicle_status &x)
     m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
     m_armed_time_ = x.m_armed_time_;
     m_takeoff_time_ = x.m_takeoff_time_;
+    m_safety_button_available_ = x.m_safety_button_available_;
+    m_safety_off_ = x.m_safety_off_;
 }
 
 vehicle_status::vehicle_status(vehicle_status &&x)
@@ -251,6 +259,8 @@ vehicle_status::vehicle_status(vehicle_status &&x)
     m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
     m_armed_time_ = x.m_armed_time_;
     m_takeoff_time_ = x.m_takeoff_time_;
+    m_safety_button_available_ = x.m_safety_button_available_;
+    m_safety_off_ = x.m_safety_off_;
 }
 
 vehicle_status& vehicle_status::operator=(const vehicle_status &x)
@@ -285,6 +295,8 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
     m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
     m_armed_time_ = x.m_armed_time_;
     m_takeoff_time_ = x.m_takeoff_time_;
+    m_safety_button_available_ = x.m_safety_button_available_;
+    m_safety_off_ = x.m_safety_off_;
 
     return *this;
 }
@@ -321,6 +333,8 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
     m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
     m_armed_time_ = x.m_armed_time_;
     m_takeoff_time_ = x.m_takeoff_time_;
+    m_safety_button_available_ = x.m_safety_button_available_;
+    m_safety_off_ = x.m_safety_off_;
 
     return *this;
 }
@@ -415,6 +429,12 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
 
@@ -514,6 +534,12 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -550,6 +576,8 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_latest_disarming_reason_;
     scdr << m_armed_time_;
     scdr << m_takeoff_time_;
+    scdr << m_safety_button_available_;
+    scdr << m_safety_off_;
 }
 
 void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -584,6 +612,8 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_latest_disarming_reason_;
     dcdr >> m_armed_time_;
     dcdr >> m_takeoff_time_;
+    dcdr >> m_safety_button_available_;
+    dcdr >> m_safety_off_;
 }
 
 /*!
@@ -1369,10 +1399,66 @@ uint64_t& vehicle_status::takeoff_time_()
     return m_takeoff_time_;
 }
 
+/*!
+ * @brief This function sets a value in member safety_button_available_
+ * @param _safety_button_available_ New value for member safety_button_available_
+ */
+void vehicle_status::safety_button_available_(bool _safety_button_available_)
+{
+m_safety_button_available_ = _safety_button_available_;
+}
+
+/*!
+ * @brief This function returns the value of member safety_button_available_
+ * @return Value of member safety_button_available_
+ */
+bool vehicle_status::safety_button_available_() const
+{
+    return m_safety_button_available_;
+}
+
+/*!
+ * @brief This function returns a reference to member safety_button_available_
+ * @return Reference to member safety_button_available_
+ */
+bool& vehicle_status::safety_button_available_()
+{
+    return m_safety_button_available_;
+}
+
+/*!
+ * @brief This function sets a value in member safety_off_
+ * @param _safety_off_ New value for member safety_off_
+ */
+void vehicle_status::safety_off_(bool _safety_off_)
+{
+m_safety_off_ = _safety_off_;
+}
+
+/*!
+ * @brief This function returns the value of member safety_off_
+ * @return Value of member safety_off_
+ */
+bool vehicle_status::safety_off_() const
+{
+    return m_safety_off_;
+}
+
+/*!
+ * @brief This function returns a reference to member safety_off_
+ * @return Reference to member safety_off_
+ */
+bool& vehicle_status::safety_off_()
+{
+    return m_safety_off_;
+}
+
 
 size_t vehicle_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
+
 
 
 
@@ -1416,6 +1502,8 @@ bool vehicle_status::isKeyDefined()
 void vehicle_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
+     
      
      
      
