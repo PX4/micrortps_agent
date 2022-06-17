@@ -48,8 +48,8 @@
 
 
 
-typedef std::array<float, 21> vehicle_visual_odometry__float_array_21;
 typedef std::array<float, 4> vehicle_visual_odometry__float_array_4;
+typedef std::array<float, 21> vehicle_visual_odometry__float_array_21;
 /*!
  * @brief This class represents the TopicDataType of the type vehicle_visual_odometry defined by the user in the IDL file.
  * @ingroup VEHICLE_VISUAL_ODOMETRY
