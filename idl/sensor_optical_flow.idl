@@ -9,8 +9,8 @@ const octet sensor_optical_flow__MODE_BRIGHT = 1;
 const octet sensor_optical_flow__MODE_LOWLIGHT = 2;
 const octet sensor_optical_flow__MODE_SUPER_LOWLIGHT = 3;
 
-typedef float sensor_optical_flow__float_array_2[2];
 typedef float sensor_optical_flow__float_array_3[3];
+typedef float sensor_optical_flow__float_array_2[2];
 
 struct sensor_optical_flow
 {

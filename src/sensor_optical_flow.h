@@ -68,8 +68,8 @@ const uint8_t sensor_optical_flow__MODE_UNKNOWN = 0;
 const uint8_t sensor_optical_flow__MODE_BRIGHT = 1;
 const uint8_t sensor_optical_flow__MODE_LOWLIGHT = 2;
 const uint8_t sensor_optical_flow__MODE_SUPER_LOWLIGHT = 3;
-typedef std::array<float, 2> sensor_optical_flow__float_array_2;
 typedef std::array<float, 3> sensor_optical_flow__float_array_3;
+typedef std::array<float, 2> sensor_optical_flow__float_array_2;
 /*!
  * @brief This class represents the structure sensor_optical_flow defined by the user in the IDL file.
  * @ingroup SENSOR_OPTICAL_FLOW
