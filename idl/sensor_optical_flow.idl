@@ -1,0 +1,37 @@
+
+#ifndef __sensor_optical_flow__idl__
+#define __sensor_optical_flow__idl__
+
+
+
+const octet sensor_optical_flow__MODE_UNKNOWN = 0;
+const octet sensor_optical_flow__MODE_BRIGHT = 1;
+const octet sensor_optical_flow__MODE_LOWLIGHT = 2;
+const octet sensor_optical_flow__MODE_SUPER_LOWLIGHT = 3;
+
+typedef float sensor_optical_flow__float_array_3[3];
+typedef float sensor_optical_flow__float_array_2[2];
+
+struct sensor_optical_flow
+{
+    unsigned long long timestamp_;
+    unsigned long long timestamp_sample_;
+    unsigned long device_id_;
+    sensor_optical_flow__float_array_2 pixel_flow;
+    sensor_optical_flow__float_array_3 delta_angle;
+    boolean delta_angle_available_;
+    float distance_m_;
+    boolean distance_available_;
+    unsigned long integration_timespan_us_;
+    octet quality_;
+    unsigned long error_count_;
+    float max_flow_rate_;
+    float min_ground_distance_;
+    float max_ground_distance_;
+    octet mode_;
+
+}; // struct sensor_optical_flow
+
+#pragma keylist sensor_optical_flow
+
+#endif  // __sensor_optical_flow__idl__
