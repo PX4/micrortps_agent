@@ -52,7 +52,7 @@
 #include "debug_value_Subscriber.h"
 #include "debug_vect_Subscriber.h"
 #include "offboard_control_mode_Subscriber.h"
-#include "optical_flow_Subscriber.h"
+#include "sensor_optical_flow_Subscriber.h"
 #include "position_setpoint_Subscriber.h"
 #include "position_setpoint_triplet_Subscriber.h"
 #include "telemetry_status_Subscriber.h"
@@ -73,7 +73,7 @@ using debug_key_value_msg_t = debug_key_value;
 using debug_value_msg_t = debug_value;
 using debug_vect_msg_t = debug_vect;
 using offboard_control_mode_msg_t = offboard_control_mode;
-using optical_flow_msg_t = optical_flow;
+using sensor_optical_flow_msg_t = sensor_optical_flow;
 using position_setpoint_msg_t = position_setpoint;
 using position_setpoint_triplet_msg_t = position_setpoint_triplet;
 using telemetry_status_msg_t = telemetry_status;
@@ -129,7 +129,7 @@ private:
 	debug_value_Subscriber _debug_value_sub;
 	debug_vect_Subscriber _debug_vect_sub;
 	offboard_control_mode_Subscriber _offboard_control_mode_sub;
-	optical_flow_Subscriber _optical_flow_sub;
+	sensor_optical_flow_Subscriber _sensor_optical_flow_sub;
 	position_setpoint_Subscriber _position_setpoint_sub;
 	position_setpoint_triplet_Subscriber _position_setpoint_triplet_sub;
 	telemetry_status_Subscriber _telemetry_status_sub;

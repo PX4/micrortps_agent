@@ -84,11 +84,11 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_optical_flow_sub.init(6, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
-		std::cout << "- optical_flow subscriber started" << std::endl;
+	if (_sensor_optical_flow_sub.init(6, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+		std::cout << "- sensor_optical_flow subscriber started" << std::endl;
 
 	} else {
-		std::cerr << "Failed starting optical_flow subscriber" << std::endl;
+		std::cerr << "Failed starting sensor_optical_flow subscriber" << std::endl;
 		return false;
 	}
 
@@ -531,9 +531,9 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 6: // optical_flow subscriber
-		if (_optical_flow_sub.hasMsg()) {
-			optical_flow_msg_t msg = _optical_flow_sub.getMsg();
+	case 6: // sensor_optical_flow subscriber
+		if (_sensor_optical_flow_sub.hasMsg()) {
+			sensor_optical_flow_msg_t msg = _sensor_optical_flow_sub.getMsg();
 
 			// apply timestamp offset
 			sync_timestamp_of_outgoing_data(msg);
@@ -541,7 +541,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 			msg.serialize(scdr);
 			ret = true;
 
-			_optical_flow_sub.unlockMsg();
+			_sensor_optical_flow_sub.unlockMsg();
 		}
 
 		break;

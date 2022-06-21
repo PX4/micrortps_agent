@@ -32,20 +32,20 @@
  ****************************************************************************/
 
 /*!
- * @file optical_flow_Subscriber.h
+ * @file sensor_optical_flow_Subscriber.h
  * This header file contains the declaration of the subscriber functions.
  *
  * This file was adapted from the fastrtpsgen tool.
  */
 
 
-#ifndef _optical_flow__SUBSCRIBER_H_
-#define _optical_flow__SUBSCRIBER_H_
+#ifndef _sensor_optical_flow__SUBSCRIBER_H_
+#define _sensor_optical_flow__SUBSCRIBER_H_
 
 #include <fastrtps/fastrtps_fwd.h>
 #include <fastrtps/subscriber/SubscriberListener.h>
 #include <fastrtps/subscriber/SampleInfo.h>
-#include "optical_flowPubSubTypes.h"
+#include "sensor_optical_flowPubSubTypes.h"
 
 #include <atomic>
 #include <condition_variable>
@@ -54,19 +54,19 @@
 using namespace eprosima::fastrtps;
 using namespace eprosima::fastrtps::rtps;
 
-using optical_flow_msg_t = optical_flow;
-using optical_flow_msg_datatype = optical_flowPubSubType;
+using sensor_optical_flow_msg_t = sensor_optical_flow;
+using sensor_optical_flow_msg_datatype = sensor_optical_flowPubSubType;
 
-class optical_flow_Subscriber
+class sensor_optical_flow_Subscriber
 {
 public:
-	optical_flow_Subscriber();
-	virtual ~optical_flow_Subscriber();
+	sensor_optical_flow_Subscriber();
+	virtual ~sensor_optical_flow_Subscriber();
 	bool init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv, std::mutex *t_send_queue_mutex,
 		  std::queue<uint8_t> *t_send_queue, const std::string &ns, std::string topic_name = "");
 	void run();
 	bool hasMsg();
-	optical_flow_msg_t getMsg();
+	sensor_optical_flow_msg_t getMsg();
 	void unlockMsg();
 
 private:
@@ -83,7 +83,7 @@ private:
 		SampleInfo_t m_info;
 		int n_matched;
 		int n_msg;
-		optical_flow_msg_t msg;
+		sensor_optical_flow_msg_t msg;
 		std::atomic_bool has_msg;
 		uint8_t topic_ID;
 		std::condition_variable *t_send_queue_cv;
@@ -93,7 +93,7 @@ private:
 		std::mutex has_msg_mutex;
 
 	} m_listener;
-	optical_flow_msg_datatype optical_flowDataType;
+	sensor_optical_flow_msg_datatype sensor_optical_flowDataType;
 };
 
-#endif // _optical_flow__SUBSCRIBER_H_
+#endif // _sensor_optical_flow__SUBSCRIBER_H_

@@ -43,11 +43,11 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_trajectory_waypoint::vehicle_trajectory_waypoint()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@61dd025
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1677d1
     m_timestamp_ = 0;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@124c278f
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48fa0f47
     m_type_ = 0;
-    // m_waypoints com.eprosima.idl.parser.typecode.AliasTypeCode@15b204a1
+    // m_waypoints com.eprosima.idl.parser.typecode.AliasTypeCode@6ac13091
 
 
 }

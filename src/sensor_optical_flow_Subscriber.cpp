@@ -32,13 +32,13 @@
  ****************************************************************************/
 
 /*!
- * @file optical_flow_Subscriber.cpp
+ * @file sensor_optical_flow_Subscriber.cpp
  * This file contains the implementation of the subscriber functions.
  *
  * This file was adapted from the fastrtpsgen tool.
  */
 
-#include "optical_flow_Subscriber.h"
+#include "sensor_optical_flow_Subscriber.h"
 
 #include <fastrtps/Domain.h>
 #include <fastrtps/participant/Participant.h>
@@ -51,17 +51,17 @@
 using SharedMemTransportDescriptor = eprosima::fastdds::rtps::SharedMemTransportDescriptor;
 
 
-optical_flow_Subscriber::optical_flow_Subscriber()
+sensor_optical_flow_Subscriber::sensor_optical_flow_Subscriber()
 	: mp_participant(nullptr),
 	  mp_subscriber(nullptr)
 { }
 
-optical_flow_Subscriber::~optical_flow_Subscriber()
+sensor_optical_flow_Subscriber::~sensor_optical_flow_Subscriber()
 {
 	Domain::removeParticipant(mp_participant);
 }
 
-bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv,
+bool sensor_optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_send_queue_cv,
 			       std::mutex *t_send_queue_mutex, std::queue<uint8_t> *t_send_queue, const std::string &ns,
 			       std::string topic_name)
 {
@@ -75,7 +75,7 @@ bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_
 	PParam.domainId = 0;
 	PParam.rtps.builtin.discovery_config.leaseDuration = c_TimeInfinite;
 	std::string nodeName = ns;
-	nodeName.append("optical_flow_subscriber");
+	nodeName.append("sensor_optical_flow_subscriber");
 	PParam.rtps.setName(nodeName.c_str());
 
 
@@ -86,14 +86,14 @@ bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_
 	}
 
 	// Register the type
-	Domain::registerType(mp_participant, static_cast<TopicDataType *>(&optical_flowDataType));
+	Domain::registerType(mp_participant, static_cast<TopicDataType *>(&sensor_optical_flowDataType));
 
 	// Create Subscriber
 	SubscriberAttributes Rparam;
 	Rparam.topic.topicKind = NO_KEY;
-	Rparam.topic.topicDataType = optical_flowDataType.getName();
+	Rparam.topic.topicDataType = sensor_optical_flowDataType.getName();
 	std::string topicName = ns;
-	topic_name.empty() ? topicName.append("fmu/optical_flow/in") : topicName.append(topic_name);
+	topic_name.empty() ? topicName.append("fmu/sensor_optical_flow/in") : topicName.append(topic_name);
 	Rparam.topic.topicName = topicName;
 	mp_subscriber = Domain::createSubscriber(mp_participant, Rparam, static_cast<SubscriberListener *>(&m_listener));
 
@@ -104,7 +104,7 @@ bool optical_flow_Subscriber::init(uint8_t topic_ID, std::condition_variable *t_
 	return true;
 }
 
-void optical_flow_Subscriber::SubListener::onSubscriptionMatched(Subscriber *sub, MatchingInfo &info)
+void sensor_optical_flow_Subscriber::SubListener::onSubscriptionMatched(Subscriber *sub, MatchingInfo &info)
 {
 	// The first 6 values of the ID guidPrefix of an entity in a DDS-RTPS Domain
 	// are the same for all its subcomponents (publishers, subscribers)
@@ -121,17 +121,17 @@ void optical_flow_Subscriber::SubListener::onSubscriptionMatched(Subscriber *sub
 	if (is_different_endpoint) {
 		if (info.status == MATCHED_MATCHING) {
 			n_matched++;
-			std::cout << "\033[0;37m[   micrortps_agent   ]\toptical_flow subscriber matched\033[0m" << std::endl;
+			std::cout << "\033[0;37m[   micrortps_agent   ]\tsensor_optical_flow subscriber matched\033[0m" << std::endl;
 
 		} else {
 			n_matched--;
-			std::cout << "\033[0;37m[   micrortps_agent   ]\toptical_flow subscriber unmatched\033[0m" << std::endl;
+			std::cout << "\033[0;37m[   micrortps_agent   ]\tsensor_optical_flow subscriber unmatched\033[0m" << std::endl;
 		}
 	}
 
 }
 
-void optical_flow_Subscriber::SubListener::onNewDataMessage(Subscriber *sub)
+void sensor_optical_flow_Subscriber::SubListener::onNewDataMessage(Subscriber *sub)
 {
 	if (n_matched > 0) {
 		std::unique_lock<std::mutex> has_msg_lock(has_msg_mutex);
@@ -159,7 +159,7 @@ void optical_flow_Subscriber::SubListener::onNewDataMessage(Subscriber *sub)
 	}
 }
 
-bool optical_flow_Subscriber::hasMsg()
+bool sensor_optical_flow_Subscriber::hasMsg()
 {
 	if (m_listener.n_matched > 0) {
 		return m_listener.has_msg.load();
@@ -168,12 +168,12 @@ bool optical_flow_Subscriber::hasMsg()
 	return false;
 }
 
-optical_flow_msg_t optical_flow_Subscriber::getMsg()
+sensor_optical_flow_msg_t sensor_optical_flow_Subscriber::getMsg()
 {
 	return m_listener.msg;
 }
 
-void optical_flow_Subscriber::unlockMsg()
+void sensor_optical_flow_Subscriber::unlockMsg()
 {
 	if (m_listener.n_matched > 0) {
 		std::unique_lock<std::mutex> has_msg_lock(m_listener.has_msg_mutex);

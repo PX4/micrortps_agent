@@ -93,67 +93,67 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_status::vehicle_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@358c99f5
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@19d37183
     m_timestamp_ = 0;
-    // m_nav_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3ee0fea4
+    // m_nav_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a0dcaa
     m_nav_state_ = 0;
-    // m_nav_state_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48524010
+    // m_nav_state_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bd40a57
     m_nav_state_timestamp_ = 0;
-    // m_arming_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b168fa9
+    // m_arming_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@fdefd3f
     m_arming_state_ = 0;
-    // m_hil_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a84f40f
+    // m_hil_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@d83da2e
     m_hil_state_ = 0;
-    // m_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23282c25
+    // m_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a4102b8
     m_failsafe_ = false;
-    // m_failsafe_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7920ba90
+    // m_failsafe_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11dc3715
     m_failsafe_timestamp_ = 0;
-    // m_system_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b419da
+    // m_system_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@69930714
     m_system_type_ = 0;
-    // m_system_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b2da18f
+    // m_system_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a52f2a2
     m_system_id_ = 0;
-    // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5906ebcb
+    // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78047b92
     m_component_id_ = 0;
-    // m_vehicle_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@258e2e41
+    // m_vehicle_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@8909f18
     m_vehicle_type_ = 0;
-    // m_is_vtol_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d299e3
+    // m_is_vtol_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79ca92b9
     m_is_vtol_ = false;
-    // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55a561cf
+    // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1460a8c0
     m_is_vtol_tailsitter_ = false;
-    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b938003
+    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f638935
     m_in_transition_mode_ = false;
-    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6f3b5d16
+    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4387b79e
     m_in_transition_to_fw_ = false;
-    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b1cc93
+    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e75aa0d
     m_rc_signal_lost_ = false;
-    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6646153
+    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fc229ab
     m_data_link_lost_ = false;
-    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@21507a04
+    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2cbb3d47
     m_data_link_lost_counter_ = 0;
-    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@143640d5
+    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@527e5409
     m_high_latency_data_link_lost_ = false;
-    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6295d394
+    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1198b989
     m_mission_failure_ = false;
-    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@475e586c
+    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ff95560
     m_geofence_violated_ = false;
-    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@657c8ad9
+    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@add0edd
     m_failure_detector_status_ = 0;
-    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@436a4e4b
+    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa3cd93
     m_onboard_control_sensors_present_ = 0;
-    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f2f2cc1
+    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ea37dbf
     m_onboard_control_sensors_enabled_ = 0;
-    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3a079870
+    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b44655e
     m_onboard_control_sensors_health_ = 0;
-    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b2cf7ab
+    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@290d210d
     m_latest_arming_reason_ = 0;
-    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa5fe93
+    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d76aeea
     m_latest_disarming_reason_ = 0;
-    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5c1a8622
+    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78dd667e
     m_armed_time_ = 0;
-    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ad851c9
+    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10db82ae
     m_takeoff_time_ = 0;
-    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6156496
+    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@501edcf1
     m_safety_button_available_ = false;
-    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3c153a1
+    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b729e6
     m_safety_off_ = false;
 
 }
