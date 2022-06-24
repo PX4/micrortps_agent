@@ -36,8 +36,8 @@
 
 
 
-typedef std::array<float, 2> sensor_optical_flow__float_array_2;
 typedef std::array<float, 3> sensor_optical_flow__float_array_3;
+typedef std::array<float, 2> sensor_optical_flow__float_array_2;
 /*!
  * @brief This class represents the TopicDataType of the type sensor_optical_flow defined by the user in the IDL file.
  * @ingroup SENSOR_OPTICAL_FLOW

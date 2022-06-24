@@ -40,13 +40,13 @@ using namespace eprosima::fastcdr::exception;
 
 sensor_optical_flow::sensor_optical_flow()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57f23557
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6366ebe0
     m_timestamp_ = 0;
-    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d0f8e03
+    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44f75083
     m_timestamp_sample_ = 0;
-    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6366ebe0
+    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2698dc7
     m_device_id_ = 0;
-    // m_pixel_flow com.eprosima.idl.parser.typecode.AliasTypeCode@44f75083
+    // m_pixel_flow com.eprosima.idl.parser.typecode.AliasTypeCode@43d7741f
     memset(&m_pixel_flow, 0, (2) * 4);
     // m_delta_angle com.eprosima.idl.parser.typecode.AliasTypeCode@17baae6e
     memset(&m_delta_angle, 0, (3) * 4);
