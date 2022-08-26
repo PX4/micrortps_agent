@@ -38,6 +38,7 @@ struct position_setpoint
     octet loiter_direction_;
     float acceptance_radius_;
     float cruising_speed_;
+    boolean gliding_enabled_;
     float cruising_throttle_;
     boolean disable_weather_vane_;
 

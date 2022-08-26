@@ -39,25 +39,25 @@ using namespace eprosima::fastcdr::exception;
 
 sensor_combined::sensor_combined()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c729a55
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bb9a3ff
     m_timestamp_ = 0;
-    // m_gyro_rad com.eprosima.idl.parser.typecode.AliasTypeCode@3bb9a3ff
+    // m_gyro_rad com.eprosima.idl.parser.typecode.AliasTypeCode@661972b0
     memset(&m_gyro_rad, 0, (3) * 4);
-    // m_gyro_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@661972b0
+    // m_gyro_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5af3afd9
     m_gyro_integral_dt_ = 0;
-    // m_accelerometer_timestamp_relative_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5af3afd9
+    // m_accelerometer_timestamp_relative_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@323b36e0
     m_accelerometer_timestamp_relative_ = 0;
-    // m_accelerometer_m_s2 com.eprosima.idl.parser.typecode.AliasTypeCode@3bb9a3ff
+    // m_accelerometer_m_s2 com.eprosima.idl.parser.typecode.AliasTypeCode@661972b0
     memset(&m_accelerometer_m_s2, 0, (3) * 4);
-    // m_accelerometer_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@323b36e0
+    // m_accelerometer_integral_dt_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44ebcd03
     m_accelerometer_integral_dt_ = 0;
-    // m_accelerometer_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44ebcd03
+    // m_accelerometer_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@694abbdc
     m_accelerometer_clipping_ = 0;
-    // m_gyro_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@694abbdc
+    // m_gyro_clipping_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2e005c4b
     m_gyro_clipping_ = 0;
-    // m_accel_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2e005c4b
+    // m_accel_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4567f35d
     m_accel_calibration_count_ = 0;
-    // m_gyro_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4567f35d
+    // m_gyro_calibration_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5ffead27
     m_gyro_calibration_count_ = 0;
 
 }

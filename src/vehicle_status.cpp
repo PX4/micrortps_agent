@@ -93,67 +93,67 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_status::vehicle_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@19d37183
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a0dcaa
     m_timestamp_ = 0;
-    // m_nav_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a0dcaa
-    m_nav_state_ = 0;
-    // m_nav_state_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bd40a57
-    m_nav_state_timestamp_ = 0;
-    // m_arming_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@fdefd3f
-    m_arming_state_ = 0;
-    // m_hil_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@d83da2e
-    m_hil_state_ = 0;
-    // m_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a4102b8
-    m_failsafe_ = false;
-    // m_failsafe_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11dc3715
-    m_failsafe_timestamp_ = 0;
-    // m_system_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@69930714
-    m_system_type_ = 0;
-    // m_system_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a52f2a2
-    m_system_id_ = 0;
-    // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78047b92
-    m_component_id_ = 0;
-    // m_vehicle_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@8909f18
-    m_vehicle_type_ = 0;
-    // m_is_vtol_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79ca92b9
-    m_is_vtol_ = false;
-    // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1460a8c0
-    m_is_vtol_tailsitter_ = false;
-    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f638935
-    m_in_transition_mode_ = false;
-    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4387b79e
-    m_in_transition_to_fw_ = false;
-    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e75aa0d
-    m_rc_signal_lost_ = false;
-    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fc229ab
-    m_data_link_lost_ = false;
-    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2cbb3d47
-    m_data_link_lost_counter_ = 0;
-    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@527e5409
-    m_high_latency_data_link_lost_ = false;
-    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1198b989
-    m_mission_failure_ = false;
-    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ff95560
-    m_geofence_violated_ = false;
-    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@add0edd
-    m_failure_detector_status_ = 0;
-    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa3cd93
-    m_onboard_control_sensors_present_ = 0;
-    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ea37dbf
-    m_onboard_control_sensors_enabled_ = 0;
-    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b44655e
-    m_onboard_control_sensors_health_ = 0;
-    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@290d210d
-    m_latest_arming_reason_ = 0;
-    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d76aeea
-    m_latest_disarming_reason_ = 0;
-    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78dd667e
+    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3bd40a57
     m_armed_time_ = 0;
-    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10db82ae
+    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@fdefd3f
     m_takeoff_time_ = 0;
-    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@501edcf1
+    // m_arming_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@d83da2e
+    m_arming_state_ = 0;
+    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a4102b8
+    m_latest_arming_reason_ = 0;
+    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@11dc3715
+    m_latest_disarming_reason_ = 0;
+    // m_nav_state_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@69930714
+    m_nav_state_timestamp_ = 0;
+    // m_nav_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7a52f2a2
+    m_nav_state_ = 0;
+    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78047b92
+    m_failure_detector_status_ = 0;
+    // m_hil_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@8909f18
+    m_hil_state_ = 0;
+    // m_vehicle_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79ca92b9
+    m_vehicle_type_ = 0;
+    // m_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1460a8c0
+    m_failsafe_ = false;
+    // m_failsafe_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f638935
+    m_failsafe_timestamp_ = 0;
+    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4387b79e
+    m_rc_signal_lost_ = false;
+    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e75aa0d
+    m_data_link_lost_ = false;
+    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fc229ab
+    m_data_link_lost_counter_ = 0;
+    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2cbb3d47
+    m_high_latency_data_link_lost_ = false;
+    // m_is_vtol_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@527e5409
+    m_is_vtol_ = false;
+    // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1198b989
+    m_is_vtol_tailsitter_ = false;
+    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ff95560
+    m_in_transition_mode_ = false;
+    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@add0edd
+    m_in_transition_to_fw_ = false;
+    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2aa3cd93
+    m_mission_failure_ = false;
+    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7ea37dbf
+    m_geofence_violated_ = false;
+    // m_system_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b44655e
+    m_system_type_ = 0;
+    // m_system_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@290d210d
+    m_system_id_ = 0;
+    // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d76aeea
+    m_component_id_ = 0;
+    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78dd667e
+    m_onboard_control_sensors_present_ = 0;
+    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10db82ae
+    m_onboard_control_sensors_enabled_ = 0;
+    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@501edcf1
+    m_onboard_control_sensors_health_ = 0;
+    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b729e6
     m_safety_button_available_ = false;
-    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b729e6
+    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b4a4e18
     m_safety_off_ = false;
 
 }
@@ -196,34 +196,34 @@ vehicle_status::~vehicle_status()
 vehicle_status::vehicle_status(const vehicle_status &x)
 {
     m_timestamp_ = x.m_timestamp_;
-    m_nav_state_ = x.m_nav_state_;
-    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_armed_time_ = x.m_armed_time_;
+    m_takeoff_time_ = x.m_takeoff_time_;
     m_arming_state_ = x.m_arming_state_;
+    m_latest_arming_reason_ = x.m_latest_arming_reason_;
+    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
+    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_nav_state_ = x.m_nav_state_;
+    m_failure_detector_status_ = x.m_failure_detector_status_;
     m_hil_state_ = x.m_hil_state_;
+    m_vehicle_type_ = x.m_vehicle_type_;
     m_failsafe_ = x.m_failsafe_;
     m_failsafe_timestamp_ = x.m_failsafe_timestamp_;
-    m_system_type_ = x.m_system_type_;
-    m_system_id_ = x.m_system_id_;
-    m_component_id_ = x.m_component_id_;
-    m_vehicle_type_ = x.m_vehicle_type_;
-    m_is_vtol_ = x.m_is_vtol_;
-    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_in_transition_mode_ = x.m_in_transition_mode_;
-    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
+    m_is_vtol_ = x.m_is_vtol_;
+    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
+    m_in_transition_mode_ = x.m_in_transition_mode_;
+    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_mission_failure_ = x.m_mission_failure_;
     m_geofence_violated_ = x.m_geofence_violated_;
-    m_failure_detector_status_ = x.m_failure_detector_status_;
+    m_system_type_ = x.m_system_type_;
+    m_system_id_ = x.m_system_id_;
+    m_component_id_ = x.m_component_id_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
     m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
-    m_latest_arming_reason_ = x.m_latest_arming_reason_;
-    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
-    m_armed_time_ = x.m_armed_time_;
-    m_takeoff_time_ = x.m_takeoff_time_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
 }
@@ -231,34 +231,34 @@ vehicle_status::vehicle_status(const vehicle_status &x)
 vehicle_status::vehicle_status(vehicle_status &&x)
 {
     m_timestamp_ = x.m_timestamp_;
-    m_nav_state_ = x.m_nav_state_;
-    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_armed_time_ = x.m_armed_time_;
+    m_takeoff_time_ = x.m_takeoff_time_;
     m_arming_state_ = x.m_arming_state_;
+    m_latest_arming_reason_ = x.m_latest_arming_reason_;
+    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
+    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_nav_state_ = x.m_nav_state_;
+    m_failure_detector_status_ = x.m_failure_detector_status_;
     m_hil_state_ = x.m_hil_state_;
+    m_vehicle_type_ = x.m_vehicle_type_;
     m_failsafe_ = x.m_failsafe_;
     m_failsafe_timestamp_ = x.m_failsafe_timestamp_;
-    m_system_type_ = x.m_system_type_;
-    m_system_id_ = x.m_system_id_;
-    m_component_id_ = x.m_component_id_;
-    m_vehicle_type_ = x.m_vehicle_type_;
-    m_is_vtol_ = x.m_is_vtol_;
-    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_in_transition_mode_ = x.m_in_transition_mode_;
-    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
+    m_is_vtol_ = x.m_is_vtol_;
+    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
+    m_in_transition_mode_ = x.m_in_transition_mode_;
+    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_mission_failure_ = x.m_mission_failure_;
     m_geofence_violated_ = x.m_geofence_violated_;
-    m_failure_detector_status_ = x.m_failure_detector_status_;
+    m_system_type_ = x.m_system_type_;
+    m_system_id_ = x.m_system_id_;
+    m_component_id_ = x.m_component_id_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
     m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
-    m_latest_arming_reason_ = x.m_latest_arming_reason_;
-    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
-    m_armed_time_ = x.m_armed_time_;
-    m_takeoff_time_ = x.m_takeoff_time_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
 }
@@ -267,34 +267,34 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
 {
 
     m_timestamp_ = x.m_timestamp_;
-    m_nav_state_ = x.m_nav_state_;
-    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_armed_time_ = x.m_armed_time_;
+    m_takeoff_time_ = x.m_takeoff_time_;
     m_arming_state_ = x.m_arming_state_;
+    m_latest_arming_reason_ = x.m_latest_arming_reason_;
+    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
+    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_nav_state_ = x.m_nav_state_;
+    m_failure_detector_status_ = x.m_failure_detector_status_;
     m_hil_state_ = x.m_hil_state_;
+    m_vehicle_type_ = x.m_vehicle_type_;
     m_failsafe_ = x.m_failsafe_;
     m_failsafe_timestamp_ = x.m_failsafe_timestamp_;
-    m_system_type_ = x.m_system_type_;
-    m_system_id_ = x.m_system_id_;
-    m_component_id_ = x.m_component_id_;
-    m_vehicle_type_ = x.m_vehicle_type_;
-    m_is_vtol_ = x.m_is_vtol_;
-    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_in_transition_mode_ = x.m_in_transition_mode_;
-    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
+    m_is_vtol_ = x.m_is_vtol_;
+    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
+    m_in_transition_mode_ = x.m_in_transition_mode_;
+    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_mission_failure_ = x.m_mission_failure_;
     m_geofence_violated_ = x.m_geofence_violated_;
-    m_failure_detector_status_ = x.m_failure_detector_status_;
+    m_system_type_ = x.m_system_type_;
+    m_system_id_ = x.m_system_id_;
+    m_component_id_ = x.m_component_id_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
     m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
-    m_latest_arming_reason_ = x.m_latest_arming_reason_;
-    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
-    m_armed_time_ = x.m_armed_time_;
-    m_takeoff_time_ = x.m_takeoff_time_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
 
@@ -305,34 +305,34 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
 {
 
     m_timestamp_ = x.m_timestamp_;
-    m_nav_state_ = x.m_nav_state_;
-    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_armed_time_ = x.m_armed_time_;
+    m_takeoff_time_ = x.m_takeoff_time_;
     m_arming_state_ = x.m_arming_state_;
+    m_latest_arming_reason_ = x.m_latest_arming_reason_;
+    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
+    m_nav_state_timestamp_ = x.m_nav_state_timestamp_;
+    m_nav_state_ = x.m_nav_state_;
+    m_failure_detector_status_ = x.m_failure_detector_status_;
     m_hil_state_ = x.m_hil_state_;
+    m_vehicle_type_ = x.m_vehicle_type_;
     m_failsafe_ = x.m_failsafe_;
     m_failsafe_timestamp_ = x.m_failsafe_timestamp_;
-    m_system_type_ = x.m_system_type_;
-    m_system_id_ = x.m_system_id_;
-    m_component_id_ = x.m_component_id_;
-    m_vehicle_type_ = x.m_vehicle_type_;
-    m_is_vtol_ = x.m_is_vtol_;
-    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
-    m_in_transition_mode_ = x.m_in_transition_mode_;
-    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_rc_signal_lost_ = x.m_rc_signal_lost_;
     m_data_link_lost_ = x.m_data_link_lost_;
     m_data_link_lost_counter_ = x.m_data_link_lost_counter_;
     m_high_latency_data_link_lost_ = x.m_high_latency_data_link_lost_;
+    m_is_vtol_ = x.m_is_vtol_;
+    m_is_vtol_tailsitter_ = x.m_is_vtol_tailsitter_;
+    m_in_transition_mode_ = x.m_in_transition_mode_;
+    m_in_transition_to_fw_ = x.m_in_transition_to_fw_;
     m_mission_failure_ = x.m_mission_failure_;
     m_geofence_violated_ = x.m_geofence_violated_;
-    m_failure_detector_status_ = x.m_failure_detector_status_;
+    m_system_type_ = x.m_system_type_;
+    m_system_id_ = x.m_system_id_;
+    m_component_id_ = x.m_component_id_;
     m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
     m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
     m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
-    m_latest_arming_reason_ = x.m_latest_arming_reason_;
-    m_latest_disarming_reason_ = x.m_latest_disarming_reason_;
-    m_armed_time_ = x.m_armed_time_;
-    m_takeoff_time_ = x.m_takeoff_time_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
 
@@ -347,7 +347,7 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
@@ -363,45 +363,6 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -410,10 +371,13 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
     current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
@@ -423,6 +387,42 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
@@ -450,7 +450,7 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
@@ -466,45 +466,6 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -513,10 +474,13 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 2 + eprosima::fastcdr::Cdr::alignment(current_alignment, 2);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
@@ -526,6 +490,42 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
@@ -548,34 +548,34 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
 {
 
     scdr << m_timestamp_;
-    scdr << m_nav_state_;
-    scdr << m_nav_state_timestamp_;
+    scdr << m_armed_time_;
+    scdr << m_takeoff_time_;
     scdr << m_arming_state_;
+    scdr << m_latest_arming_reason_;
+    scdr << m_latest_disarming_reason_;
+    scdr << m_nav_state_timestamp_;
+    scdr << m_nav_state_;
+    scdr << m_failure_detector_status_;
     scdr << m_hil_state_;
+    scdr << m_vehicle_type_;
     scdr << m_failsafe_;
     scdr << m_failsafe_timestamp_;
-    scdr << m_system_type_;
-    scdr << m_system_id_;
-    scdr << m_component_id_;
-    scdr << m_vehicle_type_;
-    scdr << m_is_vtol_;
-    scdr << m_is_vtol_tailsitter_;
-    scdr << m_in_transition_mode_;
-    scdr << m_in_transition_to_fw_;
     scdr << m_rc_signal_lost_;
     scdr << m_data_link_lost_;
     scdr << m_data_link_lost_counter_;
     scdr << m_high_latency_data_link_lost_;
+    scdr << m_is_vtol_;
+    scdr << m_is_vtol_tailsitter_;
+    scdr << m_in_transition_mode_;
+    scdr << m_in_transition_to_fw_;
     scdr << m_mission_failure_;
     scdr << m_geofence_violated_;
-    scdr << m_failure_detector_status_;
+    scdr << m_system_type_;
+    scdr << m_system_id_;
+    scdr << m_component_id_;
     scdr << m_onboard_control_sensors_present_;
     scdr << m_onboard_control_sensors_enabled_;
     scdr << m_onboard_control_sensors_health_;
-    scdr << m_latest_arming_reason_;
-    scdr << m_latest_disarming_reason_;
-    scdr << m_armed_time_;
-    scdr << m_takeoff_time_;
     scdr << m_safety_button_available_;
     scdr << m_safety_off_;
 }
@@ -584,34 +584,34 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
 {
 
     dcdr >> m_timestamp_;
-    dcdr >> m_nav_state_;
-    dcdr >> m_nav_state_timestamp_;
+    dcdr >> m_armed_time_;
+    dcdr >> m_takeoff_time_;
     dcdr >> m_arming_state_;
+    dcdr >> m_latest_arming_reason_;
+    dcdr >> m_latest_disarming_reason_;
+    dcdr >> m_nav_state_timestamp_;
+    dcdr >> m_nav_state_;
+    dcdr >> m_failure_detector_status_;
     dcdr >> m_hil_state_;
+    dcdr >> m_vehicle_type_;
     dcdr >> m_failsafe_;
     dcdr >> m_failsafe_timestamp_;
-    dcdr >> m_system_type_;
-    dcdr >> m_system_id_;
-    dcdr >> m_component_id_;
-    dcdr >> m_vehicle_type_;
-    dcdr >> m_is_vtol_;
-    dcdr >> m_is_vtol_tailsitter_;
-    dcdr >> m_in_transition_mode_;
-    dcdr >> m_in_transition_to_fw_;
     dcdr >> m_rc_signal_lost_;
     dcdr >> m_data_link_lost_;
     dcdr >> m_data_link_lost_counter_;
     dcdr >> m_high_latency_data_link_lost_;
+    dcdr >> m_is_vtol_;
+    dcdr >> m_is_vtol_tailsitter_;
+    dcdr >> m_in_transition_mode_;
+    dcdr >> m_in_transition_to_fw_;
     dcdr >> m_mission_failure_;
     dcdr >> m_geofence_violated_;
-    dcdr >> m_failure_detector_status_;
+    dcdr >> m_system_type_;
+    dcdr >> m_system_id_;
+    dcdr >> m_component_id_;
     dcdr >> m_onboard_control_sensors_present_;
     dcdr >> m_onboard_control_sensors_enabled_;
     dcdr >> m_onboard_control_sensors_health_;
-    dcdr >> m_latest_arming_reason_;
-    dcdr >> m_latest_disarming_reason_;
-    dcdr >> m_armed_time_;
-    dcdr >> m_takeoff_time_;
     dcdr >> m_safety_button_available_;
     dcdr >> m_safety_off_;
 }
@@ -644,57 +644,57 @@ uint64_t& vehicle_status::timestamp_()
 }
 
 /*!
- * @brief This function sets a value in member nav_state_
- * @param _nav_state_ New value for member nav_state_
+ * @brief This function sets a value in member armed_time_
+ * @param _armed_time_ New value for member armed_time_
  */
-void vehicle_status::nav_state_(uint8_t _nav_state_)
+void vehicle_status::armed_time_(uint64_t _armed_time_)
 {
-m_nav_state_ = _nav_state_;
+m_armed_time_ = _armed_time_;
 }
 
 /*!
- * @brief This function returns the value of member nav_state_
- * @return Value of member nav_state_
+ * @brief This function returns the value of member armed_time_
+ * @return Value of member armed_time_
  */
-uint8_t vehicle_status::nav_state_() const
+uint64_t vehicle_status::armed_time_() const
 {
-    return m_nav_state_;
+    return m_armed_time_;
 }
 
 /*!
- * @brief This function returns a reference to member nav_state_
- * @return Reference to member nav_state_
+ * @brief This function returns a reference to member armed_time_
+ * @return Reference to member armed_time_
  */
-uint8_t& vehicle_status::nav_state_()
+uint64_t& vehicle_status::armed_time_()
 {
-    return m_nav_state_;
+    return m_armed_time_;
 }
 
 /*!
- * @brief This function sets a value in member nav_state_timestamp_
- * @param _nav_state_timestamp_ New value for member nav_state_timestamp_
+ * @brief This function sets a value in member takeoff_time_
+ * @param _takeoff_time_ New value for member takeoff_time_
  */
-void vehicle_status::nav_state_timestamp_(uint64_t _nav_state_timestamp_)
+void vehicle_status::takeoff_time_(uint64_t _takeoff_time_)
 {
-m_nav_state_timestamp_ = _nav_state_timestamp_;
+m_takeoff_time_ = _takeoff_time_;
 }
 
 /*!
- * @brief This function returns the value of member nav_state_timestamp_
- * @return Value of member nav_state_timestamp_
+ * @brief This function returns the value of member takeoff_time_
+ * @return Value of member takeoff_time_
  */
-uint64_t vehicle_status::nav_state_timestamp_() const
+uint64_t vehicle_status::takeoff_time_() const
 {
-    return m_nav_state_timestamp_;
+    return m_takeoff_time_;
 }
 
 /*!
- * @brief This function returns a reference to member nav_state_timestamp_
- * @return Reference to member nav_state_timestamp_
+ * @brief This function returns a reference to member takeoff_time_
+ * @return Reference to member takeoff_time_
  */
-uint64_t& vehicle_status::nav_state_timestamp_()
+uint64_t& vehicle_status::takeoff_time_()
 {
-    return m_nav_state_timestamp_;
+    return m_takeoff_time_;
 }
 
 /*!
@@ -725,6 +725,141 @@ uint8_t& vehicle_status::arming_state_()
 }
 
 /*!
+ * @brief This function sets a value in member latest_arming_reason_
+ * @param _latest_arming_reason_ New value for member latest_arming_reason_
+ */
+void vehicle_status::latest_arming_reason_(uint8_t _latest_arming_reason_)
+{
+m_latest_arming_reason_ = _latest_arming_reason_;
+}
+
+/*!
+ * @brief This function returns the value of member latest_arming_reason_
+ * @return Value of member latest_arming_reason_
+ */
+uint8_t vehicle_status::latest_arming_reason_() const
+{
+    return m_latest_arming_reason_;
+}
+
+/*!
+ * @brief This function returns a reference to member latest_arming_reason_
+ * @return Reference to member latest_arming_reason_
+ */
+uint8_t& vehicle_status::latest_arming_reason_()
+{
+    return m_latest_arming_reason_;
+}
+
+/*!
+ * @brief This function sets a value in member latest_disarming_reason_
+ * @param _latest_disarming_reason_ New value for member latest_disarming_reason_
+ */
+void vehicle_status::latest_disarming_reason_(uint8_t _latest_disarming_reason_)
+{
+m_latest_disarming_reason_ = _latest_disarming_reason_;
+}
+
+/*!
+ * @brief This function returns the value of member latest_disarming_reason_
+ * @return Value of member latest_disarming_reason_
+ */
+uint8_t vehicle_status::latest_disarming_reason_() const
+{
+    return m_latest_disarming_reason_;
+}
+
+/*!
+ * @brief This function returns a reference to member latest_disarming_reason_
+ * @return Reference to member latest_disarming_reason_
+ */
+uint8_t& vehicle_status::latest_disarming_reason_()
+{
+    return m_latest_disarming_reason_;
+}
+
+/*!
+ * @brief This function sets a value in member nav_state_timestamp_
+ * @param _nav_state_timestamp_ New value for member nav_state_timestamp_
+ */
+void vehicle_status::nav_state_timestamp_(uint64_t _nav_state_timestamp_)
+{
+m_nav_state_timestamp_ = _nav_state_timestamp_;
+}
+
+/*!
+ * @brief This function returns the value of member nav_state_timestamp_
+ * @return Value of member nav_state_timestamp_
+ */
+uint64_t vehicle_status::nav_state_timestamp_() const
+{
+    return m_nav_state_timestamp_;
+}
+
+/*!
+ * @brief This function returns a reference to member nav_state_timestamp_
+ * @return Reference to member nav_state_timestamp_
+ */
+uint64_t& vehicle_status::nav_state_timestamp_()
+{
+    return m_nav_state_timestamp_;
+}
+
+/*!
+ * @brief This function sets a value in member nav_state_
+ * @param _nav_state_ New value for member nav_state_
+ */
+void vehicle_status::nav_state_(uint8_t _nav_state_)
+{
+m_nav_state_ = _nav_state_;
+}
+
+/*!
+ * @brief This function returns the value of member nav_state_
+ * @return Value of member nav_state_
+ */
+uint8_t vehicle_status::nav_state_() const
+{
+    return m_nav_state_;
+}
+
+/*!
+ * @brief This function returns a reference to member nav_state_
+ * @return Reference to member nav_state_
+ */
+uint8_t& vehicle_status::nav_state_()
+{
+    return m_nav_state_;
+}
+
+/*!
+ * @brief This function sets a value in member failure_detector_status_
+ * @param _failure_detector_status_ New value for member failure_detector_status_
+ */
+void vehicle_status::failure_detector_status_(uint16_t _failure_detector_status_)
+{
+m_failure_detector_status_ = _failure_detector_status_;
+}
+
+/*!
+ * @brief This function returns the value of member failure_detector_status_
+ * @return Value of member failure_detector_status_
+ */
+uint16_t vehicle_status::failure_detector_status_() const
+{
+    return m_failure_detector_status_;
+}
+
+/*!
+ * @brief This function returns a reference to member failure_detector_status_
+ * @return Reference to member failure_detector_status_
+ */
+uint16_t& vehicle_status::failure_detector_status_()
+{
+    return m_failure_detector_status_;
+}
+
+/*!
  * @brief This function sets a value in member hil_state_
  * @param _hil_state_ New value for member hil_state_
  */
@@ -749,6 +884,33 @@ uint8_t vehicle_status::hil_state_() const
 uint8_t& vehicle_status::hil_state_()
 {
     return m_hil_state_;
+}
+
+/*!
+ * @brief This function sets a value in member vehicle_type_
+ * @param _vehicle_type_ New value for member vehicle_type_
+ */
+void vehicle_status::vehicle_type_(uint8_t _vehicle_type_)
+{
+m_vehicle_type_ = _vehicle_type_;
+}
+
+/*!
+ * @brief This function returns the value of member vehicle_type_
+ * @return Value of member vehicle_type_
+ */
+uint8_t vehicle_status::vehicle_type_() const
+{
+    return m_vehicle_type_;
+}
+
+/*!
+ * @brief This function returns a reference to member vehicle_type_
+ * @return Reference to member vehicle_type_
+ */
+uint8_t& vehicle_status::vehicle_type_()
+{
+    return m_vehicle_type_;
 }
 
 /*!
@@ -803,222 +965,6 @@ uint64_t vehicle_status::failsafe_timestamp_() const
 uint64_t& vehicle_status::failsafe_timestamp_()
 {
     return m_failsafe_timestamp_;
-}
-
-/*!
- * @brief This function sets a value in member system_type_
- * @param _system_type_ New value for member system_type_
- */
-void vehicle_status::system_type_(uint8_t _system_type_)
-{
-m_system_type_ = _system_type_;
-}
-
-/*!
- * @brief This function returns the value of member system_type_
- * @return Value of member system_type_
- */
-uint8_t vehicle_status::system_type_() const
-{
-    return m_system_type_;
-}
-
-/*!
- * @brief This function returns a reference to member system_type_
- * @return Reference to member system_type_
- */
-uint8_t& vehicle_status::system_type_()
-{
-    return m_system_type_;
-}
-
-/*!
- * @brief This function sets a value in member system_id_
- * @param _system_id_ New value for member system_id_
- */
-void vehicle_status::system_id_(uint8_t _system_id_)
-{
-m_system_id_ = _system_id_;
-}
-
-/*!
- * @brief This function returns the value of member system_id_
- * @return Value of member system_id_
- */
-uint8_t vehicle_status::system_id_() const
-{
-    return m_system_id_;
-}
-
-/*!
- * @brief This function returns a reference to member system_id_
- * @return Reference to member system_id_
- */
-uint8_t& vehicle_status::system_id_()
-{
-    return m_system_id_;
-}
-
-/*!
- * @brief This function sets a value in member component_id_
- * @param _component_id_ New value for member component_id_
- */
-void vehicle_status::component_id_(uint8_t _component_id_)
-{
-m_component_id_ = _component_id_;
-}
-
-/*!
- * @brief This function returns the value of member component_id_
- * @return Value of member component_id_
- */
-uint8_t vehicle_status::component_id_() const
-{
-    return m_component_id_;
-}
-
-/*!
- * @brief This function returns a reference to member component_id_
- * @return Reference to member component_id_
- */
-uint8_t& vehicle_status::component_id_()
-{
-    return m_component_id_;
-}
-
-/*!
- * @brief This function sets a value in member vehicle_type_
- * @param _vehicle_type_ New value for member vehicle_type_
- */
-void vehicle_status::vehicle_type_(uint8_t _vehicle_type_)
-{
-m_vehicle_type_ = _vehicle_type_;
-}
-
-/*!
- * @brief This function returns the value of member vehicle_type_
- * @return Value of member vehicle_type_
- */
-uint8_t vehicle_status::vehicle_type_() const
-{
-    return m_vehicle_type_;
-}
-
-/*!
- * @brief This function returns a reference to member vehicle_type_
- * @return Reference to member vehicle_type_
- */
-uint8_t& vehicle_status::vehicle_type_()
-{
-    return m_vehicle_type_;
-}
-
-/*!
- * @brief This function sets a value in member is_vtol_
- * @param _is_vtol_ New value for member is_vtol_
- */
-void vehicle_status::is_vtol_(bool _is_vtol_)
-{
-m_is_vtol_ = _is_vtol_;
-}
-
-/*!
- * @brief This function returns the value of member is_vtol_
- * @return Value of member is_vtol_
- */
-bool vehicle_status::is_vtol_() const
-{
-    return m_is_vtol_;
-}
-
-/*!
- * @brief This function returns a reference to member is_vtol_
- * @return Reference to member is_vtol_
- */
-bool& vehicle_status::is_vtol_()
-{
-    return m_is_vtol_;
-}
-
-/*!
- * @brief This function sets a value in member is_vtol_tailsitter_
- * @param _is_vtol_tailsitter_ New value for member is_vtol_tailsitter_
- */
-void vehicle_status::is_vtol_tailsitter_(bool _is_vtol_tailsitter_)
-{
-m_is_vtol_tailsitter_ = _is_vtol_tailsitter_;
-}
-
-/*!
- * @brief This function returns the value of member is_vtol_tailsitter_
- * @return Value of member is_vtol_tailsitter_
- */
-bool vehicle_status::is_vtol_tailsitter_() const
-{
-    return m_is_vtol_tailsitter_;
-}
-
-/*!
- * @brief This function returns a reference to member is_vtol_tailsitter_
- * @return Reference to member is_vtol_tailsitter_
- */
-bool& vehicle_status::is_vtol_tailsitter_()
-{
-    return m_is_vtol_tailsitter_;
-}
-
-/*!
- * @brief This function sets a value in member in_transition_mode_
- * @param _in_transition_mode_ New value for member in_transition_mode_
- */
-void vehicle_status::in_transition_mode_(bool _in_transition_mode_)
-{
-m_in_transition_mode_ = _in_transition_mode_;
-}
-
-/*!
- * @brief This function returns the value of member in_transition_mode_
- * @return Value of member in_transition_mode_
- */
-bool vehicle_status::in_transition_mode_() const
-{
-    return m_in_transition_mode_;
-}
-
-/*!
- * @brief This function returns a reference to member in_transition_mode_
- * @return Reference to member in_transition_mode_
- */
-bool& vehicle_status::in_transition_mode_()
-{
-    return m_in_transition_mode_;
-}
-
-/*!
- * @brief This function sets a value in member in_transition_to_fw_
- * @param _in_transition_to_fw_ New value for member in_transition_to_fw_
- */
-void vehicle_status::in_transition_to_fw_(bool _in_transition_to_fw_)
-{
-m_in_transition_to_fw_ = _in_transition_to_fw_;
-}
-
-/*!
- * @brief This function returns the value of member in_transition_to_fw_
- * @return Value of member in_transition_to_fw_
- */
-bool vehicle_status::in_transition_to_fw_() const
-{
-    return m_in_transition_to_fw_;
-}
-
-/*!
- * @brief This function returns a reference to member in_transition_to_fw_
- * @return Reference to member in_transition_to_fw_
- */
-bool& vehicle_status::in_transition_to_fw_()
-{
-    return m_in_transition_to_fw_;
 }
 
 /*!
@@ -1130,6 +1076,114 @@ bool& vehicle_status::high_latency_data_link_lost_()
 }
 
 /*!
+ * @brief This function sets a value in member is_vtol_
+ * @param _is_vtol_ New value for member is_vtol_
+ */
+void vehicle_status::is_vtol_(bool _is_vtol_)
+{
+m_is_vtol_ = _is_vtol_;
+}
+
+/*!
+ * @brief This function returns the value of member is_vtol_
+ * @return Value of member is_vtol_
+ */
+bool vehicle_status::is_vtol_() const
+{
+    return m_is_vtol_;
+}
+
+/*!
+ * @brief This function returns a reference to member is_vtol_
+ * @return Reference to member is_vtol_
+ */
+bool& vehicle_status::is_vtol_()
+{
+    return m_is_vtol_;
+}
+
+/*!
+ * @brief This function sets a value in member is_vtol_tailsitter_
+ * @param _is_vtol_tailsitter_ New value for member is_vtol_tailsitter_
+ */
+void vehicle_status::is_vtol_tailsitter_(bool _is_vtol_tailsitter_)
+{
+m_is_vtol_tailsitter_ = _is_vtol_tailsitter_;
+}
+
+/*!
+ * @brief This function returns the value of member is_vtol_tailsitter_
+ * @return Value of member is_vtol_tailsitter_
+ */
+bool vehicle_status::is_vtol_tailsitter_() const
+{
+    return m_is_vtol_tailsitter_;
+}
+
+/*!
+ * @brief This function returns a reference to member is_vtol_tailsitter_
+ * @return Reference to member is_vtol_tailsitter_
+ */
+bool& vehicle_status::is_vtol_tailsitter_()
+{
+    return m_is_vtol_tailsitter_;
+}
+
+/*!
+ * @brief This function sets a value in member in_transition_mode_
+ * @param _in_transition_mode_ New value for member in_transition_mode_
+ */
+void vehicle_status::in_transition_mode_(bool _in_transition_mode_)
+{
+m_in_transition_mode_ = _in_transition_mode_;
+}
+
+/*!
+ * @brief This function returns the value of member in_transition_mode_
+ * @return Value of member in_transition_mode_
+ */
+bool vehicle_status::in_transition_mode_() const
+{
+    return m_in_transition_mode_;
+}
+
+/*!
+ * @brief This function returns a reference to member in_transition_mode_
+ * @return Reference to member in_transition_mode_
+ */
+bool& vehicle_status::in_transition_mode_()
+{
+    return m_in_transition_mode_;
+}
+
+/*!
+ * @brief This function sets a value in member in_transition_to_fw_
+ * @param _in_transition_to_fw_ New value for member in_transition_to_fw_
+ */
+void vehicle_status::in_transition_to_fw_(bool _in_transition_to_fw_)
+{
+m_in_transition_to_fw_ = _in_transition_to_fw_;
+}
+
+/*!
+ * @brief This function returns the value of member in_transition_to_fw_
+ * @return Value of member in_transition_to_fw_
+ */
+bool vehicle_status::in_transition_to_fw_() const
+{
+    return m_in_transition_to_fw_;
+}
+
+/*!
+ * @brief This function returns a reference to member in_transition_to_fw_
+ * @return Reference to member in_transition_to_fw_
+ */
+bool& vehicle_status::in_transition_to_fw_()
+{
+    return m_in_transition_to_fw_;
+}
+
+/*!
  * @brief This function sets a value in member mission_failure_
  * @param _mission_failure_ New value for member mission_failure_
  */
@@ -1184,30 +1238,84 @@ bool& vehicle_status::geofence_violated_()
 }
 
 /*!
- * @brief This function sets a value in member failure_detector_status_
- * @param _failure_detector_status_ New value for member failure_detector_status_
+ * @brief This function sets a value in member system_type_
+ * @param _system_type_ New value for member system_type_
  */
-void vehicle_status::failure_detector_status_(uint16_t _failure_detector_status_)
+void vehicle_status::system_type_(uint8_t _system_type_)
 {
-m_failure_detector_status_ = _failure_detector_status_;
+m_system_type_ = _system_type_;
 }
 
 /*!
- * @brief This function returns the value of member failure_detector_status_
- * @return Value of member failure_detector_status_
+ * @brief This function returns the value of member system_type_
+ * @return Value of member system_type_
  */
-uint16_t vehicle_status::failure_detector_status_() const
+uint8_t vehicle_status::system_type_() const
 {
-    return m_failure_detector_status_;
+    return m_system_type_;
 }
 
 /*!
- * @brief This function returns a reference to member failure_detector_status_
- * @return Reference to member failure_detector_status_
+ * @brief This function returns a reference to member system_type_
+ * @return Reference to member system_type_
  */
-uint16_t& vehicle_status::failure_detector_status_()
+uint8_t& vehicle_status::system_type_()
 {
-    return m_failure_detector_status_;
+    return m_system_type_;
+}
+
+/*!
+ * @brief This function sets a value in member system_id_
+ * @param _system_id_ New value for member system_id_
+ */
+void vehicle_status::system_id_(uint8_t _system_id_)
+{
+m_system_id_ = _system_id_;
+}
+
+/*!
+ * @brief This function returns the value of member system_id_
+ * @return Value of member system_id_
+ */
+uint8_t vehicle_status::system_id_() const
+{
+    return m_system_id_;
+}
+
+/*!
+ * @brief This function returns a reference to member system_id_
+ * @return Reference to member system_id_
+ */
+uint8_t& vehicle_status::system_id_()
+{
+    return m_system_id_;
+}
+
+/*!
+ * @brief This function sets a value in member component_id_
+ * @param _component_id_ New value for member component_id_
+ */
+void vehicle_status::component_id_(uint8_t _component_id_)
+{
+m_component_id_ = _component_id_;
+}
+
+/*!
+ * @brief This function returns the value of member component_id_
+ * @return Value of member component_id_
+ */
+uint8_t vehicle_status::component_id_() const
+{
+    return m_component_id_;
+}
+
+/*!
+ * @brief This function returns a reference to member component_id_
+ * @return Reference to member component_id_
+ */
+uint8_t& vehicle_status::component_id_()
+{
+    return m_component_id_;
 }
 
 /*!
@@ -1289,114 +1397,6 @@ uint64_t vehicle_status::onboard_control_sensors_health_() const
 uint64_t& vehicle_status::onboard_control_sensors_health_()
 {
     return m_onboard_control_sensors_health_;
-}
-
-/*!
- * @brief This function sets a value in member latest_arming_reason_
- * @param _latest_arming_reason_ New value for member latest_arming_reason_
- */
-void vehicle_status::latest_arming_reason_(uint8_t _latest_arming_reason_)
-{
-m_latest_arming_reason_ = _latest_arming_reason_;
-}
-
-/*!
- * @brief This function returns the value of member latest_arming_reason_
- * @return Value of member latest_arming_reason_
- */
-uint8_t vehicle_status::latest_arming_reason_() const
-{
-    return m_latest_arming_reason_;
-}
-
-/*!
- * @brief This function returns a reference to member latest_arming_reason_
- * @return Reference to member latest_arming_reason_
- */
-uint8_t& vehicle_status::latest_arming_reason_()
-{
-    return m_latest_arming_reason_;
-}
-
-/*!
- * @brief This function sets a value in member latest_disarming_reason_
- * @param _latest_disarming_reason_ New value for member latest_disarming_reason_
- */
-void vehicle_status::latest_disarming_reason_(uint8_t _latest_disarming_reason_)
-{
-m_latest_disarming_reason_ = _latest_disarming_reason_;
-}
-
-/*!
- * @brief This function returns the value of member latest_disarming_reason_
- * @return Value of member latest_disarming_reason_
- */
-uint8_t vehicle_status::latest_disarming_reason_() const
-{
-    return m_latest_disarming_reason_;
-}
-
-/*!
- * @brief This function returns a reference to member latest_disarming_reason_
- * @return Reference to member latest_disarming_reason_
- */
-uint8_t& vehicle_status::latest_disarming_reason_()
-{
-    return m_latest_disarming_reason_;
-}
-
-/*!
- * @brief This function sets a value in member armed_time_
- * @param _armed_time_ New value for member armed_time_
- */
-void vehicle_status::armed_time_(uint64_t _armed_time_)
-{
-m_armed_time_ = _armed_time_;
-}
-
-/*!
- * @brief This function returns the value of member armed_time_
- * @return Value of member armed_time_
- */
-uint64_t vehicle_status::armed_time_() const
-{
-    return m_armed_time_;
-}
-
-/*!
- * @brief This function returns a reference to member armed_time_
- * @return Reference to member armed_time_
- */
-uint64_t& vehicle_status::armed_time_()
-{
-    return m_armed_time_;
-}
-
-/*!
- * @brief This function sets a value in member takeoff_time_
- * @param _takeoff_time_ New value for member takeoff_time_
- */
-void vehicle_status::takeoff_time_(uint64_t _takeoff_time_)
-{
-m_takeoff_time_ = _takeoff_time_;
-}
-
-/*!
- * @brief This function returns the value of member takeoff_time_
- * @return Value of member takeoff_time_
- */
-uint64_t vehicle_status::takeoff_time_() const
-{
-    return m_takeoff_time_;
-}
-
-/*!
- * @brief This function returns a reference to member takeoff_time_
- * @return Reference to member takeoff_time_
- */
-uint64_t& vehicle_status::takeoff_time_()
-{
-    return m_takeoff_time_;
 }
 
 /*!

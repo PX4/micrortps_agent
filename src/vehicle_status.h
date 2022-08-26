@@ -80,8 +80,20 @@ const uint8_t vehicle_status__ARMING_STATE_STANDBY_ERROR = 3;
 const uint8_t vehicle_status__ARMING_STATE_SHUTDOWN = 4;
 const uint8_t vehicle_status__ARMING_STATE_IN_AIR_RESTORE = 5;
 const uint8_t vehicle_status__ARMING_STATE_MAX = 6;
-const uint8_t vehicle_status__HIL_STATE_OFF = 0;
-const uint8_t vehicle_status__HIL_STATE_ON = 1;
+const uint8_t vehicle_status__ARM_DISARM_REASON_TRANSITION_TO_STANDBY = 0;
+const uint8_t vehicle_status__ARM_DISARM_REASON_RC_STICK = 1;
+const uint8_t vehicle_status__ARM_DISARM_REASON_RC_SWITCH = 2;
+const uint8_t vehicle_status__ARM_DISARM_REASON_COMMAND_INTERNAL = 3;
+const uint8_t vehicle_status__ARM_DISARM_REASON_COMMAND_EXTERNAL = 4;
+const uint8_t vehicle_status__ARM_DISARM_REASON_MISSION_START = 5;
+const uint8_t vehicle_status__ARM_DISARM_REASON_SAFETY_BUTTON = 6;
+const uint8_t vehicle_status__ARM_DISARM_REASON_AUTO_DISARM_LAND = 7;
+const uint8_t vehicle_status__ARM_DISARM_REASON_AUTO_DISARM_PREFLIGHT = 8;
+const uint8_t vehicle_status__ARM_DISARM_REASON_KILL_SWITCH = 9;
+const uint8_t vehicle_status__ARM_DISARM_REASON_LOCKDOWN = 10;
+const uint8_t vehicle_status__ARM_DISARM_REASON_FAILURE_DETECTOR = 11;
+const uint8_t vehicle_status__ARM_DISARM_REASON_SHUTDOWN = 12;
+const uint8_t vehicle_status__ARM_DISARM_REASON_UNIT_TEST = 13;
 const uint8_t vehicle_status__NAVIGATION_STATE_MANUAL = 0;
 const uint8_t vehicle_status__NAVIGATION_STATE_ALTCTL = 1;
 const uint8_t vehicle_status__NAVIGATION_STATE_POSCTL = 2;
@@ -104,25 +116,13 @@ const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_PRECLAND = 20;
 const uint8_t vehicle_status__NAVIGATION_STATE_ORBIT = 21;
 const uint8_t vehicle_status__NAVIGATION_STATE_AUTO_VTOL_TAKEOFF = 22;
 const uint8_t vehicle_status__NAVIGATION_STATE_MAX = 23;
+const uint8_t vehicle_status__HIL_STATE_OFF = 0;
+const uint8_t vehicle_status__HIL_STATE_ON = 1;
 const uint8_t vehicle_status__VEHICLE_TYPE_UNKNOWN = 0;
 const uint8_t vehicle_status__VEHICLE_TYPE_ROTARY_WING = 1;
 const uint8_t vehicle_status__VEHICLE_TYPE_FIXED_WING = 2;
 const uint8_t vehicle_status__VEHICLE_TYPE_ROVER = 3;
 const uint8_t vehicle_status__VEHICLE_TYPE_AIRSHIP = 4;
-const uint8_t vehicle_status__ARM_DISARM_REASON_TRANSITION_TO_STANDBY = 0;
-const uint8_t vehicle_status__ARM_DISARM_REASON_RC_STICK = 1;
-const uint8_t vehicle_status__ARM_DISARM_REASON_RC_SWITCH = 2;
-const uint8_t vehicle_status__ARM_DISARM_REASON_COMMAND_INTERNAL = 3;
-const uint8_t vehicle_status__ARM_DISARM_REASON_COMMAND_EXTERNAL = 4;
-const uint8_t vehicle_status__ARM_DISARM_REASON_MISSION_START = 5;
-const uint8_t vehicle_status__ARM_DISARM_REASON_SAFETY_BUTTON = 6;
-const uint8_t vehicle_status__ARM_DISARM_REASON_AUTO_DISARM_LAND = 7;
-const uint8_t vehicle_status__ARM_DISARM_REASON_AUTO_DISARM_PREFLIGHT = 8;
-const uint8_t vehicle_status__ARM_DISARM_REASON_KILL_SWITCH = 9;
-const uint8_t vehicle_status__ARM_DISARM_REASON_LOCKDOWN = 10;
-const uint8_t vehicle_status__ARM_DISARM_REASON_FAILURE_DETECTOR = 11;
-const uint8_t vehicle_status__ARM_DISARM_REASON_SHUTDOWN = 12;
-const uint8_t vehicle_status__ARM_DISARM_REASON_UNIT_TEST = 13;
 /*!
  * @brief This class represents the structure vehicle_status defined by the user in the IDL file.
  * @ingroup VEHICLE_STATUS
@@ -184,40 +184,40 @@ public:
     eProsima_user_DllExport uint64_t& timestamp_();
 
     /*!
-     * @brief This function sets a value in member nav_state_
-     * @param _nav_state_ New value for member nav_state_
+     * @brief This function sets a value in member armed_time_
+     * @param _armed_time_ New value for member armed_time_
      */
-    eProsima_user_DllExport void nav_state_(uint8_t _nav_state_);
+    eProsima_user_DllExport void armed_time_(uint64_t _armed_time_);
 
     /*!
-     * @brief This function returns the value of member nav_state_
-     * @return Value of member nav_state_
+     * @brief This function returns the value of member armed_time_
+     * @return Value of member armed_time_
      */
-    eProsima_user_DllExport uint8_t nav_state_() const;
+    eProsima_user_DllExport uint64_t armed_time_() const;
 
     /*!
-     * @brief This function returns a reference to member nav_state_
-     * @return Reference to member nav_state_
+     * @brief This function returns a reference to member armed_time_
+     * @return Reference to member armed_time_
      */
-    eProsima_user_DllExport uint8_t& nav_state_();
+    eProsima_user_DllExport uint64_t& armed_time_();
 
     /*!
-     * @brief This function sets a value in member nav_state_timestamp_
-     * @param _nav_state_timestamp_ New value for member nav_state_timestamp_
+     * @brief This function sets a value in member takeoff_time_
+     * @param _takeoff_time_ New value for member takeoff_time_
      */
-    eProsima_user_DllExport void nav_state_timestamp_(uint64_t _nav_state_timestamp_);
+    eProsima_user_DllExport void takeoff_time_(uint64_t _takeoff_time_);
 
     /*!
-     * @brief This function returns the value of member nav_state_timestamp_
-     * @return Value of member nav_state_timestamp_
+     * @brief This function returns the value of member takeoff_time_
+     * @return Value of member takeoff_time_
      */
-    eProsima_user_DllExport uint64_t nav_state_timestamp_() const;
+    eProsima_user_DllExport uint64_t takeoff_time_() const;
 
     /*!
-     * @brief This function returns a reference to member nav_state_timestamp_
-     * @return Reference to member nav_state_timestamp_
+     * @brief This function returns a reference to member takeoff_time_
+     * @return Reference to member takeoff_time_
      */
-    eProsima_user_DllExport uint64_t& nav_state_timestamp_();
+    eProsima_user_DllExport uint64_t& takeoff_time_();
 
     /*!
      * @brief This function sets a value in member arming_state_
@@ -238,6 +238,96 @@ public:
     eProsima_user_DllExport uint8_t& arming_state_();
 
     /*!
+     * @brief This function sets a value in member latest_arming_reason_
+     * @param _latest_arming_reason_ New value for member latest_arming_reason_
+     */
+    eProsima_user_DllExport void latest_arming_reason_(uint8_t _latest_arming_reason_);
+
+    /*!
+     * @brief This function returns the value of member latest_arming_reason_
+     * @return Value of member latest_arming_reason_
+     */
+    eProsima_user_DllExport uint8_t latest_arming_reason_() const;
+
+    /*!
+     * @brief This function returns a reference to member latest_arming_reason_
+     * @return Reference to member latest_arming_reason_
+     */
+    eProsima_user_DllExport uint8_t& latest_arming_reason_();
+
+    /*!
+     * @brief This function sets a value in member latest_disarming_reason_
+     * @param _latest_disarming_reason_ New value for member latest_disarming_reason_
+     */
+    eProsima_user_DllExport void latest_disarming_reason_(uint8_t _latest_disarming_reason_);
+
+    /*!
+     * @brief This function returns the value of member latest_disarming_reason_
+     * @return Value of member latest_disarming_reason_
+     */
+    eProsima_user_DllExport uint8_t latest_disarming_reason_() const;
+
+    /*!
+     * @brief This function returns a reference to member latest_disarming_reason_
+     * @return Reference to member latest_disarming_reason_
+     */
+    eProsima_user_DllExport uint8_t& latest_disarming_reason_();
+
+    /*!
+     * @brief This function sets a value in member nav_state_timestamp_
+     * @param _nav_state_timestamp_ New value for member nav_state_timestamp_
+     */
+    eProsima_user_DllExport void nav_state_timestamp_(uint64_t _nav_state_timestamp_);
+
+    /*!
+     * @brief This function returns the value of member nav_state_timestamp_
+     * @return Value of member nav_state_timestamp_
+     */
+    eProsima_user_DllExport uint64_t nav_state_timestamp_() const;
+
+    /*!
+     * @brief This function returns a reference to member nav_state_timestamp_
+     * @return Reference to member nav_state_timestamp_
+     */
+    eProsima_user_DllExport uint64_t& nav_state_timestamp_();
+
+    /*!
+     * @brief This function sets a value in member nav_state_
+     * @param _nav_state_ New value for member nav_state_
+     */
+    eProsima_user_DllExport void nav_state_(uint8_t _nav_state_);
+
+    /*!
+     * @brief This function returns the value of member nav_state_
+     * @return Value of member nav_state_
+     */
+    eProsima_user_DllExport uint8_t nav_state_() const;
+
+    /*!
+     * @brief This function returns a reference to member nav_state_
+     * @return Reference to member nav_state_
+     */
+    eProsima_user_DllExport uint8_t& nav_state_();
+
+    /*!
+     * @brief This function sets a value in member failure_detector_status_
+     * @param _failure_detector_status_ New value for member failure_detector_status_
+     */
+    eProsima_user_DllExport void failure_detector_status_(uint16_t _failure_detector_status_);
+
+    /*!
+     * @brief This function returns the value of member failure_detector_status_
+     * @return Value of member failure_detector_status_
+     */
+    eProsima_user_DllExport uint16_t failure_detector_status_() const;
+
+    /*!
+     * @brief This function returns a reference to member failure_detector_status_
+     * @return Reference to member failure_detector_status_
+     */
+    eProsima_user_DllExport uint16_t& failure_detector_status_();
+
+    /*!
      * @brief This function sets a value in member hil_state_
      * @param _hil_state_ New value for member hil_state_
      */
@@ -254,6 +344,24 @@ public:
      * @return Reference to member hil_state_
      */
     eProsima_user_DllExport uint8_t& hil_state_();
+
+    /*!
+     * @brief This function sets a value in member vehicle_type_
+     * @param _vehicle_type_ New value for member vehicle_type_
+     */
+    eProsima_user_DllExport void vehicle_type_(uint8_t _vehicle_type_);
+
+    /*!
+     * @brief This function returns the value of member vehicle_type_
+     * @return Value of member vehicle_type_
+     */
+    eProsima_user_DllExport uint8_t vehicle_type_() const;
+
+    /*!
+     * @brief This function returns a reference to member vehicle_type_
+     * @return Reference to member vehicle_type_
+     */
+    eProsima_user_DllExport uint8_t& vehicle_type_();
 
     /*!
      * @brief This function sets a value in member failsafe_
@@ -290,150 +398,6 @@ public:
      * @return Reference to member failsafe_timestamp_
      */
     eProsima_user_DllExport uint64_t& failsafe_timestamp_();
-
-    /*!
-     * @brief This function sets a value in member system_type_
-     * @param _system_type_ New value for member system_type_
-     */
-    eProsima_user_DllExport void system_type_(uint8_t _system_type_);
-
-    /*!
-     * @brief This function returns the value of member system_type_
-     * @return Value of member system_type_
-     */
-    eProsima_user_DllExport uint8_t system_type_() const;
-
-    /*!
-     * @brief This function returns a reference to member system_type_
-     * @return Reference to member system_type_
-     */
-    eProsima_user_DllExport uint8_t& system_type_();
-
-    /*!
-     * @brief This function sets a value in member system_id_
-     * @param _system_id_ New value for member system_id_
-     */
-    eProsima_user_DllExport void system_id_(uint8_t _system_id_);
-
-    /*!
-     * @brief This function returns the value of member system_id_
-     * @return Value of member system_id_
-     */
-    eProsima_user_DllExport uint8_t system_id_() const;
-
-    /*!
-     * @brief This function returns a reference to member system_id_
-     * @return Reference to member system_id_
-     */
-    eProsima_user_DllExport uint8_t& system_id_();
-
-    /*!
-     * @brief This function sets a value in member component_id_
-     * @param _component_id_ New value for member component_id_
-     */
-    eProsima_user_DllExport void component_id_(uint8_t _component_id_);
-
-    /*!
-     * @brief This function returns the value of member component_id_
-     * @return Value of member component_id_
-     */
-    eProsima_user_DllExport uint8_t component_id_() const;
-
-    /*!
-     * @brief This function returns a reference to member component_id_
-     * @return Reference to member component_id_
-     */
-    eProsima_user_DllExport uint8_t& component_id_();
-
-    /*!
-     * @brief This function sets a value in member vehicle_type_
-     * @param _vehicle_type_ New value for member vehicle_type_
-     */
-    eProsima_user_DllExport void vehicle_type_(uint8_t _vehicle_type_);
-
-    /*!
-     * @brief This function returns the value of member vehicle_type_
-     * @return Value of member vehicle_type_
-     */
-    eProsima_user_DllExport uint8_t vehicle_type_() const;
-
-    /*!
-     * @brief This function returns a reference to member vehicle_type_
-     * @return Reference to member vehicle_type_
-     */
-    eProsima_user_DllExport uint8_t& vehicle_type_();
-
-    /*!
-     * @brief This function sets a value in member is_vtol_
-     * @param _is_vtol_ New value for member is_vtol_
-     */
-    eProsima_user_DllExport void is_vtol_(bool _is_vtol_);
-
-    /*!
-     * @brief This function returns the value of member is_vtol_
-     * @return Value of member is_vtol_
-     */
-    eProsima_user_DllExport bool is_vtol_() const;
-
-    /*!
-     * @brief This function returns a reference to member is_vtol_
-     * @return Reference to member is_vtol_
-     */
-    eProsima_user_DllExport bool& is_vtol_();
-
-    /*!
-     * @brief This function sets a value in member is_vtol_tailsitter_
-     * @param _is_vtol_tailsitter_ New value for member is_vtol_tailsitter_
-     */
-    eProsima_user_DllExport void is_vtol_tailsitter_(bool _is_vtol_tailsitter_);
-
-    /*!
-     * @brief This function returns the value of member is_vtol_tailsitter_
-     * @return Value of member is_vtol_tailsitter_
-     */
-    eProsima_user_DllExport bool is_vtol_tailsitter_() const;
-
-    /*!
-     * @brief This function returns a reference to member is_vtol_tailsitter_
-     * @return Reference to member is_vtol_tailsitter_
-     */
-    eProsima_user_DllExport bool& is_vtol_tailsitter_();
-
-    /*!
-     * @brief This function sets a value in member in_transition_mode_
-     * @param _in_transition_mode_ New value for member in_transition_mode_
-     */
-    eProsima_user_DllExport void in_transition_mode_(bool _in_transition_mode_);
-
-    /*!
-     * @brief This function returns the value of member in_transition_mode_
-     * @return Value of member in_transition_mode_
-     */
-    eProsima_user_DllExport bool in_transition_mode_() const;
-
-    /*!
-     * @brief This function returns a reference to member in_transition_mode_
-     * @return Reference to member in_transition_mode_
-     */
-    eProsima_user_DllExport bool& in_transition_mode_();
-
-    /*!
-     * @brief This function sets a value in member in_transition_to_fw_
-     * @param _in_transition_to_fw_ New value for member in_transition_to_fw_
-     */
-    eProsima_user_DllExport void in_transition_to_fw_(bool _in_transition_to_fw_);
-
-    /*!
-     * @brief This function returns the value of member in_transition_to_fw_
-     * @return Value of member in_transition_to_fw_
-     */
-    eProsima_user_DllExport bool in_transition_to_fw_() const;
-
-    /*!
-     * @brief This function returns a reference to member in_transition_to_fw_
-     * @return Reference to member in_transition_to_fw_
-     */
-    eProsima_user_DllExport bool& in_transition_to_fw_();
 
     /*!
      * @brief This function sets a value in member rc_signal_lost_
@@ -508,6 +472,78 @@ public:
     eProsima_user_DllExport bool& high_latency_data_link_lost_();
 
     /*!
+     * @brief This function sets a value in member is_vtol_
+     * @param _is_vtol_ New value for member is_vtol_
+     */
+    eProsima_user_DllExport void is_vtol_(bool _is_vtol_);
+
+    /*!
+     * @brief This function returns the value of member is_vtol_
+     * @return Value of member is_vtol_
+     */
+    eProsima_user_DllExport bool is_vtol_() const;
+
+    /*!
+     * @brief This function returns a reference to member is_vtol_
+     * @return Reference to member is_vtol_
+     */
+    eProsima_user_DllExport bool& is_vtol_();
+
+    /*!
+     * @brief This function sets a value in member is_vtol_tailsitter_
+     * @param _is_vtol_tailsitter_ New value for member is_vtol_tailsitter_
+     */
+    eProsima_user_DllExport void is_vtol_tailsitter_(bool _is_vtol_tailsitter_);
+
+    /*!
+     * @brief This function returns the value of member is_vtol_tailsitter_
+     * @return Value of member is_vtol_tailsitter_
+     */
+    eProsima_user_DllExport bool is_vtol_tailsitter_() const;
+
+    /*!
+     * @brief This function returns a reference to member is_vtol_tailsitter_
+     * @return Reference to member is_vtol_tailsitter_
+     */
+    eProsima_user_DllExport bool& is_vtol_tailsitter_();
+
+    /*!
+     * @brief This function sets a value in member in_transition_mode_
+     * @param _in_transition_mode_ New value for member in_transition_mode_
+     */
+    eProsima_user_DllExport void in_transition_mode_(bool _in_transition_mode_);
+
+    /*!
+     * @brief This function returns the value of member in_transition_mode_
+     * @return Value of member in_transition_mode_
+     */
+    eProsima_user_DllExport bool in_transition_mode_() const;
+
+    /*!
+     * @brief This function returns a reference to member in_transition_mode_
+     * @return Reference to member in_transition_mode_
+     */
+    eProsima_user_DllExport bool& in_transition_mode_();
+
+    /*!
+     * @brief This function sets a value in member in_transition_to_fw_
+     * @param _in_transition_to_fw_ New value for member in_transition_to_fw_
+     */
+    eProsima_user_DllExport void in_transition_to_fw_(bool _in_transition_to_fw_);
+
+    /*!
+     * @brief This function returns the value of member in_transition_to_fw_
+     * @return Value of member in_transition_to_fw_
+     */
+    eProsima_user_DllExport bool in_transition_to_fw_() const;
+
+    /*!
+     * @brief This function returns a reference to member in_transition_to_fw_
+     * @return Reference to member in_transition_to_fw_
+     */
+    eProsima_user_DllExport bool& in_transition_to_fw_();
+
+    /*!
      * @brief This function sets a value in member mission_failure_
      * @param _mission_failure_ New value for member mission_failure_
      */
@@ -544,22 +580,58 @@ public:
     eProsima_user_DllExport bool& geofence_violated_();
 
     /*!
-     * @brief This function sets a value in member failure_detector_status_
-     * @param _failure_detector_status_ New value for member failure_detector_status_
+     * @brief This function sets a value in member system_type_
+     * @param _system_type_ New value for member system_type_
      */
-    eProsima_user_DllExport void failure_detector_status_(uint16_t _failure_detector_status_);
+    eProsima_user_DllExport void system_type_(uint8_t _system_type_);
 
     /*!
-     * @brief This function returns the value of member failure_detector_status_
-     * @return Value of member failure_detector_status_
+     * @brief This function returns the value of member system_type_
+     * @return Value of member system_type_
      */
-    eProsima_user_DllExport uint16_t failure_detector_status_() const;
+    eProsima_user_DllExport uint8_t system_type_() const;
 
     /*!
-     * @brief This function returns a reference to member failure_detector_status_
-     * @return Reference to member failure_detector_status_
+     * @brief This function returns a reference to member system_type_
+     * @return Reference to member system_type_
      */
-    eProsima_user_DllExport uint16_t& failure_detector_status_();
+    eProsima_user_DllExport uint8_t& system_type_();
+
+    /*!
+     * @brief This function sets a value in member system_id_
+     * @param _system_id_ New value for member system_id_
+     */
+    eProsima_user_DllExport void system_id_(uint8_t _system_id_);
+
+    /*!
+     * @brief This function returns the value of member system_id_
+     * @return Value of member system_id_
+     */
+    eProsima_user_DllExport uint8_t system_id_() const;
+
+    /*!
+     * @brief This function returns a reference to member system_id_
+     * @return Reference to member system_id_
+     */
+    eProsima_user_DllExport uint8_t& system_id_();
+
+    /*!
+     * @brief This function sets a value in member component_id_
+     * @param _component_id_ New value for member component_id_
+     */
+    eProsima_user_DllExport void component_id_(uint8_t _component_id_);
+
+    /*!
+     * @brief This function returns the value of member component_id_
+     * @return Value of member component_id_
+     */
+    eProsima_user_DllExport uint8_t component_id_() const;
+
+    /*!
+     * @brief This function returns a reference to member component_id_
+     * @return Reference to member component_id_
+     */
+    eProsima_user_DllExport uint8_t& component_id_();
 
     /*!
      * @brief This function sets a value in member onboard_control_sensors_present_
@@ -614,78 +686,6 @@ public:
      * @return Reference to member onboard_control_sensors_health_
      */
     eProsima_user_DllExport uint64_t& onboard_control_sensors_health_();
-
-    /*!
-     * @brief This function sets a value in member latest_arming_reason_
-     * @param _latest_arming_reason_ New value for member latest_arming_reason_
-     */
-    eProsima_user_DllExport void latest_arming_reason_(uint8_t _latest_arming_reason_);
-
-    /*!
-     * @brief This function returns the value of member latest_arming_reason_
-     * @return Value of member latest_arming_reason_
-     */
-    eProsima_user_DllExport uint8_t latest_arming_reason_() const;
-
-    /*!
-     * @brief This function returns a reference to member latest_arming_reason_
-     * @return Reference to member latest_arming_reason_
-     */
-    eProsima_user_DllExport uint8_t& latest_arming_reason_();
-
-    /*!
-     * @brief This function sets a value in member latest_disarming_reason_
-     * @param _latest_disarming_reason_ New value for member latest_disarming_reason_
-     */
-    eProsima_user_DllExport void latest_disarming_reason_(uint8_t _latest_disarming_reason_);
-
-    /*!
-     * @brief This function returns the value of member latest_disarming_reason_
-     * @return Value of member latest_disarming_reason_
-     */
-    eProsima_user_DllExport uint8_t latest_disarming_reason_() const;
-
-    /*!
-     * @brief This function returns a reference to member latest_disarming_reason_
-     * @return Reference to member latest_disarming_reason_
-     */
-    eProsima_user_DllExport uint8_t& latest_disarming_reason_();
-
-    /*!
-     * @brief This function sets a value in member armed_time_
-     * @param _armed_time_ New value for member armed_time_
-     */
-    eProsima_user_DllExport void armed_time_(uint64_t _armed_time_);
-
-    /*!
-     * @brief This function returns the value of member armed_time_
-     * @return Value of member armed_time_
-     */
-    eProsima_user_DllExport uint64_t armed_time_() const;
-
-    /*!
-     * @brief This function returns a reference to member armed_time_
-     * @return Reference to member armed_time_
-     */
-    eProsima_user_DllExport uint64_t& armed_time_();
-
-    /*!
-     * @brief This function sets a value in member takeoff_time_
-     * @param _takeoff_time_ New value for member takeoff_time_
-     */
-    eProsima_user_DllExport void takeoff_time_(uint64_t _takeoff_time_);
-
-    /*!
-     * @brief This function returns the value of member takeoff_time_
-     * @return Value of member takeoff_time_
-     */
-    eProsima_user_DllExport uint64_t takeoff_time_() const;
-
-    /*!
-     * @brief This function returns a reference to member takeoff_time_
-     * @return Reference to member takeoff_time_
-     */
-    eProsima_user_DllExport uint64_t& takeoff_time_();
 
     /*!
      * @brief This function sets a value in member safety_button_available_
@@ -776,34 +776,34 @@ public:
 
 private:
     uint64_t m_timestamp_;
-    uint8_t m_nav_state_;
-    uint64_t m_nav_state_timestamp_;
+    uint64_t m_armed_time_;
+    uint64_t m_takeoff_time_;
     uint8_t m_arming_state_;
+    uint8_t m_latest_arming_reason_;
+    uint8_t m_latest_disarming_reason_;
+    uint64_t m_nav_state_timestamp_;
+    uint8_t m_nav_state_;
+    uint16_t m_failure_detector_status_;
     uint8_t m_hil_state_;
+    uint8_t m_vehicle_type_;
     bool m_failsafe_;
     uint64_t m_failsafe_timestamp_;
-    uint8_t m_system_type_;
-    uint8_t m_system_id_;
-    uint8_t m_component_id_;
-    uint8_t m_vehicle_type_;
-    bool m_is_vtol_;
-    bool m_is_vtol_tailsitter_;
-    bool m_in_transition_mode_;
-    bool m_in_transition_to_fw_;
     bool m_rc_signal_lost_;
     bool m_data_link_lost_;
     uint8_t m_data_link_lost_counter_;
     bool m_high_latency_data_link_lost_;
+    bool m_is_vtol_;
+    bool m_is_vtol_tailsitter_;
+    bool m_in_transition_mode_;
+    bool m_in_transition_to_fw_;
     bool m_mission_failure_;
     bool m_geofence_violated_;
-    uint16_t m_failure_detector_status_;
+    uint8_t m_system_type_;
+    uint8_t m_system_id_;
+    uint8_t m_component_id_;
     uint64_t m_onboard_control_sensors_present_;
     uint64_t m_onboard_control_sensors_enabled_;
     uint64_t m_onboard_control_sensors_health_;
-    uint8_t m_latest_arming_reason_;
-    uint8_t m_latest_disarming_reason_;
-    uint64_t m_armed_time_;
-    uint64_t m_takeoff_time_;
     bool m_safety_button_available_;
     bool m_safety_off_;
 };

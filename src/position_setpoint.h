@@ -494,6 +494,24 @@ public:
     eProsima_user_DllExport float& cruising_speed_();
 
     /*!
+     * @brief This function sets a value in member gliding_enabled_
+     * @param _gliding_enabled_ New value for member gliding_enabled_
+     */
+    eProsima_user_DllExport void gliding_enabled_(bool _gliding_enabled_);
+
+    /*!
+     * @brief This function returns the value of member gliding_enabled_
+     * @return Value of member gliding_enabled_
+     */
+    eProsima_user_DllExport bool gliding_enabled_() const;
+
+    /*!
+     * @brief This function returns a reference to member gliding_enabled_
+     * @return Reference to member gliding_enabled_
+     */
+    eProsima_user_DllExport bool& gliding_enabled_();
+
+    /*!
      * @brief This function sets a value in member cruising_throttle_
      * @param _cruising_throttle_ New value for member cruising_throttle_
      */
@@ -602,6 +620,7 @@ private:
     uint8_t m_loiter_direction_;
     float m_acceptance_radius_;
     float m_cruising_speed_;
+    bool m_gliding_enabled_;
     float m_cruising_throttle_;
     bool m_disable_weather_vane_;
 };
