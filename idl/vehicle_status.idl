@@ -93,11 +93,15 @@ struct vehicle_status
     octet system_type_;
     octet system_id_;
     octet component_id_;
-    unsigned long long onboard_control_sensors_present_;
-    unsigned long long onboard_control_sensors_enabled_;
-    unsigned long long onboard_control_sensors_health_;
     boolean safety_button_available_;
     boolean safety_off_;
+    boolean auto_mission_available_;
+    boolean power_input_valid_;
+    boolean usb_connected_;
+    boolean parachute_system_present_;
+    boolean parachute_system_healthy_;
+    boolean avoidance_system_required_;
+    boolean avoidance_system_valid_;
 
 }; // struct vehicle_status
 

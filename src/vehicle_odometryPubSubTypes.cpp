@@ -37,15 +37,6 @@ using namespace eprosima::fastrtps::rtps;
 
 
 
-
-
-
-
-
-
-
-
-
 vehicle_odometryPubSubType::vehicle_odometryPubSubType()
 {
     setName("vehicle_odometry");

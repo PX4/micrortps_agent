@@ -634,60 +634,6 @@ public:
     eProsima_user_DllExport uint8_t& component_id_();
 
     /*!
-     * @brief This function sets a value in member onboard_control_sensors_present_
-     * @param _onboard_control_sensors_present_ New value for member onboard_control_sensors_present_
-     */
-    eProsima_user_DllExport void onboard_control_sensors_present_(uint64_t _onboard_control_sensors_present_);
-
-    /*!
-     * @brief This function returns the value of member onboard_control_sensors_present_
-     * @return Value of member onboard_control_sensors_present_
-     */
-    eProsima_user_DllExport uint64_t onboard_control_sensors_present_() const;
-
-    /*!
-     * @brief This function returns a reference to member onboard_control_sensors_present_
-     * @return Reference to member onboard_control_sensors_present_
-     */
-    eProsima_user_DllExport uint64_t& onboard_control_sensors_present_();
-
-    /*!
-     * @brief This function sets a value in member onboard_control_sensors_enabled_
-     * @param _onboard_control_sensors_enabled_ New value for member onboard_control_sensors_enabled_
-     */
-    eProsima_user_DllExport void onboard_control_sensors_enabled_(uint64_t _onboard_control_sensors_enabled_);
-
-    /*!
-     * @brief This function returns the value of member onboard_control_sensors_enabled_
-     * @return Value of member onboard_control_sensors_enabled_
-     */
-    eProsima_user_DllExport uint64_t onboard_control_sensors_enabled_() const;
-
-    /*!
-     * @brief This function returns a reference to member onboard_control_sensors_enabled_
-     * @return Reference to member onboard_control_sensors_enabled_
-     */
-    eProsima_user_DllExport uint64_t& onboard_control_sensors_enabled_();
-
-    /*!
-     * @brief This function sets a value in member onboard_control_sensors_health_
-     * @param _onboard_control_sensors_health_ New value for member onboard_control_sensors_health_
-     */
-    eProsima_user_DllExport void onboard_control_sensors_health_(uint64_t _onboard_control_sensors_health_);
-
-    /*!
-     * @brief This function returns the value of member onboard_control_sensors_health_
-     * @return Value of member onboard_control_sensors_health_
-     */
-    eProsima_user_DllExport uint64_t onboard_control_sensors_health_() const;
-
-    /*!
-     * @brief This function returns a reference to member onboard_control_sensors_health_
-     * @return Reference to member onboard_control_sensors_health_
-     */
-    eProsima_user_DllExport uint64_t& onboard_control_sensors_health_();
-
-    /*!
      * @brief This function sets a value in member safety_button_available_
      * @param _safety_button_available_ New value for member safety_button_available_
      */
@@ -722,6 +668,132 @@ public:
      * @return Reference to member safety_off_
      */
     eProsima_user_DllExport bool& safety_off_();
+
+    /*!
+     * @brief This function sets a value in member auto_mission_available_
+     * @param _auto_mission_available_ New value for member auto_mission_available_
+     */
+    eProsima_user_DllExport void auto_mission_available_(bool _auto_mission_available_);
+
+    /*!
+     * @brief This function returns the value of member auto_mission_available_
+     * @return Value of member auto_mission_available_
+     */
+    eProsima_user_DllExport bool auto_mission_available_() const;
+
+    /*!
+     * @brief This function returns a reference to member auto_mission_available_
+     * @return Reference to member auto_mission_available_
+     */
+    eProsima_user_DllExport bool& auto_mission_available_();
+
+    /*!
+     * @brief This function sets a value in member power_input_valid_
+     * @param _power_input_valid_ New value for member power_input_valid_
+     */
+    eProsima_user_DllExport void power_input_valid_(bool _power_input_valid_);
+
+    /*!
+     * @brief This function returns the value of member power_input_valid_
+     * @return Value of member power_input_valid_
+     */
+    eProsima_user_DllExport bool power_input_valid_() const;
+
+    /*!
+     * @brief This function returns a reference to member power_input_valid_
+     * @return Reference to member power_input_valid_
+     */
+    eProsima_user_DllExport bool& power_input_valid_();
+
+    /*!
+     * @brief This function sets a value in member usb_connected_
+     * @param _usb_connected_ New value for member usb_connected_
+     */
+    eProsima_user_DllExport void usb_connected_(bool _usb_connected_);
+
+    /*!
+     * @brief This function returns the value of member usb_connected_
+     * @return Value of member usb_connected_
+     */
+    eProsima_user_DllExport bool usb_connected_() const;
+
+    /*!
+     * @brief This function returns a reference to member usb_connected_
+     * @return Reference to member usb_connected_
+     */
+    eProsima_user_DllExport bool& usb_connected_();
+
+    /*!
+     * @brief This function sets a value in member parachute_system_present_
+     * @param _parachute_system_present_ New value for member parachute_system_present_
+     */
+    eProsima_user_DllExport void parachute_system_present_(bool _parachute_system_present_);
+
+    /*!
+     * @brief This function returns the value of member parachute_system_present_
+     * @return Value of member parachute_system_present_
+     */
+    eProsima_user_DllExport bool parachute_system_present_() const;
+
+    /*!
+     * @brief This function returns a reference to member parachute_system_present_
+     * @return Reference to member parachute_system_present_
+     */
+    eProsima_user_DllExport bool& parachute_system_present_();
+
+    /*!
+     * @brief This function sets a value in member parachute_system_healthy_
+     * @param _parachute_system_healthy_ New value for member parachute_system_healthy_
+     */
+    eProsima_user_DllExport void parachute_system_healthy_(bool _parachute_system_healthy_);
+
+    /*!
+     * @brief This function returns the value of member parachute_system_healthy_
+     * @return Value of member parachute_system_healthy_
+     */
+    eProsima_user_DllExport bool parachute_system_healthy_() const;
+
+    /*!
+     * @brief This function returns a reference to member parachute_system_healthy_
+     * @return Reference to member parachute_system_healthy_
+     */
+    eProsima_user_DllExport bool& parachute_system_healthy_();
+
+    /*!
+     * @brief This function sets a value in member avoidance_system_required_
+     * @param _avoidance_system_required_ New value for member avoidance_system_required_
+     */
+    eProsima_user_DllExport void avoidance_system_required_(bool _avoidance_system_required_);
+
+    /*!
+     * @brief This function returns the value of member avoidance_system_required_
+     * @return Value of member avoidance_system_required_
+     */
+    eProsima_user_DllExport bool avoidance_system_required_() const;
+
+    /*!
+     * @brief This function returns a reference to member avoidance_system_required_
+     * @return Reference to member avoidance_system_required_
+     */
+    eProsima_user_DllExport bool& avoidance_system_required_();
+
+    /*!
+     * @brief This function sets a value in member avoidance_system_valid_
+     * @param _avoidance_system_valid_ New value for member avoidance_system_valid_
+     */
+    eProsima_user_DllExport void avoidance_system_valid_(bool _avoidance_system_valid_);
+
+    /*!
+     * @brief This function returns the value of member avoidance_system_valid_
+     * @return Value of member avoidance_system_valid_
+     */
+    eProsima_user_DllExport bool avoidance_system_valid_() const;
+
+    /*!
+     * @brief This function returns a reference to member avoidance_system_valid_
+     * @return Reference to member avoidance_system_valid_
+     */
+    eProsima_user_DllExport bool& avoidance_system_valid_();
 
 
     /*!
@@ -801,11 +873,15 @@ private:
     uint8_t m_system_type_;
     uint8_t m_system_id_;
     uint8_t m_component_id_;
-    uint64_t m_onboard_control_sensors_present_;
-    uint64_t m_onboard_control_sensors_enabled_;
-    uint64_t m_onboard_control_sensors_health_;
     bool m_safety_button_available_;
     bool m_safety_off_;
+    bool m_auto_mission_available_;
+    bool m_power_input_valid_;
+    bool m_usb_connected_;
+    bool m_parachute_system_present_;
+    bool m_parachute_system_healthy_;
+    bool m_avoidance_system_required_;
+    bool m_avoidance_system_valid_;
 };
 
 #endif // _VEHICLE_STATUS_H_

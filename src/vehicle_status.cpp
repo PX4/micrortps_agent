@@ -145,21 +145,33 @@ vehicle_status::vehicle_status()
     m_system_id_ = 0;
     // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d76aeea
     m_component_id_ = 0;
-    // m_onboard_control_sensors_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78dd667e
-    m_onboard_control_sensors_present_ = 0;
-    // m_onboard_control_sensors_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10db82ae
-    m_onboard_control_sensors_enabled_ = 0;
-    // m_onboard_control_sensors_health_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@501edcf1
-    m_onboard_control_sensors_health_ = 0;
-    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b729e6
+    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78dd667e
     m_safety_button_available_ = false;
-    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b4a4e18
+    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10db82ae
     m_safety_off_ = false;
+    // m_auto_mission_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@501edcf1
+    m_auto_mission_available_ = false;
+    // m_power_input_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b729e6
+    m_power_input_valid_ = false;
+    // m_usb_connected_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b4a4e18
+    m_usb_connected_ = false;
+    // m_parachute_system_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27c86f2d
+    m_parachute_system_present_ = false;
+    // m_parachute_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@197d671
+    m_parachute_system_healthy_ = false;
+    // m_avoidance_system_required_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@402e37bc
+    m_avoidance_system_required_ = false;
+    // m_avoidance_system_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@79ad8b2f
+    m_avoidance_system_valid_ = false;
 
 }
 
 vehicle_status::~vehicle_status()
 {
+
+
+
+
 
 
 
@@ -221,11 +233,15 @@ vehicle_status::vehicle_status(const vehicle_status &x)
     m_system_type_ = x.m_system_type_;
     m_system_id_ = x.m_system_id_;
     m_component_id_ = x.m_component_id_;
-    m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
-    m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
-    m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
+    m_auto_mission_available_ = x.m_auto_mission_available_;
+    m_power_input_valid_ = x.m_power_input_valid_;
+    m_usb_connected_ = x.m_usb_connected_;
+    m_parachute_system_present_ = x.m_parachute_system_present_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
+    m_avoidance_system_required_ = x.m_avoidance_system_required_;
+    m_avoidance_system_valid_ = x.m_avoidance_system_valid_;
 }
 
 vehicle_status::vehicle_status(vehicle_status &&x)
@@ -256,11 +272,15 @@ vehicle_status::vehicle_status(vehicle_status &&x)
     m_system_type_ = x.m_system_type_;
     m_system_id_ = x.m_system_id_;
     m_component_id_ = x.m_component_id_;
-    m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
-    m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
-    m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
+    m_auto_mission_available_ = x.m_auto_mission_available_;
+    m_power_input_valid_ = x.m_power_input_valid_;
+    m_usb_connected_ = x.m_usb_connected_;
+    m_parachute_system_present_ = x.m_parachute_system_present_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
+    m_avoidance_system_required_ = x.m_avoidance_system_required_;
+    m_avoidance_system_valid_ = x.m_avoidance_system_valid_;
 }
 
 vehicle_status& vehicle_status::operator=(const vehicle_status &x)
@@ -292,11 +312,15 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
     m_system_type_ = x.m_system_type_;
     m_system_id_ = x.m_system_id_;
     m_component_id_ = x.m_component_id_;
-    m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
-    m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
-    m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
+    m_auto_mission_available_ = x.m_auto_mission_available_;
+    m_power_input_valid_ = x.m_power_input_valid_;
+    m_usb_connected_ = x.m_usb_connected_;
+    m_parachute_system_present_ = x.m_parachute_system_present_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
+    m_avoidance_system_required_ = x.m_avoidance_system_required_;
+    m_avoidance_system_valid_ = x.m_avoidance_system_valid_;
 
     return *this;
 }
@@ -330,11 +354,15 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
     m_system_type_ = x.m_system_type_;
     m_system_id_ = x.m_system_id_;
     m_component_id_ = x.m_component_id_;
-    m_onboard_control_sensors_present_ = x.m_onboard_control_sensors_present_;
-    m_onboard_control_sensors_enabled_ = x.m_onboard_control_sensors_enabled_;
-    m_onboard_control_sensors_health_ = x.m_onboard_control_sensors_health_;
     m_safety_button_available_ = x.m_safety_button_available_;
     m_safety_off_ = x.m_safety_off_;
+    m_auto_mission_available_ = x.m_auto_mission_available_;
+    m_power_input_valid_ = x.m_power_input_valid_;
+    m_usb_connected_ = x.m_usb_connected_;
+    m_parachute_system_present_ = x.m_parachute_system_present_;
+    m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
+    m_avoidance_system_required_ = x.m_avoidance_system_required_;
+    m_avoidance_system_valid_ = x.m_avoidance_system_valid_;
 
     return *this;
 }
@@ -422,13 +450,25 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -525,13 +565,25 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -573,11 +625,15 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_system_type_;
     scdr << m_system_id_;
     scdr << m_component_id_;
-    scdr << m_onboard_control_sensors_present_;
-    scdr << m_onboard_control_sensors_enabled_;
-    scdr << m_onboard_control_sensors_health_;
     scdr << m_safety_button_available_;
     scdr << m_safety_off_;
+    scdr << m_auto_mission_available_;
+    scdr << m_power_input_valid_;
+    scdr << m_usb_connected_;
+    scdr << m_parachute_system_present_;
+    scdr << m_parachute_system_healthy_;
+    scdr << m_avoidance_system_required_;
+    scdr << m_avoidance_system_valid_;
 }
 
 void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
@@ -609,11 +665,15 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_system_type_;
     dcdr >> m_system_id_;
     dcdr >> m_component_id_;
-    dcdr >> m_onboard_control_sensors_present_;
-    dcdr >> m_onboard_control_sensors_enabled_;
-    dcdr >> m_onboard_control_sensors_health_;
     dcdr >> m_safety_button_available_;
     dcdr >> m_safety_off_;
+    dcdr >> m_auto_mission_available_;
+    dcdr >> m_power_input_valid_;
+    dcdr >> m_usb_connected_;
+    dcdr >> m_parachute_system_present_;
+    dcdr >> m_parachute_system_healthy_;
+    dcdr >> m_avoidance_system_required_;
+    dcdr >> m_avoidance_system_valid_;
 }
 
 /*!
@@ -1319,87 +1379,6 @@ uint8_t& vehicle_status::component_id_()
 }
 
 /*!
- * @brief This function sets a value in member onboard_control_sensors_present_
- * @param _onboard_control_sensors_present_ New value for member onboard_control_sensors_present_
- */
-void vehicle_status::onboard_control_sensors_present_(uint64_t _onboard_control_sensors_present_)
-{
-m_onboard_control_sensors_present_ = _onboard_control_sensors_present_;
-}
-
-/*!
- * @brief This function returns the value of member onboard_control_sensors_present_
- * @return Value of member onboard_control_sensors_present_
- */
-uint64_t vehicle_status::onboard_control_sensors_present_() const
-{
-    return m_onboard_control_sensors_present_;
-}
-
-/*!
- * @brief This function returns a reference to member onboard_control_sensors_present_
- * @return Reference to member onboard_control_sensors_present_
- */
-uint64_t& vehicle_status::onboard_control_sensors_present_()
-{
-    return m_onboard_control_sensors_present_;
-}
-
-/*!
- * @brief This function sets a value in member onboard_control_sensors_enabled_
- * @param _onboard_control_sensors_enabled_ New value for member onboard_control_sensors_enabled_
- */
-void vehicle_status::onboard_control_sensors_enabled_(uint64_t _onboard_control_sensors_enabled_)
-{
-m_onboard_control_sensors_enabled_ = _onboard_control_sensors_enabled_;
-}
-
-/*!
- * @brief This function returns the value of member onboard_control_sensors_enabled_
- * @return Value of member onboard_control_sensors_enabled_
- */
-uint64_t vehicle_status::onboard_control_sensors_enabled_() const
-{
-    return m_onboard_control_sensors_enabled_;
-}
-
-/*!
- * @brief This function returns a reference to member onboard_control_sensors_enabled_
- * @return Reference to member onboard_control_sensors_enabled_
- */
-uint64_t& vehicle_status::onboard_control_sensors_enabled_()
-{
-    return m_onboard_control_sensors_enabled_;
-}
-
-/*!
- * @brief This function sets a value in member onboard_control_sensors_health_
- * @param _onboard_control_sensors_health_ New value for member onboard_control_sensors_health_
- */
-void vehicle_status::onboard_control_sensors_health_(uint64_t _onboard_control_sensors_health_)
-{
-m_onboard_control_sensors_health_ = _onboard_control_sensors_health_;
-}
-
-/*!
- * @brief This function returns the value of member onboard_control_sensors_health_
- * @return Value of member onboard_control_sensors_health_
- */
-uint64_t vehicle_status::onboard_control_sensors_health_() const
-{
-    return m_onboard_control_sensors_health_;
-}
-
-/*!
- * @brief This function returns a reference to member onboard_control_sensors_health_
- * @return Reference to member onboard_control_sensors_health_
- */
-uint64_t& vehicle_status::onboard_control_sensors_health_()
-{
-    return m_onboard_control_sensors_health_;
-}
-
-/*!
  * @brief This function sets a value in member safety_button_available_
  * @param _safety_button_available_ New value for member safety_button_available_
  */
@@ -1453,10 +1432,203 @@ bool& vehicle_status::safety_off_()
     return m_safety_off_;
 }
 
+/*!
+ * @brief This function sets a value in member auto_mission_available_
+ * @param _auto_mission_available_ New value for member auto_mission_available_
+ */
+void vehicle_status::auto_mission_available_(bool _auto_mission_available_)
+{
+m_auto_mission_available_ = _auto_mission_available_;
+}
+
+/*!
+ * @brief This function returns the value of member auto_mission_available_
+ * @return Value of member auto_mission_available_
+ */
+bool vehicle_status::auto_mission_available_() const
+{
+    return m_auto_mission_available_;
+}
+
+/*!
+ * @brief This function returns a reference to member auto_mission_available_
+ * @return Reference to member auto_mission_available_
+ */
+bool& vehicle_status::auto_mission_available_()
+{
+    return m_auto_mission_available_;
+}
+
+/*!
+ * @brief This function sets a value in member power_input_valid_
+ * @param _power_input_valid_ New value for member power_input_valid_
+ */
+void vehicle_status::power_input_valid_(bool _power_input_valid_)
+{
+m_power_input_valid_ = _power_input_valid_;
+}
+
+/*!
+ * @brief This function returns the value of member power_input_valid_
+ * @return Value of member power_input_valid_
+ */
+bool vehicle_status::power_input_valid_() const
+{
+    return m_power_input_valid_;
+}
+
+/*!
+ * @brief This function returns a reference to member power_input_valid_
+ * @return Reference to member power_input_valid_
+ */
+bool& vehicle_status::power_input_valid_()
+{
+    return m_power_input_valid_;
+}
+
+/*!
+ * @brief This function sets a value in member usb_connected_
+ * @param _usb_connected_ New value for member usb_connected_
+ */
+void vehicle_status::usb_connected_(bool _usb_connected_)
+{
+m_usb_connected_ = _usb_connected_;
+}
+
+/*!
+ * @brief This function returns the value of member usb_connected_
+ * @return Value of member usb_connected_
+ */
+bool vehicle_status::usb_connected_() const
+{
+    return m_usb_connected_;
+}
+
+/*!
+ * @brief This function returns a reference to member usb_connected_
+ * @return Reference to member usb_connected_
+ */
+bool& vehicle_status::usb_connected_()
+{
+    return m_usb_connected_;
+}
+
+/*!
+ * @brief This function sets a value in member parachute_system_present_
+ * @param _parachute_system_present_ New value for member parachute_system_present_
+ */
+void vehicle_status::parachute_system_present_(bool _parachute_system_present_)
+{
+m_parachute_system_present_ = _parachute_system_present_;
+}
+
+/*!
+ * @brief This function returns the value of member parachute_system_present_
+ * @return Value of member parachute_system_present_
+ */
+bool vehicle_status::parachute_system_present_() const
+{
+    return m_parachute_system_present_;
+}
+
+/*!
+ * @brief This function returns a reference to member parachute_system_present_
+ * @return Reference to member parachute_system_present_
+ */
+bool& vehicle_status::parachute_system_present_()
+{
+    return m_parachute_system_present_;
+}
+
+/*!
+ * @brief This function sets a value in member parachute_system_healthy_
+ * @param _parachute_system_healthy_ New value for member parachute_system_healthy_
+ */
+void vehicle_status::parachute_system_healthy_(bool _parachute_system_healthy_)
+{
+m_parachute_system_healthy_ = _parachute_system_healthy_;
+}
+
+/*!
+ * @brief This function returns the value of member parachute_system_healthy_
+ * @return Value of member parachute_system_healthy_
+ */
+bool vehicle_status::parachute_system_healthy_() const
+{
+    return m_parachute_system_healthy_;
+}
+
+/*!
+ * @brief This function returns a reference to member parachute_system_healthy_
+ * @return Reference to member parachute_system_healthy_
+ */
+bool& vehicle_status::parachute_system_healthy_()
+{
+    return m_parachute_system_healthy_;
+}
+
+/*!
+ * @brief This function sets a value in member avoidance_system_required_
+ * @param _avoidance_system_required_ New value for member avoidance_system_required_
+ */
+void vehicle_status::avoidance_system_required_(bool _avoidance_system_required_)
+{
+m_avoidance_system_required_ = _avoidance_system_required_;
+}
+
+/*!
+ * @brief This function returns the value of member avoidance_system_required_
+ * @return Value of member avoidance_system_required_
+ */
+bool vehicle_status::avoidance_system_required_() const
+{
+    return m_avoidance_system_required_;
+}
+
+/*!
+ * @brief This function returns a reference to member avoidance_system_required_
+ * @return Reference to member avoidance_system_required_
+ */
+bool& vehicle_status::avoidance_system_required_()
+{
+    return m_avoidance_system_required_;
+}
+
+/*!
+ * @brief This function sets a value in member avoidance_system_valid_
+ * @param _avoidance_system_valid_ New value for member avoidance_system_valid_
+ */
+void vehicle_status::avoidance_system_valid_(bool _avoidance_system_valid_)
+{
+m_avoidance_system_valid_ = _avoidance_system_valid_;
+}
+
+/*!
+ * @brief This function returns the value of member avoidance_system_valid_
+ * @return Value of member avoidance_system_valid_
+ */
+bool vehicle_status::avoidance_system_valid_() const
+{
+    return m_avoidance_system_valid_;
+}
+
+/*!
+ * @brief This function returns a reference to member avoidance_system_valid_
+ * @return Reference to member avoidance_system_valid_
+ */
+bool& vehicle_status::avoidance_system_valid_()
+{
+    return m_avoidance_system_valid_;
+}
+
 
 size_t vehicle_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
+
+
+
 
 
 
@@ -1502,6 +1674,10 @@ bool vehicle_status::isKeyDefined()
 void vehicle_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
+     
+     
+     
      
      
      

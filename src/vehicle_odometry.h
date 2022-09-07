@@ -64,24 +64,15 @@ namespace eprosima
 }
 
 
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_X_VARIANCE = 0;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_Y_VARIANCE = 6;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_Z_VARIANCE = 11;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_ROLL_VARIANCE = 15;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_PITCH_VARIANCE = 18;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_YAW_VARIANCE = 20;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_VX_VARIANCE = 0;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_VY_VARIANCE = 6;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_VZ_VARIANCE = 11;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_ROLLRATE_VARIANCE = 15;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_PITCHRATE_VARIANCE = 18;
-const uint8_t vehicle_odometry__COVARIANCE_MATRIX_YAWRATE_VARIANCE = 20;
-const uint8_t vehicle_odometry__LOCAL_FRAME_NED = 0;
-const uint8_t vehicle_odometry__LOCAL_FRAME_FRD = 1;
-const uint8_t vehicle_odometry__LOCAL_FRAME_OTHER = 2;
-const uint8_t vehicle_odometry__BODY_FRAME_FRD = 3;
-typedef std::array<float, 21> vehicle_odometry__float_array_21;
+const uint8_t vehicle_odometry__POSE_FRAME_UNKNOWN = 0;
+const uint8_t vehicle_odometry__POSE_FRAME_NED = 1;
+const uint8_t vehicle_odometry__POSE_FRAME_FRD = 2;
+const uint8_t vehicle_odometry__VELOCITY_FRAME_UNKNOWN = 0;
+const uint8_t vehicle_odometry__VELOCITY_FRAME_NED = 1;
+const uint8_t vehicle_odometry__VELOCITY_FRAME_FRD = 2;
+const uint8_t vehicle_odometry__VELOCITY_FRAME_BODY_FRD = 3;
 typedef std::array<float, 4> vehicle_odometry__float_array_4;
+typedef std::array<float, 3> vehicle_odometry__float_array_3;
 /*!
  * @brief This class represents the structure vehicle_odometry defined by the user in the IDL file.
  * @ingroup VEHICLE_ODOMETRY
@@ -161,77 +152,46 @@ public:
     eProsima_user_DllExport uint64_t& timestamp_sample_();
 
     /*!
-     * @brief This function sets a value in member local_frame_
-     * @param _local_frame_ New value for member local_frame_
+     * @brief This function sets a value in member pose_frame_
+     * @param _pose_frame_ New value for member pose_frame_
      */
-    eProsima_user_DllExport void local_frame_(uint8_t _local_frame_);
+    eProsima_user_DllExport void pose_frame_(uint8_t _pose_frame_);
 
     /*!
-     * @brief This function returns the value of member local_frame_
-     * @return Value of member local_frame_
+     * @brief This function returns the value of member pose_frame_
+     * @return Value of member pose_frame_
      */
-    eProsima_user_DllExport uint8_t local_frame_() const;
+    eProsima_user_DllExport uint8_t pose_frame_() const;
 
     /*!
-     * @brief This function returns a reference to member local_frame_
-     * @return Reference to member local_frame_
+     * @brief This function returns a reference to member pose_frame_
+     * @return Reference to member pose_frame_
      */
-    eProsima_user_DllExport uint8_t& local_frame_();
+    eProsima_user_DllExport uint8_t& pose_frame_();
 
     /*!
-     * @brief This function sets a value in member x_
-     * @param _x_ New value for member x_
+     * @brief This function copies the value in member position
+     * @param _position New value to be copied in member position
      */
-    eProsima_user_DllExport void x_(float _x_);
+    eProsima_user_DllExport void position(const vehicle_odometry__float_array_3 &_position);
 
     /*!
-     * @brief This function returns the value of member x_
-     * @return Value of member x_
+     * @brief This function moves the value in member position
+     * @param _position New value to be moved in member position
      */
-    eProsima_user_DllExport float x_() const;
+    eProsima_user_DllExport void position(vehicle_odometry__float_array_3 &&_position);
 
     /*!
-     * @brief This function returns a reference to member x_
-     * @return Reference to member x_
+     * @brief This function returns a constant reference to member position
+     * @return Constant reference to member position
      */
-    eProsima_user_DllExport float& x_();
+    eProsima_user_DllExport const vehicle_odometry__float_array_3& position() const;
 
     /*!
-     * @brief This function sets a value in member y_
-     * @param _y_ New value for member y_
+     * @brief This function returns a reference to member position
+     * @return Reference to member position
      */
-    eProsima_user_DllExport void y_(float _y_);
-
-    /*!
-     * @brief This function returns the value of member y_
-     * @return Value of member y_
-     */
-    eProsima_user_DllExport float y_() const;
-
-    /*!
-     * @brief This function returns a reference to member y_
-     * @return Reference to member y_
-     */
-    eProsima_user_DllExport float& y_();
-
-    /*!
-     * @brief This function sets a value in member z_
-     * @param _z_ New value for member z_
-     */
-    eProsima_user_DllExport void z_(float _z_);
-
-    /*!
-     * @brief This function returns the value of member z_
-     * @return Value of member z_
-     */
-    eProsima_user_DllExport float z_() const;
-
-    /*!
-     * @brief This function returns a reference to member z_
-     * @return Reference to member z_
-     */
-    eProsima_user_DllExport float& z_();
-
+    eProsima_user_DllExport vehicle_odometry__float_array_3& position();
     /*!
      * @brief This function copies the value in member q
      * @param _q New value to be copied in member q
@@ -256,52 +216,6 @@ public:
      */
     eProsima_user_DllExport vehicle_odometry__float_array_4& q();
     /*!
-     * @brief This function copies the value in member q_offset
-     * @param _q_offset New value to be copied in member q_offset
-     */
-    eProsima_user_DllExport void q_offset(const vehicle_odometry__float_array_4 &_q_offset);
-
-    /*!
-     * @brief This function moves the value in member q_offset
-     * @param _q_offset New value to be moved in member q_offset
-     */
-    eProsima_user_DllExport void q_offset(vehicle_odometry__float_array_4 &&_q_offset);
-
-    /*!
-     * @brief This function returns a constant reference to member q_offset
-     * @return Constant reference to member q_offset
-     */
-    eProsima_user_DllExport const vehicle_odometry__float_array_4& q_offset() const;
-
-    /*!
-     * @brief This function returns a reference to member q_offset
-     * @return Reference to member q_offset
-     */
-    eProsima_user_DllExport vehicle_odometry__float_array_4& q_offset();
-    /*!
-     * @brief This function copies the value in member pose_covariance
-     * @param _pose_covariance New value to be copied in member pose_covariance
-     */
-    eProsima_user_DllExport void pose_covariance(const vehicle_odometry__float_array_21 &_pose_covariance);
-
-    /*!
-     * @brief This function moves the value in member pose_covariance
-     * @param _pose_covariance New value to be moved in member pose_covariance
-     */
-    eProsima_user_DllExport void pose_covariance(vehicle_odometry__float_array_21 &&_pose_covariance);
-
-    /*!
-     * @brief This function returns a constant reference to member pose_covariance
-     * @return Constant reference to member pose_covariance
-     */
-    eProsima_user_DllExport const vehicle_odometry__float_array_21& pose_covariance() const;
-
-    /*!
-     * @brief This function returns a reference to member pose_covariance
-     * @return Reference to member pose_covariance
-     */
-    eProsima_user_DllExport vehicle_odometry__float_array_21& pose_covariance();
-    /*!
      * @brief This function sets a value in member velocity_frame_
      * @param _velocity_frame_ New value for member velocity_frame_
      */
@@ -320,136 +234,120 @@ public:
     eProsima_user_DllExport uint8_t& velocity_frame_();
 
     /*!
-     * @brief This function sets a value in member vx_
-     * @param _vx_ New value for member vx_
+     * @brief This function copies the value in member velocity
+     * @param _velocity New value to be copied in member velocity
      */
-    eProsima_user_DllExport void vx_(float _vx_);
+    eProsima_user_DllExport void velocity(const vehicle_odometry__float_array_3 &_velocity);
 
     /*!
-     * @brief This function returns the value of member vx_
-     * @return Value of member vx_
+     * @brief This function moves the value in member velocity
+     * @param _velocity New value to be moved in member velocity
      */
-    eProsima_user_DllExport float vx_() const;
+    eProsima_user_DllExport void velocity(vehicle_odometry__float_array_3 &&_velocity);
 
     /*!
-     * @brief This function returns a reference to member vx_
-     * @return Reference to member vx_
+     * @brief This function returns a constant reference to member velocity
+     * @return Constant reference to member velocity
      */
-    eProsima_user_DllExport float& vx_();
+    eProsima_user_DllExport const vehicle_odometry__float_array_3& velocity() const;
 
     /*!
-     * @brief This function sets a value in member vy_
-     * @param _vy_ New value for member vy_
+     * @brief This function returns a reference to member velocity
+     * @return Reference to member velocity
      */
-    eProsima_user_DllExport void vy_(float _vy_);
+    eProsima_user_DllExport vehicle_odometry__float_array_3& velocity();
+    /*!
+     * @brief This function copies the value in member angular_velocity
+     * @param _angular_velocity New value to be copied in member angular_velocity
+     */
+    eProsima_user_DllExport void angular_velocity(const vehicle_odometry__float_array_3 &_angular_velocity);
 
     /*!
-     * @brief This function returns the value of member vy_
-     * @return Value of member vy_
+     * @brief This function moves the value in member angular_velocity
+     * @param _angular_velocity New value to be moved in member angular_velocity
      */
-    eProsima_user_DllExport float vy_() const;
+    eProsima_user_DllExport void angular_velocity(vehicle_odometry__float_array_3 &&_angular_velocity);
 
     /*!
-     * @brief This function returns a reference to member vy_
-     * @return Reference to member vy_
+     * @brief This function returns a constant reference to member angular_velocity
+     * @return Constant reference to member angular_velocity
      */
-    eProsima_user_DllExport float& vy_();
+    eProsima_user_DllExport const vehicle_odometry__float_array_3& angular_velocity() const;
 
     /*!
-     * @brief This function sets a value in member vz_
-     * @param _vz_ New value for member vz_
+     * @brief This function returns a reference to member angular_velocity
+     * @return Reference to member angular_velocity
      */
-    eProsima_user_DllExport void vz_(float _vz_);
+    eProsima_user_DllExport vehicle_odometry__float_array_3& angular_velocity();
+    /*!
+     * @brief This function copies the value in member position_variance
+     * @param _position_variance New value to be copied in member position_variance
+     */
+    eProsima_user_DllExport void position_variance(const vehicle_odometry__float_array_3 &_position_variance);
 
     /*!
-     * @brief This function returns the value of member vz_
-     * @return Value of member vz_
+     * @brief This function moves the value in member position_variance
+     * @param _position_variance New value to be moved in member position_variance
      */
-    eProsima_user_DllExport float vz_() const;
+    eProsima_user_DllExport void position_variance(vehicle_odometry__float_array_3 &&_position_variance);
 
     /*!
-     * @brief This function returns a reference to member vz_
-     * @return Reference to member vz_
+     * @brief This function returns a constant reference to member position_variance
+     * @return Constant reference to member position_variance
      */
-    eProsima_user_DllExport float& vz_();
+    eProsima_user_DllExport const vehicle_odometry__float_array_3& position_variance() const;
 
     /*!
-     * @brief This function sets a value in member rollspeed_
-     * @param _rollspeed_ New value for member rollspeed_
+     * @brief This function returns a reference to member position_variance
+     * @return Reference to member position_variance
      */
-    eProsima_user_DllExport void rollspeed_(float _rollspeed_);
+    eProsima_user_DllExport vehicle_odometry__float_array_3& position_variance();
+    /*!
+     * @brief This function copies the value in member orientation_variance
+     * @param _orientation_variance New value to be copied in member orientation_variance
+     */
+    eProsima_user_DllExport void orientation_variance(const vehicle_odometry__float_array_3 &_orientation_variance);
 
     /*!
-     * @brief This function returns the value of member rollspeed_
-     * @return Value of member rollspeed_
+     * @brief This function moves the value in member orientation_variance
+     * @param _orientation_variance New value to be moved in member orientation_variance
      */
-    eProsima_user_DllExport float rollspeed_() const;
+    eProsima_user_DllExport void orientation_variance(vehicle_odometry__float_array_3 &&_orientation_variance);
 
     /*!
-     * @brief This function returns a reference to member rollspeed_
-     * @return Reference to member rollspeed_
+     * @brief This function returns a constant reference to member orientation_variance
+     * @return Constant reference to member orientation_variance
      */
-    eProsima_user_DllExport float& rollspeed_();
+    eProsima_user_DllExport const vehicle_odometry__float_array_3& orientation_variance() const;
 
     /*!
-     * @brief This function sets a value in member pitchspeed_
-     * @param _pitchspeed_ New value for member pitchspeed_
+     * @brief This function returns a reference to member orientation_variance
+     * @return Reference to member orientation_variance
      */
-    eProsima_user_DllExport void pitchspeed_(float _pitchspeed_);
+    eProsima_user_DllExport vehicle_odometry__float_array_3& orientation_variance();
+    /*!
+     * @brief This function copies the value in member velocity_variance
+     * @param _velocity_variance New value to be copied in member velocity_variance
+     */
+    eProsima_user_DllExport void velocity_variance(const vehicle_odometry__float_array_3 &_velocity_variance);
 
     /*!
-     * @brief This function returns the value of member pitchspeed_
-     * @return Value of member pitchspeed_
+     * @brief This function moves the value in member velocity_variance
+     * @param _velocity_variance New value to be moved in member velocity_variance
      */
-    eProsima_user_DllExport float pitchspeed_() const;
+    eProsima_user_DllExport void velocity_variance(vehicle_odometry__float_array_3 &&_velocity_variance);
 
     /*!
-     * @brief This function returns a reference to member pitchspeed_
-     * @return Reference to member pitchspeed_
+     * @brief This function returns a constant reference to member velocity_variance
+     * @return Constant reference to member velocity_variance
      */
-    eProsima_user_DllExport float& pitchspeed_();
+    eProsima_user_DllExport const vehicle_odometry__float_array_3& velocity_variance() const;
 
     /*!
-     * @brief This function sets a value in member yawspeed_
-     * @param _yawspeed_ New value for member yawspeed_
+     * @brief This function returns a reference to member velocity_variance
+     * @return Reference to member velocity_variance
      */
-    eProsima_user_DllExport void yawspeed_(float _yawspeed_);
-
-    /*!
-     * @brief This function returns the value of member yawspeed_
-     * @return Value of member yawspeed_
-     */
-    eProsima_user_DllExport float yawspeed_() const;
-
-    /*!
-     * @brief This function returns a reference to member yawspeed_
-     * @return Reference to member yawspeed_
-     */
-    eProsima_user_DllExport float& yawspeed_();
-
-    /*!
-     * @brief This function copies the value in member velocity_covariance
-     * @param _velocity_covariance New value to be copied in member velocity_covariance
-     */
-    eProsima_user_DllExport void velocity_covariance(const vehicle_odometry__float_array_21 &_velocity_covariance);
-
-    /*!
-     * @brief This function moves the value in member velocity_covariance
-     * @param _velocity_covariance New value to be moved in member velocity_covariance
-     */
-    eProsima_user_DllExport void velocity_covariance(vehicle_odometry__float_array_21 &&_velocity_covariance);
-
-    /*!
-     * @brief This function returns a constant reference to member velocity_covariance
-     * @return Constant reference to member velocity_covariance
-     */
-    eProsima_user_DllExport const vehicle_odometry__float_array_21& velocity_covariance() const;
-
-    /*!
-     * @brief This function returns a reference to member velocity_covariance
-     * @return Reference to member velocity_covariance
-     */
-    eProsima_user_DllExport vehicle_odometry__float_array_21& velocity_covariance();
+    eProsima_user_DllExport vehicle_odometry__float_array_3& velocity_variance();
     /*!
      * @brief This function sets a value in member reset_counter_
      * @param _reset_counter_ New value for member reset_counter_
@@ -467,6 +365,24 @@ public:
      * @return Reference to member reset_counter_
      */
     eProsima_user_DllExport uint8_t& reset_counter_();
+
+    /*!
+     * @brief This function sets a value in member quality_
+     * @param _quality_ New value for member quality_
+     */
+    eProsima_user_DllExport void quality_(uint8_t _quality_);
+
+    /*!
+     * @brief This function returns the value of member quality_
+     * @return Value of member quality_
+     */
+    eProsima_user_DllExport uint8_t quality_() const;
+
+    /*!
+     * @brief This function returns a reference to member quality_
+     * @return Reference to member quality_
+     */
+    eProsima_user_DllExport uint8_t& quality_();
 
 
     /*!
@@ -522,22 +438,17 @@ public:
 private:
     uint64_t m_timestamp_;
     uint64_t m_timestamp_sample_;
-    uint8_t m_local_frame_;
-    float m_x_;
-    float m_y_;
-    float m_z_;
+    uint8_t m_pose_frame_;
+    vehicle_odometry__float_array_3 m_position;
     vehicle_odometry__float_array_4 m_q;
-    vehicle_odometry__float_array_4 m_q_offset;
-    vehicle_odometry__float_array_21 m_pose_covariance;
     uint8_t m_velocity_frame_;
-    float m_vx_;
-    float m_vy_;
-    float m_vz_;
-    float m_rollspeed_;
-    float m_pitchspeed_;
-    float m_yawspeed_;
-    vehicle_odometry__float_array_21 m_velocity_covariance;
+    vehicle_odometry__float_array_3 m_velocity;
+    vehicle_odometry__float_array_3 m_angular_velocity;
+    vehicle_odometry__float_array_3 m_position_variance;
+    vehicle_odometry__float_array_3 m_orientation_variance;
+    vehicle_odometry__float_array_3 m_velocity_variance;
     uint8_t m_reset_counter_;
+    uint8_t m_quality_;
 };
 
 #endif // _VEHICLE_ODOMETRY_H_
