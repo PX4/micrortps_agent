@@ -59,6 +59,8 @@
 #include "timesync_Subscriber.h"
 #include "vehicle_command_Subscriber.h"
 #include "vehicle_local_position_setpoint_Subscriber.h"
+#include "vehicle_attitude_setpoint_Subscriber.h"
+#include "vehicle_rates_setpoint_Subscriber.h"
 #include "trajectory_setpoint_Subscriber.h"
 #include "vehicle_trajectory_waypoint_Subscriber.h"
 #include "onboard_computer_status_Subscriber.h"
@@ -80,6 +82,8 @@ using telemetry_status_msg_t = telemetry_status;
 using timesync_msg_t = timesync;
 using vehicle_command_msg_t = vehicle_command;
 using vehicle_local_position_setpoint_msg_t = vehicle_local_position_setpoint;
+using vehicle_attitude_setpoint_msg_t = vehicle_attitude_setpoint;
+using vehicle_rates_setpoint_msg_t = vehicle_rates_setpoint;
 using trajectory_setpoint_msg_t = trajectory_setpoint;
 using vehicle_trajectory_waypoint_msg_t = vehicle_trajectory_waypoint;
 using onboard_computer_status_msg_t = onboard_computer_status;
@@ -136,6 +140,8 @@ private:
 	timesync_Subscriber _timesync_sub;
 	vehicle_command_Subscriber _vehicle_command_sub;
 	vehicle_local_position_setpoint_Subscriber _vehicle_local_position_setpoint_sub;
+	vehicle_attitude_setpoint_Subscriber _vehicle_attitude_setpoint_sub;
+	vehicle_rates_setpoint_Subscriber _vehicle_rates_setpoint_sub;
 	trajectory_setpoint_Subscriber _trajectory_setpoint_sub;
 	vehicle_trajectory_waypoint_Subscriber _vehicle_trajectory_waypoint_sub;
 	onboard_computer_status_Subscriber _onboard_computer_status_sub;

@@ -40,35 +40,35 @@ using namespace eprosima::fastcdr::exception;
 
 sensor_optical_flow::sensor_optical_flow()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6366ebe0
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2f490758
     m_timestamp_ = 0;
-    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44f75083
+    // m_timestamp_sample_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@101df177
     m_timestamp_sample_ = 0;
-    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2698dc7
+    // m_device_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@166fa74d
     m_device_id_ = 0;
-    // m_pixel_flow com.eprosima.idl.parser.typecode.AliasTypeCode@43d7741f
+    // m_pixel_flow com.eprosima.idl.parser.typecode.AliasTypeCode@40f08448
     memset(&m_pixel_flow, 0, (2) * 4);
-    // m_delta_angle com.eprosima.idl.parser.typecode.AliasTypeCode@17baae6e
+    // m_delta_angle com.eprosima.idl.parser.typecode.AliasTypeCode@276438c9
     memset(&m_delta_angle, 0, (3) * 4);
-    // m_delta_angle_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@69379752
+    // m_delta_angle_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@588df31b
     m_delta_angle_available_ = false;
-    // m_distance_m_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@27fe3806
+    // m_distance_m_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@33b37288
     m_distance_m_ = 0.0;
-    // m_distance_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5f71c76a
+    // m_distance_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77a57272
     m_distance_available_ = false;
-    // m_integration_timespan_us_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d7acb34
+    // m_integration_timespan_us_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7181ae3f
     m_integration_timespan_us_ = 0;
-    // m_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48a242ce
+    // m_quality_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@46238e3f
     m_quality_ = 0;
-    // m_error_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e4a7dd4
+    // m_error_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6e2c9341
     m_error_count_ = 0;
-    // m_max_flow_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4f51b3e0
+    // m_max_flow_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@32464a14
     m_max_flow_rate_ = 0.0;
-    // m_min_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4b9e255
+    // m_min_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4e4aea35
     m_min_ground_distance_ = 0.0;
-    // m_max_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e57643e
+    // m_max_ground_distance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1442d7b5
     m_max_ground_distance_ = 0.0;
-    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@133e16fd
+    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1efee8e7
     m_mode_ = 0;
 
 }

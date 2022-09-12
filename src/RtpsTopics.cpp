@@ -147,7 +147,25 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_trajectory_setpoint_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_attitude_setpoint_sub.init(15, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+		std::cout << "- vehicle_attitude_setpoint subscriber started" << std::endl;
+
+	} else {
+		std::cerr << "Failed starting vehicle_attitude_setpoint subscriber" << std::endl;
+		return false;
+	}
+
+
+	if (_vehicle_rates_setpoint_sub.init(16, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+		std::cout << "- vehicle_rates_setpoint subscriber started" << std::endl;
+
+	} else {
+		std::cerr << "Failed starting vehicle_rates_setpoint subscriber" << std::endl;
+		return false;
+	}
+
+
+	if (_trajectory_setpoint_sub.init(17, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- trajectory_setpoint subscriber started" << std::endl;
 
 	} else {
@@ -156,7 +174,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_trajectory_waypoint_sub.init(20, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_trajectory_waypoint_sub.init(22, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_trajectory_waypoint subscriber started" << std::endl;
 
 	} else {
@@ -165,7 +183,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_onboard_computer_status_sub.init(23, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_onboard_computer_status_sub.init(25, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- onboard_computer_status subscriber started" << std::endl;
 
 	} else {
@@ -174,7 +192,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_trajectory_bezier_sub.init(24, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_trajectory_bezier_sub.init(26, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- trajectory_bezier subscriber started" << std::endl;
 
 	} else {
@@ -183,7 +201,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_trajectory_bezier_sub.init(25, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_trajectory_bezier_sub.init(27, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_trajectory_bezier subscriber started" << std::endl;
 
 	} else {
@@ -192,7 +210,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_mocap_odometry_sub.init(17, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_mocap_odometry_sub.init(19, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_mocap_odometry subscriber started" << std::endl;
 
 	} else {
@@ -201,7 +219,7 @@ bool RtpsTopics::init(std::condition_variable *t_send_queue_cv, std::mutex *t_se
 	}
 
 
-	if (_vehicle_visual_odometry_sub.init(18, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
+	if (_vehicle_visual_odometry_sub.init(20, t_send_queue_cv, t_send_queue_mutex, t_send_queue, ns)) {
 		std::cout << "- vehicle_visual_odometry subscriber started" << std::endl;
 
 	} else {
@@ -356,7 +374,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 16: { // vehicle_odometry publisher
+	case 18: { // vehicle_odometry publisher
 		vehicle_odometry_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -369,7 +387,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 19: { // vehicle_status publisher
+	case 21: { // vehicle_status publisher
 		vehicle_status_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -382,7 +400,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 22: { // collision_constraints publisher
+	case 24: { // collision_constraints publisher
 		collision_constraints_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -395,7 +413,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 26: { // timesync_status publisher
+	case 28: { // timesync_status publisher
 		timesync_status_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -408,7 +426,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 27: { // sensor_combined publisher
+	case 29: { // sensor_combined publisher
 		sensor_combined_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -421,7 +439,7 @@ void RtpsTopics::publish(const uint8_t topic_ID, char data_buffer[], size_t len)
 	}
 	break;
 
-	case 21: { // vehicle_trajectory_waypoint_desired publisher
+	case 23: { // vehicle_trajectory_waypoint_desired publisher
 		vehicle_trajectory_waypoint_desired_msg_t st;
 		eprosima::fastcdr::FastBuffer cdrbuffer(data_buffer, len);
 		eprosima::fastcdr::Cdr cdr_des(cdrbuffer);
@@ -636,7 +654,37 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 15: // trajectory_setpoint subscriber
+	case 15: // vehicle_attitude_setpoint subscriber
+		if (_vehicle_attitude_setpoint_sub.hasMsg()) {
+			vehicle_attitude_setpoint_msg_t msg = _vehicle_attitude_setpoint_sub.getMsg();
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
+			_vehicle_attitude_setpoint_sub.unlockMsg();
+		}
+
+		break;
+
+	case 16: // vehicle_rates_setpoint subscriber
+		if (_vehicle_rates_setpoint_sub.hasMsg()) {
+			vehicle_rates_setpoint_msg_t msg = _vehicle_rates_setpoint_sub.getMsg();
+
+			// apply timestamp offset
+			sync_timestamp_of_outgoing_data(msg);
+
+			msg.serialize(scdr);
+			ret = true;
+
+			_vehicle_rates_setpoint_sub.unlockMsg();
+		}
+
+		break;
+
+	case 17: // trajectory_setpoint subscriber
 		if (_trajectory_setpoint_sub.hasMsg()) {
 			trajectory_setpoint_msg_t msg = _trajectory_setpoint_sub.getMsg();
 
@@ -651,7 +699,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 20: // vehicle_trajectory_waypoint subscriber
+	case 22: // vehicle_trajectory_waypoint subscriber
 		if (_vehicle_trajectory_waypoint_sub.hasMsg()) {
 			vehicle_trajectory_waypoint_msg_t msg = _vehicle_trajectory_waypoint_sub.getMsg();
 
@@ -666,7 +714,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 23: // onboard_computer_status subscriber
+	case 25: // onboard_computer_status subscriber
 		if (_onboard_computer_status_sub.hasMsg()) {
 			onboard_computer_status_msg_t msg = _onboard_computer_status_sub.getMsg();
 
@@ -681,7 +729,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 24: // trajectory_bezier subscriber
+	case 26: // trajectory_bezier subscriber
 		if (_trajectory_bezier_sub.hasMsg()) {
 			trajectory_bezier_msg_t msg = _trajectory_bezier_sub.getMsg();
 
@@ -696,7 +744,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 25: // vehicle_trajectory_bezier subscriber
+	case 27: // vehicle_trajectory_bezier subscriber
 		if (_vehicle_trajectory_bezier_sub.hasMsg()) {
 			vehicle_trajectory_bezier_msg_t msg = _vehicle_trajectory_bezier_sub.getMsg();
 
@@ -711,7 +759,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 17: // vehicle_mocap_odometry subscriber
+	case 19: // vehicle_mocap_odometry subscriber
 		if (_vehicle_mocap_odometry_sub.hasMsg()) {
 			vehicle_mocap_odometry_msg_t msg = _vehicle_mocap_odometry_sub.getMsg();
 
@@ -726,7 +774,7 @@ bool RtpsTopics::getMsg(const uint8_t topic_ID, eprosima::fastcdr::Cdr &scdr)
 
 		break;
 
-	case 18: // vehicle_visual_odometry subscriber
+	case 20: // vehicle_visual_odometry subscriber
 		if (_vehicle_visual_odometry_sub.hasMsg()) {
 			vehicle_visual_odometry_msg_t msg = _vehicle_visual_odometry_sub.getMsg();
 
