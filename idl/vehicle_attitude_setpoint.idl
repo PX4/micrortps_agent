@@ -1,0 +1,35 @@
+
+#ifndef __vehicle_attitude_setpoint__idl__
+#define __vehicle_attitude_setpoint__idl__
+
+
+
+const octet vehicle_attitude_setpoint__FLAPS_OFF = 0;
+const octet vehicle_attitude_setpoint__FLAPS_LAND = 1;
+const octet vehicle_attitude_setpoint__FLAPS_TAKEOFF = 2;
+const octet vehicle_attitude_setpoint__SPOILERS_OFF = 0;
+const octet vehicle_attitude_setpoint__SPOILERS_LAND = 1;
+const octet vehicle_attitude_setpoint__SPOILERS_DESCEND = 2;
+
+typedef float vehicle_attitude_setpoint__float_array_3[3];
+typedef float vehicle_attitude_setpoint__float_array_4[4];
+
+struct vehicle_attitude_setpoint
+{
+    unsigned long long timestamp_;
+    float roll_body_;
+    float pitch_body_;
+    float yaw_body_;
+    float yaw_sp_move_rate_;
+    vehicle_attitude_setpoint__float_array_4 q_d;
+    vehicle_attitude_setpoint__float_array_3 thrust_body;
+    boolean reset_rate_integrals_;
+    boolean fw_control_yaw_;
+    octet apply_flaps_;
+    octet apply_spoilers_;
+
+}; // struct vehicle_attitude_setpoint
+
+#pragma keylist vehicle_attitude_setpoint
+
+#endif  // __vehicle_attitude_setpoint__idl__

@@ -1,0 +1,22 @@
+
+#ifndef __vehicle_rates_setpoint__idl__
+#define __vehicle_rates_setpoint__idl__
+
+
+
+
+typedef float vehicle_rates_setpoint__float_array_3[3];
+
+struct vehicle_rates_setpoint
+{
+    unsigned long long timestamp_;
+    float roll_;
+    float pitch_;
+    float yaw_;
+    vehicle_rates_setpoint__float_array_3 thrust_body;
+
+}; // struct vehicle_rates_setpoint
+
+#pragma keylist vehicle_rates_setpoint
+
+#endif  // __vehicle_rates_setpoint__idl__
