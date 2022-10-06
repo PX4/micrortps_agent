@@ -35,15 +35,15 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_rates_setpoint::vehicle_rates_setpoint()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1677d1
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48fa0f47
     m_timestamp_ = 0;
-    // m_roll_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48fa0f47
+    // m_roll_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ac13091
     m_roll_ = 0.0;
-    // m_pitch_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ac13091
+    // m_pitch_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e316c74
     m_pitch_ = 0.0;
-    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e316c74
+    // m_yaw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6d2a209c
     m_yaw_ = 0.0;
-    // m_thrust_body com.eprosima.idl.parser.typecode.AliasTypeCode@6d2a209c
+    // m_thrust_body com.eprosima.idl.parser.typecode.AliasTypeCode@75329a49
     memset(&m_thrust_body, 0, (3) * 4);
 
 }

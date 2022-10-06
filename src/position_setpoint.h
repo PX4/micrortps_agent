@@ -70,7 +70,6 @@ const uint8_t position_setpoint__SETPOINT_TYPE_LOITER = 2;
 const uint8_t position_setpoint__SETPOINT_TYPE_TAKEOFF = 3;
 const uint8_t position_setpoint__SETPOINT_TYPE_LAND = 4;
 const uint8_t position_setpoint__SETPOINT_TYPE_IDLE = 5;
-const uint8_t position_setpoint__SETPOINT_TYPE_FOLLOW_TARGET = 6;
 const uint8_t position_setpoint__VELOCITY_FRAME_LOCAL_NED = 1;
 const uint8_t position_setpoint__VELOCITY_FRAME_BODY_NED = 8;
 /*!
@@ -404,24 +403,6 @@ public:
     eProsima_user_DllExport bool& yawspeed_valid_();
 
     /*!
-     * @brief This function sets a value in member landing_gear_
-     * @param _landing_gear_ New value for member landing_gear_
-     */
-    eProsima_user_DllExport void landing_gear_(uint8_t _landing_gear_);
-
-    /*!
-     * @brief This function returns the value of member landing_gear_
-     * @return Value of member landing_gear_
-     */
-    eProsima_user_DllExport uint8_t landing_gear_() const;
-
-    /*!
-     * @brief This function returns a reference to member landing_gear_
-     * @return Reference to member landing_gear_
-     */
-    eProsima_user_DllExport uint8_t& landing_gear_();
-
-    /*!
      * @brief This function sets a value in member loiter_radius_
      * @param _loiter_radius_ New value for member loiter_radius_
      */
@@ -440,22 +421,22 @@ public:
     eProsima_user_DllExport float& loiter_radius_();
 
     /*!
-     * @brief This function sets a value in member loiter_direction_
-     * @param _loiter_direction_ New value for member loiter_direction_
+     * @brief This function sets a value in member loiter_direction_counter_clockwise_
+     * @param _loiter_direction_counter_clockwise_ New value for member loiter_direction_counter_clockwise_
      */
-    eProsima_user_DllExport void loiter_direction_(uint8_t _loiter_direction_);
+    eProsima_user_DllExport void loiter_direction_counter_clockwise_(bool _loiter_direction_counter_clockwise_);
 
     /*!
-     * @brief This function returns the value of member loiter_direction_
-     * @return Value of member loiter_direction_
+     * @brief This function returns the value of member loiter_direction_counter_clockwise_
+     * @return Value of member loiter_direction_counter_clockwise_
      */
-    eProsima_user_DllExport uint8_t loiter_direction_() const;
+    eProsima_user_DllExport bool loiter_direction_counter_clockwise_() const;
 
     /*!
-     * @brief This function returns a reference to member loiter_direction_
-     * @return Reference to member loiter_direction_
+     * @brief This function returns a reference to member loiter_direction_counter_clockwise_
+     * @return Reference to member loiter_direction_counter_clockwise_
      */
-    eProsima_user_DllExport uint8_t& loiter_direction_();
+    eProsima_user_DllExport bool& loiter_direction_counter_clockwise_();
 
     /*!
      * @brief This function sets a value in member acceptance_radius_
@@ -615,9 +596,8 @@ private:
     bool m_yaw_valid_;
     float m_yawspeed_;
     bool m_yawspeed_valid_;
-    uint8_t m_landing_gear_;
     float m_loiter_radius_;
-    uint8_t m_loiter_direction_;
+    bool m_loiter_direction_counter_clockwise_;
     float m_acceptance_radius_;
     float m_cruising_speed_;
     bool m_gliding_enabled_;

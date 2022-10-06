@@ -40,87 +40,93 @@ using namespace eprosima::fastcdr::exception;
 
 telemetry_status::telemetry_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@40a4337a
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6025e1b6
     m_timestamp_ = 0;
-    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6025e1b6
+    // m_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22ff4249
     m_type_ = 0;
-    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22ff4249
+    // m_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2d1ef81a
     m_mode_ = 0;
-    // m_flow_control_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2d1ef81a
+    // m_flow_control_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c402120
     m_flow_control_ = false;
-    // m_forwarding_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c402120
+    // m_forwarding_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@327514f
     m_forwarding_ = false;
-    // m_mavlink_v2_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@327514f
+    // m_mavlink_v2_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b12b668
     m_mavlink_v2_ = false;
-    // m_ftp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5b12b668
+    // m_ftp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1165b38
     m_ftp_ = false;
-    // m_streams_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1165b38
+    // m_streams_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c12331b
     m_streams_ = 0;
-    // m_data_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c12331b
+    // m_data_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7586beff
     m_data_rate_ = 0.0;
-    // m_rate_multiplier_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7586beff
+    // m_rate_multiplier_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b69e7d1
     m_rate_multiplier_ = 0.0;
-    // m_tx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b69e7d1
+    // m_tx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@815b41f
     m_tx_rate_avg_ = 0.0;
-    // m_tx_error_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@815b41f
+    // m_tx_error_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5542c4ed
     m_tx_error_rate_avg_ = 0.0;
-    // m_tx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5542c4ed
+    // m_tx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1573f9fc
     m_tx_message_count_ = 0;
-    // m_tx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1573f9fc
+    // m_tx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6150c3ec
     m_tx_buffer_overruns_ = 0;
-    // m_rx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6150c3ec
+    // m_rx_rate_avg_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c03695
     m_rx_rate_avg_ = 0.0;
-    // m_rx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44c03695
+    // m_rx_message_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e6f74c
     m_rx_message_count_ = 0;
-    // m_rx_message_lost_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e6f74c
+    // m_rx_message_lost_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd05255
     m_rx_message_lost_count_ = 0;
-    // m_rx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd05255
+    // m_rx_buffer_overruns_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a78afa0
     m_rx_buffer_overruns_ = 0;
-    // m_rx_parse_errors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6a78afa0
+    // m_rx_parse_errors_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2f4948e4
     m_rx_parse_errors_ = 0;
-    // m_rx_packet_drop_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2f4948e4
+    // m_rx_packet_drop_count_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f2586d6
     m_rx_packet_drop_count_ = 0;
-    // m_rx_message_lost_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f2586d6
+    // m_rx_message_lost_rate_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10683d9d
     m_rx_message_lost_rate_ = 0.0;
-    // m_heartbeat_type_antenna_tracker_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10683d9d
+    // m_heartbeat_type_antenna_tracker_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3fc2959f
     m_heartbeat_type_antenna_tracker_ = false;
-    // m_heartbeat_type_gcs_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3fc2959f
+    // m_heartbeat_type_gcs_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5aa9e4eb
     m_heartbeat_type_gcs_ = false;
-    // m_heartbeat_type_onboard_controller_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5aa9e4eb
+    // m_heartbeat_type_onboard_controller_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6989da5e
     m_heartbeat_type_onboard_controller_ = false;
-    // m_heartbeat_type_gimbal_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6989da5e
+    // m_heartbeat_type_gimbal_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@385c9627
     m_heartbeat_type_gimbal_ = false;
-    // m_heartbeat_type_adsb_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@385c9627
+    // m_heartbeat_type_adsb_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@139982de
     m_heartbeat_type_adsb_ = false;
-    // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@139982de
+    // m_heartbeat_type_camera_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@682b2fa
     m_heartbeat_type_camera_ = false;
-    // m_heartbeat_type_parachute_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@682b2fa
+    // m_heartbeat_type_parachute_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@217ed35e
     m_heartbeat_type_parachute_ = false;
-    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@217ed35e
+    // m_heartbeat_type_open_drone_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7dcf94f8
+    m_heartbeat_type_open_drone_id_ = false;
+    // m_heartbeat_component_telemetry_radio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@229f66ed
     m_heartbeat_component_telemetry_radio_ = false;
-    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7dcf94f8
+    // m_heartbeat_component_log_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@31190526
     m_heartbeat_component_log_ = false;
-    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@229f66ed
+    // m_heartbeat_component_osd_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@662ac478
     m_heartbeat_component_osd_ = false;
-    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@31190526
+    // m_heartbeat_component_obstacle_avoidance_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6743e411
     m_heartbeat_component_obstacle_avoidance_ = false;
-    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@662ac478
+    // m_heartbeat_component_vio_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3eb25e1a
     m_heartbeat_component_vio_ = false;
-    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6743e411
+    // m_heartbeat_component_pairing_manager_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@477b4cdf
     m_heartbeat_component_pairing_manager_ = false;
-    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3eb25e1a
+    // m_heartbeat_component_udp_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77c2494c
     m_heartbeat_component_udp_bridge_ = false;
-    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@477b4cdf
+    // m_heartbeat_component_uart_bridge_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f5958c9
     m_heartbeat_component_uart_bridge_ = false;
-    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77c2494c
+    // m_avoidance_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@233795b6
     m_avoidance_system_healthy_ = false;
-    // m_parachute_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f5958c9
+    // m_open_drone_id_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3eb738bb
+    m_open_drone_id_system_healthy_ = false;
+    // m_parachute_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bda8e08
     m_parachute_system_healthy_ = false;
 
 }
 
 telemetry_status::~telemetry_status()
 {
+
+
 
 
 
@@ -191,6 +197,7 @@ telemetry_status::telemetry_status(const telemetry_status &x)
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
     m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
+    m_heartbeat_type_open_drone_id_ = x.m_heartbeat_type_open_drone_id_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -200,6 +207,7 @@ telemetry_status::telemetry_status(const telemetry_status &x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 }
 
@@ -233,6 +241,7 @@ telemetry_status::telemetry_status(telemetry_status &&x)
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
     m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
+    m_heartbeat_type_open_drone_id_ = x.m_heartbeat_type_open_drone_id_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -242,6 +251,7 @@ telemetry_status::telemetry_status(telemetry_status &&x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 }
 
@@ -276,6 +286,7 @@ telemetry_status& telemetry_status::operator=(const telemetry_status &x)
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
     m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
+    m_heartbeat_type_open_drone_id_ = x.m_heartbeat_type_open_drone_id_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -285,6 +296,7 @@ telemetry_status& telemetry_status::operator=(const telemetry_status &x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 
     return *this;
@@ -321,6 +333,7 @@ telemetry_status& telemetry_status::operator=(telemetry_status &&x)
     m_heartbeat_type_adsb_ = x.m_heartbeat_type_adsb_;
     m_heartbeat_type_camera_ = x.m_heartbeat_type_camera_;
     m_heartbeat_type_parachute_ = x.m_heartbeat_type_parachute_;
+    m_heartbeat_type_open_drone_id_ = x.m_heartbeat_type_open_drone_id_;
     m_heartbeat_component_telemetry_radio_ = x.m_heartbeat_component_telemetry_radio_;
     m_heartbeat_component_log_ = x.m_heartbeat_component_log_;
     m_heartbeat_component_osd_ = x.m_heartbeat_component_osd_;
@@ -330,6 +343,7 @@ telemetry_status& telemetry_status::operator=(telemetry_status &&x)
     m_heartbeat_component_udp_bridge_ = x.m_heartbeat_component_udp_bridge_;
     m_heartbeat_component_uart_bridge_ = x.m_heartbeat_component_uart_bridge_;
     m_avoidance_system_healthy_ = x.m_avoidance_system_healthy_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
 
     return *this;
@@ -401,6 +415,12 @@ size_t telemetry_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -578,6 +598,12 @@ size_t telemetry_status::getCdrSerializedSize(const telemetry_status& data, size
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -613,6 +639,7 @@ void telemetry_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_heartbeat_type_adsb_;
     scdr << m_heartbeat_type_camera_;
     scdr << m_heartbeat_type_parachute_;
+    scdr << m_heartbeat_type_open_drone_id_;
     scdr << m_heartbeat_component_telemetry_radio_;
     scdr << m_heartbeat_component_log_;
     scdr << m_heartbeat_component_osd_;
@@ -622,6 +649,7 @@ void telemetry_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_heartbeat_component_udp_bridge_;
     scdr << m_heartbeat_component_uart_bridge_;
     scdr << m_avoidance_system_healthy_;
+    scdr << m_open_drone_id_system_healthy_;
     scdr << m_parachute_system_healthy_;
 }
 
@@ -656,6 +684,7 @@ void telemetry_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_heartbeat_type_adsb_;
     dcdr >> m_heartbeat_type_camera_;
     dcdr >> m_heartbeat_type_parachute_;
+    dcdr >> m_heartbeat_type_open_drone_id_;
     dcdr >> m_heartbeat_component_telemetry_radio_;
     dcdr >> m_heartbeat_component_log_;
     dcdr >> m_heartbeat_component_osd_;
@@ -665,6 +694,7 @@ void telemetry_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_heartbeat_component_udp_bridge_;
     dcdr >> m_heartbeat_component_uart_bridge_;
     dcdr >> m_avoidance_system_healthy_;
+    dcdr >> m_open_drone_id_system_healthy_;
     dcdr >> m_parachute_system_healthy_;
 }
 
@@ -1425,6 +1455,33 @@ bool& telemetry_status::heartbeat_type_parachute_()
 }
 
 /*!
+ * @brief This function sets a value in member heartbeat_type_open_drone_id_
+ * @param _heartbeat_type_open_drone_id_ New value for member heartbeat_type_open_drone_id_
+ */
+void telemetry_status::heartbeat_type_open_drone_id_(bool _heartbeat_type_open_drone_id_)
+{
+m_heartbeat_type_open_drone_id_ = _heartbeat_type_open_drone_id_;
+}
+
+/*!
+ * @brief This function returns the value of member heartbeat_type_open_drone_id_
+ * @return Value of member heartbeat_type_open_drone_id_
+ */
+bool telemetry_status::heartbeat_type_open_drone_id_() const
+{
+    return m_heartbeat_type_open_drone_id_;
+}
+
+/*!
+ * @brief This function returns a reference to member heartbeat_type_open_drone_id_
+ * @return Reference to member heartbeat_type_open_drone_id_
+ */
+bool& telemetry_status::heartbeat_type_open_drone_id_()
+{
+    return m_heartbeat_type_open_drone_id_;
+}
+
+/*!
  * @brief This function sets a value in member heartbeat_component_telemetry_radio_
  * @param _heartbeat_component_telemetry_radio_ New value for member heartbeat_component_telemetry_radio_
  */
@@ -1668,6 +1725,33 @@ bool& telemetry_status::avoidance_system_healthy_()
 }
 
 /*!
+ * @brief This function sets a value in member open_drone_id_system_healthy_
+ * @param _open_drone_id_system_healthy_ New value for member open_drone_id_system_healthy_
+ */
+void telemetry_status::open_drone_id_system_healthy_(bool _open_drone_id_system_healthy_)
+{
+m_open_drone_id_system_healthy_ = _open_drone_id_system_healthy_;
+}
+
+/*!
+ * @brief This function returns the value of member open_drone_id_system_healthy_
+ * @return Value of member open_drone_id_system_healthy_
+ */
+bool telemetry_status::open_drone_id_system_healthy_() const
+{
+    return m_open_drone_id_system_healthy_;
+}
+
+/*!
+ * @brief This function returns a reference to member open_drone_id_system_healthy_
+ * @return Reference to member open_drone_id_system_healthy_
+ */
+bool& telemetry_status::open_drone_id_system_healthy_()
+{
+    return m_open_drone_id_system_healthy_;
+}
+
+/*!
  * @brief This function sets a value in member parachute_system_healthy_
  * @param _parachute_system_healthy_ New value for member parachute_system_healthy_
  */
@@ -1739,6 +1823,8 @@ size_t telemetry_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
+
+
     return current_align;
 }
 
@@ -1750,6 +1836,8 @@ bool telemetry_status::isKeyDefined()
 void telemetry_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
+     
      
      
      

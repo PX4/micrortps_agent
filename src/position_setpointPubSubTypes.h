@@ -40,7 +40,6 @@
 
 
 
-
 /*!
  * @brief This class represents the TopicDataType of the type position_setpoint defined by the user in the IDL file.
  * @ingroup POSITION_SETPOINT

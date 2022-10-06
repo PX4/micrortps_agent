@@ -40,7 +40,6 @@ using namespace eprosima::fastcdr::exception;
 
 
 
-
 position_setpoint::position_setpoint()
 {
     // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@59717824
@@ -75,28 +74,25 @@ position_setpoint::position_setpoint()
     m_yawspeed_ = 0.0;
     // m_yawspeed_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd3b207
     m_yawspeed_valid_ = false;
-    // m_landing_gear_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551bdc27
-    m_landing_gear_ = 0;
-    // m_loiter_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58fdd99
+    // m_loiter_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551bdc27
     m_loiter_radius_ = 0.0;
-    // m_loiter_direction_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b1274d2
-    m_loiter_direction_ = 0;
-    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7bc1a03d
+    // m_loiter_direction_counter_clockwise_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58fdd99
+    m_loiter_direction_counter_clockwise_ = false;
+    // m_acceptance_radius_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b1274d2
     m_acceptance_radius_ = 0.0;
-    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@70b0b186
+    // m_cruising_speed_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7bc1a03d
     m_cruising_speed_ = 0.0;
-    // m_gliding_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@ba8d91c
+    // m_gliding_enabled_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@70b0b186
     m_gliding_enabled_ = false;
-    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7364985f
+    // m_cruising_throttle_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@ba8d91c
     m_cruising_throttle_ = 0.0;
-    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5d20e46
+    // m_disable_weather_vane_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7364985f
     m_disable_weather_vane_ = false;
 
 }
 
 position_setpoint::~position_setpoint()
 {
-
 
 
 
@@ -140,9 +136,8 @@ position_setpoint::position_setpoint(const position_setpoint &x)
     m_yaw_valid_ = x.m_yaw_valid_;
     m_yawspeed_ = x.m_yawspeed_;
     m_yawspeed_valid_ = x.m_yawspeed_valid_;
-    m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
-    m_loiter_direction_ = x.m_loiter_direction_;
+    m_loiter_direction_counter_clockwise_ = x.m_loiter_direction_counter_clockwise_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_gliding_enabled_ = x.m_gliding_enabled_;
@@ -168,9 +163,8 @@ position_setpoint::position_setpoint(position_setpoint &&x)
     m_yaw_valid_ = x.m_yaw_valid_;
     m_yawspeed_ = x.m_yawspeed_;
     m_yawspeed_valid_ = x.m_yawspeed_valid_;
-    m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
-    m_loiter_direction_ = x.m_loiter_direction_;
+    m_loiter_direction_counter_clockwise_ = x.m_loiter_direction_counter_clockwise_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_gliding_enabled_ = x.m_gliding_enabled_;
@@ -197,9 +191,8 @@ position_setpoint& position_setpoint::operator=(const position_setpoint &x)
     m_yaw_valid_ = x.m_yaw_valid_;
     m_yawspeed_ = x.m_yawspeed_;
     m_yawspeed_valid_ = x.m_yawspeed_valid_;
-    m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
-    m_loiter_direction_ = x.m_loiter_direction_;
+    m_loiter_direction_counter_clockwise_ = x.m_loiter_direction_counter_clockwise_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_gliding_enabled_ = x.m_gliding_enabled_;
@@ -228,9 +221,8 @@ position_setpoint& position_setpoint::operator=(position_setpoint &&x)
     m_yaw_valid_ = x.m_yaw_valid_;
     m_yawspeed_ = x.m_yawspeed_;
     m_yawspeed_valid_ = x.m_yawspeed_valid_;
-    m_landing_gear_ = x.m_landing_gear_;
     m_loiter_radius_ = x.m_loiter_radius_;
-    m_loiter_direction_ = x.m_loiter_direction_;
+    m_loiter_direction_counter_clockwise_ = x.m_loiter_direction_counter_clockwise_;
     m_acceptance_radius_ = x.m_acceptance_radius_;
     m_cruising_speed_ = x.m_cruising_speed_;
     m_gliding_enabled_ = x.m_gliding_enabled_;
@@ -288,9 +280,6 @@ size_t position_setpoint::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -375,9 +364,6 @@ size_t position_setpoint::getCdrSerializedSize(const position_setpoint& data, si
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -422,9 +408,8 @@ void position_setpoint::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_yaw_valid_;
     scdr << m_yawspeed_;
     scdr << m_yawspeed_valid_;
-    scdr << m_landing_gear_;
     scdr << m_loiter_radius_;
-    scdr << m_loiter_direction_;
+    scdr << m_loiter_direction_counter_clockwise_;
     scdr << m_acceptance_radius_;
     scdr << m_cruising_speed_;
     scdr << m_gliding_enabled_;
@@ -451,9 +436,8 @@ void position_setpoint::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_yaw_valid_;
     dcdr >> m_yawspeed_;
     dcdr >> m_yawspeed_valid_;
-    dcdr >> m_landing_gear_;
     dcdr >> m_loiter_radius_;
-    dcdr >> m_loiter_direction_;
+    dcdr >> m_loiter_direction_counter_clockwise_;
     dcdr >> m_acceptance_radius_;
     dcdr >> m_cruising_speed_;
     dcdr >> m_gliding_enabled_;
@@ -894,33 +878,6 @@ bool& position_setpoint::yawspeed_valid_()
 }
 
 /*!
- * @brief This function sets a value in member landing_gear_
- * @param _landing_gear_ New value for member landing_gear_
- */
-void position_setpoint::landing_gear_(uint8_t _landing_gear_)
-{
-m_landing_gear_ = _landing_gear_;
-}
-
-/*!
- * @brief This function returns the value of member landing_gear_
- * @return Value of member landing_gear_
- */
-uint8_t position_setpoint::landing_gear_() const
-{
-    return m_landing_gear_;
-}
-
-/*!
- * @brief This function returns a reference to member landing_gear_
- * @return Reference to member landing_gear_
- */
-uint8_t& position_setpoint::landing_gear_()
-{
-    return m_landing_gear_;
-}
-
-/*!
  * @brief This function sets a value in member loiter_radius_
  * @param _loiter_radius_ New value for member loiter_radius_
  */
@@ -948,30 +905,30 @@ float& position_setpoint::loiter_radius_()
 }
 
 /*!
- * @brief This function sets a value in member loiter_direction_
- * @param _loiter_direction_ New value for member loiter_direction_
+ * @brief This function sets a value in member loiter_direction_counter_clockwise_
+ * @param _loiter_direction_counter_clockwise_ New value for member loiter_direction_counter_clockwise_
  */
-void position_setpoint::loiter_direction_(uint8_t _loiter_direction_)
+void position_setpoint::loiter_direction_counter_clockwise_(bool _loiter_direction_counter_clockwise_)
 {
-m_loiter_direction_ = _loiter_direction_;
+m_loiter_direction_counter_clockwise_ = _loiter_direction_counter_clockwise_;
 }
 
 /*!
- * @brief This function returns the value of member loiter_direction_
- * @return Value of member loiter_direction_
+ * @brief This function returns the value of member loiter_direction_counter_clockwise_
+ * @return Value of member loiter_direction_counter_clockwise_
  */
-uint8_t position_setpoint::loiter_direction_() const
+bool position_setpoint::loiter_direction_counter_clockwise_() const
 {
-    return m_loiter_direction_;
+    return m_loiter_direction_counter_clockwise_;
 }
 
 /*!
- * @brief This function returns a reference to member loiter_direction_
- * @return Reference to member loiter_direction_
+ * @brief This function returns a reference to member loiter_direction_counter_clockwise_
+ * @return Reference to member loiter_direction_counter_clockwise_
  */
-uint8_t& position_setpoint::loiter_direction_()
+bool& position_setpoint::loiter_direction_counter_clockwise_()
 {
-    return m_loiter_direction_;
+    return m_loiter_direction_counter_clockwise_;
 }
 
 /*!
@@ -1139,7 +1096,6 @@ size_t position_setpoint::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
-
     return current_align;
 }
 
@@ -1151,7 +1107,6 @@ bool position_setpoint::isKeyDefined()
 void position_setpoint::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
-     
      
      
      

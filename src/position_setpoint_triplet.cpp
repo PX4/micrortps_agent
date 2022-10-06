@@ -40,16 +40,15 @@ using namespace eprosima::fastcdr::exception;
 
 
 
-
 position_setpoint_triplet::position_setpoint_triplet()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@75f9eccc
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@525f1e4e
     m_timestamp_ = 0;
-    // m_previous_ com.eprosima.fastrtps.idl.parser.typecode.StructTypeCode@52aa2946
+    // m_previous_ com.eprosima.fastrtps.idl.parser.typecode.StructTypeCode@75f9eccc
 
-    // m_current_ com.eprosima.fastrtps.idl.parser.typecode.StructTypeCode@52aa2946
+    // m_current_ com.eprosima.fastrtps.idl.parser.typecode.StructTypeCode@75f9eccc
 
-    // m_next_ com.eprosima.fastrtps.idl.parser.typecode.StructTypeCode@52aa2946
+    // m_next_ com.eprosima.fastrtps.idl.parser.typecode.StructTypeCode@75f9eccc
 
 
 }

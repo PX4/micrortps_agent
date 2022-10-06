@@ -10,7 +10,6 @@ const octet position_setpoint__SETPOINT_TYPE_LOITER = 2;
 const octet position_setpoint__SETPOINT_TYPE_TAKEOFF = 3;
 const octet position_setpoint__SETPOINT_TYPE_LAND = 4;
 const octet position_setpoint__SETPOINT_TYPE_IDLE = 5;
-const octet position_setpoint__SETPOINT_TYPE_FOLLOW_TARGET = 6;
 const octet position_setpoint__VELOCITY_FRAME_LOCAL_NED = 1;
 const octet position_setpoint__VELOCITY_FRAME_BODY_NED = 8;
 
@@ -33,9 +32,8 @@ struct position_setpoint
     boolean yaw_valid_;
     float yawspeed_;
     boolean yawspeed_valid_;
-    octet landing_gear_;
     float loiter_radius_;
-    octet loiter_direction_;
+    boolean loiter_direction_counter_clockwise_;
     float acceptance_radius_;
     float cruising_speed_;
     boolean gliding_enabled_;

@@ -98,6 +98,8 @@ struct vehicle_status
     boolean auto_mission_available_;
     boolean power_input_valid_;
     boolean usb_connected_;
+    boolean open_drone_id_system_present_;
+    boolean open_drone_id_system_healthy_;
     boolean parachute_system_present_;
     boolean parachute_system_healthy_;
     boolean avoidance_system_required_;

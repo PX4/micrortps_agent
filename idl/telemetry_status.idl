@@ -42,6 +42,7 @@ struct telemetry_status
     boolean heartbeat_type_adsb_;
     boolean heartbeat_type_camera_;
     boolean heartbeat_type_parachute_;
+    boolean heartbeat_type_open_drone_id_;
     boolean heartbeat_component_telemetry_radio_;
     boolean heartbeat_component_log_;
     boolean heartbeat_component_osd_;
@@ -51,6 +52,7 @@ struct telemetry_status
     boolean heartbeat_component_udp_bridge_;
     boolean heartbeat_component_uart_bridge_;
     boolean avoidance_system_healthy_;
+    boolean open_drone_id_system_healthy_;
     boolean parachute_system_healthy_;
 
 }; // struct telemetry_status

@@ -36,7 +36,6 @@ using namespace eprosima::fastrtps::rtps;
 
 
 
-
 position_setpointPubSubType::position_setpointPubSubType()
 {
     setName("position_setpoint");

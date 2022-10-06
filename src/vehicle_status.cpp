@@ -93,81 +93,87 @@ using namespace eprosima::fastcdr::exception;
 
 vehicle_status::vehicle_status()
 {
-    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f8c1ddd
+    // m_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fc2413d
     m_timestamp_ = 0;
-    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@70be0a2b
+    // m_armed_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@f8c1ddd
     m_armed_time_ = 0;
-    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2133814f
+    // m_takeoff_time_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@70be0a2b
     m_takeoff_time_ = 0;
-    // m_arming_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c15e7fd
+    // m_arming_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2133814f
     m_arming_state_ = 0;
-    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23986957
+    // m_latest_arming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c15e7fd
     m_latest_arming_reason_ = 0;
-    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23f7d05d
+    // m_latest_disarming_reason_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23986957
     m_latest_disarming_reason_ = 0;
-    // m_nav_state_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e730495
+    // m_nav_state_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23f7d05d
     m_nav_state_timestamp_ = 0;
-    // m_nav_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d3a22a9
+    // m_nav_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e730495
     m_nav_state_ = 0;
-    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d082e88
+    // m_failure_detector_status_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d3a22a9
     m_failure_detector_status_ = 0;
-    // m_hil_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60704c
+    // m_hil_state_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1d082e88
     m_hil_state_ = 0;
-    // m_vehicle_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b19b79
+    // m_vehicle_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60704c
     m_vehicle_type_ = 0;
-    // m_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a32de6c
+    // m_failsafe_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b19b79
     m_failsafe_ = false;
-    // m_failsafe_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7692d9cc
+    // m_failsafe_timestamp_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a32de6c
     m_failsafe_timestamp_ = 0;
-    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@75f32542
+    // m_rc_signal_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7692d9cc
     m_rc_signal_lost_ = false;
-    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7f1302d6
+    // m_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@75f32542
     m_data_link_lost_ = false;
-    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@43ee72e6
+    // m_data_link_lost_counter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7f1302d6
     m_data_link_lost_counter_ = 0;
-    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23529fee
+    // m_high_latency_data_link_lost_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@43ee72e6
     m_high_latency_data_link_lost_ = false;
-    // m_is_vtol_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4fe767f3
+    // m_is_vtol_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@23529fee
     m_is_vtol_ = false;
-    // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2805c96b
+    // m_is_vtol_tailsitter_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4fe767f3
     m_is_vtol_tailsitter_ = false;
-    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@184cf7cf
+    // m_in_transition_mode_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2805c96b
     m_in_transition_mode_ = false;
-    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2fd6b6c7
+    // m_in_transition_to_fw_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@184cf7cf
     m_in_transition_to_fw_ = false;
-    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bfa9431
+    // m_mission_failure_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2fd6b6c7
     m_mission_failure_ = false;
-    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5db250b4
+    // m_geofence_violated_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5bfa9431
     m_geofence_violated_ = false;
-    // m_system_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@223f3642
+    // m_system_type_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5db250b4
     m_system_type_ = 0;
-    // m_system_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@38c5cc4c
+    // m_system_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@223f3642
     m_system_id_ = 0;
-    // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37918c79
+    // m_component_id_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@38c5cc4c
     m_component_id_ = 0;
-    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78e94dcf
+    // m_safety_button_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37918c79
     m_safety_button_available_ = false;
-    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@233fe9b6
+    // m_safety_off_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78e94dcf
     m_safety_off_ = false;
-    // m_auto_mission_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@358ee631
+    // m_auto_mission_available_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@233fe9b6
     m_auto_mission_available_ = false;
-    // m_power_input_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@ec756bd
+    // m_power_input_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@358ee631
     m_power_input_valid_ = false;
-    // m_usb_connected_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3c72f59f
+    // m_usb_connected_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@ec756bd
     m_usb_connected_ = false;
-    // m_parachute_system_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60dcc9fe
+    // m_open_drone_id_system_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3c72f59f
+    m_open_drone_id_system_present_ = false;
+    // m_open_drone_id_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60dcc9fe
+    m_open_drone_id_system_healthy_ = false;
+    // m_parachute_system_present_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@222114ba
     m_parachute_system_present_ = false;
-    // m_parachute_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@222114ba
+    // m_parachute_system_healthy_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@16e7dcfd
     m_parachute_system_healthy_ = false;
-    // m_avoidance_system_required_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@16e7dcfd
+    // m_avoidance_system_required_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d121db3
     m_avoidance_system_required_ = false;
-    // m_avoidance_system_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3d121db3
+    // m_avoidance_system_valid_ com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3b07a0d6
     m_avoidance_system_valid_ = false;
 
 }
 
 vehicle_status::~vehicle_status()
 {
+
+
 
 
 
@@ -238,6 +244,8 @@ vehicle_status::vehicle_status(const vehicle_status &x)
     m_auto_mission_available_ = x.m_auto_mission_available_;
     m_power_input_valid_ = x.m_power_input_valid_;
     m_usb_connected_ = x.m_usb_connected_;
+    m_open_drone_id_system_present_ = x.m_open_drone_id_system_present_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_present_ = x.m_parachute_system_present_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
     m_avoidance_system_required_ = x.m_avoidance_system_required_;
@@ -277,6 +285,8 @@ vehicle_status::vehicle_status(vehicle_status &&x)
     m_auto_mission_available_ = x.m_auto_mission_available_;
     m_power_input_valid_ = x.m_power_input_valid_;
     m_usb_connected_ = x.m_usb_connected_;
+    m_open_drone_id_system_present_ = x.m_open_drone_id_system_present_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_present_ = x.m_parachute_system_present_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
     m_avoidance_system_required_ = x.m_avoidance_system_required_;
@@ -317,6 +327,8 @@ vehicle_status& vehicle_status::operator=(const vehicle_status &x)
     m_auto_mission_available_ = x.m_auto_mission_available_;
     m_power_input_valid_ = x.m_power_input_valid_;
     m_usb_connected_ = x.m_usb_connected_;
+    m_open_drone_id_system_present_ = x.m_open_drone_id_system_present_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_present_ = x.m_parachute_system_present_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
     m_avoidance_system_required_ = x.m_avoidance_system_required_;
@@ -359,6 +371,8 @@ vehicle_status& vehicle_status::operator=(vehicle_status &&x)
     m_auto_mission_available_ = x.m_auto_mission_available_;
     m_power_input_valid_ = x.m_power_input_valid_;
     m_usb_connected_ = x.m_usb_connected_;
+    m_open_drone_id_system_present_ = x.m_open_drone_id_system_present_;
+    m_open_drone_id_system_healthy_ = x.m_open_drone_id_system_healthy_;
     m_parachute_system_present_ = x.m_parachute_system_present_;
     m_parachute_system_healthy_ = x.m_parachute_system_healthy_;
     m_avoidance_system_required_ = x.m_avoidance_system_required_;
@@ -409,6 +423,12 @@ size_t vehicle_status::getMaxCdrSerializedSize(size_t current_alignment)
 
 
     current_alignment += 8 + eprosima::fastcdr::Cdr::alignment(current_alignment, 8);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -592,6 +612,12 @@ size_t vehicle_status::getCdrSerializedSize(const vehicle_status& data, size_t c
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -630,6 +656,8 @@ void vehicle_status::serialize(eprosima::fastcdr::Cdr &scdr) const
     scdr << m_auto_mission_available_;
     scdr << m_power_input_valid_;
     scdr << m_usb_connected_;
+    scdr << m_open_drone_id_system_present_;
+    scdr << m_open_drone_id_system_healthy_;
     scdr << m_parachute_system_present_;
     scdr << m_parachute_system_healthy_;
     scdr << m_avoidance_system_required_;
@@ -670,6 +698,8 @@ void vehicle_status::deserialize(eprosima::fastcdr::Cdr &dcdr)
     dcdr >> m_auto_mission_available_;
     dcdr >> m_power_input_valid_;
     dcdr >> m_usb_connected_;
+    dcdr >> m_open_drone_id_system_present_;
+    dcdr >> m_open_drone_id_system_healthy_;
     dcdr >> m_parachute_system_present_;
     dcdr >> m_parachute_system_healthy_;
     dcdr >> m_avoidance_system_required_;
@@ -1514,6 +1544,60 @@ bool& vehicle_status::usb_connected_()
 }
 
 /*!
+ * @brief This function sets a value in member open_drone_id_system_present_
+ * @param _open_drone_id_system_present_ New value for member open_drone_id_system_present_
+ */
+void vehicle_status::open_drone_id_system_present_(bool _open_drone_id_system_present_)
+{
+m_open_drone_id_system_present_ = _open_drone_id_system_present_;
+}
+
+/*!
+ * @brief This function returns the value of member open_drone_id_system_present_
+ * @return Value of member open_drone_id_system_present_
+ */
+bool vehicle_status::open_drone_id_system_present_() const
+{
+    return m_open_drone_id_system_present_;
+}
+
+/*!
+ * @brief This function returns a reference to member open_drone_id_system_present_
+ * @return Reference to member open_drone_id_system_present_
+ */
+bool& vehicle_status::open_drone_id_system_present_()
+{
+    return m_open_drone_id_system_present_;
+}
+
+/*!
+ * @brief This function sets a value in member open_drone_id_system_healthy_
+ * @param _open_drone_id_system_healthy_ New value for member open_drone_id_system_healthy_
+ */
+void vehicle_status::open_drone_id_system_healthy_(bool _open_drone_id_system_healthy_)
+{
+m_open_drone_id_system_healthy_ = _open_drone_id_system_healthy_;
+}
+
+/*!
+ * @brief This function returns the value of member open_drone_id_system_healthy_
+ * @return Value of member open_drone_id_system_healthy_
+ */
+bool vehicle_status::open_drone_id_system_healthy_() const
+{
+    return m_open_drone_id_system_healthy_;
+}
+
+/*!
+ * @brief This function returns a reference to member open_drone_id_system_healthy_
+ * @return Reference to member open_drone_id_system_healthy_
+ */
+bool& vehicle_status::open_drone_id_system_healthy_()
+{
+    return m_open_drone_id_system_healthy_;
+}
+
+/*!
  * @brief This function sets a value in member parachute_system_present_
  * @param _parachute_system_present_ New value for member parachute_system_present_
  */
@@ -1663,6 +1747,8 @@ size_t vehicle_status::getKeyMaxCdrSerializedSize(size_t current_alignment)
 
 
 
+
+
     return current_align;
 }
 
@@ -1674,6 +1760,8 @@ bool vehicle_status::isKeyDefined()
 void vehicle_status::serializeKey(eprosima::fastcdr::Cdr &scdr) const
 {
     (void) scdr;
+     
+     
      
      
      

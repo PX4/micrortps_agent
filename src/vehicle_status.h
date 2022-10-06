@@ -724,6 +724,42 @@ public:
     eProsima_user_DllExport bool& usb_connected_();
 
     /*!
+     * @brief This function sets a value in member open_drone_id_system_present_
+     * @param _open_drone_id_system_present_ New value for member open_drone_id_system_present_
+     */
+    eProsima_user_DllExport void open_drone_id_system_present_(bool _open_drone_id_system_present_);
+
+    /*!
+     * @brief This function returns the value of member open_drone_id_system_present_
+     * @return Value of member open_drone_id_system_present_
+     */
+    eProsima_user_DllExport bool open_drone_id_system_present_() const;
+
+    /*!
+     * @brief This function returns a reference to member open_drone_id_system_present_
+     * @return Reference to member open_drone_id_system_present_
+     */
+    eProsima_user_DllExport bool& open_drone_id_system_present_();
+
+    /*!
+     * @brief This function sets a value in member open_drone_id_system_healthy_
+     * @param _open_drone_id_system_healthy_ New value for member open_drone_id_system_healthy_
+     */
+    eProsima_user_DllExport void open_drone_id_system_healthy_(bool _open_drone_id_system_healthy_);
+
+    /*!
+     * @brief This function returns the value of member open_drone_id_system_healthy_
+     * @return Value of member open_drone_id_system_healthy_
+     */
+    eProsima_user_DllExport bool open_drone_id_system_healthy_() const;
+
+    /*!
+     * @brief This function returns a reference to member open_drone_id_system_healthy_
+     * @return Reference to member open_drone_id_system_healthy_
+     */
+    eProsima_user_DllExport bool& open_drone_id_system_healthy_();
+
+    /*!
      * @brief This function sets a value in member parachute_system_present_
      * @param _parachute_system_present_ New value for member parachute_system_present_
      */
@@ -878,6 +914,8 @@ private:
     bool m_auto_mission_available_;
     bool m_power_input_valid_;
     bool m_usb_connected_;
+    bool m_open_drone_id_system_present_;
+    bool m_open_drone_id_system_healthy_;
     bool m_parachute_system_present_;
     bool m_parachute_system_healthy_;
     bool m_avoidance_system_required_;

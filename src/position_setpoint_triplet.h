@@ -73,7 +73,6 @@ namespace eprosima
 
 
 
-
 /*!
  * @brief This class represents the structure position_setpoint_triplet defined by the user in the IDL file.
  * @ingroup POSITION_SETPOINT_TRIPLET
