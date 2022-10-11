@@ -71,8 +71,8 @@ const uint8_t vehicle_mocap_odometry__VELOCITY_FRAME_UNKNOWN = 0;
 const uint8_t vehicle_mocap_odometry__VELOCITY_FRAME_NED = 1;
 const uint8_t vehicle_mocap_odometry__VELOCITY_FRAME_FRD = 2;
 const uint8_t vehicle_mocap_odometry__VELOCITY_FRAME_BODY_FRD = 3;
-typedef std::array<float, 4> vehicle_mocap_odometry__float_array_4;
 typedef std::array<float, 3> vehicle_mocap_odometry__float_array_3;
+typedef std::array<float, 4> vehicle_mocap_odometry__float_array_4;
 /*!
  * @brief This class represents the structure vehicle_mocap_odometry defined by the user in the IDL file.
  * @ingroup VEHICLE_MOCAP_ODOMETRY

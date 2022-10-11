@@ -11,8 +11,8 @@ const octet vehicle_attitude_setpoint__SPOILERS_OFF = 0;
 const octet vehicle_attitude_setpoint__SPOILERS_LAND = 1;
 const octet vehicle_attitude_setpoint__SPOILERS_DESCEND = 2;
 
-typedef float vehicle_attitude_setpoint__float_array_3[3];
 typedef float vehicle_attitude_setpoint__float_array_4[4];
+typedef float vehicle_attitude_setpoint__float_array_3[3];
 
 struct vehicle_attitude_setpoint
 {

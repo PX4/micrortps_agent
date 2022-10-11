@@ -70,8 +70,8 @@ const uint8_t vehicle_attitude_setpoint__FLAPS_TAKEOFF = 2;
 const uint8_t vehicle_attitude_setpoint__SPOILERS_OFF = 0;
 const uint8_t vehicle_attitude_setpoint__SPOILERS_LAND = 1;
 const uint8_t vehicle_attitude_setpoint__SPOILERS_DESCEND = 2;
-typedef std::array<float, 3> vehicle_attitude_setpoint__float_array_3;
 typedef std::array<float, 4> vehicle_attitude_setpoint__float_array_4;
+typedef std::array<float, 3> vehicle_attitude_setpoint__float_array_3;
 /*!
  * @brief This class represents the structure vehicle_attitude_setpoint defined by the user in the IDL file.
  * @ingroup VEHICLE_ATTITUDE_SETPOINT

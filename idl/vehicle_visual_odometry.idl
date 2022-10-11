@@ -12,8 +12,8 @@ const octet vehicle_visual_odometry__VELOCITY_FRAME_NED = 1;
 const octet vehicle_visual_odometry__VELOCITY_FRAME_FRD = 2;
 const octet vehicle_visual_odometry__VELOCITY_FRAME_BODY_FRD = 3;
 
-typedef float vehicle_visual_odometry__float_array_3[3];
 typedef float vehicle_visual_odometry__float_array_4[4];
+typedef float vehicle_visual_odometry__float_array_3[3];
 
 struct vehicle_visual_odometry
 {

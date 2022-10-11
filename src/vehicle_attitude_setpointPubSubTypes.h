@@ -38,8 +38,8 @@
 
 
 
-typedef std::array<float, 3> vehicle_attitude_setpoint__float_array_3;
 typedef std::array<float, 4> vehicle_attitude_setpoint__float_array_4;
+typedef std::array<float, 3> vehicle_attitude_setpoint__float_array_3;
 /*!
  * @brief This class represents the TopicDataType of the type vehicle_attitude_setpoint defined by the user in the IDL file.
  * @ingroup VEHICLE_ATTITUDE_SETPOINT
